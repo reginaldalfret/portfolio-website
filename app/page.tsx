@@ -1,0 +1,38 @@
+"use client";
+
+import React, { useState } from "react";
+import { Navbar } from "@/components/layout/Navbar";
+import { Hero } from "@/components/hero/Hero";
+import { ProjectsSection } from "@/components/projects/ProjectsSection";
+import { ExperienceSection } from "@/components/experience/ExperienceSection";
+import { AchievementsSection } from "@/components/achievements/AchievementsSection";
+import { SkillsSection } from "@/components/skills/SkillsSection";
+import { EducationSection } from "@/components/about/EducationSection";
+import { ContactSection } from "@/components/contact/ContactSection";
+import { Footer } from "@/components/layout/Footer";
+import { ResumeModal } from "@/components/contact/ResumeModal";
+
+export default function Home() {
+  const [resumeOpen, setResumeOpen] = useState(false);
+
+  return (
+    <div className="relative min-h-screen text-white flex flex-col justify-between selection:bg-cyan-500/20 selection:text-cyan-200">
+      <Navbar onOpenResume={() => setResumeOpen(true)} />
+      
+      <main className="flex-1">
+        <Hero onOpenResume={() => setResumeOpen(true)} />
+        <ProjectsSection />
+        <ExperienceSection />
+        <AchievementsSection />
+        <SkillsSection />
+        <EducationSection />
+        <ContactSection onOpenResume={() => setResumeOpen(true)} />
+      </main>
+
+      <Footer />
+
+      {/* Global Resume PDF Modal */}
+      <ResumeModal isOpen={resumeOpen} onClose={() => setResumeOpen(false)} />
+    </div>
+  );
+}
