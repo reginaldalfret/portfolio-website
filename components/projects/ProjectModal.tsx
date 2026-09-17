@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Project } from "@/lib/portfolioData";
-import { X, Trophy, Github, CheckCircle2, ArrowUpRight } from "lucide-react";
+import { X, Trophy, CheckCircle2, ArrowUpRight } from "lucide-react";
 import { GlassButton } from "@/components/ui/GlassButton";
 
 interface ProjectModalProps {
@@ -32,7 +32,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto pt-[max(1rem,env(safe-area-inset-top))] pb-[max(1rem,env(safe-area-inset-bottom))]">
         {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -44,63 +44,63 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
         {/* Modal Window */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+          initial={{ opacity: 0, scale: 0.95, y: 15 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          transition={{ type: "spring", duration: 0.5, bounce: 0.2 }}
-          className="relative w-full max-w-3xl glass-4 rounded-3xl p-6 sm:p-8 border border-white/15 shadow-2xl my-8 overflow-hidden text-left"
+          exit={{ opacity: 0, scale: 0.95, y: 15 }}
+          transition={{ type: "spring", duration: 0.4, bounce: 0.15 }}
+          className="relative w-full max-w-3xl max-h-[88dvh] flex flex-col glass-4 rounded-3xl p-5 sm:p-8 border border-white/15 shadow-2xl overflow-y-auto text-left"
         >
-          {/* Specular Edge */}
+          {/* Top Specular Edge */}
           <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
 
-          {/* Close Button */}
+          {/* Close Button - 44x44 tap target */}
           <button
             onClick={onClose}
-            className="absolute top-5 right-5 p-2 rounded-full glass-2 text-neutral-400 hover:text-white hover:border-white/20 transition-all cursor-pointer z-10"
+            className="absolute top-4 right-4 w-11 h-11 flex items-center justify-center rounded-full glass-2 text-neutral-300 hover:text-white active:scale-95 transition-all cursor-pointer z-10 border border-white/10"
             aria-label="Close details"
           >
             <X className="w-5 h-5" />
           </button>
 
           {/* Header */}
-          <div className="flex items-center gap-3 mb-4">
-            <span className="text-xs font-mono font-bold tracking-widest text-neutral-400">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-3 pr-12">
+            <span className="text-[11px] font-mono font-bold tracking-widest text-neutral-400">
               PROJECT {project.number}
             </span>
             <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border ${project.theme.badgeBg}`}>
-              <Trophy className="w-3.5 h-3.5" />
+              <Trophy className="w-3.5 h-3.5 shrink-0" />
               <span>{project.award.title}</span>
             </div>
           </div>
 
-          <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+          <h3 className="text-xl sm:text-3xl font-bold text-white tracking-tight pr-10">
             {project.title}
           </h3>
-          <p className="text-sm sm:text-base font-medium text-neutral-300 mt-1 mb-4">
+          <p className="text-xs sm:text-base font-medium text-neutral-300 mt-1 mb-3">
             {project.tagline}
           </p>
 
-          <p className="text-neutral-400 leading-relaxed text-sm sm:text-base mb-6">
+          <p className="text-neutral-400 leading-relaxed text-xs sm:text-sm mb-5">
             {project.description}
           </p>
 
           {/* Award Context */}
-          <div className="glass-2 p-4 rounded-2xl border border-white/10 mb-6 flex items-start gap-3">
-            <Trophy className="w-5 h-5 text-yellow-400 shrink-0 mt-0.5" />
+          <div className="glass-2 p-3.5 sm:p-4 rounded-2xl border border-white/10 mb-5 flex items-start gap-3">
+            <Trophy className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 shrink-0 mt-0.5" />
             <div>
-              <div className="text-xs font-mono uppercase tracking-wider text-neutral-400">Achievement Context</div>
-              <div className="text-sm font-semibold text-neutral-200 mt-0.5">{project.award.context}</div>
+              <div className="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-neutral-400">Achievement Context</div>
+              <div className="text-xs sm:text-sm font-semibold text-neutral-200 mt-0.5">{project.award.context}</div>
             </div>
           </div>
 
           {/* Key Engineering Details */}
-          <div className="mb-6">
-            <h4 className="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-3">
+          <div className="mb-5">
+            <h4 className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-neutral-400 mb-2.5">
               Engineering Architecture & Achievements
             </h4>
-            <div className="space-y-2.5">
+            <div className="space-y-2">
               {project.points.map((point, idx) => (
-                <div key={idx} className="flex items-start gap-3 text-sm text-neutral-300">
+                <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-300 leading-relaxed">
                   <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                   <span>{point}</span>
                 </div>
@@ -109,15 +109,15 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           </div>
 
           {/* Technologies */}
-          <div className="mb-8">
-            <h4 className="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-3">
+          <div className="mb-6">
+            <h4 className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-neutral-400 mb-2.5">
               Technologies & Frameworks
             </h4>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2">
               {project.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1 rounded-full text-xs font-mono glass-2 text-neutral-300 border border-white/10"
+                  className="px-2.5 py-1 rounded-full text-[11px] sm:text-xs font-mono glass-2 text-neutral-300 border border-white/10"
                 >
                   {tech}
                 </span>
@@ -126,20 +126,21 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           </div>
 
           {/* Actions */}
-          <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/10">
+          <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-white/10 mt-auto">
             {project.github && (
               <GlassButton
                 variant="primary"
                 href={project.github}
                 target="_blank"
                 icon={<ArrowUpRight className="w-4 h-4" />}
+                className="w-full sm:w-auto"
               >
                 View Repository on GitHub
               </GlassButton>
             )}
             <button
               onClick={onClose}
-              className="text-xs font-medium text-neutral-400 hover:text-white transition-colors ml-auto"
+              className="text-xs font-medium text-neutral-400 hover:text-white transition-colors ml-auto py-2 px-3 touch-manipulation min-h-[44px] flex items-center"
             >
               Dismiss
             </button>

@@ -16,10 +16,10 @@ export default function Home() {
   const [resumeOpen, setResumeOpen] = useState(false);
 
   return (
-    <div className="relative min-h-screen text-white flex flex-col justify-between selection:bg-cyan-500/20 selection:text-cyan-200">
+    <div className="relative min-h-[100dvh] w-full max-w-full overflow-x-hidden text-white flex flex-col justify-between selection:bg-cyan-500/20 selection:text-cyan-200">
       <Navbar onOpenResume={() => setResumeOpen(true)} />
       
-      <main className="flex-1">
+      <main className="flex-1 w-full max-w-full overflow-x-hidden">
         <Hero onOpenResume={() => setResumeOpen(true)} />
         <ProjectsSection />
         <ExperienceSection />

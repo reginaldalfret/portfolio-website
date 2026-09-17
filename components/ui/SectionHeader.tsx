@@ -34,7 +34,7 @@ export function SectionHeader({
   return (
     <div
       className={cn(
-        "relative mb-14 md:mb-20 max-w-3xl",
+        "relative mb-8 sm:mb-14 md:mb-20 max-w-3xl px-2 sm:px-0",
         align === "center" ? "mx-auto text-center" : "text-left",
         className
       )}
@@ -43,9 +43,9 @@ export function SectionHeader({
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-[11px] font-mono uppercase tracking-[0.2em] mb-4 border glass-1 backdrop-blur-md"
+          className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 rounded-full text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.15em] sm:tracking-[0.2em] mb-3 sm:mb-4 border glass-1 backdrop-blur-md"
         >
           <span className={cn("w-1.5 h-1.5 rounded-full animate-pulse", {
             "bg-neutral-400": badgeColor === "default",
@@ -61,9 +61,9 @@ export function SectionHeader({
       <motion.h2
         initial={{ opacity: 0, y: 15 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-[-0.03em] text-white leading-[1.1]"
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-[-0.03em] text-white leading-[1.15] break-words"
       >
         {title}{" "}
         {highlight && (
@@ -77,9 +77,9 @@ export function SectionHeader({
         <motion.p
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-4 text-base sm:text-lg text-neutral-400 leading-relaxed font-normal max-w-2xl mx-auto"
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-2.5 sm:mt-4 text-xs sm:text-base lg:text-lg text-neutral-300 sm:text-neutral-400 leading-relaxed font-normal max-w-2xl mx-auto"
         >
           {description}
         </motion.p>
