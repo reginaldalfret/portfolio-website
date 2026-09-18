@@ -66,6 +66,42 @@ export function Footer() {
         </div>
       </div>
 
+      {/* Semantic Crawlable Internal Navigation Links */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-6 border-t border-white/5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-neutral-400">
+        <a href="/" className="hover:text-cyan-400 transition-colors">
+          Home
+        </a>
+        <a href="/about" className="hover:text-cyan-400 transition-colors">
+          About Reginald Alfret V
+        </a>
+        <a
+          href="/projects/301-super-ai-agents"
+          className="hover:text-cyan-400 transition-colors"
+        >
+          301 Super AI Agents
+        </a>
+        <a
+          href="/projects/tor-unveil"
+          className="hover:text-rose-400 transition-colors"
+        >
+          TOR-UNVEIL
+        </a>
+        <a
+          href="/projects/ai-crop-recommendation"
+          className="hover:text-emerald-400 transition-colors"
+        >
+          AI Crop Recommendation
+        </a>
+        <a
+          href="/Reginald_Alfret_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-white transition-colors"
+        >
+          Resume (PDF)
+        </a>
+      </div>
+
       {/* Subtle Copyright Line */}
       <div className="mt-6 text-center text-[10px] sm:text-[11px] font-mono text-neutral-500 px-4">
         © {new Date().getFullYear()} Reginald Alfret V. Designed with Liquid Glass & Ambient RGB.

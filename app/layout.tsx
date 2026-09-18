@@ -55,23 +55,55 @@ export default function RootLayout({
 }) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Reginald Alfret V",
-    jobTitle: ["Software Engineer", "Full-Stack Developer", "AI Engineer"],
-    url: "https://reginaldalfret.tech",
-    sameAs: [
-      "https://github.com/reginaldalfret",
-      "https://www.linkedin.com/in/reginaldalfret",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://reginaldalfret.tech/#website",
+        "url": "https://reginaldalfret.tech/",
+        "name": "Reginald Alfret V Portfolio",
+        "description":
+          "Official engineering portfolio of Reginald Alfret V — Software Engineer, Full-Stack Developer, and AI Engineer.",
+        "inLanguage": "en-US",
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://reginaldalfret.tech/#profilepage",
+        "url": "https://reginaldalfret.tech/",
+        "name": "Reginald Alfret V — Software Engineer | AI Engineer | Full-Stack Developer",
+        "isPartOf": {
+          "@id": "https://reginaldalfret.tech/#website",
+        },
+        "mainEntity": {
+          "@id": "https://reginaldalfret.tech/#person",
+        },
+      },
+      {
+        "@type": "Person",
+        "@id": "https://reginaldalfret.tech/#person",
+        "name": "Reginald Alfret V",
+        "jobTitle": [
+          "Software Engineer",
+          "Full-Stack Developer",
+          "AI Engineer",
+        ],
+        "description":
+          "Software Engineer and AI Engineer specializing in multi-agent AI systems, scalable full-stack web applications, and machine learning architectures.",
+        "url": "https://reginaldalfret.tech/",
+        "sameAs": [
+          "https://github.com/reginaldalfret",
+          "https://www.linkedin.com/in/reginaldalfret",
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Chennai",
+          "addressCountry": "India",
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "St. Joseph's Institute of Technology",
+        },
+      },
     ],
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Chennai",
-      addressCountry: "India",
-    },
-    alumniOf: {
-      "@type": "CollegeOrUniversity",
-      name: "St. Joseph's Institute of Technology",
-    },
   };
 
   return (

@@ -130,7 +130,16 @@ export function ProjectsSection() {
                         icon={<Sparkles className="w-4 h-4 text-cyan-500" />}
                         className="flex-1 sm:flex-initial"
                       >
-                        View Project Details
+                        Quick Overview
+                      </GlassButton>
+
+                      <GlassButton
+                        variant="secondary"
+                        href={`/projects/${PROJECT_IDENTIFIERS[project.id]}`}
+                        icon={<ArrowUpRight className="w-4 h-4" />}
+                        className="flex-1 sm:flex-initial"
+                      >
+                        Full Case Study
                       </GlassButton>
 
                       {project.github && (

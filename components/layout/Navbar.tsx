@@ -11,12 +11,13 @@ interface NavbarProps {
 }
 
 const navItems = [
-  { label: "Work", href: "#work" },
-  { label: "Experience", href: "#experience" },
-  { label: "Achievements", href: "#achievements" },
-  { label: "Skills", href: "#skills" },
-  { label: "Education", href: "#education" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/about" },
+  { label: "Work", href: "/#work" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Achievements", href: "/#achievements" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Education", href: "/#education" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export function Navbar({ onOpenResume }: NavbarProps) {
@@ -25,6 +26,10 @@ export function Navbar({ onOpenResume }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    if (typeof window !== "undefined" && window.location.pathname === "/about") {
+      setActiveSection("about");
+    }
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 30);
 
@@ -63,7 +68,7 @@ export function Navbar({ onOpenResume }: NavbarProps) {
         >
           {/* Brand Logo / Name */}
           <a
-            href="#"
+            href="/"
             className="group flex items-center gap-2.5 text-sm font-semibold tracking-tight text-white hover:opacity-90 transition-opacity min-h-[44px] pr-1"
             aria-label="Reginald Alfret Home"
           >
