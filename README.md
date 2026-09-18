@@ -1,4 +1,4 @@
-﻿# Reginald Alfret V — Portfolio
+# Reginald Alfret V — Portfolio
 
 Premium personal portfolio built with:
 
@@ -11,6 +11,7 @@ Premium personal portfolio built with:
 - Lenis
 - Three.js
 - React Three Fiber
+- Google Analytics 4 (@next/third-parties/google)
 
 ## Visual Direction
 
