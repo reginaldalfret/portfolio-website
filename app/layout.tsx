@@ -19,14 +19,13 @@ export const metadata: Metadata = {
     "AI Engineer",
     "Full-Stack Developer",
     "React",
-    "Node.js",
-    "Python",
-    "Ollama",
-    "Multi-Agent AI",
-    "HackIndia 2026",
-    "Chennai India",
+    "FastAPI",
+    "Tailwind CSS",
+    "PostgreSQL",
+    "WebSockets",
+    "Chennai Developer",
   ],
-  authors: [{ name: "Reginald Alfret V" }],
+  authors: [{ name: "Reginald Alfret V", url: "https://reginaldalfret.tech" }],
   creator: "Reginald Alfret V",
   openGraph: {
     title: "Reginald Alfret V — Software Engineer | AI Engineer | Full-Stack Developer",
@@ -64,16 +63,7 @@ export default function RootLayout({
         "description":
           "Official engineering portfolio of Reginald Alfret V — Software Engineer, Full-Stack Developer, and AI Engineer.",
         "inLanguage": "en-US",
-      },
-      {
-        "@type": "ProfilePage",
-        "@id": "https://reginaldalfret.tech/#profilepage",
-        "url": "https://reginaldalfret.tech/",
-        "name": "Reginald Alfret V — Software Engineer | AI Engineer | Full-Stack Developer",
-        "isPartOf": {
-          "@id": "https://reginaldalfret.tech/#website",
-        },
-        "mainEntity": {
+        "publisher": {
           "@id": "https://reginaldalfret.tech/#person",
         },
       },

@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, ExternalLink, Download, Sparkles, GraduationCap, Briefcase, Award, Code2, ShieldCheck, HelpCircle } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/lib/portfolioData";
@@ -343,7 +343,7 @@ export default function AboutPage() {
               <div className="space-y-1.5">
                 <h3 className="font-bold text-white">What technologies does he use?</h3>
                 <p className="text-neutral-300">
-                  His core technology stack includes Python, TypeScript, React.js, Next.js, Node.js, Express.js, FastAPI, Ollama for local LLM inference, Three.js for WebGL graphics, Tailwind CSS, PostgreSQL, and Git.
+                  His core technology stack includes Python, TypeScript, React.js, Next.js, Node.js, Express.js, FastAPI, Large Language Models (LLMs), Three.js for WebGL graphics, Tailwind CSS, PostgreSQL, and Git.
                 </p>
               </div>
 

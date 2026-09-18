@@ -62,7 +62,7 @@ export default function Project301Page() {
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Linux, macOS, Windows (Local & Cloud)",
         "description":
-          "A sovereign, local-first multi-agent AI platform orchestrating 301 specialised agents coordinated by a central orchestrator. Built with Ollama local LLMs, FastAPI, and React.js, featuring privacy-first offline inference, OCR document parsing, and real-time streaming automation.",
+          "A sovereign, local-first multi-agent AI platform orchestrating 301 specialised agents coordinated by a central orchestrator. Built with Large Language Models (LLMs), FastAPI, and React.js, featuring privacy-first offline inference, OCR document parsing, and real-time streaming automation.",
         "author": {
           "@type": "Person",
           "@id": "https://reginaldalfret.tech/#person",
@@ -75,7 +75,7 @@ export default function Project301Page() {
 
   const technologies = [
     "Python",
-    "LLMs (Ollama)",
+    "Large Language Models (LLMs)",
     "Agent Orchestration",
     "FastAPI",
     "React.js",
@@ -166,7 +166,7 @@ export default function Project301Page() {
                 <strong>301 Super AI Agents</strong> is a sovereign, local-first multi-agent artificial intelligence platform designed to orchestrate 301 specialised AI agents for enterprise automation, analytical processing, and intelligent workflow execution without compromising data sovereignty.
               </p>
               <p>
-                Engineered with privacy-first paradigms, the platform allows organizations and technical operators to execute complex autonomous agent workflows locally using Ollama and open-weight models, eliminating external API dependency and recurring inference costs while safeguarding sensitive enterprise telemetry.
+                Engineered with privacy-first paradigms, the platform allows organizations and technical operators to execute complex autonomous agent workflows locally using open-weight large language models, eliminating external API dependency and recurring inference costs while safeguarding sensitive enterprise telemetry.
               </p>
             </div>
           </section>
@@ -195,7 +195,7 @@ export default function Project301Page() {
                   <span>Sovereign Local Inference</span>
                 </div>
                 <p className="text-neutral-300 text-xs sm:text-sm leading-relaxed">
-                  Integrated Ollama runtime support allowing on-device local execution of cutting-edge LLMs. Ensures zero data exfiltration for privacy-critical documents, legal briefs, and proprietary enterprise knowledge.
+                  Integrated local runtime support allowing on-device local execution of cutting-edge LLMs. Ensures zero data exfiltration for privacy-critical documents, legal briefs, and proprietary enterprise knowledge.
                 </p>
               </div>
 

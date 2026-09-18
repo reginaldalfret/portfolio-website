@@ -152,7 +152,7 @@ export function AgentSwarmVisualizer() {
         <div className="flex items-center gap-2 sm:gap-3 text-neutral-400">
           <span className="flex items-center gap-1">
             <Cpu className="w-3 h-3 text-emerald-400" />
-            <span className="text-neutral-300 hidden xs:inline">Local Ollama</span>
+            <span className="text-neutral-300 hidden xs:inline">Local Inference</span>
           </span>
           <span className="flex items-center gap-1">
             <Zap className="w-3 h-3 text-yellow-400" />

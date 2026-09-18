@@ -99,7 +99,7 @@ export const PORTFOLIO_DATA = {
       },
       technologies: [
         "Python",
-        "LLMs (Ollama)",
+        "Large Language Models (LLMs)",
         "Agent Orchestration",
         "FastAPI",
         "React.js",
@@ -355,7 +355,7 @@ export const PORTFOLIO_DATA = {
       category: "AI & Machine Learning",
       skills: [
         { name: "Machine Learning", tag: "Core" },
-        { name: "LLMs (Ollama / Open Models)", tag: "Specialised" },
+        { name: "Large Language Models (LLMs)", tag: "Specialised" },
         { name: "LoRA Fine-Tuning", tag: "Applied" },
         { name: "Prompt Engineering", tag: "LLMs" },
         { name: "OCR", tag: "Vision" },
