@@ -6,6 +6,7 @@ import { PORTFOLIO_DATA } from "@/lib/portfolioData";
 import { GlassButton } from "@/components/ui/GlassButton";
 import { LiquidNeuralCore } from "@/components/3d/LiquidNeuralCore";
 import { ArrowDown, Github, Linkedin, Mail, Trophy, Sparkles, Terminal } from "lucide-react";
+import { trackContactClick } from "@/lib/analytics";
 
 interface HeroProps {
   onOpenResume: () => void;
@@ -100,6 +101,7 @@ export function Hero({ onOpenResume }: HeroProps) {
               href={PORTFOLIO_DATA.personal.github}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackContactClick("github")}
               className="w-10 h-10 flex items-center justify-center rounded-full glass-2 hover:text-white hover:border-white/30 active:scale-95 transition-all"
               aria-label="GitHub Profile"
             >
@@ -109,6 +111,7 @@ export function Hero({ onOpenResume }: HeroProps) {
               href={PORTFOLIO_DATA.personal.linkedin}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackContactClick("linkedin")}
               className="w-10 h-10 flex items-center justify-center rounded-full glass-2 hover:text-white hover:border-white/30 active:scale-95 transition-all"
               aria-label="LinkedIn Profile"
             >
@@ -116,6 +119,7 @@ export function Hero({ onOpenResume }: HeroProps) {
             </a>
             <a
               href={`mailto:${PORTFOLIO_DATA.personal.email}`}
+              onClick={() => trackContactClick("email")}
               className="w-10 h-10 flex items-center justify-center rounded-full glass-2 hover:text-white hover:border-white/30 active:scale-95 transition-all"
               aria-label="Send Email"
             >

@@ -10,6 +10,13 @@ import { TorNetworkVisualizer } from "./TorNetworkVisualizer";
 import { AgriGisVisualizer } from "./AgriGisVisualizer";
 import { ProjectModal } from "./ProjectModal";
 import { Trophy, ArrowUpRight, Sparkles } from "lucide-react";
+import { trackProjectOpen, trackContactClick, ProjectIdentifier } from "@/lib/analytics";
+
+const PROJECT_IDENTIFIERS: Record<string, ProjectIdentifier> = {
+  "project-301": "301-super-ai-agents",
+  "project-tor": "tor-unveil",
+  "project-crop": "ai-crop-recommendation",
+};
 
 export function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -115,7 +122,11 @@ export function ProjectsSection() {
                     <div className="flex flex-wrap items-center gap-3">
                       <GlassButton
                         variant="primary"
-                        onClick={() => setSelectedProject(project)}
+                        onClick={() => {
+                          const safeId = PROJECT_IDENTIFIERS[project.id];
+                          if (safeId) trackProjectOpen(safeId);
+                          setSelectedProject(project);
+                        }}
                         icon={<Sparkles className="w-4 h-4 text-cyan-500" />}
                         className="flex-1 sm:flex-initial"
                       >
@@ -127,6 +138,7 @@ export function ProjectsSection() {
                           variant="secondary"
                           href={project.github}
                           target="_blank"
+                          onClick={() => trackContactClick("github")}
                           icon={<ArrowUpRight className="w-4 h-4" />}
                           className="flex-1 sm:flex-initial"
                         >

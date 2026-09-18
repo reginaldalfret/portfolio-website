@@ -18,6 +18,7 @@ import {
   ArrowUpRight,
   Sparkles,
 } from "lucide-react";
+import { trackResumeDownload, trackContactClick } from "@/lib/analytics";
 
 interface ContactSectionProps {
   onOpenResume: () => void;
@@ -79,6 +80,7 @@ export function ContactSection({ onOpenResume }: ContactSectionProps) {
             <a
               href="/Reginald_Alfret_Resume.pdf"
               download="Reginald_Alfret_Resume.pdf"
+              onClick={() => trackResumeDownload()}
               className="w-full sm:w-auto"
             >
               <GlassButton
@@ -125,13 +127,17 @@ export function ContactSection({ onOpenResume }: ContactSectionProps) {
           <div className="flex items-center gap-2 pt-3.5 border-t border-white/8">
             <a
               href={`mailto:${PORTFOLIO_DATA.personal.email}`}
+              onClick={() => trackContactClick("email")}
               className="min-h-[44px] text-xs font-semibold text-cyan-300 hover:text-cyan-200 flex items-center gap-1 transition-colors touch-manipulation"
             >
               <span>Compose</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
             <button
-              onClick={() => copyToClipboard(PORTFOLIO_DATA.personal.email, "email")}
+              onClick={() => {
+                copyToClipboard(PORTFOLIO_DATA.personal.email, "email");
+                trackContactClick("email");
+              }}
               className="ml-auto w-11 h-11 flex items-center justify-center rounded-xl glass-2 text-neutral-300 hover:text-white transition-colors cursor-pointer border border-white/10 active:scale-95"
               title="Copy Email"
               aria-label="Copy Email"
@@ -199,6 +205,7 @@ export function ContactSection({ onOpenResume }: ContactSectionProps) {
               href={PORTFOLIO_DATA.personal.github}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackContactClick("github")}
               className="w-11 h-11 flex items-center justify-center rounded-xl glass-2 text-neutral-300 hover:text-white transition-colors border border-white/10 active:scale-95"
               aria-label="GitHub Profile"
             >
@@ -208,6 +215,7 @@ export function ContactSection({ onOpenResume }: ContactSectionProps) {
               href={PORTFOLIO_DATA.personal.linkedin}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackContactClick("linkedin")}
               className="w-11 h-11 flex items-center justify-center rounded-xl glass-2 text-neutral-300 hover:text-white transition-colors border border-white/10 active:scale-95"
               aria-label="LinkedIn Profile"
             >

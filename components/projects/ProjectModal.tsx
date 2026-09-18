@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Project } from "@/lib/portfolioData";
 import { X, Trophy, CheckCircle2, ArrowUpRight } from "lucide-react";
 import { GlassButton } from "@/components/ui/GlassButton";
+import { trackContactClick } from "@/lib/analytics";
 
 interface ProjectModalProps {
   project: Project | null;
@@ -132,6 +133,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                 variant="primary"
                 href={project.github}
                 target="_blank"
+                onClick={() => trackContactClick("github")}
                 icon={<ArrowUpRight className="w-4 h-4" />}
                 className="w-full sm:w-auto"
               >

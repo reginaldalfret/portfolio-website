@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { AmbientLighting } from "@/components/ui/AmbientLighting";
 import { NoiseOverlay } from "@/components/ui/NoiseOverlay";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://reginaldalfret.tech"),
@@ -85,6 +86,9 @@ export default function RootLayout({
         <NoiseOverlay />
         <AmbientLighting />
         <SmoothScroll>{children}</SmoothScroll>
+        {process.env.NEXT_PUBLIC_GA_ID ? (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        ) : null}
       </body>
     </html>
   );

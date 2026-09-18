@@ -3,6 +3,7 @@
 import React from "react";
 import { PORTFOLIO_DATA } from "@/lib/portfolioData";
 import { Github, Linkedin, Mail, ArrowUp } from "lucide-react";
+import { trackContactClick } from "@/lib/analytics";
 
 export function Footer() {
   const scrollToTop = () => {
@@ -29,6 +30,7 @@ export function Footer() {
             href={PORTFOLIO_DATA.personal.github}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackContactClick("github")}
             className="w-11 h-11 flex items-center justify-center rounded-full glass-2 hover:text-white transition-colors border border-white/10 active:scale-95"
             aria-label="GitHub"
           >
@@ -38,6 +40,7 @@ export function Footer() {
             href={PORTFOLIO_DATA.personal.linkedin}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackContactClick("linkedin")}
             className="w-11 h-11 flex items-center justify-center rounded-full glass-2 hover:text-white transition-colors border border-white/10 active:scale-95"
             aria-label="LinkedIn"
           >
@@ -45,6 +48,7 @@ export function Footer() {
           </a>
           <a
             href={`mailto:${PORTFOLIO_DATA.personal.email}`}
+            onClick={() => trackContactClick("email")}
             className="w-11 h-11 flex items-center justify-center rounded-full glass-2 hover:text-white transition-colors border border-white/10 active:scale-95"
             aria-label="Email"
           >

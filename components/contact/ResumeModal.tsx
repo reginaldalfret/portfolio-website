@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Download, ExternalLink, FileText } from "lucide-react";
 import { GlassButton } from "@/components/ui/GlassButton";
+import { trackResumeDownload } from "@/lib/analytics";
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -69,6 +70,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               <a
                 href="/Reginald_Alfret_Resume.pdf"
                 download="Reginald_Alfret_Resume.pdf"
+                onClick={() => trackResumeDownload()}
                 className="hidden sm:inline-flex"
               >
                 <GlassButton
@@ -84,6 +86,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 href="/Reginald_Alfret_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackResumeDownload()}
                 className="w-11 h-11 flex items-center justify-center rounded-full glass-2 text-neutral-300 hover:text-white transition-colors border border-white/10 active:scale-95"
                 title="Open PDF in new tab"
                 aria-label="Open PDF in new tab"
@@ -116,6 +119,7 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             <a
               href="/Reginald_Alfret_Resume.pdf"
               download="Reginald_Alfret_Resume.pdf"
+              onClick={() => trackResumeDownload()}
               className="flex-1 max-w-[160px]"
             >
               <GlassButton variant="primary" size="sm" className="w-full min-h-[44px]">
