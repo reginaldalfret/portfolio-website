@@ -1,4 +1,4 @@
-﻿import { sendGAEvent } from "@next/third-parties/google";
+import { sendGAEvent } from "@next/third-parties/google";
 
 /**
  * Portfolio Analytics Integration
@@ -58,4 +58,11 @@ export function trackContactClick(channel: ContactChannel) {
       trackEvent("linkedin_click");
       break;
   }
+}
+
+/**
+ * Track open-source pull request clicks
+ */
+export function trackOpenSourceClick(repo: string, prNumber: number) {
+  trackEvent("opensource_pr_click", { repo, pr_number: prNumber });
 }

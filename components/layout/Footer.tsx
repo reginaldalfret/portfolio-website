@@ -74,6 +74,9 @@ export function Footer() {
         <a href="/about" className="hover:text-cyan-400 transition-colors">
           About Reginald Alfret V
         </a>
+        <a href="/#open-source" className="hover:text-cyan-400 transition-colors">
+          Open-Source Contributions
+        </a>
         <a
           href="/projects/301-super-ai-agents"
           className="hover:text-cyan-400 transition-colors"

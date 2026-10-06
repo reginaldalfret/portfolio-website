@@ -360,6 +360,13 @@ export default function AboutPage() {
                   Reginald won 1st Place at HackIndia 2026 (competing against 500+ teams nationwide), 1st Place at the Tamil Nadu Police Hackathon 2025, 1st Place at Blaze a Trail 2.0, and 6 additional competitive technical symposium championships.
                 </p>
               </div>
+
+              <div className="space-y-1.5">
+                <h3 className="font-bold text-white">What are his open-source contributions?</h3>
+                <p className="text-neutral-300">
+                  Reginald has contributed upstream pull requests to major open-source ecosystems including Meta (StyleX #1899), Apache (ShenYu Dashboard #696), Intel (PyTorch XPU #5518), Microsoft Azure (Cosmos DB Emulator #359), IBM (Docling Pipelines #85), Docker (Docs #26266), SAP (Terraform Provider BTP #1710), GitHub (CLI #14592), AMD ROCm (hrx-system #1231), and Cloudflare (Vinext #3470, incorporated into #3534). Details can be viewed in the <a href="/#open-source" className="text-cyan-400 hover:underline">Open-Source Contributions section</a>.
+                </p>
+              </div>
             </div>
           </section>
 

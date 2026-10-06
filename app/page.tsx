@@ -6,6 +6,7 @@ import { Hero } from "@/components/hero/Hero";
 import { ProjectsSection } from "@/components/projects/ProjectsSection";
 import { ExperienceSection } from "@/components/experience/ExperienceSection";
 import { AchievementsSection } from "@/components/achievements/AchievementsSection";
+import { OpenSourceSection } from "@/components/opensource/OpenSourceSection";
 import { SkillsSection } from "@/components/skills/SkillsSection";
 import { EducationSection } from "@/components/about/EducationSection";
 import { ContactSection } from "@/components/contact/ContactSection";
@@ -24,6 +25,7 @@ export default function Home() {
         <ProjectsSection />
         <ExperienceSection />
         <AchievementsSection />
+        <OpenSourceSection />
         <SkillsSection />
         <EducationSection />
         <ContactSection onOpenResume={() => setResumeOpen(true)} />

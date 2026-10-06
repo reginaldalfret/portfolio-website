@@ -15,6 +15,7 @@ const navItems = [
   { label: "Work", href: "/#work" },
   { label: "Experience", href: "/#experience" },
   { label: "Achievements", href: "/#achievements" },
+  { label: "Open Source", href: "/#open-source" },
   { label: "Skills", href: "/#skills" },
   { label: "Education", href: "/#education" },
   { label: "Contact", href: "/#contact" },
@@ -34,7 +35,7 @@ export function Navbar({ onOpenResume }: NavbarProps) {
       setScrolled(window.scrollY > 30);
 
       // Simple section spy
-      const sections = ["work", "experience", "achievements", "skills", "education", "contact"];
+      const sections = ["work", "experience", "achievements", "open-source", "skills", "education", "contact"];
       const scrollPos = window.scrollY + 200;
 
       for (const section of sections) {
