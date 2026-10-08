@@ -80,10 +80,10 @@ export const PORTFOLIO_DATA = {
   },
 
   stats: [
+    { value: "14", label: "Merged Pull Requests", caption: "Across Apple, NVIDIA, Meta & more" },
+    { value: "70+", label: "Built Projects", caption: "AI systems, full-stack & automation" },
+    { value: "3×", label: "1st Place Hackathons", caption: "HackIndia 2026, TN Police & Blaze a Trail" },
     { value: "301", label: "Specialised AI Agents", caption: "Orchestrated in sovereign local platform" },
-    { value: "1st", label: "HackIndia 2026", caption: "Champion across 500+ teams nationwide" },
-    { value: "6", label: "National Symposium Wins", caption: "Competitive tech championships" },
-    { value: "70+", label: "Technical Symposia", caption: "Hands-on symposium track record" },
   ],
 
   projects: [
@@ -100,7 +100,7 @@ export const PORTFOLIO_DATA = {
       },
       technologies: [
         "Python",
-        "Large Language Models (LLMs)",
+        "LLMs (Ollama)",
         "Agent Orchestration",
         "FastAPI",
         "React.js",
