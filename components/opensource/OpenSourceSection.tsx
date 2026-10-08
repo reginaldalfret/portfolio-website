@@ -13,16 +13,25 @@ import { trackOpenSourceClick } from "@/lib/analytics";
 import {
   GitPullRequest,
   CheckCircle2,
-  GitMerge,
-  ExternalLink,
-  GitBranch,
   Building2,
   Sparkles,
-  Layers,
   ArrowUpRight,
+  ShieldCheck,
+  Code2,
+  Terminal,
 } from "lucide-react";
 
-type FilterKey = "all" | "merged" | "incorporated" | "docs" | "bug-fix" | "test" | "infra";
+type FilterKey = "all" | "docs" | "bug-fix" | "test" | "infra" | "build";
+
+// Featured subset for the high-impact spotlight strip
+const FEATURED_PR_IDS = [
+  "apple-swift-numerics-355",
+  "nvidia-cuda-quantum-5560",
+  "meta-stylex-1899",
+  "cli-cli-14592",
+  "intel-torch-5518",
+  "cloudflare-vinext-3469",
+];
 
 export function OpenSourceSection() {
   const [activeFilter, setActiveFilter] = useState<FilterKey>("all");
@@ -30,24 +39,28 @@ export function OpenSourceSection() {
   const filteredContributions = useMemo(() => {
     return OPEN_SOURCE_CONTRIBUTIONS.filter((item) => {
       if (activeFilter === "all") return true;
-      if (activeFilter === "merged") return item.status === "merged";
-      if (activeFilter === "incorporated") return item.status === "incorporated";
       if (activeFilter === "docs") return item.category === "DOCS";
       if (activeFilter === "bug-fix") return item.category === "BUG FIX";
       if (activeFilter === "test") return item.category === "TEST";
       if (activeFilter === "infra") return item.category === "INFRA";
+      if (activeFilter === "build") return item.category === "BUILD";
       return true;
     });
   }, [activeFilter]);
 
+  const featuredContributions = useMemo(() => {
+    return FEATURED_PR_IDS.map((id) =>
+      OPEN_SOURCE_CONTRIBUTIONS.find((c) => c.id === id)
+    ).filter(Boolean) as OpenSourceContribution[];
+  }, []);
+
   const filterTabs: { id: FilterKey; label: string; count: number }[] = [
-    { id: "all", label: "All", count: OPEN_SOURCE_METRICS.totalContributions },
-    { id: "merged", label: "Merged", count: OPEN_SOURCE_METRICS.mergedCount },
-    { id: "incorporated", label: "Incorporated", count: OPEN_SOURCE_METRICS.incorporatedCount },
-    { id: "docs", label: "Docs", count: OPEN_SOURCE_CONTRIBUTIONS.filter((c) => c.category === "DOCS").length },
-    { id: "bug-fix", label: "Bug Fix", count: OPEN_SOURCE_CONTRIBUTIONS.filter((c) => c.category === "BUG FIX").length },
-    { id: "test", label: "Tests", count: OPEN_SOURCE_CONTRIBUTIONS.filter((c) => c.category === "TEST").length },
-    { id: "infra", label: "Infra", count: OPEN_SOURCE_CONTRIBUTIONS.filter((c) => c.category === "INFRA").length },
+    { id: "all", label: "All Contributions", count: OPEN_SOURCE_METRICS.totalContributions },
+    { id: "docs", label: "Documentation", count: OPEN_SOURCE_CONTRIBUTIONS.filter((c) => c.category === "DOCS").length },
+    { id: "bug-fix", label: "Bug Fixes", count: OPEN_SOURCE_CONTRIBUTIONS.filter((c) => c.category === "BUG FIX").length },
+    { id: "test", label: "Test Suites", count: OPEN_SOURCE_CONTRIBUTIONS.filter((c) => c.category === "TEST").length },
+    { id: "infra", label: "Infrastructure", count: OPEN_SOURCE_CONTRIBUTIONS.filter((c) => c.category === "INFRA").length },
+    { id: "build", label: "Build & Packaging", count: OPEN_SOURCE_CONTRIBUTIONS.filter((c) => c.category === "BUILD").length },
   ];
 
   return (
@@ -57,102 +70,184 @@ export function OpenSourceSection() {
       className="relative py-16 sm:py-24 md:py-32 px-3.5 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden"
     >
       <SectionHeader
-        eyebrow="Upstream Engineering"
+        eyebrow="Primary Engineering Signal"
         title="Open-Source"
         highlight="Contributions"
-        description="Contributing bug fixes, test suite alignments, documentation refinements, and infrastructure improvements to major open-source ecosystems."
+        description="Real upstream engineering work across major open-source ecosystems. Verified pull requests merged directly into production repositories maintained by Apple, NVIDIA, Meta, GitHub, Intel, Cloudflare, Docker, Microsoft Azure, IBM, Apache, SAP, AMD, Airbnb, and Qualcomm."
         badgeColor="cyan"
       />
 
-      {/* Hero Metrics Dashboard */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-10 sm:mb-14">
-        {/* Metric 1: Merged PRs */}
+      {/* Command Center Hero Metrics Dashboard */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6 mb-12 sm:mb-16">
+        {/* Metric 1: Upstream Merged PRs */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.4 }}
-          className="relative group p-4 sm:p-6 rounded-2xl sm:rounded-3xl glass-3 border border-emerald-500/20 hover:border-emerald-500/40 transition-all duration-300"
+          className="relative group p-5 sm:p-7 rounded-2xl sm:rounded-3xl glass-3 border border-emerald-500/25 hover:border-emerald-500/50 transition-all duration-300 shadow-[0_4px_24px_rgba(16,185,129,0.08)]"
         >
-          <div className="flex items-center justify-between mb-2 sm:mb-3">
-            <span className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
-              <CheckCircle2 className="w-3.5 h-3.5" />
-              <span>Upstream Merged</span>
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-emerald-400 flex items-center gap-1.5 font-semibold">
+              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+              <span>Upstream Verified</span>
+            </span>
+            <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">
+              100% MERGED
             </span>
           </div>
-          <div className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <div className="text-3xl sm:text-5xl font-black text-white tracking-tight font-mono">
             {OPEN_SOURCE_METRICS.mergedCount}
           </div>
-          <div className="text-xs sm:text-sm text-neutral-400 mt-1">
+          <div className="text-xs sm:text-sm text-neutral-300 font-medium mt-1">
             Merged Pull Requests
           </div>
+          <p className="text-[11px] text-neutral-400 mt-2 leading-relaxed">
+            Directly merged into official default branches by maintainers.
+          </p>
         </motion.div>
 
-        {/* Metric 2: Incorporated Contribution */}
+        {/* Metric 2: Total Documented Contributions */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.4, delay: 0.08 }}
-          className="relative group p-4 sm:p-6 rounded-2xl sm:rounded-3xl glass-3 border border-amber-500/20 hover:border-amber-500/40 transition-all duration-300"
+          className="relative group p-5 sm:p-7 rounded-2xl sm:rounded-3xl glass-3 border border-cyan-500/25 hover:border-cyan-500/50 transition-all duration-300 shadow-[0_4px_24px_rgba(6,182,212,0.08)]"
         >
-          <div className="flex items-center justify-between mb-2 sm:mb-3">
-            <span className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-amber-400 flex items-center gap-1.5">
-              <GitMerge className="w-3.5 h-3.5" />
-              <span>Incorporated</span>
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-cyan-400 flex items-center gap-1.5 font-semibold">
+              <GitPullRequest className="w-4 h-4 text-cyan-400" />
+              <span>Total Impact</span>
+            </span>
+            <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">
+              VERIFIED
             </span>
           </div>
-          <div className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-            {OPEN_SOURCE_METRICS.incorporatedCount}
+          <div className="text-3xl sm:text-5xl font-black text-white tracking-tight font-mono">
+            {OPEN_SOURCE_METRICS.totalContributions}
           </div>
-          <div className="text-xs sm:text-sm text-neutral-400 mt-1">
-            Merged via PR #3534
+          <div className="text-xs sm:text-sm text-neutral-300 font-medium mt-1">
+            Engineering Contributions
           </div>
+          <p className="text-[11px] text-neutral-400 mt-2 leading-relaxed">
+            Spanning bug fixes, tests, CI infra, build systems, and docs.
+          </p>
         </motion.div>
 
-        {/* Metric 3: Total Documented Contributions */}
+        {/* Metric 3: Major Organizations */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.4, delay: 0.16 }}
-          className="relative group p-4 sm:p-6 rounded-2xl sm:rounded-3xl glass-3 border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300"
+          className="relative group p-5 sm:p-7 rounded-2xl sm:rounded-3xl glass-3 border border-purple-500/25 hover:border-purple-500/50 transition-all duration-300 shadow-[0_4px_24px_rgba(168,85,247,0.08)]"
         >
-          <div className="flex items-center justify-between mb-2 sm:mb-3">
-            <span className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-cyan-400 flex items-center gap-1.5">
-              <GitPullRequest className="w-3.5 h-3.5" />
-              <span>Total PRs</span>
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-purple-400 flex items-center gap-1.5 font-semibold">
+              <Building2 className="w-4 h-4 text-purple-400" />
+              <span>Global Reach</span>
+            </span>
+            <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/20">
+              14 ECOSYSTEMS
             </span>
           </div>
-          <div className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-            {OPEN_SOURCE_METRICS.totalContributions}
-          </div>
-          <div className="text-xs sm:text-sm text-neutral-400 mt-1">
-            Documented Contributions
-          </div>
-        </motion.div>
-
-        {/* Metric 4: Major Organizations */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.4, delay: 0.24 }}
-          className="relative group p-4 sm:p-6 rounded-2xl sm:rounded-3xl glass-3 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300"
-        >
-          <div className="flex items-center justify-between mb-2 sm:mb-3">
-            <span className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-purple-400 flex items-center gap-1.5">
-              <Building2 className="w-3.5 h-3.5" />
-              <span>Ecosystems</span>
-            </span>
-          </div>
-          <div className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <div className="text-3xl sm:text-5xl font-black text-white tracking-tight font-mono">
             {OPEN_SOURCE_METRICS.totalOrganizations}
           </div>
-          <div className="text-xs sm:text-sm text-neutral-400 mt-1">
-            Major Global Organizations
+          <div className="text-xs sm:text-sm text-neutral-300 font-medium mt-1">
+            Major Organizations & Foundries
           </div>
+          <p className="text-[11px] text-neutral-400 mt-2 leading-relaxed">
+            Fortune 100 enterprises, hyperscalers, and premier foundations.
+          </p>
         </motion.div>
+      </div>
+
+      {/* Featured Spotlight Section */}
+      <div className="mb-14 sm:mb-18">
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center gap-2">
+            <Sparkles className="w-4 h-4 text-cyan-400" />
+            <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">
+              Spotlight Contributions
+            </h3>
+            <span className="text-xs font-mono text-neutral-400 hidden sm:inline">
+              &bull; High-Impact Ecosystems
+            </span>
+          </div>
+          <span className="text-xs font-mono text-neutral-400">
+            6 Selected Highlights
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+          {featuredContributions.map((item, idx) => (
+            <motion.div
+              key={`spotlight-${item.id}`}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: idx * 0.05 }}
+              className="relative p-5 sm:p-6 rounded-2xl glass-3 border border-white/12 hover:border-cyan-400/40 transition-all duration-300 group flex flex-col justify-between"
+              style={{
+                boxShadow: `0 0 20px -5px ${item.theme.borderGlow}`,
+              }}
+            >
+              <div>
+                <div className="flex items-center justify-between gap-3 mb-3">
+                  <div className="flex items-center gap-2.5">
+                    <div
+                      className="w-9 h-9 rounded-xl glass-2 border border-white/10 flex items-center justify-center shrink-0"
+                      style={{ color: item.theme.accent }}
+                    >
+                      <OrgLogo orgKey={item.orgKey} className="w-4.5 h-4.5" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-bold text-white leading-tight">
+                        {item.organization}
+                      </div>
+                      <div className="text-[10px] font-mono text-neutral-400 truncate max-w-[170px]">
+                        {item.repository}
+                      </div>
+                    </div>
+                  </div>
+
+                  <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 font-semibold shrink-0 flex items-center gap-1">
+                    <CheckCircle2 className="w-3 h-3" />
+                    <span>Merged #{item.prNumber}</span>
+                  </span>
+                </div>
+
+                <h4 className="text-xs sm:text-sm font-semibold text-neutral-100 group-hover:text-white transition-colors mb-2 line-clamp-2">
+                  {item.title}
+                </h4>
+
+                <p className="text-xs text-neutral-400 group-hover:text-neutral-300 transition-colors leading-relaxed mb-4">
+                  {item.contribution}
+                </p>
+              </div>
+
+              <div className="pt-3 border-t border-white/10 flex items-center justify-between">
+                <span className="text-[10px] font-mono text-neutral-400">
+                  {item.displayDate}
+                </span>
+
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackOpenSourceClick(item.repository, item.prNumber)}
+                  className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-cyan-300 hover:text-white transition-colors"
+                  aria-label={`View ${item.organization} pull request #${item.prNumber} on GitHub`}
+                >
+                  <span>View PR #{item.prNumber}</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
 
       {/* Filter Tabs Bar */}
@@ -184,12 +279,10 @@ export function OpenSourceSection() {
         })}
       </div>
 
-      {/* Contributions Grid */}
+      {/* All Contributions Grid (14 records) */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         <AnimatePresence mode="popLayout">
           {filteredContributions.map((item, index) => {
-            const isMerged = item.status === "merged";
-
             return (
               <motion.article
                 key={item.id}
@@ -197,7 +290,7 @@ export function OpenSourceSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4, delay: index * 0.04 }}
+                transition={{ duration: 0.35, delay: index * 0.03 }}
                 className="group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl glass-3 p-5 sm:p-7 border border-white/10 hover:border-white/30 transition-all duration-300 hover:shadow-[0_10px_35px_rgba(0,0,0,0.4)]"
                 style={{
                   boxShadow: `0 0 0 1px rgba(255, 255, 255, 0.05)`,
@@ -205,9 +298,8 @@ export function OpenSourceSection() {
               >
                 {/* Ambient Top Glow */}
                 <div
-                  className={`absolute -top-12 -right-12 w-28 h-28 rounded-full blur-3xl opacity-20 pointer-events-none transition-opacity group-hover:opacity-40 ${
-                    isMerged ? "bg-cyan-500" : "bg-amber-500"
-                  }`}
+                  className="absolute -top-12 -right-12 w-28 h-28 rounded-full blur-3xl opacity-20 pointer-events-none transition-opacity group-hover:opacity-40"
+                  style={{ backgroundColor: item.theme.accent }}
                 />
 
                 {/* Card Top: Org Mark & Category Badge */}
@@ -250,41 +342,16 @@ export function OpenSourceSection() {
                 <div className="pt-4 border-t border-white/8 space-y-3">
                   <div className="flex items-center justify-between text-xs">
                     {/* Status Badge */}
-                    {isMerged ? (
-                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                        <span>✓ Merged</span>
-                        <span className="text-emerald-400/70">#{item.prNumber}</span>
-                      </span>
-                    ) : (
-                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold font-mono bg-amber-500/15 text-amber-300 border border-amber-500/30">
-                        <GitMerge className="w-3.5 h-3.5 text-amber-400" />
-                        <span>↗ Incorporated</span>
-                        <span className="text-amber-400/70">#{item.prNumber}</span>
-                      </span>
-                    )}
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                      <span>✓ Merged</span>
+                      <span className="text-emerald-400/70">#{item.prNumber}</span>
+                    </span>
 
                     <span className="text-[11px] font-mono text-neutral-400">
                       {item.displayDate}
                     </span>
                   </div>
-
-                  {/* Incorporated subtext if applicable */}
-                  {item.incorporatedInto && (
-                    <div className="text-[11px] font-mono text-amber-300/90 glass-1 p-2 rounded-xl border border-amber-500/20 flex items-center justify-between">
-                      <span>Incorporated into merged PR #3534</span>
-                      <a
-                        href={item.incorporatedInto.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-amber-400 hover:text-white underline inline-flex items-center gap-0.5 ml-1"
-                        aria-label="View incorporated merged pull request 3534"
-                      >
-                        <span>#3534</span>
-                        <ArrowUpRight className="w-3 h-3" />
-                      </a>
-                    </div>
-                  )}
 
                   {/* Direct Pull Request Link */}
                   <a
@@ -308,31 +375,63 @@ export function OpenSourceSection() {
         </AnimatePresence>
       </div>
 
-      {/* Impact Narrative Callout */}
+      {/* Why Open Source & Engineering Rigor Narrative */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-40px" }}
-        transition={{ duration: 0.5, delay: 0.2 }}
+        transition={{ duration: 0.5, delay: 0.15 }}
         className="mt-12 sm:mt-16 p-6 sm:p-10 rounded-2xl sm:rounded-3xl glass-3 border border-white/10 relative overflow-hidden"
       >
         <div className="absolute top-0 right-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="max-w-3xl space-y-4 relative z-10">
+        <div className="max-w-4xl space-y-5 relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-widest glass-2 text-cyan-300 border border-cyan-500/30">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-            <span>Engineering Discipline</span>
+            <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
+            <span>Why Open Source</span>
           </div>
 
-          <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-            Upstream Rigor & Codebase Collaboration
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white tracking-tight">
+            Upstream Rigor, Codebase Archaeology & Peer Collaboration
           </h3>
 
           <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
-            Open-source contribution is part of how I learn systems engineering: reading unfamiliar codebases, diagnosing upstream bugs, reproducing test suite regressions, proposing surgical patches, and collaborating through public peer review with maintainers at Meta, Apache, Intel, Microsoft Azure, IBM, Docker, SAP, GitHub, and Cloudflare.
+            Open-source contribution is core to how I practice engineering: diving into large unfamiliar codebases, diagnosing production edge-cases, aligning test suites with upstream invariants, and proposing surgical patches through public code reviews with maintainers across Apple, NVIDIA, Meta, GitHub, Intel, Cloudflare, Microsoft Azure, IBM, Docker, SAP, and Apache.
           </p>
 
-          <div className="pt-2 flex flex-wrap items-center gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs text-neutral-300">
+            <div className="p-3 rounded-xl glass-2 border border-white/8 space-y-1">
+              <div className="font-semibold text-white flex items-center gap-1.5">
+                <Terminal className="w-3.5 h-3.5 text-cyan-400" />
+                <span>Diagnostic Precision</span>
+              </div>
+              <p className="text-neutral-400 text-[11px] leading-relaxed">
+                Reproducing regressions in complex environments before authoring minimal, clean fixes.
+              </p>
+            </div>
+
+            <div className="p-3 rounded-xl glass-2 border border-white/8 space-y-1">
+              <div className="font-semibold text-white flex items-center gap-1.5">
+                <Code2 className="w-3.5 h-3.5 text-purple-400" />
+                <span>Upstream Parity</span>
+              </div>
+              <p className="text-neutral-400 text-[11px] leading-relaxed">
+                Keeping developer tooling, docs, and test assertions in lockstep with official releases.
+              </p>
+            </div>
+
+            <div className="p-3 rounded-xl glass-2 border border-white/8 space-y-1">
+              <div className="font-semibold text-white flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                <span>Maintainer Trust</span>
+              </div>
+              <p className="text-neutral-400 text-[11px] leading-relaxed">
+                Collaborating politely through CI checks, linting gates, and senior reviewer feedback.
+              </p>
+            </div>
+          </div>
+
+          <div className="pt-3 flex flex-wrap items-center gap-3">
             <a
               href="https://github.com/reginaldalfret"
               target="_blank"
@@ -345,7 +444,7 @@ export function OpenSourceSection() {
             </a>
 
             <span className="text-xs font-mono text-neutral-400">
-              Verified on GitHub &bull; 9 Merged + 1 Incorporated
+              Verified on GitHub &bull; 14 Merged Pull Requests Across 14 Ecosystems
             </span>
           </div>
         </div>

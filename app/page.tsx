@@ -22,10 +22,10 @@ export default function Home() {
       
       <main className="flex-1 w-full max-w-full overflow-x-hidden">
         <Hero onOpenResume={() => setResumeOpen(true)} />
+        <OpenSourceSection />
         <ProjectsSection />
         <ExperienceSection />
         <AchievementsSection />
-        <OpenSourceSection />
         <SkillsSection />
         <EducationSection />
         <ContactSection onOpenResume={() => setResumeOpen(true)} />

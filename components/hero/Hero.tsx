@@ -40,14 +40,14 @@ export function Hero({ onOpenResume }: HeroProps) {
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="space-y-1 sm:space-y-2 mb-4 sm:mb-6 w-full"
           >
-            <h1 className="text-[28px] xs:text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-[-0.04em] text-white leading-[1.08] break-words">
-              SOFTWARE ENGINEER
+            <h1 className="text-[26px] xs:text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-[-0.04em] text-white leading-[1.08] break-words">
+              OPEN-SOURCE CONTRIBUTOR
             </h1>
-            <h2 className="text-[24px] xs:text-[28px] sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-[-0.035em] text-neutral-300 leading-[1.08] break-words">
-              FULL-STACK DEVELOPER
-            </h2>
             <h2 className="text-[24px] xs:text-[28px] sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-[-0.035em] bg-gradient-to-r from-cyan-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent leading-[1.08] break-words">
               AI ENGINEER
+            </h2>
+            <h2 className="text-[20px] xs:text-[24px] sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-[-0.035em] text-neutral-300 leading-[1.08] break-words">
+              SOFTWARE ENGINEER &bull; FULL-STACK DEVELOPER
             </h2>
           </motion.div>
 
@@ -58,7 +58,7 @@ export function Hero({ onOpenResume }: HeroProps) {
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="text-base sm:text-xl text-neutral-300 max-w-xl font-normal leading-relaxed mb-6 sm:mb-8 px-2 sm:px-0"
           >
-            {PORTFOLIO_DATA.personal.headline}
+            Building intelligent systems and contributing focused fixes, tests, documentation, and infrastructure improvements to major open-source ecosystems.
           </motion.p>
 
           {/* Call to Actions - Tappable & Stacked Intelligently on narrow screens */}
@@ -71,8 +71,18 @@ export function Hero({ onOpenResume }: HeroProps) {
             <GlassButton
               variant="primary"
               size="lg"
-              href="#work"
+              href="#open-source"
               icon={<ArrowDown className="w-4 h-4" />}
+              className="flex-1 sm:flex-initial"
+            >
+              Explore Open Source ↓
+            </GlassButton>
+
+            <GlassButton
+              variant="secondary"
+              size="lg"
+              href="#work"
+              icon={<ArrowDown className="w-4 h-4 text-cyan-400" />}
               className="flex-1 sm:flex-initial"
             >
               Explore Work

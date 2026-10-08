@@ -1,5 +1,5 @@
 export type ContributionStatus = "merged" | "incorporated";
-export type ContributionCategory = "DOCS" | "BUG FIX" | "TEST" | "INFRA";
+export type ContributionCategory = "DOCS" | "BUG FIX" | "TEST" | "INFRA" | "BUILD";
 
 export interface OpenSourceContribution {
   id: string;
@@ -14,7 +14,11 @@ export interface OpenSourceContribution {
     | "sap"
     | "github"
     | "rocm"
-    | "cloudflare";
+    | "cloudflare"
+    | "qualcomm"
+    | "nvidia"
+    | "airbnb"
+    | "apple";
   repository: string;
   prNumber: number;
   title: string;
@@ -40,6 +44,121 @@ export interface OpenSourceContribution {
 }
 
 export const OPEN_SOURCE_CONTRIBUTIONS: OpenSourceContribution[] = [
+  {
+    id: "airbnb-magazinelayout-169",
+    organization: "Airbnb",
+    orgKey: "airbnb",
+    repository: "airbnb/MagazineLayout",
+    prNumber: 169,
+    title: "fix(podspec): specify swift_versions array supporting Swift 4.0, 4.2, and 5.0",
+    url: "https://github.com/airbnb/MagazineLayout/pull/169",
+    status: "merged",
+    statusLabel: "Merged",
+    category: "BUILD",
+    contribution:
+      "Specified explicit swift_versions array supporting Swift 4.0, 4.2, and 5.0 in the CocoaPods specification for dependency manager compatibility.",
+    date: "2026-10-08T15:24:52Z",
+    displayDate: "Oct 8, 2026",
+    theme: {
+      accent: "#FF5A5F",
+      borderGlow: "rgba(255, 90, 95, 0.35)",
+      gradient: "from-rose-500/15 via-pink-600/5 to-transparent",
+      textColor: "text-rose-400",
+      badgeBg: "bg-rose-500/10 border-rose-500/30 text-rose-300",
+    },
+  },
+  {
+    id: "apple-swift-numerics-355",
+    organization: "Apple",
+    orgKey: "apple",
+    repository: "apple/swift-numerics",
+    prNumber: 355,
+    title: "docs: add dedicated documentation for ApproximateEquality",
+    url: "https://github.com/apple/swift-numerics/pull/355",
+    status: "merged",
+    statusLabel: "Merged",
+    category: "DOCS",
+    contribution:
+      "Authored dedicated documentation and usage examples for the ApproximateEquality protocol in Swift Numerics.",
+    date: "2026-10-08T14:44:08Z",
+    displayDate: "Oct 8, 2026",
+    theme: {
+      accent: "#E5E5E7",
+      borderGlow: "rgba(255, 255, 255, 0.35)",
+      gradient: "from-neutral-300/15 via-neutral-400/5 to-transparent",
+      textColor: "text-neutral-200",
+      badgeBg: "bg-white/10 border-white/30 text-white",
+    },
+  },
+  {
+    id: "qualcomm-appbuilder-286",
+    organization: "Qualcomm",
+    orgKey: "qualcomm",
+    repository: "qualcomm/qai-appbuilder",
+    prNumber: 286,
+    title: "docs(webui): fix screenshot relative image paths in README",
+    url: "https://github.com/qualcomm/qai-appbuilder/pull/286",
+    status: "merged",
+    statusLabel: "Merged",
+    category: "DOCS",
+    contribution:
+      "Fixed broken screenshot relative image paths in WebUI documentation to ensure consistent asset rendering across docs.",
+    date: "2026-10-08T02:59:53Z",
+    displayDate: "Oct 8, 2026",
+    theme: {
+      accent: "#3253DC",
+      borderGlow: "rgba(50, 83, 220, 0.35)",
+      gradient: "from-blue-600/15 via-indigo-600/5 to-transparent",
+      textColor: "text-blue-400",
+      badgeBg: "bg-blue-500/10 border-blue-500/30 text-blue-300",
+    },
+  },
+  {
+    id: "cloudflare-vinext-3469",
+    organization: "Cloudflare",
+    orgKey: "cloudflare",
+    repository: "cloudflare/vinext",
+    prNumber: 3469,
+    title: "docs(standalone): document startProdServer for custom and compiled entries",
+    url: "https://github.com/cloudflare/vinext/pull/3469",
+    status: "merged",
+    statusLabel: "Merged",
+    category: "DOCS",
+    contribution:
+      "Documented startProdServer programmatic API for custom server scripts and compiled standalone outputs in Cloudflare vinext.",
+    date: "2026-10-07T23:29:25Z",
+    displayDate: "Oct 7, 2026",
+    theme: {
+      accent: "#F38020",
+      borderGlow: "rgba(243, 128, 32, 0.35)",
+      gradient: "from-amber-500/15 via-orange-600/5 to-transparent",
+      textColor: "text-amber-400",
+      badgeBg: "bg-amber-500/10 border-amber-500/30 text-amber-300",
+    },
+  },
+  {
+    id: "nvidia-cuda-quantum-5560",
+    organization: "NVIDIA",
+    orgKey: "nvidia",
+    repository: "NVIDIA/cuda-quantum",
+    prNumber: 5560,
+    title: "docs: correct typos and phrasing in state vector simulators documentation",
+    url: "https://github.com/NVIDIA/cuda-quantum/pull/5560",
+    status: "merged",
+    statusLabel: "Merged",
+    category: "DOCS",
+    contribution:
+      "Corrected typographical errors and refined technical phrasing in the state vector simulators quantum documentation.",
+    date: "2026-10-07T22:35:17Z",
+    displayDate: "Oct 7, 2026",
+    theme: {
+      accent: "#76B900",
+      borderGlow: "rgba(118, 185, 0, 0.35)",
+      gradient: "from-emerald-500/15 via-green-600/5 to-transparent",
+      textColor: "text-emerald-400",
+      badgeBg: "bg-emerald-500/10 border-emerald-500/30 text-emerald-300",
+    },
+  },
   {
     id: "amd-rocm-1231",
     organization: "AMD ROCm",
@@ -144,7 +263,7 @@ export const OPEN_SOURCE_CONTRIBUTIONS: OpenSourceContribution[] = [
     statusLabel: "Merged",
     category: "DOCS",
     contribution:
-      "Removed obsolete project paths from contributor and architecture documentation and aligned documentation with the current project structure.",
+      "Removed obsolete project paths from contributor and architecture documentation and aligned documentation with current project structure.",
     date: "2026-10-05T04:21:05Z",
     displayDate: "Oct 5, 2026",
     theme: {
@@ -202,34 +321,6 @@ export const OPEN_SOURCE_CONTRIBUTIONS: OpenSourceContribution[] = [
     },
   },
   {
-    id: "cloudflare-vinext-3470",
-    organization: "Cloudflare",
-    orgKey: "cloudflare",
-    repository: "cloudflare/vinext",
-    prNumber: 3470,
-    title: "fix(workers-response-store): return false instead of throwing on rejected edge purge",
-    url: "https://github.com/cloudflare/vinext/pull/3470",
-    status: "incorporated",
-    statusLabel: "Incorporated into #3534",
-    incorporatedInto: {
-      prNumber: 3534,
-      url: "https://github.com/cloudflare/vinext/pull/3534",
-      description: "Incorporated into merged upstream PR #3534",
-    },
-    category: "BUG FIX",
-    contribution:
-      "Changed rejected edge-cache purge handling to return false instead of throwing, preventing transient purge failures from escaping into higher-level write operations.",
-    date: "2026-09-29T11:25:59Z", // Date of the incorporated merged PR #3534
-    displayDate: "Sep 29, 2026",
-    theme: {
-      accent: "#F38020",
-      borderGlow: "rgba(243, 128, 32, 0.35)",
-      gradient: "from-amber-500/15 via-orange-600/5 to-transparent",
-      textColor: "text-amber-400",
-      badgeBg: "bg-amber-500/10 border-amber-500/30 text-amber-300",
-    },
-  },
-  {
     id: "apache-shenyu-696",
     organization: "Apache",
     orgKey: "apache",
@@ -282,5 +373,5 @@ export const OPEN_SOURCE_METRICS = {
   incorporatedCount: OPEN_SOURCE_CONTRIBUTIONS.filter((c) => c.status === "incorporated").length,
   totalContributions: OPEN_SOURCE_CONTRIBUTIONS.length,
   totalOrganizations: new Set(OPEN_SOURCE_CONTRIBUTIONS.map((c) => c.organization)).size,
-  summaryStatement: "9 merged pull requests + 1 contribution incorporated into a merged PR",
+  summaryStatement: "14 merged pull requests across 14 major ecosystems",
 };

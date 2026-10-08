@@ -55,11 +55,12 @@ export const PORTFOLIO_DATA = {
   personal: {
     name: "Reginald Alfret V",
     titles: [
+      "Open-Source Contributor",
+      "AI Engineer",
       "Software Engineer",
       "Full-Stack Developer",
-      "AI Engineer",
     ],
-    headline: "Building intelligent software, AI systems, and real-world products.",
+    headline: "Building intelligent systems and contributing focused fixes, tests, documentation, and infrastructure improvements to major open-source ecosystems.",
     summary:
       "Final-year B.Tech Artificial Intelligence & Data Science student and Software Engineer with proven hands-on experience across full-stack engineering, multi-agent AI architectures, scalable REST APIs, ERP systems, and machine learning models. Built 1st-place solutions at HackIndia 2026, TN Police Hackathon 2025, and Blaze a Trail 2.0.",
     location: "Chennai, India",

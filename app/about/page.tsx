@@ -364,7 +364,7 @@ export default function AboutPage() {
               <div className="space-y-1.5">
                 <h3 className="font-bold text-white">What are his open-source contributions?</h3>
                 <p className="text-neutral-300">
-                  Reginald has contributed upstream pull requests to major open-source ecosystems including Meta (StyleX #1899), Apache (ShenYu Dashboard #696), Intel (PyTorch XPU #5518), Microsoft Azure (Cosmos DB Emulator #359), IBM (Docling Pipelines #85), Docker (Docs #26266), SAP (Terraform Provider BTP #1710), GitHub (CLI #14592), AMD ROCm (hrx-system #1231), and Cloudflare (Vinext #3470, incorporated into #3534). Details can be viewed in the <a href="/#open-source" className="text-cyan-400 hover:underline">Open-Source Contributions section</a>.
+                  Reginald has contributed 14 upstream pull requests merged into major open-source ecosystems including Apple (swift-numerics #355), NVIDIA (cuda-quantum #5560), Meta (StyleX #1899), GitHub (CLI #14592), Intel (PyTorch XPU #5518), Cloudflare (vinext #3469), Qualcomm (qai-appbuilder #286), Airbnb (MagazineLayout #169), Microsoft Azure (Cosmos DB Emulator #359), IBM (Docling Pipelines #85), Docker (Docs #26266), SAP (Terraform Provider BTP #1710), AMD ROCm (hrx-system #1231), and Apache (ShenYu Dashboard #696). Details can be viewed in the <a href="/#open-source" className="text-cyan-400 hover:underline">Open-Source Contributions section</a>.
                 </p>
               </div>
             </div>
