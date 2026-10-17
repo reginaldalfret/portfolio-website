@@ -95,7 +95,10 @@ export function OpenSourceSection() {
           <div className="flex items-center justify-between mb-3">
             <span className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-emerald-400 flex items-center gap-1.5 font-semibold">
               <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-              <span>Upstream Verified <!-- metrics below are derived dynamically --> 100% MERGED
+              <span>Upstream Verified</span>
+            </span>
+            <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">
+              100% MERGED
             </span>
           </div>
           <div className="text-3xl sm:text-5xl font-black text-white tracking-tight font-mono">
@@ -130,10 +133,10 @@ export function OpenSourceSection() {
             {OPEN_SOURCE_METRICS.totalContributions}
           </div>
           <div className="text-xs sm:text-sm text-neutral-300 font-medium mt-1">
-            Engineering Contributions
+            Documented Contributions
           </div>
           <p className="text-[11px] text-neutral-400 mt-2 leading-relaxed">
-            Spanning bug fixes, tests, CI infra, build systems, and docs.
+            Spanning bug fixes, tests, CI infra, build systems, maintenance, and docs.
           </p>
         </motion.div>
 
@@ -151,14 +154,14 @@ export function OpenSourceSection() {
               <span>Global Reach</span>
             </span>
             <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/20">
-              21 ECOSYSTEMS
+              {OPEN_SOURCE_METRICS.totalOrganizations} ECOSYSTEMS
             </span>
           </div>
           <div className="text-3xl sm:text-5xl font-black text-white tracking-tight font-mono">
             {OPEN_SOURCE_METRICS.totalOrganizations}
           </div>
           <div className="text-xs sm:text-sm text-neutral-300 font-medium mt-1">
-            Major Organizations & Foundries
+            Organization Labels
           </div>
           <p className="text-[11px] text-neutral-400 mt-2 leading-relaxed">
             Fortune 100 enterprises, hyperscalers, and premier foundations.
@@ -179,7 +182,7 @@ export function OpenSourceSection() {
             </span>
           </div>
           <span className="text-xs font-mono text-neutral-400">
-            6 Selected Highlights
+            {featuredContributions.length} Selected Highlights
           </span>
         </div>
 
@@ -281,7 +284,7 @@ export function OpenSourceSection() {
         })}
       </div>
 
-      {/* All Contributions Grid (14 records) */}
+      {/* All Contributions Grid (23 records) */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         <AnimatePresence mode="popLayout">
           {filteredContributions.map((item, index) => {
@@ -398,7 +401,7 @@ export function OpenSourceSection() {
           </h3>
 
           <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
-            Open-source contribution is core to how I practice engineering: diving into large unfamiliar codebases, diagnosing production edge-cases, aligning test suites with upstream invariants, and proposing surgical patches through public code reviews with maintainers across Apple, NVIDIA, Meta, GitHub, Intel, Cloudflare, Microsoft Azure, IBM, Docker, SAP, and Apache.
+            Open-source contribution is core to how I practice engineering: diving into large unfamiliar codebases, diagnosing production edge-cases, aligning test suites with upstream invariants, and proposing surgical patches through public code reviews with maintainers across Apple, NVIDIA, Meta, GitHub, Intel, Cloudflare, Microsoft Azure, IBM, Docker, SAP, Apache, AMD, Airbnb, Qualcomm, Pinterest, Uber, JRuby, NASA, AWS, Microsoft .NET, and Adobe.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs text-neutral-300">
@@ -446,7 +449,7 @@ export function OpenSourceSection() {
             </a>
 
             <span className="text-xs font-mono text-neutral-400">
-              Verified on GitHub &bull; 23 Merged Pull Requests Across 21 Organizations
+              Verified on GitHub &bull; 23 Merged Pull Requests Across 21 Organization Labels
             </span>
           </div>
         </div>

@@ -1,5 +1,5 @@
 export type ContributionStatus = "merged" | "incorporated";
-export type ContributionCategory = "DOCS" | "BUG FIX" | "TEST" | "INFRA" | "BUILD";
+export type ContributionCategory = "DOCS" | "BUG FIX" | "TEST" | "INFRA" | "BUILD" | "MAINTENANCE";
 
 export interface OpenSourceContribution {
   id: string;
@@ -373,7 +373,6 @@ export const OPEN_SOURCE_CONTRIBUTIONS: OpenSourceContribution[] = [
       badgeBg: "bg-blue-500/10 border-blue-500/30 text-blue-300",
     },
   },
-,
   {
     id: "pinterest-pymemcache-657",
     organization: "Pinterest",
@@ -580,12 +579,13 @@ export const OPEN_SOURCE_CONTRIBUTIONS: OpenSourceContribution[] = [
       textColor: "text-red-400",
       badgeBg: "bg-red-500/10 border-red-500/30 text-red-300",
     },
-  }
+  },
+];
 
 export const OPEN_SOURCE_METRICS = {
   mergedCount: OPEN_SOURCE_CONTRIBUTIONS.filter((c) => c.status === "merged").length,
   incorporatedCount: OPEN_SOURCE_CONTRIBUTIONS.filter((c) => c.status === "incorporated").length,
   totalContributions: OPEN_SOURCE_CONTRIBUTIONS.length,
   totalOrganizations: new Set(OPEN_SOURCE_CONTRIBUTIONS.map((c) => c.organization)).size,
-  summaryStatement: "23 merged pull requests across 21 repositories and 21 major organizations",
+  summaryStatement: "23 merged pull requests across 21 organization labels",
 };
