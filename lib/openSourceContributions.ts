@@ -588,5 +588,5 @@ export const OPEN_SOURCE_METRICS = {
   incorporatedCount: OPEN_SOURCE_CONTRIBUTIONS.filter((c) => c.status === "incorporated").length,
   totalContributions: OPEN_SOURCE_CONTRIBUTIONS.length,
   totalOrganizations: new Set(OPEN_SOURCE_CONTRIBUTIONS.map((c) => c.organization)).size,
-  summaryStatement: "23 merged pull requests across 20 major organizations and ecosystems",
+  summaryStatement: "23 merged pull requests across 21 repositories and 20 major organizations",
 };
