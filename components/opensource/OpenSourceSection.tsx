@@ -28,7 +28,7 @@ const FEATURED_PR_IDS = [
   "apple-swift-numerics-355",
   "nvidia-cuda-quantum-5560",
   "nasa-oceandata-208",
-  "aws-xray-sdk-python-494",
+  "aws-powertools-8542",
   "adobe-skills-445",
   "meta-stylex-1899",
   "cli-cli-14592",
@@ -284,7 +284,7 @@ export function OpenSourceSection() {
         })}
       </div>
 
-      {/* All Contributions Grid (23 records) */}
+      {/* All Contributions Grid (21 records) */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         <AnimatePresence mode="popLayout">
           {filteredContributions.map((item, index) => {
@@ -449,7 +449,7 @@ export function OpenSourceSection() {
             </a>
 
             <span className="text-xs font-mono text-neutral-400">
-              Verified on GitHub &bull; 23 Merged Pull Requests Across 21 Organization Labels
+              Verified on GitHub &bull; 21 Merged Pull Requests Across 21 Organizations
             </span>
           </div>
         </div>

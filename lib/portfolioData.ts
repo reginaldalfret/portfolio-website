@@ -80,7 +80,7 @@ export const PORTFOLIO_DATA = {
   },
 
   stats: [
-    { value: "23", label: "Merged Pull Requests", caption: "Across 21 major organizations & ecosystems" },
+    { value: "21", label: "Merged Pull Requests", caption: "Across 21 major organizations & ecosystems" },
     { value: "70+", label: "Built Projects", caption: "AI systems, full-stack & automation" },
     { value: "3×", label: "1st Place Hackathons", caption: "HackIndia 2026, TN Police & Blaze a Trail" },
     { value: "301", label: "Specialised AI Agents", caption: "Orchestrated in sovereign local platform" },
