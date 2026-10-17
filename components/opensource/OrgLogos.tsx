@@ -122,6 +122,22 @@ export function OrgLogo({ orgKey, className = "w-5 h-5" }: OrgLogoProps) {
         </svg>
       );
 
+
+    case "pinterest":
+      return <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-label="Pinterest logo"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.1 2.47 7.63 6 9.17-.03-.7-.01-1.54.17-2.3l1.3-5.5s-.32-.64-.32-1.58c0-1.48.86-2.58 1.94-2.58.92 0 1.37.69 1.37 1.52 0 .93-.59 2.33-.9 3.63-.26 1.08.54 1.96 1.6 1.96 1.92 0 3.4-2.02 3.4-4.94 0-2.58-1.85-4.38-4.48-4.38-3.05 0-4.84 2.29-4.84 4.65 0 .92.35 1.91.79 2.45.09.11.1.21.07.33l-.29 1.18c-.05.19-.15.23-.35.14-1.3-.61-2.11-2.53-2.11-4.07 0-3.31 2.4-6.36 6.91-6.36 3.63 0 6.45 2.59 6.45 6.04 0 3.6-2.27 6.51-5.42 6.51-1.06 0-2.06-.55-2.4-1.2l-.65 2.48c-.24.91-.89 2.05-1.32 2.75.99.31 2.03.47 3.11.47 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>;
+    case "uber":
+      return <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-label="Uber logo"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 3.2a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm-4.3 5.2h8.6v2.1H7.7v-2.1zm0 4h8.6v2.1H7.7v-2.1z"/></svg>;
+    case "jruby":
+      return <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-label="JRuby logo"><path d="M12 2.2a9.8 9.8 0 1 0 0 19.6 9.8 9.8 0 0 0 0-19.6zm0 3.1a6.7 6.7 0 1 1 0 13.4 6.7 6.7 0 0 1 0-13.4zm-2.2 3.1v7.2h2.4V8.4H9.8z"/></svg>;
+    case "nasa":
+      return <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-label="NASA logo"><circle cx="12" cy="12" r="10"/><path d="M4.4 13.5 19.8 8l-9.1 9.3 2-5.6z" fill="white"/><path d="M6 6 18 18" stroke="#fff" strokeWidth=".7"/></svg>;
+    case "aws":
+      return <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-label="AWS logo"><path d="M6.4 15.5c-1.4-.5-2.3-1.5-2.3-3 0-1.9 1.6-3.4 3.8-3.4.6 0 1.3.1 1.8.4.8-2.3 2.8-3.7 5.1-3.7 3 0 5.4 2.4 5.4 5.4v.4c1.1.4 1.8 1.3 1.8 2.4 0 1.5-1.2 2.7-2.7 2.7H7.9c-.6 0-1.1-.1-1.5-.2zm1.3 3.1 9.4-.1-1.2 1.7-8.2-1.6z"/></svg>;
+    case "dotnet":
+      return <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-label="Microsoft .NET logo"><path d="M12 2 22 7.5v9L12 22 2 16.5v-9L12 2zm0 2.4L4.5 8.5 12 12.6l7.5-4.1L12 4.4zm-8 5.6v5.1l7 3.9v-5.1l-7-3.9zm16 0-7 3.9V19l7-3.9v-5.1z"/></svg>;
+    case "adobe":
+      return <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-label="Adobe logo"><path d="M1.5 21.5 8.4 2.5h4.2L5.7 21.5H1.5zm12.6-19h4.2l4.2 19h-4.2l-4.2-19zM9.1 16.7h5.8l1.2 4.8h-8.2l1.2-4.8z"/></svg>;
+
     default:
       return (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
