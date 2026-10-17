@@ -95,10 +95,7 @@ export function OpenSourceSection() {
           <div className="flex items-center justify-between mb-3">
             <span className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-emerald-400 flex items-center gap-1.5 font-semibold">
               <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-              <span>Upstream Verified</span>
-            </span>
-            <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">
-              100% MERGED
+              <span>Upstream Verified <!-- metrics below are derived dynamically --> 100% MERGED
             </span>
           </div>
           <div className="text-3xl sm:text-5xl font-black text-white tracking-tight font-mono">
@@ -154,7 +151,7 @@ export function OpenSourceSection() {
               <span>Global Reach</span>
             </span>
             <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/20">
-              20 ECOSYSTEMS
+              21 ECOSYSTEMS
             </span>
           </div>
           <div className="text-3xl sm:text-5xl font-black text-white tracking-tight font-mono">
@@ -449,7 +446,7 @@ export function OpenSourceSection() {
             </a>
 
             <span className="text-xs font-mono text-neutral-400">
-              Verified on GitHub &bull; 23 Merged Pull Requests Across 20 Organizations
+              Verified on GitHub &bull; 23 Merged Pull Requests Across 21 Organizations
             </span>
           </div>
         </div>
