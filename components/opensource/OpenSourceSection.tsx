@@ -21,12 +21,15 @@ import {
   Terminal,
 } from "lucide-react";
 
-type FilterKey = "all" | "docs" | "bug-fix" | "test" | "infra" | "build";
+type FilterKey = "all" | "docs" | "bug-fix" | "test" | "infra" | "build" | "maintenance";
 
 // Featured subset for the high-impact spotlight strip
 const FEATURED_PR_IDS = [
   "apple-swift-numerics-355",
   "nvidia-cuda-quantum-5560",
+  "nasa-oceandata-208",
+  "aws-xray-sdk-python-494",
+  "adobe-skills-445",
   "meta-stylex-1899",
   "cli-cli-14592",
   "intel-torch-5518",
@@ -44,6 +47,7 @@ export function OpenSourceSection() {
       if (activeFilter === "test") return item.category === "TEST";
       if (activeFilter === "infra") return item.category === "INFRA";
       if (activeFilter === "build") return item.category === "BUILD";
+      if (activeFilter === "maintenance") return item.category === "MAINTENANCE";
       return true;
     });
   }, [activeFilter]);
@@ -61,6 +65,7 @@ export function OpenSourceSection() {
     { id: "test", label: "Test Suites", count: OPEN_SOURCE_CONTRIBUTIONS.filter((c) => c.category === "TEST").length },
     { id: "infra", label: "Infrastructure", count: OPEN_SOURCE_CONTRIBUTIONS.filter((c) => c.category === "INFRA").length },
     { id: "build", label: "Build & Packaging", count: OPEN_SOURCE_CONTRIBUTIONS.filter((c) => c.category === "BUILD").length },
+    { id: "maintenance", label: "Maintenance", count: OPEN_SOURCE_CONTRIBUTIONS.filter((c) => c.category === "MAINTENANCE").length },
   ];
 
   return (
@@ -73,7 +78,7 @@ export function OpenSourceSection() {
         eyebrow="Primary Engineering Signal"
         title="Open-Source"
         highlight="Contributions"
-        description="Real upstream engineering work across major open-source ecosystems. Verified pull requests merged directly into production repositories maintained by Apple, NVIDIA, Meta, GitHub, Intel, Cloudflare, Docker, Microsoft Azure, IBM, Apache, SAP, AMD, Airbnb, and Qualcomm."
+        description="Real upstream engineering work across major open-source ecosystems. Verified pull requests merged directly into production repositories maintained by Apple, NVIDIA, Meta, GitHub, Intel, Cloudflare, Docker, Microsoft Azure, IBM, Apache, SAP, AMD, Airbnb, Qualcomm, Pinterest, Uber, JRuby, NASA, AWS, Microsoft .NET, and Adobe."
         badgeColor="cyan"
       />
 
@@ -149,7 +154,7 @@ export function OpenSourceSection() {
               <span>Global Reach</span>
             </span>
             <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/20">
-              14 ECOSYSTEMS
+              20 ECOSYSTEMS
             </span>
           </div>
           <div className="text-3xl sm:text-5xl font-black text-white tracking-tight font-mono">
@@ -444,7 +449,7 @@ export function OpenSourceSection() {
             </a>
 
             <span className="text-xs font-mono text-neutral-400">
-              Verified on GitHub &bull; 14 Merged Pull Requests Across 14 Ecosystems
+              Verified on GitHub &bull; 23 Merged Pull Requests Across 20 Organizations
             </span>
           </div>
         </div>
