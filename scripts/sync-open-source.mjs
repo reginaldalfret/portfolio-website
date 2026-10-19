@@ -6,7 +6,6 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DATA_FILE = path.join(ROOT, "data", "open-source-contributions.json");
 const CONFIG_FILE = path.join(ROOT, "scripts", "open-source-organizations.json");
-const GRAPHQL_URL = "https://api.github.com/graphql";
 const REST_URL = "https://api.github.com";
 const ACCOUNT_LOGIN = "reginaldalfret";
 const API_VERSION = "2022-11-28";
@@ -18,34 +17,6 @@ const DEFAULT_THEME = {
   textColor: "text-cyan-300",
   badgeBg: "bg-cyan-500/10 border-cyan-500/30 text-cyan-300",
 };
-
-const GRAPHQL_QUERY = `
-  query MergedContributionSearch($query: String!, $after: String) {
-    search(query: $query, type: ISSUE, first: 100, after: $after) {
-      issueCount
-      pageInfo { hasNextPage endCursor }
-      nodes {
-        ... on PullRequest {
-          number
-          title
-          body
-          url
-          state
-          isDraft
-          mergedAt
-          author { login }
-          repository {
-            name
-            nameWithOwner
-            url
-            owner { login }
-          }
-          labels(first: 20) { nodes { name } }
-        }
-      }
-    }
-  }
-`;
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -345,71 +316,6 @@ export function calculateContributionStats(contributions) {
   };
 }
 
-export async function fetchGraphQLPullRequests(token, fetchImpl = fetch) {
-  let cursor = null;
-  const all = [];
-  let page = 0;
-  let reportedTotal = 0;
-
-  do {
-    page += 1;
-    const payload = await requestJson(
-      GRAPHQL_URL,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          query: GRAPHQL_QUERY,
-          variables: { query: `author:${ACCOUNT_LOGIN} is:pr is:merged`, after: cursor },
-        }),
-      },
-      { token, fetchImpl }
-    );
-    if (payload.errors?.length) {
-      throw new Error(`GitHub GraphQL returned errors: ${payload.errors.map((item) => item.message).join("; ").slice(0, 400)}`);
-    }
-    const search = payload.data?.search;
-    if (!search || !Array.isArray(search.nodes)) throw new Error("GitHub GraphQL response did not contain contribution search results.");
-
-    reportedTotal = Number(search.issueCount ?? 0);
-    all.push(...search.nodes.filter((node) => node && node.number));
-    cursor = search.pageInfo?.hasNextPage ? search.pageInfo.endCursor : null;
-
-    if (page >= 10 && cursor) {
-      console.warn("GitHub search reached its 1,000-result pagination ceiling; the API cannot return further search hits in this query.");
-      break;
-    }
-  } while (cursor);
-
-  if (reportedTotal > all.length) {
-    console.warn(`GitHub search reports ${reportedTotal} matches; this run retrieved ${all.length}. The checked-in dataset will be retained and augmented rather than cleared.`);
-  }
-  return all;
-}
-
-function parseRepositoryAndNumber(item) {
-  const apiUrl = item?.pull_request?.url ?? item?.url ?? "";
-  const match = apiUrl.match(/\/repos\/([^/]+\/[^/]+)\/(?:pulls|issues)\/(\d+)/i);
-  if (match) return { repositoryFullName: match[1], number: Number(match[2]), apiUrl };
-  const html = item?.html_url ?? item?.display_url ?? "";
-  const htmlMatch = html.match(/github\.com\/([^/]+\/[^/]+)\/pull\/(\d+)/i);
-  return htmlMatch ? { repositoryFullName: htmlMatch[1], number: Number(htmlMatch[2]), apiUrl: "" } : null;
-}
-
-async function mapWithConcurrency(items, limit, worker) {
-  const output = new Array(items.length);
-  let next = 0;
-  const workers = Array.from({ length: Math.min(limit, items.length) }, async () => {
-    while (true) {
-      const index = next++;
-      if (index >= items.length) return;
-      output[index] = await worker(items[index], index);
-    }
-  });
-  await Promise.all(workers);
-  return output;
-}
-
 export async function fetchRestPullRequests(token = "", fetchImpl = fetch) {
   const searchItems = [];
   let expectedTotal = 0;
@@ -462,7 +368,88 @@ export async function runSync({ token = process.env.GITHUB_TOKEN ?? "", dryRun =
 
   const pullRequests = token
     ? await fetchGraphQLPullRequests(token, fetchImpl)
-    : await fetchRestPullRequests("", fetchImpl);
+    : await fetchRestPullRequexport async function fetchRestPullRequests(token = "", fetchImpl = fetch) {
+  const searchItems = [];
+  let expectedTotal = 0;
+  let pagesFetched = 0;
+
+  // Search results already expose pull_request.merged_at. Use those authoritative
+  // fields instead of issuing one follow-up request per PR (which can exhaust rate limits).
+  for (let page = 1; page <= 10; page += 1) {
+    const searchUrl = new URL(`${REST_URL}/search/issues`);
+    searchUrl.searchParams.set("q", `author:${ACCOUNT_LOGIN} is:pr is:merged`);
+    searchUrl.searchParams.set("per_page", "100");
+    searchUrl.searchParams.set("page", String(page));
+
+    const payload = await requestJson(searchUrl.toString(), {}, { token, fetchImpl });
+    expectedTotal = Number(payload.total_count ?? 0);
+    pagesFetched = page;
+    const items = Array.isArray(payload.items) ? payload.items : [];
+    searchItems.push(...items);
+
+    if (items.length < 100 || searchItems.length >= expectedTotal) break;
+    if (page === 10 && expectedTotal > searchItems.length) {
+      console.warn("REST search reached the 1,000-result API ceiling.");
+    }
+  }
+
+  const results = [];
+  let missingMergeTime = 0;
+  let invalidRecords = 0;
+  for (const item of searchItems) {
+    const repositoryMatch = String(item?.repository_url ?? "").match(/\/repos\/([^/]+\/[^/]+)\/?$/i);
+    const repositoryFullName = repositoryMatch?.[1] ?? "";
+    const mergedAt = item?.pull_request?.merged_at ?? null;
+    const authorLogin = item?.user?.login ?? "";
+
+    // Search is qualified with is:merged, but enforce the timestamp as a
+    // second guard so closed-but-unmerged PRs never enter the dataset.
+    if (!mergedAt) {
+      missingMergeTime += 1;
+      continue;
+    }
+    if (!repositoryFullName.includes("/") || !Number(item?.number) || !item?.html_url) {
+      invalidRecords += 1;
+      continue;
+    }
+
+    const [owner = ""] = repositoryFullName.split("/");
+    results.push({
+      number: Number(item.number),
+      title: item.title ?? "",
+      body: item.body ?? "",
+      html_url: item.html_url,
+      state: item.state ?? "closed",
+      merged: true,
+      merged_at: mergedAt,
+      user: { login: authorLogin },
+      repository_full_name: repositoryFullName,
+      repository_url: `https://github.com/${repositoryFullName}`,
+      base: {
+        repo: {
+          full_name: repositoryFullName,
+          owner: { login: owner },
+        },
+      },
+      labels: Array.isArray(item.labels) ? item.labels : [],
+    });
+  }
+
+  console.log(`REST merged-PR search retrieved ${results.length} verified records from ${searchItems.length} search results across ${pagesFetched} page(s).`);
+  if (missingMergeTime > 0) console.warn(`Ignored ${missingMergeTime} search result(s) without an authoritative pull_request.merged_at timestamp.`);
+  if (invalidRecords > 0) console.warn(`Ignored ${invalidRecords} malformed search result(s).`);
+  if (expectedTotal > searchItems.length) {
+    console.warn(`GitHub reports ${expectedTotal} matching PRs; retrieved ${searchItems.length}. Search results are capped at 1,000 items.`);
+  }
+  return results;
+}
+
+export async function runSync({ token = process.env.GITHUB_TOKEN ?? "", dryRun = false, fetchImpl = fetch } = {}) {
+  const config = JSON.parse(await readFile(CONFIG_FILE, "utf8"));
+  const existing = JSON.parse(await readFile(DATA_FILE, "utf8"));
+  if (!Array.isArray(existing)) throw new Error("Existing contribution JSON must be an array.");
+
+  const pullRequests = await fetchRestPullRequests(token, fetchImpl);
 
   if (pullRequests.length === 0 && existing.length > 0) {
     throw new Error("GitHub returned no verifiable merged PRs. Refusing to replace the last-known-good contribution dataset.");
@@ -470,6 +457,9 @@ export async function runSync({ token = process.env.GITHUB_TOKEN ?? "", dryRun =
 
   const normalized = pullRequests.map(normalizePullRequest);
   const { contributions, added, updated, excluded, apiRecords } = mergeContributionData(existing, normalized, config);
+  if (apiRecords === 0 && existing.length > 0) {
+    throw new Error("GitHub returned zero eligible upstream merged PRs. Refusing to report a successful refresh or overwrite the last-known-good dataset.");
+  }
   if (!contributions.length && existing.length) {
     throw new Error("The refresh would remove every existing record. Refusing to overwrite the dataset.");
   }
