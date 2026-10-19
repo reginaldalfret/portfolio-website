@@ -319,62 +319,10 @@ export function calculateContributionStats(contributions) {
 export async function fetchRestPullRequests(token = "", fetchImpl = fetch) {
   const searchItems = [];
   let expectedTotal = 0;
-  for (let page = 1; page <= 10; page += 1) {
-    const searchUrl = new URL(`${REST_URL}/search/issues`);
-    searchUrl.searchParams.set("q", `author:${ACCOUNT_LOGIN} is:pr is:merged`);
-    searchUrl.searchParams.set("per_page", "100");
-    searchUrl.searchParams.set("page", String(page));
-    const payload = await requestJson(searchUrl.toString(), {}, { token, fetchImpl });
-    expectedTotal = Number(payload.total_count ?? 0);
-    searchItems.push(...(payload.items ?? []));
-    if ((payload.items ?? []).length < 100 || searchItems.length >= expectedTotal) break;
-    if (page === 10 && expectedTotal > searchItems.length) {
-      console.warn("REST search reached the 1,000-result API ceiling.");
-    }
-  }
-
-  let rateLimited = false;
-  const detailResults = await mapWithConcurrency(searchItems, 4, async (item) => {
-    if (rateLimited) return null;
-    const parsed = parseRepositoryAndNumber(item);
-    if (!parsed) return null;
-    try {
-      return await requestJson(
-        parsed.apiUrl || `${REST_URL}/repos/${parsed.repositoryFullName}/pulls/${parsed.number}`,
-        {},
-        { token, fetchImpl }
-      );
-    } catch (error) {
-      if (error?.rateLimited) rateLimited = true;
-      console.warn(`Skipped one PR detail because GitHub could not be reached: ${parsed.repositoryFullName}#${parsed.number} (${error.message})`);
-      return null;
-    }
-  });
-
-  const results = detailResults.filter(Boolean);
-  if (rateLimited || results.length < searchItems.length) {
-    console.warn(`Partial REST refresh: verified details for ${results.length} of ${searchItems.length} search results; existing valid records will be preserved.`);
-  }
-  if (expectedTotal > searchItems.length) {
-    console.warn(`GitHub reports ${expectedTotal} matching PRs; retrieved ${searchItems.length}. Search results are capped at 1,000 items.`);
-  }
-  return results;
-}
-
-export async function runSync({ token = process.env.GITHUB_TOKEN ?? "", dryRun = false, fetchImpl = fetch } = {}) {
-  const config = JSON.parse(await readFile(CONFIG_FILE, "utf8"));
-  const existing = JSON.parse(await readFile(DATA_FILE, "utf8"));
-  if (!Array.isArray(existing)) throw new Error("Existing contribution JSON must be an array.");
-
-  const pullRequests = token
-    ? await fetchGraphQLPullRequests(token, fetchImpl)
-    : await fetchRestPullRequexport async function fetchRestPullRequests(token = "", fetchImpl = fetch) {
-  const searchItems = [];
-  let expectedTotal = 0;
   let pagesFetched = 0;
 
-  // Search results already expose pull_request.merged_at. Use those authoritative
-  // fields instead of issuing one follow-up request per PR (which can exhaust rate limits).
+  // Search results already expose pull_request.merged_at. Use authoritative
+  // merge metadata instead of issuing one follow-up request per PR.
   for (let page = 1; page <= 10; page += 1) {
     const searchUrl = new URL(`${REST_URL}/search/issues`);
     searchUrl.searchParams.set("q", `author:${ACCOUNT_LOGIN} is:pr is:merged`);
@@ -402,13 +350,17 @@ export async function runSync({ token = process.env.GITHUB_TOKEN ?? "", dryRun =
     const mergedAt = item?.pull_request?.merged_at ?? null;
     const authorLogin = item?.user?.login ?? "";
 
-    // Search is qualified with is:merged, but enforce the timestamp as a
-    // second guard so closed-but-unmerged PRs never enter the dataset.
     if (!mergedAt) {
       missingMergeTime += 1;
       continue;
     }
-    if (!repositoryFullName.includes("/") || !Number(item?.number) || !item?.html_url) {
+    if (
+      authorLogin.toLowerCase() !== ACCOUNT_LOGIN ||
+      !repositoryFullName.includes("/") ||
+      !Number(item?.number) ||
+      !item?.html_url ||
+      !String(item.html_url).startsWith("https://github.com/")
+    ) {
       invalidRecords += 1;
       continue;
     }
@@ -449,8 +401,8 @@ export async function runSync({ token = process.env.GITHUB_TOKEN ?? "", dryRun =
   const existing = JSON.parse(await readFile(DATA_FILE, "utf8"));
   if (!Array.isArray(existing)) throw new Error("Existing contribution JSON must be an array.");
 
+  // REST search behaves consistently in local development and repository-scoped Actions tokens.
   const pullRequests = await fetchRestPullRequests(token, fetchImpl);
-
   if (pullRequests.length === 0 && existing.length > 0) {
     throw new Error("GitHub returned no verifiable merged PRs. Refusing to replace the last-known-good contribution dataset.");
   }
