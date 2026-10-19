@@ -93,7 +93,7 @@ export async function requestJson(url, options = {}, { token = "", fetchImpl = f
       } else {
         lastError = error;
       }
-      if (error?.rateLimited) throw error;
+      if (error?.rateLimited || error?.retryable === false) throw error;
       if (attempt === retries) throw lastError;
       await sleep(Math.min(500 * (2 ** attempt), 3_000));
     }
