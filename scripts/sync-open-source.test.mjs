@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {
   calculateContributionStats,
-  fetchGraphQLPullRequests,
+  fetchRestPullRequests,
   isEligiblePullRequest,
   mergeContributionData,
   normalizePullRequest,
@@ -40,7 +40,7 @@ function rawPullRequest(overrides = {}) {
   };
 }
 
-test("normalizes GraphQL pull-request data and preserves authoritative merge time", () => {
+test("normalizes pull-request data and preserves authoritative merge time", () => {
   const normalized = normalizePullRequest(rawPullRequest());
   assert.equal(normalized.repositoryFullName, "stripe/example");
   assert.equal(normalized.number, 7);
@@ -118,21 +118,45 @@ test("calculates distinct merged pull requests, repositories and ecosystems sepa
   });
 });
 
-test("GraphQL pagination follows cursors and deduplicates nothing prematurely", async () => {
-  const seenBodies = [];
-  const pages = [
-    { data: { search: { issueCount: 2, pageInfo: { hasNextPage: true, endCursor: "cursor-1" }, nodes: [{ number: 1 }] } } },
-    { data: { search: { issueCount: 2, pageInfo: { hasNextPage: false, endCursor: null }, nodes: [{ number: 2 }] } } },
+test("REST search follows pagination, uses merged_at, authenticates, and does not fetch PRs one-by-one", async () => {
+  const seenRequests = [];
+  const makeSearchItem = (number, { mergedAt = "2026-10-17T10:00:00Z" } = {}) => ({
+    number,
+    title: `docs: update repository guide ${number}`,
+    body: "This is a useful summary paragraph for a merged upstream pull request.",
+    html_url: `https://github.com/stripe/example/pull/${number}`,
+    state: "closed",
+    user: { login: "reginaldalfret" },
+    repository_url: "https://api.github.com/repos/stripe/example",
+    pull_request: { merged_at: mergedAt },
+    labels: [{ name: "documentation" }],
+  });
+  const firstPage = Array.from({ length: 100 }, (_, index) => makeSearchItem(index + 1));
+  const secondPage = [makeSearchItem(101), makeSearchItem(102, { mergedAt: null })];
+  const payloads = [
+    { total_count: 102, items: firstPage },
+    { total_count: 102, items: secondPage },
   ];
-  const fakeFetch = async (_url, options) => {
-    seenBodies.push(JSON.parse(options.body));
-    const payload = pages.shift();
-    return { ok: true, json: async () => payload, headers: { get: () => null } };
+  const fakeFetch = async (url, options) => {
+    seenRequests.push({ url: String(url), options });
+    const payload = payloads.shift();
+    return {
+      ok: true,
+      json: async () => payload,
+      text: async () => "",
+      headers: { get: () => null },
+    };
   };
-  const result = await fetchGraphQLPullRequests("fake-token", fakeFetch);
-  assert.equal(result.length, 2);
-  assert.equal(seenBodies.length, 2);
-  assert.equal(seenBodies[1].variables.after, "cursor-1");
+
+  const result = await fetchRestPullRequests("fake-token", fakeFetch);
+  assert.equal(seenRequests.length, 2, "should perform one API request per search page, not one request per PR");
+  assert.match(seenRequests[0].url, /page=1/);
+  assert.match(seenRequests[1].url, /page=2/);
+  assert.equal(seenRequests[0].options.headers.Authorization, "Bearer fake-token");
+  assert.equal(result.length, 101, "the missing merged_at record must be ignored");
+  assert.equal(normalizePullRequest(result[0]).merged, true);
+  assert.equal(normalizePullRequest(result[0]).repositoryFullName, "stripe/example");
+  assert.equal(normalizePullRequest(result[0]).mergedAt, "2026-10-17T10:00:00Z");
 });
 
 test("REST-style closed-but-unmerged records are rejected", () => {
