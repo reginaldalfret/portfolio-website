@@ -137,6 +137,24 @@ export function OrgLogo({ orgKey, className = "w-5 h-5" }: OrgLogoProps) {
       return <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-label="Microsoft .NET logo"><path d="M12 2 22 7.5v9L12 22 2 16.5v-9L12 2zm0 2.4L4.5 8.5 12 12.6l7.5-4.1L12 4.4zm-8 5.6v5.1l7 3.9v-5.1l-7-3.9zm16 0-7 3.9V19l7-3.9v-5.1z"/></svg>;
     case "adobe":
       return <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-label="Adobe logo"><path d="M1.5 21.5 8.4 2.5h4.2L5.7 21.5H1.5zm12.6-19h4.2l4.2 19h-4.2l-4.2-19zM9.1 16.7h5.8l1.2 4.8h-8.2l1.2-4.8z"/></svg>;
+    case "stripe":
+      return (
+        <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-label="Stripe logo">
+          <path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697.5 12.521.5 6.056.5 1.76 3.844 1.76 9.387c0 5.438 4.79 7.34 8.789 8.772 2.65.952 3.55 1.674 3.55 2.677 0 1.057-1.042 1.583-2.528 1.583-2.483 0-5.385-1.127-7.25-2.224l-.886 5.568c1.642.753 4.57 1.487 7.734 1.487 6.777 0 11.233-3.238 11.233-9.083 0-5.694-4.832-7.554-8.426-9.017z" />
+        </svg>
+      );
+    case "salesforce":
+      return (
+        <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-label="Salesforce logo">
+          <path d="M10.22 5.18a6.52 6.52 0 0 1 5.76 3.42 5.58 5.58 0 0 1 4.54 5.46 5.58 5.58 0 0 1-5.58 5.58H5.94A5.94 5.94 0 0 1 0 13.7a5.95 5.95 0 0 1 4.59-5.78 6.52 6.52 0 0 1 5.63-2.74z" />
+        </svg>
+      );
+    case "ogx-ai":
+      return (
+        <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-label="Ogx AI logo">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+        </svg>
+      );
 
     default:
       return (

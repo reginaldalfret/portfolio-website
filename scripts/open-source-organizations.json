@@ -5,7 +5,11 @@
     "open-telemetry",
     "opentelemetry",
     "detekt",
-    "sierrotechnologies"
+    "sierrotechnologies",
+    "adshieldanalyzer",
+    "0x5t4l1n",
+    "harshitha-sree",
+    "rohitsurya2809"
   ],
   "excludedRepositoryNames": [
     "detekt"
@@ -39,6 +43,7 @@
     "adobe": "Adobe",
     "stripe": "Stripe",
     "salesforce": "Salesforce",
+    "ogx-ai": "Ogx AI",
     "mozilla": "Mozilla",
     "microsoft": "Microsoft",
     "google": "Google",
@@ -70,7 +75,10 @@
     "aws": "aws",
     "aws-powertools": "aws",
     "dotnet": "dotnet",
-    "adobe": "adobe"
+    "adobe": "adobe",
+    "stripe": "stripe",
+    "salesforce": "salesforce",
+    "ogx-ai": "ogx-ai"
   },
   "ownerOrganizationUrls": {
     "airbnb": "https://github.com/airbnb",
@@ -97,6 +105,7 @@
     "dotnet": "https://github.com/dotnet",
     "adobe": "https://github.com/adobe",
     "stripe": "https://github.com/stripe",
-    "salesforce": "https://github.com/salesforce"
+    "salesforce": "https://github.com/salesforce",
+    "ogx-ai": "https://github.com/ogx-ai"
   }
 }
