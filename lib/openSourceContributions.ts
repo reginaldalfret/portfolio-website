@@ -6,6 +6,7 @@ export type ContributionCategory = "DOCS" | "BUG FIX" | "TEST" | "INFRA" | "BUIL
 export interface OpenSourceContribution {
   id: string;
   organization: string;
+  organizationUrl?: string;
   orgKey: string;
   repository: string;
   repositoryUrl?: string;
