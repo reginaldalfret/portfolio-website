@@ -4,7 +4,8 @@
     "reginaldalfret",
     "open-telemetry",
     "opentelemetry",
-    "detekt"
+    "detekt",
+    "sierrotechnologies"
   ],
   "excludedRepositoryNames": [
     "detekt"
