@@ -401,14 +401,43 @@ export async function runSync({ token = process.env.GITHUB_TOKEN ?? "", dryRun =
   const existing = JSON.parse(await readFile(DATA_FILE, "utf8"));
   if (!Array.isArray(existing)) throw new Error("Existing contribution JSON must be an array.");
 
-  // REST search behaves consistently in local development and repository-scoped Actions tokens.
-  const pullRequests = await fetchRestPullRequests(token, fetchImpl);
+  // Prefer the unauthenticated REST search: it queries public GitHub contributions globally
+  // instead of being restricted to repositories accessible to the workflow's installation token.
+  let pullRequests;
+  let searchSource = "public unauthenticated search";
+  try {
+    pullRequests = await fetchRestPullRequests("", fetchImpl);
+    if (pullRequests.length === 0 && existing.length > 0) {
+      throw new Error("Public GitHub search returned no verified merged PRs.");
+    }
+  } catch (publicError) {
+    if (!token) throw publicError;
+    console.warn(`Public GitHub search failed (${publicError.message}); trying the authenticated REST search as a fallback.`);
+    pullRequests = await fetchRestPullRequests(token, fetchImpl);
+    searchSource = "authenticated fallback search";
+  }
+
   if (pullRequests.length === 0 && existing.length > 0) {
     throw new Error("GitHub returned no verifiable merged PRs. Refusing to replace the last-known-good contribution dataset.");
   }
 
   const normalized = pullRequests.map(normalizePullRequest);
-  const { contributions, added, updated, excluded, apiRecords } = mergeContributionData(existing, normalized, config);
+  let mergeResult = mergeContributionData(existing, normalized, config);
+
+  // A non-empty search result can still contain only configured exclusions. Try the token
+  // search once as a fallback, but never clear a valid dataset on a zero-eligible result.
+  if (mergeResult.apiRecords === 0 && existing.length > 0 && token && searchSource === "public unauthenticated search") {
+    console.warn("Public search returned no eligible upstream PRs after display exclusions; retrying with the authenticated REST search.");
+    const fallbackPullRequests = await fetchRestPullRequests(token, fetchImpl);
+    const fallbackResult = mergeContributionData(existing, fallbackPullRequests.map(normalizePullRequest), config);
+    if (fallbackResult.apiRecords > 0) {
+      pullRequests = fallbackPullRequests;
+      mergeResult = fallbackResult;
+      searchSource = "authenticated fallback search";
+    }
+  }
+
+  const { contributions, added, updated, excluded, apiRecords } = mergeResult;
   if (apiRecords === 0 && existing.length > 0) {
     throw new Error("GitHub returned zero eligible upstream merged PRs. Refusing to report a successful refresh or overwrite the last-known-good dataset.");
   }
@@ -419,23 +448,24 @@ export async function runSync({ token = process.env.GITHUB_TOKEN ?? "", dryRun =
   const output = JSON.stringify(contributions, null, 2) + "\n";
   const current = JSON.stringify(existing, null, 2) + "\n";
   const stats = calculateContributionStats(contributions);
+  console.log(`Search source: ${searchSource}.`);
   console.log(`GitHub sync summary: ${stats.mergedPullRequests} merged PRs, ${stats.repositories} repositories, ${stats.ecosystems} ecosystems.`);
   console.log(`API records: ${apiRecords}; added: ${added}; updated: ${updated}; excluded by display configuration: ${excluded}.`);
 
   if (dryRun) {
     console.log("Dry run selected; no file was written.");
-    return { changed: output !== current, contributions, stats, added, updated };
+    return { changed: output !== current, contributions, stats, added, updated, searchSource };
   }
   if (output === current) {
     console.log("No data change detected; leaving the generated file untouched.");
-    return { changed: false, contributions, stats, added, updated };
+    return { changed: false, contributions, stats, added, updated, searchSource };
   }
 
   const tempFile = `${DATA_FILE}.tmp`;
   await writeFile(tempFile, output, "utf8");
   await rename(tempFile, DATA_FILE);
   console.log(`Updated ${path.relative(ROOT, DATA_FILE)} atomically.`);
-  return { changed: true, contributions, stats, added, updated };
+  return { changed: true, contributions, stats, added, updated, searchSource };
 }
 
 const invokedPath = process.argv[1] ? path.resolve(process.argv[1]) : "";
