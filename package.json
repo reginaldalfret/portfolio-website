@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "sync:open-source": "node scripts/sync-open-source.mjs",
+    "test:open-source": "node --test scripts/sync-open-source.test.mjs",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@next/third-parties": "14.2.23",
