@@ -1,5 +1,203 @@
 [
   {
+    "id": "stripe-stripe-react-native-2750",
+    "organization": "Stripe",
+    "orgKey": "stripe",
+    "organizationUrl": "https://github.com/stripe",
+    "repository": "stripe/stripe-react-native",
+    "repositoryUrl": "https://github.com/stripe/stripe-react-native",
+    "prNumber": 2750,
+    "title": "fix(ios): add missing closing backtick in customerSessionClientSecret error message",
+    "url": "https://github.com/stripe/stripe-react-native/pull/2750",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "BUG FIX",
+    "contribution": "Summary Fix a missing closing backtick on customerSessionClientSecret in iOS error messages across StripeSdkImpl+PaymentSheet.swift and StripeSdkImpl+Embedded.swift.",
+    "description": "Summary Fix a missing closing backtick on customerSessionClientSecret in iOS error messages across StripeSdkImpl+PaymentSheet.swift and StripeSdkImpl+Embedded.swift.",
+    "labels": [],
+    "date": "2026-10-19T18:02:55.000Z",
+    "mergedAt": "2026-10-19T18:02:55.000Z",
+    "displayDate": "Oct 19, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
+    "id": "stripe-stripe-react-native-2751",
+    "organization": "Stripe",
+    "orgKey": "stripe",
+    "organizationUrl": "https://github.com/stripe",
+    "repository": "stripe/stripe-react-native",
+    "repositoryUrl": "https://github.com/stripe/stripe-react-native",
+    "prNumber": 2751,
+    "title": "fix(android): only configure preferredNetworks when explicitly provided",
+    "url": "https://github.com/stripe/stripe-react-native/pull/2751",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "BUG FIX",
+    "contribution": "On Android, \\CustomerSheetManager.kt\\, \\PaymentSheetManager.kt\\, and \\EmbeddedPaymentElementViewManager.kt\\ were unconditionally chaining \\.preferredNetworks(mapToPreferredNetworks(...))\\ onto their respective configu…",
+    "description": "On Android, \\CustomerSheetManager.kt\\, \\PaymentSheetManager.kt\\, and \\EmbeddedPaymentElementViewManager.kt\\ were unconditionally chaining \\.preferredNetworks(mapToPreferredNetworks(...))\\ onto their respective configu…",
+    "labels": [],
+    "date": "2026-10-19T18:02:38.000Z",
+    "mergedAt": "2026-10-19T18:02:38.000Z",
+    "displayDate": "Oct 19, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
+    "id": "jruby-jruby-9797",
+    "organization": "JRuby",
+    "orgKey": "jruby",
+    "organizationUrl": "https://github.com/jruby",
+    "repository": "jruby/jruby",
+    "repositoryUrl": "https://github.com/jruby/jruby",
+    "prNumber": 9797,
+    "title": "fix(module): clear temporary name when module assigned to constant in named parent",
+    "url": "https://github.com/jruby/jruby/pull/9797",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "BUG FIX",
+    "contribution": "When a class or module with a temporary name (via \\settemporaryname\\) was subsequently assigned to a constant within a permanently-named outer module, the internal \\TEMPNAME\\ flag was not being cleared. As a result, s…",
+    "description": "When a class or module with a temporary name (via \\settemporaryname\\) was subsequently assigned to a constant within a permanently-named outer module, the internal \\TEMPNAME\\ flag was not being cleared. As a result, s…",
+    "labels": [],
+    "date": "2026-10-19T17:57:25.000Z",
+    "mergedAt": "2026-10-19T17:57:25.000Z",
+    "displayDate": "Oct 19, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
+    "id": "stripe-stripe-react-native-2753",
+    "organization": "Stripe",
+    "orgKey": "stripe",
+    "organizationUrl": "https://github.com/stripe",
+    "repository": "stripe/stripe-react-native",
+    "repositoryUrl": "https://github.com/stripe/stripe-react-native",
+    "prNumber": 2753,
+    "title": "docs: add localization configuration guidance for iOS and Android",
+    "url": "https://github.com/stripe/stripe-react-native/pull/2753",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "DOCS",
+    "contribution": "Developers frequently run into issues where Stripe pre-built UI components (e.g. \\PaymentSheet\\) display in English despite the device or app being set to another language on iOS.",
+    "description": "Developers frequently run into issues where Stripe pre-built UI components (e.g. \\PaymentSheet\\) display in English despite the device or app being set to another language on iOS.",
+    "labels": [],
+    "date": "2026-10-19T17:38:20.000Z",
+    "mergedAt": "2026-10-19T17:38:20.000Z",
+    "displayDate": "Oct 19, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
+    "id": "stripe-stripe-react-native-2754",
+    "organization": "Stripe",
+    "orgKey": "stripe",
+    "organizationUrl": "https://github.com/stripe",
+    "repository": "stripe/stripe-react-native",
+    "repositoryUrl": "https://github.com/stripe/stripe-react-native",
+    "prNumber": 2754,
+    "title": "docs: clarify height requirement for PlatformPayButton style prop",
+    "url": "https://github.com/stripe/stripe-react-native/pull/2754",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "DOCS",
+    "contribution": "Summary Addresses 1788 by explicitly documenting that the native Apple Pay and Google Pay button views do not have an intrinsic height in React Native. Without a specified \\height\\ in the \\style\\ prop (or container),…",
+    "description": "Summary Addresses 1788 by explicitly documenting that the native Apple Pay and Google Pay button views do not have an intrinsic height in React Native. Without a specified \\height\\ in the \\style\\ prop (or container),…",
+    "labels": [],
+    "date": "2026-10-19T17:37:26.000Z",
+    "mergedAt": "2026-10-19T17:37:26.000Z",
+    "displayDate": "Oct 19, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
+    "id": "salesforce-lwc-5928",
+    "organization": "Salesforce",
+    "orgKey": "salesforce",
+    "organizationUrl": "https://github.com/salesforce",
+    "repository": "salesforce/lwc",
+    "repositoryUrl": "https://github.com/salesforce/lwc",
+    "prNumber": 5928,
+    "title": "fix(compiler): clarify invalid if modifier error",
+    "url": "https://github.com/salesforce/lwc/pull/5928",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "BUG FIX",
+    "contribution": "Summary Clarify the LWC1084 diagnostic for invalid if modifiers and update the corresponding fixture expectation.",
+    "description": "Summary Clarify the LWC1084 diagnostic for invalid if modifiers and update the corresponding fixture expectation.",
+    "labels": [
+      "cla:signed"
+    ],
+    "date": "2026-10-19T14:00:08.000Z",
+    "mergedAt": "2026-10-19T14:00:08.000Z",
+    "displayDate": "Oct 19, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
+    "id": "intel-auto-round-2421",
+    "organization": "Intel",
+    "orgKey": "intel",
+    "organizationUrl": "https://github.com/intel",
+    "repository": "intel/auto-round",
+    "repositoryUrl": "https://github.com/intel/auto-round",
+    "prNumber": 2421,
+    "title": "fix: use spawn start method for vLLM evaluation to avoid CUDA re-initialization error",
+    "url": "https://github.com/intel/auto-round/pull/2421",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "BUG FIX",
+    "contribution": "When running evaluation with the vLLM backend, vLLM's engine core uses multiprocessing workers (\\EngineCoreProc\\). If CUDA has already been initialized in the main process (e.g. during device capability checks, model…",
+    "description": "When running evaluation with the vLLM backend, vLLM's engine core uses multiprocessing workers (\\EngineCoreProc\\). If CUDA has already been initialized in the main process (e.g. during device capability checks, model…",
+    "labels": [],
+    "date": "2026-10-19T08:18:16.000Z",
+    "mergedAt": "2026-10-19T08:18:16.000Z",
+    "displayDate": "Oct 19, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
     "id": "adobe-skills-445",
     "organization": "Adobe",
     "orgKey": "adobe",
@@ -11,7 +209,7 @@
     "statusLabel": "Merged",
     "category": "DOCS",
     "contribution": "Updated plugin installation instructions, documented Stardust capabilities, and aligned marketplace references with the current plugin registration.",
-    "date": "2026-10-17T13:46:42Z",
+    "date": "2026-10-17T13:46:42.000Z",
     "displayDate": "Oct 17, 2026",
     "theme": {
       "accent": "#EB1000",
@@ -21,10 +219,13 @@
       "badgeBg": "bg-red-500/10 border-red-500/30 text-red-300"
     },
     "repositoryUrl": "https://github.com/adobe/skills",
-    "mergedAt": "2026-10-17T13:46:42Z",
+    "mergedAt": "2026-10-17T13:46:42.000Z",
     "description": "Updated plugin installation instructions, documented Stardust capabilities, and aligned marketplace references with the current plugin registration.",
-    "labels": [],
-    "isFeatured": true
+    "labels": [
+      "released"
+    ],
+    "isFeatured": true,
+    "organizationUrl": "https://github.com/adobe"
   },
   {
     "id": "aws-xray-494",
@@ -38,7 +239,7 @@
     "statusLabel": "Merged",
     "category": "DOCS",
     "contribution": "Escaped the TCP daemon address in a docstring so documentation tooling does not interpret it as a broken link.",
-    "date": "2026-10-16T20:50:22Z",
+    "date": "2026-10-16T20:50:22.000Z",
     "displayDate": "Oct 16, 2026",
     "theme": {
       "accent": "#FF9900",
@@ -48,10 +249,11 @@
       "badgeBg": "bg-amber-500/10 border-amber-500/30 text-amber-300"
     },
     "repositoryUrl": "https://github.com/aws/aws-xray-sdk-python",
-    "mergedAt": "2026-10-16T20:50:22Z",
+    "mergedAt": "2026-10-16T20:50:22.000Z",
     "description": "Escaped the TCP daemon address in a docstring so documentation tooling does not interpret it as a broken link.",
     "labels": [],
-    "isFeatured": false
+    "isFeatured": false,
+    "organizationUrl": "https://github.com/aws"
   },
   {
     "id": "nasa-oceandata-208",
@@ -65,7 +267,7 @@
     "statusLabel": "Merged",
     "category": "DOCS",
     "contribution": "Updated six outdated L2 flags links across four notebooks to point to the current NASA OceanData reference.",
-    "date": "2026-10-16T17:47:34Z",
+    "date": "2026-10-16T17:47:34.000Z",
     "displayDate": "Oct 16, 2026",
     "theme": {
       "accent": "#0B3D91",
@@ -75,10 +277,11 @@
       "badgeBg": "bg-blue-500/10 border-blue-500/30 text-blue-200"
     },
     "repositoryUrl": "https://github.com/nasa/oceandata-notebooks",
-    "mergedAt": "2026-10-16T17:47:34Z",
+    "mergedAt": "2026-10-16T17:47:34.000Z",
     "description": "Updated six outdated L2 flags links across four notebooks to point to the current NASA OceanData reference.",
     "labels": [],
-    "isFeatured": true
+    "isFeatured": true,
+    "organizationUrl": "https://github.com/nasa"
   },
   {
     "id": "nasa-oceandata-209",
@@ -92,7 +295,7 @@
     "statusLabel": "Merged",
     "category": "DOCS",
     "contribution": "Clarified the distinction between earthaccess.open and downloading data outside the cloud in the NASA OceanData notebooks.",
-    "date": "2026-10-16T17:45:48Z",
+    "date": "2026-10-16T17:45:48.000Z",
     "displayDate": "Oct 16, 2026",
     "theme": {
       "accent": "#0B3D91",
@@ -102,10 +305,11 @@
       "badgeBg": "bg-blue-500/10 border-blue-500/30 text-blue-200"
     },
     "repositoryUrl": "https://github.com/nasa/oceandata-notebooks",
-    "mergedAt": "2026-10-16T17:45:48Z",
+    "mergedAt": "2026-10-16T17:45:48.000Z",
     "description": "Clarified the distinction between earthaccess.open and downloading data outside the cloud in the NASA OceanData notebooks.",
     "labels": [],
-    "isFeatured": false
+    "isFeatured": false,
+    "organizationUrl": "https://github.com/nasa"
   },
   {
     "id": "aws-powertools-8542",
@@ -119,7 +323,7 @@
     "statusLabel": "Merged",
     "category": "BUG FIX",
     "contribution": "Updated SES email-header parsing to support camelCase replyTo, preserve existing aliases, and add unit tests.",
-    "date": "2026-10-15T12:43:57Z",
+    "date": "2026-10-15T12:43:57.000Z",
     "displayDate": "Oct 15, 2026",
     "theme": {
       "accent": "#FF9900",
@@ -129,10 +333,14 @@
       "badgeBg": "bg-amber-500/10 border-amber-500/30 text-amber-300"
     },
     "repositoryUrl": "https://github.com/aws-powertools/powertools-lambda-python",
-    "mergedAt": "2026-10-15T12:43:57Z",
+    "mergedAt": "2026-10-15T12:43:57.000Z",
     "description": "Updated SES email-header parsing to support camelCase replyTo, preserve existing aliases, and add unit tests.",
-    "labels": [],
-    "isFeatured": true
+    "labels": [
+      "size/M",
+      "tests"
+    ],
+    "isFeatured": true,
+    "organizationUrl": "https://github.com/aws-powertools"
   },
   {
     "id": "jruby-9796",
@@ -146,7 +354,7 @@
     "statusLabel": "Merged",
     "category": "BUG FIX",
     "contribution": "Fixed string processing with four-byte GB18030-encoded characters to prevent ArrayIndexOutOfBoundsException in strip-related operations.",
-    "date": "2026-10-14T08:26:21Z",
+    "date": "2026-10-14T08:26:21.000Z",
     "displayDate": "Oct 14, 2026",
     "theme": {
       "accent": "#CC342D",
@@ -156,10 +364,11 @@
       "badgeBg": "bg-rose-500/10 border-red-500/30 text-rose-300"
     },
     "repositoryUrl": "https://github.com/jruby/jruby",
-    "mergedAt": "2026-10-14T08:26:21Z",
+    "mergedAt": "2026-10-14T08:26:21.000Z",
     "description": "Fixed string processing with four-byte GB18030-encoded characters to prevent ArrayIndexOutOfBoundsException in strip-related operations.",
     "labels": [],
-    "isFeatured": false
+    "isFeatured": false,
+    "organizationUrl": "https://github.com/jruby"
   },
   {
     "id": "dotnet-roslyn-85999",
@@ -173,7 +382,7 @@
     "statusLabel": "Merged",
     "category": "DOCS",
     "contribution": "Added README documentation, configuration examples, and NuGet packaging support for BannedApiAnalyzers.",
-    "date": "2026-10-13T21:02:18Z",
+    "date": "2026-10-13T21:02:18.000Z",
     "displayDate": "Oct 13, 2026",
     "theme": {
       "accent": "#512BD4",
@@ -183,10 +392,15 @@
       "badgeBg": "bg-violet-500/10 border-violet-500/30 text-violet-200"
     },
     "repositoryUrl": "https://github.com/dotnet/roslyn",
-    "mergedAt": "2026-10-13T21:02:18Z",
+    "mergedAt": "2026-10-13T21:02:18.000Z",
     "description": "Added README documentation, configuration examples, and NuGet packaging support for BannedApiAnalyzers.",
-    "labels": [],
-    "isFeatured": false
+    "labels": [
+      "Area-Analyzers",
+      "Documentation",
+      "Community"
+    ],
+    "isFeatured": false,
+    "organizationUrl": "https://github.com/dotnet"
   },
   {
     "id": "uber-kraken-715",
@@ -200,7 +414,7 @@
     "statusLabel": "Merged",
     "category": "MAINTENANCE",
     "contribution": "Removed accidentally committed Vim swap files and added .gitignore patterns to prevent future occurrences.",
-    "date": "2026-10-13T15:21:02Z",
+    "date": "2026-10-13T15:21:02.000Z",
     "displayDate": "Oct 13, 2026",
     "theme": {
       "accent": "#FFFFFF",
@@ -210,10 +424,39 @@
       "badgeBg": "bg-white/10 border-white/20 text-white"
     },
     "repositoryUrl": "https://github.com/uber/kraken",
-    "mergedAt": "2026-10-13T15:21:02Z",
+    "mergedAt": "2026-10-13T15:21:02.000Z",
     "description": "Removed accidentally committed Vim swap files and added .gitignore patterns to prevent future occurrences.",
     "labels": [],
-    "isFeatured": false
+    "isFeatured": false,
+    "organizationUrl": "https://github.com/uber"
+  },
+  {
+    "id": "qualcomm-commit-msg-check-action-38",
+    "organization": "Qualcomm",
+    "orgKey": "qualcomm",
+    "organizationUrl": "https://github.com/qualcomm",
+    "repository": "qualcomm/commit-msg-check-action",
+    "repositoryUrl": "https://github.com/qualcomm/commit-msg-check-action",
+    "prNumber": 38,
+    "title": "feat: add allow-empty-body option to allow subject-only commits",
+    "url": "https://github.com/qualcomm/commit-msg-check-action/pull/38",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "MAINTENANCE",
+    "contribution": "Summary Adds a configurable allow-empty-body option to action.yml and checkcommits.py.",
+    "description": "Summary Adds a configurable allow-empty-body option to action.yml and checkcommits.py.",
+    "labels": [],
+    "date": "2026-10-13T05:04:33.000Z",
+    "mergedAt": "2026-10-13T05:04:33.000Z",
+    "displayDate": "Oct 13, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
   },
   {
     "id": "pinterest-pymemcache-657",
@@ -227,7 +470,7 @@
     "statusLabel": "Merged",
     "category": "BUILD",
     "contribution": "Corrected wheel metadata so Python 3-only releases are not incorrectly advertised as supporting Python 2.",
-    "date": "2026-10-08T21:23:14Z",
+    "date": "2026-10-08T21:23:14.000Z",
     "displayDate": "Oct 8, 2026",
     "theme": {
       "accent": "#E60023",
@@ -237,10 +480,42 @@
       "badgeBg": "bg-rose-500/10 border-red-500/30 text-rose-300"
     },
     "repositoryUrl": "https://github.com/pinterest/pymemcache",
-    "mergedAt": "2026-10-08T21:23:14Z",
+    "mergedAt": "2026-10-08T21:23:14.000Z",
     "description": "Corrected wheel metadata so Python 3-only releases are not incorrectly advertised as supporting Python 2.",
     "labels": [],
-    "isFeatured": false
+    "isFeatured": false,
+    "organizationUrl": "https://github.com/pinterest"
+  },
+  {
+    "id": "nvidia-cuopt-2068",
+    "organization": "NVIDIA",
+    "orgKey": "nvidia",
+    "organizationUrl": "https://github.com/NVIDIA",
+    "repository": "NVIDIA/cuopt",
+    "repositoryUrl": "https://github.com/NVIDIA/cuopt",
+    "prNumber": 2068,
+    "title": "fix(linear_programming): implement __neg__, __pos__, and __abs__ for LinearExpression (fixes #2056)",
+    "url": "https://github.com/NVIDIA/cuopt/pull/2068",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "BUG FIX",
+    "contribution": "Summary Implements unary operator overloads (neg, pos, and abs) for LinearExpression in cuopt.linearprogramming.problem.",
+    "description": "Summary Implements unary operator overloads (neg, pos, and abs) for LinearExpression in cuopt.linearprogramming.problem.",
+    "labels": [
+      "bug",
+      "non-breaking"
+    ],
+    "date": "2026-10-08T19:59:52.000Z",
+    "mergedAt": "2026-10-08T19:59:52.000Z",
+    "displayDate": "Oct 8, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
   },
   {
     "id": "airbnb-magazinelayout-169",
@@ -254,7 +529,7 @@
     "statusLabel": "Merged",
     "category": "BUILD",
     "contribution": "Specified explicit swift_versions array supporting Swift 4.0, 4.2, and 5.0 in the CocoaPods specification for dependency manager compatibility.",
-    "date": "2026-10-08T15:24:52Z",
+    "date": "2026-10-08T15:24:52.000Z",
     "displayDate": "Oct 8, 2026",
     "theme": {
       "accent": "#FF5A5F",
@@ -264,10 +539,11 @@
       "badgeBg": "bg-rose-500/10 border-rose-500/30 text-rose-300"
     },
     "repositoryUrl": "https://github.com/airbnb/MagazineLayout",
-    "mergedAt": "2026-10-08T15:24:52Z",
+    "mergedAt": "2026-10-08T15:24:52.000Z",
     "description": "Specified explicit swift_versions array supporting Swift 4.0, 4.2, and 5.0 in the CocoaPods specification for dependency manager compatibility.",
     "labels": [],
-    "isFeatured": false
+    "isFeatured": false,
+    "organizationUrl": "https://github.com/airbnb"
   },
   {
     "id": "apple-swift-numerics-355",
@@ -281,7 +557,7 @@
     "statusLabel": "Merged",
     "category": "DOCS",
     "contribution": "Authored dedicated documentation and usage examples for the ApproximateEquality protocol in Swift Numerics.",
-    "date": "2026-10-08T14:44:08Z",
+    "date": "2026-10-08T14:44:08.000Z",
     "displayDate": "Oct 8, 2026",
     "theme": {
       "accent": "#E5E5E7",
@@ -291,10 +567,11 @@
       "badgeBg": "bg-white/10 border-white/30 text-white"
     },
     "repositoryUrl": "https://github.com/apple/swift-numerics",
-    "mergedAt": "2026-10-08T14:44:08Z",
+    "mergedAt": "2026-10-08T14:44:08.000Z",
     "description": "Authored dedicated documentation and usage examples for the ApproximateEquality protocol in Swift Numerics.",
     "labels": [],
-    "isFeatured": true
+    "isFeatured": true,
+    "organizationUrl": "https://github.com/apple"
   },
   {
     "id": "qualcomm-appbuilder-286",
@@ -308,7 +585,7 @@
     "statusLabel": "Merged",
     "category": "DOCS",
     "contribution": "Fixed broken screenshot relative image paths in WebUI documentation to ensure consistent asset rendering across docs.",
-    "date": "2026-10-08T02:59:53Z",
+    "date": "2026-10-08T02:59:53.000Z",
     "displayDate": "Oct 8, 2026",
     "theme": {
       "accent": "#3253DC",
@@ -318,10 +595,11 @@
       "badgeBg": "bg-blue-500/10 border-blue-500/30 text-blue-300"
     },
     "repositoryUrl": "https://github.com/qualcomm/qai-appbuilder",
-    "mergedAt": "2026-10-08T02:59:53Z",
+    "mergedAt": "2026-10-08T02:59:53.000Z",
     "description": "Fixed broken screenshot relative image paths in WebUI documentation to ensure consistent asset rendering across docs.",
     "labels": [],
-    "isFeatured": false
+    "isFeatured": false,
+    "organizationUrl": "https://github.com/qualcomm"
   },
   {
     "id": "cloudflare-vinext-3469",
@@ -335,7 +613,7 @@
     "statusLabel": "Merged",
     "category": "DOCS",
     "contribution": "Documented startProdServer programmatic API for custom server scripts and compiled standalone outputs in Cloudflare vinext.",
-    "date": "2026-10-07T23:29:25Z",
+    "date": "2026-10-07T23:29:25.000Z",
     "displayDate": "Oct 7, 2026",
     "theme": {
       "accent": "#F38020",
@@ -345,10 +623,11 @@
       "badgeBg": "bg-amber-500/10 border-amber-500/30 text-amber-300"
     },
     "repositoryUrl": "https://github.com/cloudflare/vinext",
-    "mergedAt": "2026-10-07T23:29:25Z",
+    "mergedAt": "2026-10-07T23:29:25.000Z",
     "description": "Documented startProdServer programmatic API for custom server scripts and compiled standalone outputs in Cloudflare vinext.",
     "labels": [],
-    "isFeatured": true
+    "isFeatured": true,
+    "organizationUrl": "https://github.com/cloudflare"
   },
   {
     "id": "nvidia-cuda-quantum-5560",
@@ -362,7 +641,7 @@
     "statusLabel": "Merged",
     "category": "DOCS",
     "contribution": "Corrected typographical errors and refined technical phrasing in the state vector simulators quantum documentation.",
-    "date": "2026-10-07T22:35:17Z",
+    "date": "2026-10-07T22:35:17.000Z",
     "displayDate": "Oct 7, 2026",
     "theme": {
       "accent": "#76B900",
@@ -372,10 +651,41 @@
       "badgeBg": "bg-emerald-500/10 border-emerald-500/30 text-emerald-300"
     },
     "repositoryUrl": "https://github.com/NVIDIA/cuda-quantum",
-    "mergedAt": "2026-10-07T22:35:17Z",
+    "mergedAt": "2026-10-07T22:35:17.000Z",
     "description": "Corrected typographical errors and refined technical phrasing in the state vector simulators quantum documentation.",
+    "labels": [
+      "documentation"
+    ],
+    "isFeatured": true,
+    "organizationUrl": "https://github.com/NVIDIA"
+  },
+  {
+    "id": "sap-e-mobility-charging-stations-simulator-2136",
+    "organization": "SAP",
+    "orgKey": "sap",
+    "organizationUrl": "https://github.com/SAP",
+    "repository": "SAP/e-mobility-charging-stations-simulator",
+    "repositoryUrl": "https://github.com/SAP/e-mobility-charging-stations-simulator",
+    "prNumber": 2136,
+    "title": "fix(charging-station): throw BaseError on invalid supervision URL and revert state on set failure",
+    "url": "https://github.com/SAP/e-mobility-charging-stations-simulator/pull/2136",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "BUG FIX",
+    "contribution": "Report supervision URL parsing failures as a BaseError naming the configured field and charging station, rather than a bare TypeError. Restore stationInfo.supervisionUrls on validation failure. In the OCPP-key setter…",
+    "description": "Report supervision URL parsing failures as a BaseError naming the configured field and charging station, rather than a bare TypeError. Restore stationInfo.supervisionUrls on validation failure. In the OCPP-key setter…",
     "labels": [],
-    "isFeatured": true
+    "date": "2026-10-07T20:48:00.000Z",
+    "mergedAt": "2026-10-07T20:48:00.000Z",
+    "displayDate": "Oct 7, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
   },
   {
     "id": "amd-rocm-1231",
@@ -389,7 +699,7 @@
     "statusLabel": "Merged",
     "category": "INFRA",
     "contribution": "Improved Python environment reuse by allowing compatible populated environments instead of enforcing strict Python-version string equality.",
-    "date": "2026-10-05T19:21:14Z",
+    "date": "2026-10-05T19:21:14.000Z",
     "displayDate": "Oct 5, 2026",
     "theme": {
       "accent": "#ED1C24",
@@ -399,10 +709,11 @@
       "badgeBg": "bg-red-500/10 border-red-500/30 text-red-300"
     },
     "repositoryUrl": "https://github.com/ROCm/hrx-system",
-    "mergedAt": "2026-10-05T19:21:14Z",
+    "mergedAt": "2026-10-05T19:21:14.000Z",
     "description": "Improved Python environment reuse by allowing compatible populated environments instead of enforcing strict Python-version string equality.",
     "labels": [],
-    "isFeatured": false
+    "isFeatured": false,
+    "organizationUrl": "https://github.com/ROCm"
   },
   {
     "id": "cli-cli-14592",
@@ -416,7 +727,7 @@
     "statusLabel": "Merged",
     "category": "DOCS",
     "contribution": "Improved Nix/NixOS installation documentation for GitHub CLI by recommending nix-shell and declarative configuration approaches.",
-    "date": "2026-10-05T16:25:08Z",
+    "date": "2026-10-05T16:25:08.000Z",
     "displayDate": "Oct 5, 2026",
     "theme": {
       "accent": "#8957E5",
@@ -426,10 +737,14 @@
       "badgeBg": "bg-purple-500/10 border-purple-500/30 text-purple-200"
     },
     "repositoryUrl": "https://github.com/cli/cli",
-    "mergedAt": "2026-10-05T16:25:08Z",
+    "mergedAt": "2026-10-05T16:25:08.000Z",
     "description": "Improved Nix/NixOS installation documentation for GitHub CLI by recommending nix-shell and declarative configuration approaches.",
-    "labels": [],
-    "isFeatured": true
+    "labels": [
+      "external",
+      "ready-for-review"
+    ],
+    "isFeatured": true,
+    "organizationUrl": "https://github.com/cli"
   },
   {
     "id": "sap-terraform-1710",
@@ -443,7 +758,7 @@
     "statusLabel": "Merged",
     "category": "DOCS",
     "contribution": "Expanded Terraform import documentation with guidance for parameters, timeouts, and non-updateable service instances.",
-    "date": "2026-10-05T08:43:16Z",
+    "date": "2026-10-05T08:43:16.000Z",
     "displayDate": "Oct 5, 2026",
     "theme": {
       "accent": "#008FD3",
@@ -453,10 +768,13 @@
       "badgeBg": "bg-sky-500/10 border-sky-500/30 text-sky-300"
     },
     "repositoryUrl": "https://github.com/SAP/terraform-provider-btp",
-    "mergedAt": "2026-10-05T08:43:16Z",
+    "mergedAt": "2026-10-05T08:43:16.000Z",
     "description": "Expanded Terraform import documentation with guidance for parameters, timeouts, and non-updateable service instances.",
-    "labels": [],
-    "isFeatured": false
+    "labels": [
+      "documentation"
+    ],
+    "isFeatured": false,
+    "organizationUrl": "https://github.com/SAP"
   },
   {
     "id": "docker-docs-26266",
@@ -470,7 +788,7 @@
     "statusLabel": "Merged",
     "category": "DOCS",
     "contribution": "Updated Docker documentation so enableDockerAI accurately documents both boolean and Business-tier string values.",
-    "date": "2026-10-05T06:41:38Z",
+    "date": "2026-10-05T06:41:38.000Z",
     "displayDate": "Oct 5, 2026",
     "theme": {
       "accent": "#2496ED",
@@ -480,24 +798,27 @@
       "badgeBg": "bg-blue-500/10 border-blue-500/30 text-blue-300"
     },
     "repositoryUrl": "https://github.com/docker/docs",
-    "mergedAt": "2026-10-05T06:41:38Z",
+    "mergedAt": "2026-10-05T06:41:38.000Z",
     "description": "Updated Docker documentation so enableDockerAI accurately documents both boolean and Business-tier string values.",
-    "labels": [],
-    "isFeatured": false
+    "labels": [
+      "area/desktop"
+    ],
+    "isFeatured": false,
+    "organizationUrl": "https://github.com/docker"
   },
   {
     "id": "ibm-docling-85",
     "organization": "IBM",
     "orgKey": "ibm",
-    "repository": "IBM/docling-pipelines",
+    "repository": "docling-project/docling-pipelines",
     "prNumber": 85,
     "title": "docs: remove stale src/docpipe_app/backend references",
-    "url": "https://github.com/IBM/docling-pipelines/pull/85",
+    "url": "https://github.com/docling-project/docling-pipelines/pull/85",
     "status": "merged",
     "statusLabel": "Merged",
     "category": "DOCS",
     "contribution": "Removed obsolete project paths from contributor and architecture documentation and aligned documentation with current project structure.",
-    "date": "2026-10-05T04:21:05Z",
+    "date": "2026-10-05T04:21:05.000Z",
     "displayDate": "Oct 5, 2026",
     "theme": {
       "accent": "#1F70C1",
@@ -506,11 +827,42 @@
       "textColor": "text-indigo-400",
       "badgeBg": "bg-indigo-500/10 border-indigo-500/30 text-indigo-300"
     },
-    "repositoryUrl": "https://github.com/IBM/docling-pipelines",
-    "mergedAt": "2026-10-05T04:21:05Z",
+    "repositoryUrl": "https://github.com/docling-project/docling-pipelines",
+    "mergedAt": "2026-10-05T04:21:05.000Z",
     "description": "Removed obsolete project paths from contributor and architecture documentation and aligned documentation with current project structure.",
     "labels": [],
-    "isFeatured": false
+    "isFeatured": false,
+    "organizationUrl": "https://github.com/docling-project"
+  },
+  {
+    "id": "apache-hertzbeat-4410",
+    "organization": "Apache",
+    "orgKey": "apache",
+    "organizationUrl": "https://github.com/apache",
+    "repository": "apache/hertzbeat",
+    "repositoryUrl": "https://github.com/apache/hertzbeat",
+    "prNumber": 4410,
+    "title": "[task] Upgrade transitive xercesImpl to 2.12.2 (CVE-2022-23437)",
+    "url": "https://github.com/apache/hertzbeat/pull/4410",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "MAINTENANCE",
+    "contribution": "Pin xerces:xercesImpl to 2.12.2 in root pom.xml dependency management to resolve CVE-2022-23437.",
+    "description": "Pin xerces:xercesImpl to 2.12.2 in root pom.xml dependency management to resolve CVE-2022-23437.",
+    "labels": [
+      "license"
+    ],
+    "date": "2026-10-05T02:08:11.000Z",
+    "mergedAt": "2026-10-05T02:08:11.000Z",
+    "displayDate": "Oct 5, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
   },
   {
     "id": "azure-cosmos-359",
@@ -524,7 +876,7 @@
     "statusLabel": "Merged",
     "category": "DOCS",
     "contribution": "Updated Linux Cosmos DB emulator documentation and container image references to reflect GA status.",
-    "date": "2026-10-02T23:54:08Z",
+    "date": "2026-10-02T23:54:08.000Z",
     "displayDate": "Oct 2, 2026",
     "theme": {
       "accent": "#0089D6",
@@ -534,10 +886,67 @@
       "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
     },
     "repositoryUrl": "https://github.com/Azure/azure-cosmos-db-emulator-docker",
-    "mergedAt": "2026-10-02T23:54:08Z",
+    "mergedAt": "2026-10-02T23:54:08.000Z",
     "description": "Updated Linux Cosmos DB emulator documentation and container image references to reflect GA status.",
     "labels": [],
-    "isFeatured": false
+    "isFeatured": false,
+    "organizationUrl": "https://github.com/Azure"
+  },
+  {
+    "id": "ogx-ai-ogx-6631",
+    "organization": "Ogx Ai",
+    "orgKey": "ogx-ai",
+    "organizationUrl": "https://github.com/ogx-ai",
+    "repository": "ogx-ai/ogx",
+    "repositoryUrl": "https://github.com/ogx-ai/ogx",
+    "prNumber": 6631,
+    "title": "ci(dependabot): add ignore rules to enforce pyproject.toml version caps (fixes #6595)",
+    "url": "https://github.com/ogx-ai/ogx/pull/6631",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "INFRA",
+    "contribution": "Summary Enforces pyproject.toml version caps with Dependabot ignore rules across both uv package ecosystems (/ and /src/ogxapi), and cross-references the two files in both directions.",
+    "description": "Summary Enforces pyproject.toml version caps with Dependabot ignore rules across both uv package ecosystems (/ and /src/ogxapi), and cross-references the two files in both directions.",
+    "labels": [],
+    "date": "2026-10-02T15:02:56.000Z",
+    "mergedAt": "2026-10-02T15:02:56.000Z",
+    "displayDate": "Oct 2, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
+    "id": "ogx-ai-ogx-6605",
+    "organization": "Ogx Ai",
+    "orgKey": "ogx-ai",
+    "organizationUrl": "https://github.com/ogx-ai",
+    "repository": "ogx-ai/ogx",
+    "repositoryUrl": "https://github.com/ogx-ai/ogx",
+    "prNumber": 6605,
+    "title": "fix(client-sdk): preserve zero-argument tool calls in ReActToolParser",
+    "url": "https://github.com/ogx-ai/ogx/pull/6605",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "BUG FIX",
+    "contribution": "Fixes an issue in ReActToolParser.gettoolcalls where tool calls for zero-argument tools were silently discarded due to falsy evaluation of an empty parameter list.",
+    "description": "Fixes an issue in ReActToolParser.gettoolcalls where tool calls for zero-argument tools were silently discarded due to falsy evaluation of an empty parameter list.",
+    "labels": [],
+    "date": "2026-09-29T23:07:02.000Z",
+    "mergedAt": "2026-09-29T23:07:02.000Z",
+    "displayDate": "Sep 29, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
   },
   {
     "id": "intel-torch-5518",
@@ -551,7 +960,7 @@
     "statusLabel": "Merged",
     "category": "TEST",
     "contribution": "Aligned the XPU test suite with upstream PyTorch by removing an obsolete grid_sample exception assertion.",
-    "date": "2026-09-29T14:48:45Z",
+    "date": "2026-09-29T14:48:45.000Z",
     "displayDate": "Sep 29, 2026",
     "theme": {
       "accent": "#0071C5",
@@ -561,10 +970,15 @@
       "badgeBg": "bg-sky-500/10 border-sky-500/30 text-sky-300"
     },
     "repositoryUrl": "https://github.com/intel/torch-xpu-ops",
-    "mergedAt": "2026-09-29T14:48:45Z",
+    "mergedAt": "2026-09-29T14:48:45.000Z",
     "description": "Aligned the XPU test suite with upstream PyTorch by removing an obsolete grid_sample exception assertion.",
-    "labels": [],
-    "isFeatured": true
+    "labels": [
+      "disable_e2e",
+      "disable_distributed",
+      "disable_build"
+    ],
+    "isFeatured": true,
+    "organizationUrl": "https://github.com/intel"
   },
   {
     "id": "apache-shenyu-696",
@@ -578,7 +992,7 @@
     "statusLabel": "Merged",
     "category": "BUG FIX",
     "contribution": "Fixed incorrect placement of PropTypes validators in defaultProps by moving them to propTypes.",
-    "date": "2026-09-28T12:51:02Z",
+    "date": "2026-09-28T12:51:02.000Z",
     "displayDate": "Sep 28, 2026",
     "theme": {
       "accent": "#D22128",
@@ -588,10 +1002,67 @@
       "badgeBg": "bg-rose-500/10 border-rose-500/30 text-rose-300"
     },
     "repositoryUrl": "https://github.com/apache/shenyu-dashboard",
-    "mergedAt": "2026-09-28T12:51:02Z",
+    "mergedAt": "2026-09-28T12:51:02.000Z",
     "description": "Fixed incorrect placement of PropTypes validators in defaultProps by moving them to propTypes.",
     "labels": [],
-    "isFeatured": false
+    "isFeatured": false,
+    "organizationUrl": "https://github.com/apache"
+  },
+  {
+    "id": "ogx-ai-ogx-6633",
+    "organization": "Ogx Ai",
+    "orgKey": "ogx-ai",
+    "organizationUrl": "https://github.com/ogx-ai",
+    "repository": "ogx-ai/ogx",
+    "repositoryUrl": "https://github.com/ogx-ai/ogx",
+    "prNumber": 6633,
+    "title": "fix(ci): respect setup rerank_model defaults in integration-tests.sh (fixes #6625)",
+    "url": "https://github.com/ogx-ai/ogx/pull/6633",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "BUG FIX",
+    "contribution": "scripts/integration-tests.sh passed --rerank-model=sentence-transformers/Qwen/Qwen3-Reranker-0.6B unconditionally on every pytest invocation. Setup defaults configured in tests/integration/suites.py are only applied b…",
+    "description": "scripts/integration-tests.sh passed --rerank-model=sentence-transformers/Qwen/Qwen3-Reranker-0.6B unconditionally on every pytest invocation. Setup defaults configured in tests/integration/suites.py are only applied b…",
+    "labels": [],
+    "date": "2026-09-25T13:05:17.000Z",
+    "mergedAt": "2026-09-25T13:05:17.000Z",
+    "displayDate": "Sep 25, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
+    "id": "ogx-ai-ogx-6632",
+    "organization": "Ogx Ai",
+    "orgKey": "ogx-ai",
+    "organizationUrl": "https://github.com/ogx-ai",
+    "repository": "ogx-ai/ogx",
+    "repositoryUrl": "https://github.com/ogx-ai/ogx",
+    "prNumber": 6632,
+    "title": "test(integration): resolve rerank model provider dynamically instead of using first registered provider (fixes #6624)",
+    "url": "https://github.com/ogx-ai/ogx/pull/6632",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "TEST",
+    "contribution": "Summary Fixes rerank integration tests skipping based on the first registered inference provider in stack config order, instead resolving the specific provider serving the rerank model.",
+    "description": "Summary Fixes rerank integration tests skipping based on the first registered inference provider in stack config order, instead resolving the specific provider serving the rerank model.",
+    "labels": [],
+    "date": "2026-09-24T14:37:21.000Z",
+    "mergedAt": "2026-09-24T14:37:21.000Z",
+    "displayDate": "Sep 24, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
   },
   {
     "id": "meta-stylex-1899",
@@ -605,7 +1076,7 @@
     "statusLabel": "Merged",
     "category": "DOCS",
     "contribution": "Removed problematic inline-flex/gap styling from heading anchor links to preserve natural inline wrapping for mixed inline content.",
-    "date": "2026-09-23T22:17:00Z",
+    "date": "2026-09-23T22:17:00.000Z",
     "displayDate": "Sep 23, 2026",
     "theme": {
       "accent": "#0081FB",
@@ -615,9 +1086,236 @@
       "badgeBg": "bg-blue-500/10 border-blue-500/30 text-blue-300"
     },
     "repositoryUrl": "https://github.com/facebook/stylex",
-    "mergedAt": "2026-09-23T22:17:00Z",
+    "mergedAt": "2026-09-23T22:17:00.000Z",
     "description": "Removed problematic inline-flex/gap styling from heading anchor links to preserve natural inline wrapping for mixed inline content.",
+    "labels": [
+      "CLA Signed"
+    ],
+    "isFeatured": true,
+    "organizationUrl": "https://github.com/facebook"
+  },
+  {
+    "id": "adshieldanalyzer-agro1-4",
+    "organization": "Adshieldanalyzer",
+    "orgKey": "adshieldanalyzer",
+    "organizationUrl": "https://github.com/AdshieldAnalyzer",
+    "repository": "AdshieldAnalyzer/Agro1",
+    "repositoryUrl": "https://github.com/AdshieldAnalyzer/Agro1",
+    "prNumber": 4,
+    "title": "Implement multi-language support for the homepage",
+    "url": "https://github.com/AdshieldAnalyzer/Agro1/pull/4",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "MAINTENANCE",
+    "contribution": "Implemented multi-language translation support for all homepage components. Updated translations.js and UI components to handle localized content dynamically. Configured project settings to support the new translation…",
+    "description": "Implemented multi-language translation support for all homepage components. Updated translations.js and UI components to handle localized content dynamically. Configured project settings to support the new translation…",
     "labels": [],
-    "isFeatured": true
+    "date": "2026-02-19T18:50:21.000Z",
+    "mergedAt": "2026-02-19T18:50:21.000Z",
+    "displayDate": "Feb 19, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
+    "id": "adshieldanalyzer-agro1-3",
+    "organization": "Adshieldanalyzer",
+    "orgKey": "adshieldanalyzer",
+    "organizationUrl": "https://github.com/AdshieldAnalyzer",
+    "repository": "AdshieldAnalyzer/Agro1",
+    "repositoryUrl": "https://github.com/AdshieldAnalyzer/Agro1",
+    "prNumber": 3,
+    "title": "Implement internationalization system for multi-language support",
+    "url": "https://github.com/AdshieldAnalyzer/Agro1/pull/3",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "MAINTENANCE",
+    "contribution": "Implemented a complete internationalization (i18n) system using a zero-dependency context provider. Added support for multi-language management across the application. Updated project configuration files to support th…",
+    "description": "Implemented a complete internationalization (i18n) system using a zero-dependency context provider. Added support for multi-language management across the application. Updated project configuration files to support th…",
+    "labels": [],
+    "date": "2026-02-19T18:24:00.000Z",
+    "mergedAt": "2026-02-19T18:24:00.000Z",
+    "displayDate": "Feb 19, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
+    "id": "adshieldanalyzer-agro1-2",
+    "organization": "Adshieldanalyzer",
+    "orgKey": "adshieldanalyzer",
+    "organizationUrl": "https://github.com/AdshieldAnalyzer",
+    "repository": "AdshieldAnalyzer/Agro1",
+    "repositoryUrl": "https://github.com/AdshieldAnalyzer/Agro1",
+    "prNumber": 2,
+    "title": "Enable voice accessibility features",
+    "url": "https://github.com/AdshieldAnalyzer/Agro1/pull/2",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "MAINTENANCE",
+    "contribution": "Integrated voice accessibility features to improve hands-free navigation and app interaction. Resolved a routing conflict by moving the VoiceAccessibilityProvider inside the BrowserRouter context. Updated project conf…",
+    "description": "Integrated voice accessibility features to improve hands-free navigation and app interaction. Resolved a routing conflict by moving the VoiceAccessibilityProvider inside the BrowserRouter context. Updated project conf…",
+    "labels": [],
+    "date": "2026-02-19T17:45:05.000Z",
+    "mergedAt": "2026-02-19T17:45:05.000Z",
+    "displayDate": "Feb 19, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
+    "id": "adshieldanalyzer-agro1-1",
+    "organization": "Adshieldanalyzer",
+    "orgKey": "adshieldanalyzer",
+    "organizationUrl": "https://github.com/AdshieldAnalyzer",
+    "repository": "AdshieldAnalyzer/Agro1",
+    "repositoryUrl": "https://github.com/AdshieldAnalyzer/Agro1",
+    "prNumber": 1,
+    "title": "Update project configuration settings",
+    "url": "https://github.com/AdshieldAnalyzer/Agro1/pull/1",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "MAINTENANCE",
+    "contribution": "Updated settings.json to refine project configuration and environment defaults.",
+    "description": "Updated settings.json to refine project configuration and environment defaults.",
+    "labels": [],
+    "date": "2026-02-19T17:19:30.000Z",
+    "mergedAt": "2026-02-19T17:19:30.000Z",
+    "displayDate": "Feb 19, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
+    "id": "0x5t4l1n-face-rec-1",
+    "organization": "0x5t4l1n",
+    "orgKey": "0x5t4l1n",
+    "organizationUrl": "https://github.com/0x5t4l1n",
+    "repository": "0x5t4l1n/Face_rec",
+    "repositoryUrl": "https://github.com/0x5t4l1n/Face_rec",
+    "prNumber": 1,
+    "title": "Hiiiiii",
+    "url": "https://github.com/0x5t4l1n/Face_rec/pull/1",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "MAINTENANCE",
+    "contribution": "Hiiiiii",
+    "description": "Hiiiiii",
+    "labels": [],
+    "date": "2026-02-04T16:06:51.000Z",
+    "mergedAt": "2026-02-04T16:06:51.000Z",
+    "displayDate": "Feb 4, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
+    "id": "0x5t4l1n-hunting-15",
+    "organization": "0x5t4l1n",
+    "orgKey": "0x5t4l1n",
+    "organizationUrl": "https://github.com/0x5t4l1n",
+    "repository": "0x5t4l1n/hunting",
+    "repositoryUrl": "https://github.com/0x5t4l1n/hunting",
+    "prNumber": 15,
+    "title": "Hiii",
+    "url": "https://github.com/0x5t4l1n/hunting/pull/15",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "MAINTENANCE",
+    "contribution": "Hiii",
+    "description": "Hiii",
+    "labels": [],
+    "date": "2026-01-30T17:04:14.000Z",
+    "mergedAt": "2026-01-30T17:04:14.000Z",
+    "displayDate": "Jan 30, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
+    "id": "harshitha-sree-eassay-about-machine-learning-1",
+    "organization": "Harshitha Sree",
+    "orgKey": "harshitha-sree",
+    "organizationUrl": "https://github.com/HARSHITHA-SREE",
+    "repository": "HARSHITHA-SREE/EASSAY-ABOUT-MACHINE-LEARNING",
+    "repositoryUrl": "https://github.com/HARSHITHA-SREE/EASSAY-ABOUT-MACHINE-LEARNING",
+    "prNumber": 1,
+    "title": "hi",
+    "url": "https://github.com/HARSHITHA-SREE/EASSAY-ABOUT-MACHINE-LEARNING/pull/1",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "MAINTENANCE",
+    "contribution": "hi",
+    "description": "hi",
+    "labels": [],
+    "date": "2026-01-22T05:06:44.000Z",
+    "mergedAt": "2026-01-22T05:06:44.000Z",
+    "displayDate": "Jan 22, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
+    "id": "rohitsurya2809-vaultedge-2",
+    "organization": "Rohitsurya2809",
+    "orgKey": "rohitsurya2809",
+    "organizationUrl": "https://github.com/RohitSurya2809",
+    "repository": "RohitSurya2809/vaultedge",
+    "repositoryUrl": "https://github.com/RohitSurya2809/vaultedge",
+    "prNumber": 2,
+    "title": "hi",
+    "url": "https://github.com/RohitSurya2809/vaultedge/pull/2",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "MAINTENANCE",
+    "contribution": "hi",
+    "description": "hi",
+    "labels": [],
+    "date": "2026-01-22T04:52:22.000Z",
+    "mergedAt": "2026-01-22T04:52:22.000Z",
+    "displayDate": "Jan 22, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
   }
 ]
