@@ -4,7 +4,7 @@
 
 The Open Source section is statically rendered from `data/open-source-contributions.json`. That file is the last-known-good snapshot, not a browser-side API cache. The existing Liquid Glass portfolio components continue to render from that dataset if GitHub is temporarily unavailable.
 
-The sync job uses GitHub's official API and the search query `author:reginaldalfret is:pr is:merged`. When the workflow token is available it uses GraphQL and follows cursors in batches of 100. For local use without a token, it uses REST issue search and checks the individual pull-request records for `merged`, `closed`, the author, and the authoritative `merged_at` timestamp.
+The sync job uses GitHub's official REST Search API and the query `author:reginaldalfret is:pr is:merged`. It paginates in batches of 100 search results and reads the `pull_request.merged_at` timestamp returned by each search result. The author, repository, canonical PR URL, closed state, and merge timestamp are validated before a record can be displayed. It uses the same REST path both locally and in GitHub Actions so results are not accidentally restricted by a repository-scoped GraphQL search context.
 
 ## What is retrieved
 
@@ -18,7 +18,7 @@ The script excludes the personal `reginaldalfret` repository owner, the `SierreT
 - The workflow uses GitHub's built-in short-lived `GITHUB_TOKEN`; no permanent personal access token is required in repository secrets.
 - With the workflow's `contents: write` permission, Actions commits `data/open-source-contributions.json` only when content changes. The repository's existing Vercel Git integration can then build/deploy that commit.
 - There is no per-visitor API polling. The browser receives only the public, checked-in snapshot.
-- API requests have timeouts and bounded retries. If the search fails completely, the script exits without touching the snapshot. If an individual REST detail cannot be fetched, that item is skipped and existing known-good entries are preserved. Search API results have a 1,000-hit ceiling; if that ceiling is reached, the script logs a warning and never clears the existing dataset.
+- API requests have timeouts and bounded retries. If the search fails completely, the script exits without touching the snapshot. The sync avoids one REST detail request per PR by using authoritative merge metadata already present in search results. Results with a missing `pull_request.merged_at` are skipped. Search API results have a 1,000-hit ceiling; if that ceiling is reached, the script logs a warning and never clears the existing dataset. A zero-eligible-record refresh is treated as a failure when an existing snapshot is present, so a broken query cannot silently report success.
 - The workflow logs the number of verified PRs, distinct repositories, ecosystems, additions, metadata updates, and configured exclusions.
 
 ## Security and permissions
@@ -36,13 +36,13 @@ npm run typecheck
 npm run build
 ```
 
-Set `GITHUB_TOKEN` in the local shell if you want authenticated GraphQL pagination. The script is safe to run without it for smaller public datasets. A dry run that compares generated output without writing is available via:
+Set `GITHUB_TOKEN` in the local shell for authenticated REST searches and the higher API rate limit. The script also supports unauthenticated searches for smaller public datasets. A dry run that compares generated output without writing is available via:
 
 ```bash
 node scripts/sync-open-source.mjs --check
 ```
 
-The test suite uses mocked GraphQL responses and deterministic fixtures; it does not depend on a live GitHub request.
+The test suite uses mocked REST search responses and deterministic fixtures; it does not depend on a live GitHub request.
 
 ## Failure behavior and debugging
 
