@@ -38,34 +38,70 @@ const FEATURED_PR_IDS = [
 
 export function OpenSourceSection() {
   const [activeFilter, setActiveFilter] = useState<FilterKey>("all");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedOrganization, setSelectedOrganization] = useState("all");
+  const [selectedYear, setSelectedYear] = useState("all");
+  const [viewMode, setViewMode] = useState<"all" | "featured" | "recent">("all");
+
+  const mergedContributions = useMemo(
+    () => OPEN_SOURCE_CONTRIBUTIONS.filter((item) => item.status === "merged"),
+    []
+  );
+
+  const organizationOptions = useMemo(
+    () => Array.from(new Set(mergedContributions.map((item) => item.organization))).sort((a, b) => a.localeCompare(b)),
+    [mergedContributions]
+  );
+
+  const yearOptions = useMemo(
+    () => Array.from(new Set(mergedContributions.map((item) => new Date(item.mergedAt ?? item.date).getUTCFullYear().toString()))).sort((a, b) => Number(b) - Number(a)),
+    [mergedContributions]
+  );
+
+  const organizationLineup = useMemo(
+    () => Array.from(new Map(mergedContributions.map((item) => [item.organization, item])).values()).sort((a, b) => a.organization.localeCompare(b.organization)),
+    [mergedContributions]
+  );
 
   const filteredContributions = useMemo(() => {
-    return OPEN_SOURCE_CONTRIBUTIONS.filter((item) => {
-      if (activeFilter === "all") return true;
-      if (activeFilter === "docs") return item.category === "DOCS";
-      if (activeFilter === "bug-fix") return item.category === "BUG FIX";
-      if (activeFilter === "test") return item.category === "TEST";
-      if (activeFilter === "infra") return item.category === "INFRA";
-      if (activeFilter === "build") return item.category === "BUILD";
-      if (activeFilter === "maintenance") return item.category === "MAINTENANCE";
+    let results = mergedContributions.filter((item) => {
+      const categoryMatches =
+        activeFilter === "all" ||
+        (activeFilter === "docs" && item.category === "DOCS") ||
+        (activeFilter === "bug-fix" && item.category === "BUG FIX") ||
+        (activeFilter === "test" && item.category === "TEST") ||
+        (activeFilter === "infra" && item.category === "INFRA") ||
+        (activeFilter === "build" && item.category === "BUILD") ||
+        (activeFilter === "maintenance" && item.category === "MAINTENANCE");
+      if (!categoryMatches) return false;
+
+      const term = searchQuery.trim().toLowerCase();
+      if (term && !`${item.title} ${item.repository} ${item.organization} #${item.prNumber}`.toLowerCase().includes(term)) return false;
+      if (selectedOrganization !== "all" && item.organization !== selectedOrganization) return false;
+      if (selectedYear !== "all" && new Date(item.mergedAt ?? item.date).getUTCFullYear().toString() !== selectedYear) return false;
+      if (viewMode === "featured" && !FEATURED_PR_IDS.includes(item.id) && !item.isFeatured) return false;
       return true;
     });
-  }, [activeFilter]);
 
-  const featuredContributions = useMemo(() => {
-    return FEATURED_PR_IDS.map((id) =>
-      OPEN_SOURCE_CONTRIBUTIONS.find((c) => c.id === id)
-    ).filter(Boolean) as OpenSourceContribution[];
-  }, []);
+    results = results.sort((a, b) => new Date(b.mergedAt ?? b.date).getTime() - new Date(a.mergedAt ?? a.date).getTime());
+    return viewMode === "recent" ? results.slice(0, 10) : results;
+  }, [activeFilter, mergedContributions, searchQuery, selectedOrganization, selectedYear, viewMode]);
+
+  const featuredContributions = useMemo(
+    () => [...mergedContributions]
+      .filter((item) => FEATURED_PR_IDS.includes(item.id) || item.isFeatured)
+      .sort((a, b) => new Date(b.mergedAt ?? b.date).getTime() - new Date(a.mergedAt ?? a.date).getTime()),
+    [mergedContributions]
+  );
 
   const filterTabs: { id: FilterKey; label: string; count: number }[] = [
-    { id: "all", label: "All Contributions", count: OPEN_SOURCE_METRICS.totalContributions },
-    { id: "docs", label: "Documentation", count: OPEN_SOURCE_CONTRIBUTIONS.filter((c) => c.category === "DOCS").length },
-    { id: "bug-fix", label: "Bug Fixes", count: OPEN_SOURCE_CONTRIBUTIONS.filter((c) => c.category === "BUG FIX").length },
-    { id: "test", label: "Test Suites", count: OPEN_SOURCE_CONTRIBUTIONS.filter((c) => c.category === "TEST").length },
-    { id: "infra", label: "Infrastructure", count: OPEN_SOURCE_CONTRIBUTIONS.filter((c) => c.category === "INFRA").length },
-    { id: "build", label: "Build & Packaging", count: OPEN_SOURCE_CONTRIBUTIONS.filter((c) => c.category === "BUILD").length },
-    { id: "maintenance", label: "Maintenance", count: OPEN_SOURCE_CONTRIBUTIONS.filter((c) => c.category === "MAINTENANCE").length },
+    { id: "all", label: "All Contributions", count: OPEN_SOURCE_METRICS.mergedCount },
+    { id: "docs", label: "Documentation", count: mergedContributions.filter((c) => c.category === "DOCS").length },
+    { id: "bug-fix", label: "Bug Fixes", count: mergedContributions.filter((c) => c.category === "BUG FIX").length },
+    { id: "test", label: "Test Suites", count: mergedContributions.filter((c) => c.category === "TEST").length },
+    { id: "infra", label: "Infrastructure", count: mergedContributions.filter((c) => c.category === "INFRA").length },
+    { id: "build", label: "Build & Packaging", count: mergedContributions.filter((c) => c.category === "BUILD").length },
+    { id: "maintenance", label: "Maintenance", count: mergedContributions.filter((c) => c.category === "MAINTENANCE").length },
   ];
 
   return (
@@ -78,7 +114,7 @@ export function OpenSourceSection() {
         eyebrow="Primary Engineering Signal"
         title="Open-Source"
         highlight="Contributions"
-        description="Real upstream engineering work across major open-source ecosystems. Verified pull requests merged directly into production repositories maintained by Apple, NVIDIA, Meta, GitHub, Intel, Cloudflare, Docker, Microsoft Azure, IBM, Apache, SAP, AMD, Airbnb, Qualcomm, Pinterest, Uber, JRuby, NASA, AWS, Microsoft .NET, and Adobe."
+        description="A daily refreshed archive of verified merged upstream pull requests across open-source projects and company ecosystems. The cards use GitHub's public API metadata while preserving a last-known-good snapshot if GitHub is temporarily unavailable."
         badgeColor="cyan"
       />
 
@@ -112,7 +148,7 @@ export function OpenSourceSection() {
           </p>
         </motion.div>
 
-        {/* Metric 2: Total Documented Contributions */}
+        {/* Metric 2: Distinct Repositories */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -130,13 +166,13 @@ export function OpenSourceSection() {
             </span>
           </div>
           <div className="text-3xl sm:text-5xl font-black text-white tracking-tight font-mono">
-            {OPEN_SOURCE_METRICS.totalContributions}
+            {OPEN_SOURCE_METRICS.totalRepositories}
           </div>
           <div className="text-xs sm:text-sm text-neutral-300 font-medium mt-1">
-            Documented Contributions
+            Repositories Contributed To
           </div>
           <p className="text-[11px] text-neutral-400 mt-2 leading-relaxed">
-            Spanning bug fixes, tests, CI infra, build systems, maintenance, and docs.
+            Distinct repositories represented by the verified merged pull requests.
           </p>
         </motion.div>
 
@@ -161,12 +197,41 @@ export function OpenSourceSection() {
             {OPEN_SOURCE_METRICS.totalOrganizations}
           </div>
           <div className="text-xs sm:text-sm text-neutral-300 font-medium mt-1">
-            Organization Labels
+            Unique Ecosystems
           </div>
           <p className="text-[11px] text-neutral-400 mt-2 leading-relaxed">
-            Fortune 100 enterprises, hyperscalers, and premier foundations.
+            Companies and independent project ecosystems are counted once, even when multiple repositories or PRs are represented.
           </p>
         </motion.div>
+      </div>
+
+      
+      {/* One entry per normalized ecosystem; repeated PRs do not duplicate a logo. */}
+      <div className="mb-12 sm:mb-16 p-5 sm:p-7 rounded-2xl sm:rounded-3xl glass-3 border border-white/10">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-5">
+          <div>
+            <h3 className="text-sm sm:text-base font-bold text-white tracking-tight">Open-Source Ecosystems</h3>
+            <p className="text-xs text-neutral-400 mt-1">A unique, alphabetized lineup derived from the visible merged-PR dataset.</p>
+          </div>
+          <span className="text-[10px] font-mono uppercase tracking-wider text-cyan-300">{organizationLineup.length} ecosystems</span>
+        </div>
+        <div className="flex flex-wrap gap-2.5">
+          {organizationLineup.map((item) => (
+            <a
+              key={item.organization}
+              href={item.organizationUrl ?? `https://github.com/${item.repository.split("/")[0]}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-3 py-2 rounded-xl glass-2 border border-white/10 hover:border-cyan-400/40 text-xs text-neutral-200 hover:text-white transition-colors"
+              aria-label={`Open the GitHub page for ${item.organization}`}
+            >
+              <span className="flex h-5 w-5 items-center justify-center" style={{ color: item.theme.accent }}>
+                <OrgLogo orgKey={item.orgKey} className="w-4 h-4" />
+              </span>
+              <span>{item.organization}</span>
+            </a>
+          ))}
+        </div>
       </div>
 
       {/* Featured Spotlight Section */}
@@ -255,6 +320,58 @@ export function OpenSourceSection() {
         </div>
       </div>
 
+      {/* Search and scoped contribution views */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 mb-5">
+        <label className="block">
+          <span className="sr-only">Search by pull-request title, repository, or ecosystem</span>
+          <input
+            type="search"
+            value={searchQuery}
+            onChange={(event) => setSearchQuery(event.target.value)}
+            placeholder="Search PR title or repository…"
+            className="w-full min-w-0 px-4 py-3 rounded-xl glass-2 border border-white/10 text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:border-cyan-400/50"
+            aria-label="Search merged pull requests by title, repository, or ecosystem"
+          />
+        </label>
+        <label className="block">
+          <span className="sr-only">Filter by ecosystem</span>
+          <select
+            value={selectedOrganization}
+            onChange={(event) => setSelectedOrganization(event.target.value)}
+            className="w-full min-w-0 px-3 py-3 rounded-xl glass-2 border border-white/10 text-sm text-white bg-neutral-950 focus:outline-none focus:border-cyan-400/50"
+            aria-label="Filter by ecosystem"
+          >
+            <option value="all">All ecosystems</option>
+            {organizationOptions.map((organization) => <option key={organization} value={organization}>{organization}</option>)}
+          </select>
+        </label>
+        <label className="block">
+          <span className="sr-only">Filter by merge year</span>
+          <select
+            value={selectedYear}
+            onChange={(event) => setSelectedYear(event.target.value)}
+            className="w-full min-w-0 px-3 py-3 rounded-xl glass-2 border border-white/10 text-sm text-white bg-neutral-950 focus:outline-none focus:border-cyan-400/50"
+            aria-label="Filter by merge year"
+          >
+            <option value="all">All years</option>
+            {yearOptions.map((year) => <option key={year} value={year}>{year}</option>)}
+          </select>
+        </label>
+        <label className="block">
+          <span className="sr-only">Choose which contributions to show</span>
+          <select
+            value={viewMode}
+            onChange={(event) => setViewMode(event.target.value as "all" | "featured" | "recent")}
+            className="w-full min-w-0 px-3 py-3 rounded-xl glass-2 border border-white/10 text-sm text-white bg-neutral-950 focus:outline-none focus:border-cyan-400/50"
+            aria-label="Choose all, featured, or recent contributions"
+          >
+            <option value="all">All matching PRs</option>
+            <option value="featured">Featured PRs</option>
+            <option value="recent">10 most recent</option>
+          </select>
+        </label>
+      </div>
+
       {/* Filter Tabs Bar */}
       <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-3 mb-8 sm:mb-10 no-scrollbar">
         {filterTabs.map((tab) => {
@@ -284,8 +401,14 @@ export function OpenSourceSection() {
         })}
       </div>
 
-      {/* All Contributions Grid (21 records) */}
+      {/* Filtered merged PR cards are generated from the synchronized contribution dataset. */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        {filteredContributions.length === 0 ? (
+          <div className="md:col-span-2 lg:col-span-3 p-8 rounded-2xl glass-3 border border-white/10 text-center">
+            <p className="text-sm font-semibold text-white">No merged pull requests match these filters.</p>
+            <p className="text-xs text-neutral-400 mt-2">Try a different search, ecosystem, year, or view.</p>
+          </div>
+        ) : (
         <AnimatePresence mode="popLayout">
           {filteredContributions.map((item, index) => {
             return (
@@ -378,6 +501,7 @@ export function OpenSourceSection() {
             );
           })}
         </AnimatePresence>
+        )}
       </div>
 
       {/* Why Open Source & Engineering Rigor Narrative */}
@@ -401,7 +525,7 @@ export function OpenSourceSection() {
           </h3>
 
           <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
-            Open-source contribution is core to how I practice engineering: diving into large unfamiliar codebases, diagnosing production edge-cases, aligning test suites with upstream invariants, and proposing surgical patches through public code reviews with maintainers across Apple, NVIDIA, Meta, GitHub, Intel, Cloudflare, Microsoft Azure, IBM, Docker, SAP, Apache, AMD, Airbnb, Qualcomm, Pinterest, Uber, JRuby, NASA, AWS, Microsoft .NET, and Adobe.
+            Open-source contribution is core to how I practice engineering: diving into unfamiliar codebases, diagnosing edge cases, aligning tests with upstream expectations, and proposing focused patches through public code review. This collection is synchronized from merged pull requests and keeps project ecosystems distinct from corporate identities.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs text-neutral-300">
@@ -449,7 +573,10 @@ export function OpenSourceSection() {
             </a>
 
             <span className="text-xs font-mono text-neutral-400">
-              Verified on GitHub &bull; 21 Merged Pull Requests Across 21 Organizations
+              {OPEN_SOURCE_METRICS.summaryStatement}
+            </span>
+            <span className="w-full text-[10px] font-mono text-neutral-500">
+              Daily GitHub Actions sync configured; the latest published dataset remains available if the API is temporarily unavailable.
             </span>
           </div>
         </div>
