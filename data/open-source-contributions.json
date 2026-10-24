@@ -1,5 +1,63 @@
 [
   {
+    "id": "salesforce-tough-cookie-659",
+    "organization": "Salesforce",
+    "orgKey": "salesforce",
+    "organizationUrl": "https://github.com/salesforce",
+    "repository": "salesforce/tough-cookie",
+    "repositoryUrl": "https://github.com/salesforce/tough-cookie",
+    "prNumber": 659,
+    "title": "feat: introduce PrefixSecurityMode string literal union type",
+    "url": "https://github.com/salesforce/tough-cookie/pull/659",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "MAINTENANCE",
+    "contribution": "RFC 6265bis-22 introduces cookie prefixes (Secure-, Host-). tough-cookie supports three enforcement modes for these prefixes: silent, strict, and unsafe-disabled. Currently the prefixSecurity option is typed as string…",
+    "description": "RFC 6265bis-22 introduces cookie prefixes (Secure-, Host-). tough-cookie supports three enforcement modes for these prefixes: silent, strict, and unsafe-disabled. Currently the prefixSecurity option is typed as string…",
+    "labels": [
+      "cla:signed"
+    ],
+    "date": "2026-10-23T18:14:42.000Z",
+    "mergedAt": "2026-10-23T18:14:42.000Z",
+    "displayDate": "Oct 23, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
+    "id": "google-budoux-1458",
+    "organization": "Google",
+    "orgKey": "google",
+    "organizationUrl": "https://github.com/google",
+    "repository": "google/budoux",
+    "repositoryUrl": "https://github.com/google/budoux",
+    "prNumber": 1458,
+    "title": "fix(py): drop boundaries before and after existing ZWSPs in HTMLChunkResolver",
+    "url": "https://github.com/google/budoux/pull/1458",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "BUG FIX",
+    "contribution": "Problem When source HTML text contains an existing Zero Width Space (\\u200b), HTMLChunkResolver dropped only boundaries at i + 1. If a chunk boundary occurred immediately before the ZWSP (index i, such as when a chunk…",
+    "description": "Problem When source HTML text contains an existing Zero Width Space (\\u200b), HTMLChunkResolver dropped only boundaries at i + 1. If a chunk boundary occurred immediately before the ZWSP (index i, such as when a chunk…",
+    "labels": [],
+    "date": "2026-10-23T13:20:16.000Z",
+    "mergedAt": "2026-10-23T13:20:16.000Z",
+    "displayDate": "Oct 23, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
     "id": "cloudflare-cfssl-1451",
     "organization": "Cloudflare",
     "orgKey": "cloudflare",
