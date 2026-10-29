@@ -1,5 +1,33 @@
 [
   {
+    "id": "snapchat-ts-inject-30",
+    "organization": "Snapchat",
+    "orgKey": "snapchat",
+    "organizationUrl": "https://github.com/Snapchat",
+    "repository": "Snapchat/ts-inject",
+    "repositoryUrl": "https://github.com/Snapchat/ts-inject",
+    "prNumber": 30,
+    "title": "fix(entries): support symbol tokens in container operations",
+    "url": "https://github.com/Snapchat/ts-inject/pull/30",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "BUG FIX",
+    "contribution": "Enables full support for Symbol tokens across container operations by updating chainedForEach and chainedKeys in src/entries.ts.",
+    "description": "Enables full support for Symbol tokens across container operations by updating chainedForEach and chainedKeys in src/entries.ts.",
+    "labels": [],
+    "date": "2026-10-28T11:17:48.000Z",
+    "mergedAt": "2026-10-28T11:17:48.000Z",
+    "displayDate": "Oct 28, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
     "id": "microsoft-semantic-kernel-14472",
     "organization": "Microsoft",
     "orgKey": "microsoft",
@@ -1612,10 +1640,10 @@
     "id": "meta-stylex-1899",
     "organization": "Meta",
     "orgKey": "meta",
-    "repository": "facebook/stylex",
+    "repository": "meta/stylex",
     "prNumber": 1899,
     "title": "fix(docs): avoid inline-flex on heading anchor links",
-    "url": "https://github.com/facebook/stylex/pull/1899",
+    "url": "https://github.com/meta/stylex/pull/1899",
     "status": "merged",
     "statusLabel": "Merged",
     "category": "DOCS",
@@ -1629,7 +1657,7 @@
       "textColor": "text-blue-400",
       "badgeBg": "bg-blue-500/10 border-blue-500/30 text-blue-300"
     },
-    "repositoryUrl": "https://github.com/facebook/stylex",
+    "repositoryUrl": "https://github.com/meta/stylex",
     "mergedAt": "2026-09-23T22:17:00.000Z",
     "description": "Removed problematic inline-flex/gap styling from heading anchor links to preserve natural inline wrapping for mixed inline content.",
     "labels": [
