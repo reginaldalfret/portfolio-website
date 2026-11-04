@@ -1,5 +1,33 @@
 [
   {
+    "id": "azure-azure-verified-modules-managed-files-55",
+    "organization": "Microsoft Azure",
+    "orgKey": "azure",
+    "organizationUrl": "https://github.com/Azure",
+    "repository": "Azure/azure-verified-modules-managed-files",
+    "repositoryUrl": "https://github.com/Azure/azure-verified-modules-managed-files",
+    "prNumber": 55,
+    "title": "docs(avm-tf-lifecycle): align 0.x.y versioning rule with SNFR17",
+    "url": "https://github.com/Azure/azure-verified-modules-managed-files/pull/55",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "DOCS",
+    "contribution": "Under \"The 0.x.y versioning rule\" in terraform/root/.github/skills/avm-tf-lifecycle/SKILL.md, the practical implications previously stated that non-breaking features bump the patch segment (0.1.0 - 0.1.1).",
+    "description": "Under \"The 0.x.y versioning rule\" in terraform/root/.github/skills/avm-tf-lifecycle/SKILL.md, the practical implications previously stated that non-breaking features bump the patch segment (0.1.0 - 0.1.1).",
+    "labels": [],
+    "date": "2026-11-03T23:24:41.000Z",
+    "mergedAt": "2026-11-03T23:24:41.000Z",
+    "displayDate": "Nov 3, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
     "id": "googlecloudplatform-professional-services-data-validator-1863",
     "organization": "Googlecloudplatform",
     "orgKey": "googlecloudplatform",
