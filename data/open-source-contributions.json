@@ -1,5 +1,33 @@
 [
   {
+    "id": "netflix-spectator-1307",
+    "organization": "Netflix",
+    "orgKey": "netflix",
+    "organizationUrl": "https://github.com/Netflix",
+    "repository": "Netflix/spectator",
+    "repositoryUrl": "https://github.com/Netflix/spectator",
+    "prNumber": 1307,
+    "title": "histogram: ignore negative amounts and support batch updates in PercentileTimer",
+    "url": "https://github.com/Netflix/spectator/pull/1307",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "MAINTENANCE",
+    "contribution": "Summary In PercentileTimer, negative durations were unconditionally passed to bucket resolution and incremented the bucket count for min (bucket 0 by default), while the underlying Timer dropped them according to the…",
+    "description": "Summary In PercentileTimer, negative durations were unconditionally passed to bucket resolution and incremented the bucket count for min (bucket 0 by default), while the underlying Timer dropped them according to the…",
+    "labels": [],
+    "date": "2026-11-05T17:31:27.000Z",
+    "mergedAt": "2026-11-05T17:31:27.000Z",
+    "displayDate": "Nov 5, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
     "id": "netflix-atlas-2011",
     "organization": "Netflix",
     "orgKey": "netflix",
