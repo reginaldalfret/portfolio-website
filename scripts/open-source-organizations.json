@@ -47,10 +47,18 @@
     "mozilla": "Mozilla",
     "microsoft": "Microsoft",
     "google": "Google",
+    "googlecloudplatform": "Google Cloud",
+    "dell": "Dell",
+    "openai": "OpenAI",
+    "snapchat": "Snapchat",
+    "spotify": "Spotify",
+    "cisco": "Cisco",
+    "netflix": "Netflix",
     "cloudflare-workers": "Cloudflare"
   },
   "repositoryDisplayNames": {
-    "docling-project/docling-pipelines": "IBM"
+    "docling-project/docling-pipelines": "IBM",
+    "GoogleCloudPlatform/professional-services-data-validator": "Google Cloud"
   },
   "ownerLogoKeys": {
     "airbnb": "airbnb",
@@ -78,7 +86,16 @@
     "adobe": "adobe",
     "stripe": "stripe",
     "salesforce": "salesforce",
-    "ogx-ai": "ogx-ai"
+    "ogx-ai": "ogx-ai",
+    "google": "google",
+    "googlecloudplatform": "googlecloud",
+    "dell": "dell",
+    "openai": "openai",
+    "snapchat": "snapchat",
+    "spotify": "spotify",
+    "cisco": "cisco",
+    "netflix": "netflix",
+    "microsoft": "microsoft"
   },
   "ownerOrganizationUrls": {
     "airbnb": "https://github.com/airbnb",
@@ -106,6 +123,15 @@
     "adobe": "https://github.com/adobe",
     "stripe": "https://github.com/stripe",
     "salesforce": "https://github.com/salesforce",
-    "ogx-ai": "https://github.com/ogx-ai"
+    "ogx-ai": "https://github.com/ogx-ai",
+    "google": "https://github.com/google",
+    "googlecloudplatform": "https://github.com/GoogleCloudPlatform",
+    "dell": "https://github.com/dell",
+    "openai": "https://github.com/openai",
+    "snapchat": "https://github.com/Snapchat",
+    "spotify": "https://github.com/spotify",
+    "cisco": "https://github.com/cisco",
+    "netflix": "https://github.com/Netflix",
+    "microsoft": "https://github.com/microsoft"
   }
 }
