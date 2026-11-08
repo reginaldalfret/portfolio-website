@@ -631,7 +631,133 @@ export function ResumePortfolio() {
               </div>
             </div>
 
-            {/* 4. Footer */}
+            {/* 4. Multi-Stack Switcher Section */}
+            <section className="py-8 border-b border-white/10" id="stacks">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                <div>
+                  <h2 className="text-base sm:text-lg font-bold text-white flex items-center gap-2 tracking-wide">
+                    <span className="text-cyan-400">⚡</span> MULTI-STACK ARCHITECTURE
+                  </h2>
+                  <p className="text-xs text-neutral-400 font-mono">
+                    Explore this exact resume portfolio built across 3 modern engineering stacks
+                  </p>
+                </div>
+                <div className="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md border border-emerald-500/20 self-start sm:self-auto">
+                  3 Stacks Available
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+                {/* Next.js (Active Production) */}
+                <div className="p-4 rounded-2xl bg-gradient-to-b from-cyan-500/10 to-transparent border border-cyan-500/30 relative flex flex-col justify-between space-y-3">
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-2">
+                        <div className="w-7 h-7 rounded-lg bg-black border border-white/20 flex items-center justify-center font-black text-xs text-white">
+                          N
+                        </div>
+                        <span className="font-bold text-sm text-white">Next.js 14</span>
+                      </div>
+                      <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                        ACTIVE
+                      </span>
+                    </div>
+                    <p className="text-xs text-neutral-300 mb-2">
+                      React 18 · App Router · TypeScript · Tailwind CSS · Vercel Edge.
+                    </p>
+                    <div className="text-[11px] font-mono text-cyan-400">
+                      Production: <span className="text-white">reginaldalfret.tech</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 pt-2 border-t border-white/10 text-xs font-mono">
+                    <a
+                      href="https://github.com/reginaldalfret/portfolio-website"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-neutral-400 hover:text-white transition-colors"
+                    >
+                      <Github className="w-3.5 h-3.5" />
+                      <span>GitHub</span>
+                    </a>
+                    <span className="text-neutral-600">•</span>
+                    <span className="text-cyan-300 font-semibold">Current Website</span>
+                  </div>
+                </div>
+
+                {/* Nuxt 3 */}
+                <div className="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border border-white/10 hover:border-emerald-500/30 transition-all flex flex-col justify-between space-y-3">
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-2">
+                        <div className="w-7 h-7 rounded-lg bg-emerald-950/60 border border-emerald-500/30 flex items-center justify-center font-bold text-xs text-emerald-400">
+                          ▲
+                        </div>
+                        <span className="font-bold text-sm text-white">Nuxt 3</span>
+                      </div>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                        VUE 3
+                      </span>
+                    </div>
+                    <p className="text-xs text-neutral-400 mb-2">
+                      Vue 3 · Nitro Engine · Vite · TypeScript · Composition API.
+                    </p>
+                    <div className="text-[11px] font-mono text-neutral-400">
+                      Local: <a href="http://localhost:3000" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">localhost:3000</a>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 pt-2 border-t border-white/10 text-xs font-mono">
+                    <a
+                      href="https://github.com/reginaldalfret/portfolio-nuxt"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-neutral-300 hover:text-emerald-400 transition-colors"
+                    >
+                      <Github className="w-3.5 h-3.5" />
+                      <span>View GitHub Repo</span>
+                      <ExternalLink className="w-3 h-3 ml-0.5" />
+                    </a>
+                  </div>
+                </div>
+
+                {/* Django */}
+                <div className="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border border-white/10 hover:border-amber-500/30 transition-all flex flex-col justify-between space-y-3">
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-2">
+                        <div className="w-7 h-7 rounded-lg bg-emerald-950/60 border border-emerald-600/30 flex items-center justify-center font-bold text-xs text-emerald-300">
+                          dj
+                        </div>
+                        <span className="font-bold text-sm text-white">Django 6</span>
+                      </div>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                        PYTHON 3.13
+                      </span>
+                    </div>
+                    <p className="text-xs text-neutral-400 mb-2">
+                      Python 3.13 · Django SSR Templates · Tailwind CSS · Static Engine.
+                    </p>
+                    <div className="text-[11px] font-mono text-neutral-400">
+                      Local: <a href="http://localhost:8001" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline">localhost:8001</a>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 pt-2 border-t border-white/10 text-xs font-mono">
+                    <a
+                      href="https://github.com/reginaldalfret/portfolio-django"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-neutral-300 hover:text-amber-400 transition-colors"
+                    >
+                      <Github className="w-3.5 h-3.5" />
+                      <span>View GitHub Repo</span>
+                      <ExternalLink className="w-3 h-3 ml-0.5" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* 5. Footer */}
             <footer className="pt-6 text-center text-xs text-neutral-500 space-y-2 font-mono">
               <div className="text-neutral-400">
                 BETTER TECHNOLOGY • HAPPIER PEOPLE
@@ -648,6 +774,40 @@ export function ResumePortfolio() {
             </footer>
           </div>
         )}
+      </div>
+
+      {/* Floating Bottom Stack Dock */}
+      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 no-print">
+        <div className="backdrop-blur-xl bg-black/85 border border-white/15 rounded-full py-1.5 px-3.5 shadow-2xl flex items-center gap-2 text-xs">
+          <span className="text-[11px] font-mono text-neutral-400 hidden sm:inline">Stack:</span>
+          
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 font-semibold shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+            Next.js
+          </span>
+
+          <a
+            href="https://github.com/reginaldalfret/portfolio-nuxt"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
+            title="Switch to Nuxt 3 (Vue 3)"
+          >
+            <span>Nuxt 3</span>
+            <ExternalLink className="w-3 h-3 opacity-60" />
+          </a>
+
+          <a
+            href="https://github.com/reginaldalfret/portfolio-django"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
+            title="Switch to Django (Python 3.13)"
+          >
+            <span>Django</span>
+            <ExternalLink className="w-3 h-3 opacity-60" />
+          </a>
+        </div>
       </div>
     </div>
   );
