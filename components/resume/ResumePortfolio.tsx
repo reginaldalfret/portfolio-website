@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import {
   Mail,
@@ -66,6 +66,31 @@ const CONTRIBUTIONS = [
 
 export function ResumePortfolio() {
   const [viewMode, setViewMode] = useState<"interactive" | "pdf">("interactive");
+  const [activeStack, setActiveStack] = useState<"nextjs" | "nuxt" | "django">("nextjs");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const stack = params.get("stack");
+      if (stack === "nuxt" || stack === "django" || stack === "nextjs") {
+        setActiveStack(stack);
+      }
+    }
+  }, []);
+
+  const switchStack = (stack: "nextjs" | "nuxt" | "django") => {
+    setActiveStack(stack);
+    if (typeof window !== "undefined") {
+      const url = new URL(window.location.href);
+      if (stack === "nextjs") {
+        url.searchParams.delete("stack");
+      } else {
+        url.searchParams.set("stack", stack);
+      }
+      window.history.pushState({}, "", url.toString());
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   const handlePrint = () => {
     if (typeof window !== "undefined") {
@@ -139,7 +164,103 @@ export function ResumePortfolio() {
 
       {/* Main Container */}
       <div className="max-w-6xl mx-auto">
-        {viewMode === "pdf" ? (
+        {activeStack === "nuxt" ? (
+          /* Nuxt 3 Live Stack Mode */
+          <div className="backdrop-blur-2xl bg-neutral-950/90 border border-emerald-500/40 rounded-3xl p-4 sm:p-6 shadow-2xl space-y-4">
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-white/10">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-emerald-950/80 border border-emerald-500/50 flex items-center justify-center font-bold text-sm text-emerald-400">
+                  ▲
+                </div>
+                <div>
+                  <div className="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+                    <span>Nuxt 3 Architecture</span>
+                    <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      LIVE
+                    </span>
+                  </div>
+                  <div className="text-xs text-neutral-400 font-mono">
+                    Vue 3 (Composition API) · Nitro Engine · Vite · Tailwind CSS
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => switchStack("nextjs")}
+                  className="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-white/10 hover:bg-white/15 text-white transition-colors"
+                >
+                  ← Back to Next.js
+                </button>
+                <a
+                  href="/stacks/nuxt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 transition-colors"
+                >
+                  <span>Open Full Window</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+            <div className="w-full h-[85vh] rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
+              <iframe
+                src="/stacks/nuxt/"
+                className="w-full h-full border-0"
+                title="Nuxt 3 Stack Portfolio"
+              />
+            </div>
+          </div>
+        ) : activeStack === "django" ? (
+          /* Django Live Stack Mode */
+          <div className="backdrop-blur-2xl bg-neutral-950/90 border border-amber-500/40 rounded-3xl p-4 sm:p-6 shadow-2xl space-y-4">
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-white/10">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-emerald-950/80 border border-emerald-600/50 flex items-center justify-center font-bold text-sm text-emerald-300">
+                  dj
+                </div>
+                <div>
+                  <div className="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+                    <span>Django 6 Architecture</span>
+                    <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                      LIVE
+                    </span>
+                  </div>
+                  <div className="text-xs text-neutral-400 font-mono">
+                    Python 3.13.17 · Django SSR Templates · Tailwind CSS
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => switchStack("nextjs")}
+                  className="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-white/10 hover:bg-white/15 text-white transition-colors"
+                >
+                  ← Back to Next.js
+                </button>
+                <a
+                  href="/stacks/django"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 transition-colors"
+                >
+                  <span>Open Full Window</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+            <div className="w-full h-[85vh] rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
+              <iframe
+                src="/stacks/django/"
+                className="w-full h-full border-0"
+                title="Django Stack Portfolio"
+              />
+            </div>
+          </div>
+        ) : viewMode === "pdf" ? (
           /* PDF Viewer Mode */
           <div className="backdrop-blur-2xl bg-neutral-950/80 border border-white/10 rounded-3xl p-4 sm:p-6 shadow-2xl">
             <div className="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
@@ -670,18 +791,26 @@ export function ResumePortfolio() {
                       Production: <span className="text-white">reginaldalfret.tech</span>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 pt-2 border-t border-white/10 text-xs font-mono">
-                    <a
-                      href="https://github.com/reginaldalfret/portfolio-website"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-neutral-400 hover:text-white transition-colors"
+                  <div className="space-y-2 pt-2 border-t border-white/10">
+                    <button
+                      type="button"
+                      onClick={() => switchStack("nextjs")}
+                      className="w-full py-2 px-3 rounded-xl bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 font-semibold text-xs shadow-sm flex items-center justify-center gap-1.5"
                     >
-                      <Github className="w-3.5 h-3.5" />
-                      <span>GitHub</span>
-                    </a>
-                    <span className="text-neutral-600">•</span>
-                    <span className="text-cyan-300 font-semibold">Current Website</span>
+                      <Sparkles className="w-3.5 h-3.5" />
+                      <span>Viewing Active Next.js</span>
+                    </button>
+                    <div className="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
+                      <a
+                        href="https://github.com/reginaldalfret/portfolio-website"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 hover:text-white transition-colors"
+                      >
+                        <Github className="w-3.5 h-3.5" />
+                        <span>Source Code</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
 
@@ -703,20 +832,38 @@ export function ResumePortfolio() {
                       Vue 3 · Nitro Engine · Vite · TypeScript · Composition API.
                     </p>
                     <div className="text-[11px] font-mono text-neutral-400">
-                      Local: <a href="http://localhost:3000" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">localhost:3000</a>
+                      Live Route: <a href="/stacks/nuxt" className="text-emerald-400 hover:underline">/stacks/nuxt</a>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 pt-2 border-t border-white/10 text-xs font-mono">
-                    <a
-                      href="https://github.com/reginaldalfret/portfolio-nuxt"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-neutral-300 hover:text-emerald-400 transition-colors"
+                  <div className="space-y-2 pt-2 border-t border-white/10">
+                    <button
+                      type="button"
+                      onClick={() => switchStack("nuxt")}
+                      className="w-full py-2 px-3 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 font-semibold text-xs border border-emerald-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
                     >
-                      <Github className="w-3.5 h-3.5" />
-                      <span>View GitHub Repo</span>
-                      <ExternalLink className="w-3 h-3 ml-0.5" />
-                    </a>
+                      <Sparkles className="w-3.5 h-3.5" />
+                      <span>Switch to Nuxt 3 Website</span>
+                    </button>
+                    <div className="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
+                      <a
+                        href="/stacks/nuxt"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 hover:text-emerald-400 transition-colors"
+                      >
+                        <span>Direct Link</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                      <a
+                        href="https://github.com/reginaldalfret/portfolio-nuxt"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 hover:text-white transition-colors"
+                      >
+                        <Github className="w-3.5 h-3.5" />
+                        <span>Source Code</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
 
@@ -738,20 +885,38 @@ export function ResumePortfolio() {
                       Python 3.13 · Django SSR Templates · Tailwind CSS · Static Engine.
                     </p>
                     <div className="text-[11px] font-mono text-neutral-400">
-                      Local: <a href="http://localhost:8001" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline">localhost:8001</a>
+                      Live Route: <a href="/stacks/django" className="text-amber-400 hover:underline">/stacks/django</a>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 pt-2 border-t border-white/10 text-xs font-mono">
-                    <a
-                      href="https://github.com/reginaldalfret/portfolio-django"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-neutral-300 hover:text-amber-400 transition-colors"
+                  <div className="space-y-2 pt-2 border-t border-white/10">
+                    <button
+                      type="button"
+                      onClick={() => switchStack("django")}
+                      className="w-full py-2 px-3 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-semibold text-xs border border-amber-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
                     >
-                      <Github className="w-3.5 h-3.5" />
-                      <span>View GitHub Repo</span>
-                      <ExternalLink className="w-3 h-3 ml-0.5" />
-                    </a>
+                      <Sparkles className="w-3.5 h-3.5" />
+                      <span>Switch to Django Website</span>
+                    </button>
+                    <div className="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
+                      <a
+                        href="/stacks/django"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 hover:text-amber-400 transition-colors"
+                      >
+                        <span>Direct Link</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                      <a
+                        href="https://github.com/reginaldalfret/portfolio-django"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 hover:text-white transition-colors"
+                      >
+                        <Github className="w-3.5 h-3.5" />
+                        <span>Source Code</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -778,35 +943,47 @@ export function ResumePortfolio() {
 
       {/* Floating Bottom Stack Dock */}
       <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 no-print">
-        <div className="backdrop-blur-xl bg-black/85 border border-white/15 rounded-full py-1.5 px-3.5 shadow-2xl flex items-center gap-2 text-xs">
+        <div className="backdrop-blur-xl bg-black/90 border border-white/20 rounded-full py-1.5 px-3.5 shadow-2xl flex items-center gap-2 text-xs">
           <span className="text-[11px] font-mono text-neutral-400 hidden sm:inline">Stack:</span>
           
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 font-semibold shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-            Next.js
-          </span>
-
-          <a
-            href="https://github.com/reginaldalfret/portfolio-nuxt"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
-            title="Switch to Nuxt 3 (Vue 3)"
+          <button
+            type="button"
+            onClick={() => switchStack("nextjs")}
+            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-semibold transition-all ${
+              activeStack === "nextjs"
+                ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 shadow-sm"
+                : "text-neutral-400 hover:text-white hover:bg-white/10"
+            }`}
           >
+            {activeStack === "nextjs" && <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />}
+            <span>Next.js</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => switchStack("nuxt")}
+            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-semibold transition-all ${
+              activeStack === "nuxt"
+                ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-sm"
+                : "text-neutral-400 hover:text-white hover:bg-white/10"
+            }`}
+          >
+            {activeStack === "nuxt" && <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />}
             <span>Nuxt 3</span>
-            <ExternalLink className="w-3 h-3 opacity-60" />
-          </a>
+          </button>
 
-          <a
-            href="https://github.com/reginaldalfret/portfolio-django"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
-            title="Switch to Django (Python 3.13)"
+          <button
+            type="button"
+            onClick={() => switchStack("django")}
+            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-semibold transition-all ${
+              activeStack === "django"
+                ? "bg-amber-500/20 text-amber-300 border border-amber-500/40 shadow-sm"
+                : "text-neutral-400 hover:text-white hover:bg-white/10"
+            }`}
           >
+            {activeStack === "django" && <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />}
             <span>Django</span>
-            <ExternalLink className="w-3 h-3 opacity-60" />
-          </a>
+          </button>
         </div>
       </div>
     </div>
