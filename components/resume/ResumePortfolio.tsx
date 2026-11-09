@@ -101,7 +101,8 @@ export function ResumePortfolio() {
   return (
     <div className="min-h-screen bg-[#050505] text-neutral-100 py-6 px-3 sm:px-6 md:px-8 selection:bg-cyan-500/20 selection:text-cyan-200">
       {/* Top Floating Glass Command Bar */}
-      <div className="max-w-6xl mx-auto mb-6 sticky top-3 z-50">
+      <div className={`mx-auto mb-4 sm:mb-6 sticky top-2 sm:top-3 z-50 transition-all ${activeStack === "nextjs" ? "max-w-6xl px-2 sm:px-4" : "w-full max-w-[99vw] 2xl:max-w-[1750px] px-1 sm:px-2"}`}>
+
         <div className="backdrop-blur-xl bg-black/60 border border-white/10 rounded-2xl p-2.5 sm:p-3 shadow-2xl flex flex-wrap items-center justify-between gap-3">
           {/* Brand Identity */}
           <div className="flex items-center gap-2.5 px-2">
@@ -163,10 +164,11 @@ export function ResumePortfolio() {
       </div>
 
       {/* Main Container */}
-      <div className="max-w-6xl mx-auto">
+      <div className={`mx-auto w-full transition-all ${activeStack === "nextjs" ? "max-w-6xl px-2 sm:px-4" : "w-full max-w-[99vw] 2xl:max-w-[1750px] px-1 sm:px-2"}`}>
+
         {activeStack === "nuxt" ? (
           /* Nuxt 3 Live Stack Mode */
-          <div className="backdrop-blur-2xl bg-neutral-950/90 border border-emerald-500/40 rounded-3xl p-4 sm:p-6 shadow-2xl space-y-4">
+          <div className="backdrop-blur-2xl bg-neutral-950/90 border border-emerald-500/40 rounded-2xl sm:rounded-3xl p-2.5 sm:p-4 md:p-5 shadow-2xl space-y-3 sm:space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-white/10">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-xl bg-emerald-950/80 border border-emerald-500/50 flex items-center justify-center font-bold text-sm text-emerald-400">
@@ -204,7 +206,7 @@ export function ResumePortfolio() {
                 </a>
               </div>
             </div>
-            <div className="w-full h-[85vh] rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
+            <div className="w-full h-[88vh] sm:h-[91vh] md:h-[93vh] rounded-xl sm:rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
               <iframe
                 src="/stacks/nuxt"
                 className="w-full h-full border-0"
@@ -214,7 +216,7 @@ export function ResumePortfolio() {
           </div>
         ) : activeStack === "django" ? (
           /* Django Live Stack Mode */
-          <div className="backdrop-blur-2xl bg-neutral-950/90 border border-amber-500/40 rounded-3xl p-4 sm:p-6 shadow-2xl space-y-4">
+          <div className="backdrop-blur-2xl bg-neutral-950/90 border border-amber-500/40 rounded-2xl sm:rounded-3xl p-2.5 sm:p-4 md:p-5 shadow-2xl space-y-3 sm:space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-white/10">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-xl bg-emerald-950/80 border border-emerald-600/50 flex items-center justify-center font-bold text-sm text-emerald-300">
@@ -252,7 +254,7 @@ export function ResumePortfolio() {
                 </a>
               </div>
             </div>
-            <div className="w-full h-[85vh] rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
+            <div className="w-full h-[88vh] sm:h-[91vh] md:h-[93vh] rounded-xl sm:rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
               <iframe
                 src="/stacks/django"
                 className="w-full h-full border-0"
@@ -262,7 +264,7 @@ export function ResumePortfolio() {
           </div>
         ) : activeStack === "springboot" ? (
           /* Spring Boot Live Stack Mode */
-          <div className="backdrop-blur-2xl bg-neutral-950/90 border border-lime-500/40 rounded-3xl p-4 sm:p-6 shadow-2xl space-y-4">
+          <div className="backdrop-blur-2xl bg-neutral-950/90 border border-lime-500/40 rounded-2xl sm:rounded-3xl p-2.5 sm:p-4 md:p-5 shadow-2xl space-y-3 sm:space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-white/10">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-xl bg-lime-950/80 border border-lime-500/50 flex items-center justify-center font-bold text-sm text-lime-400">
@@ -300,7 +302,7 @@ export function ResumePortfolio() {
                 </a>
               </div>
             </div>
-            <div className="w-full h-[85vh] rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
+            <div className="w-full h-[88vh] sm:h-[91vh] md:h-[93vh] rounded-xl sm:rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
               <iframe
                 src="/stacks/springboot"
                 className="w-full h-full border-0"
@@ -310,7 +312,7 @@ export function ResumePortfolio() {
           </div>
         ) : activeStack === "laravel" ? (
           /* Laravel Live Stack Mode */
-          <div className="backdrop-blur-2xl bg-neutral-950/90 border border-red-500/40 rounded-3xl p-4 sm:p-6 shadow-2xl space-y-4">
+          <div className="backdrop-blur-2xl bg-neutral-950/90 border border-red-500/40 rounded-2xl sm:rounded-3xl p-2.5 sm:p-4 md:p-5 shadow-2xl space-y-3 sm:space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-white/10">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-xl bg-red-950/80 border border-red-500/50 flex items-center justify-center font-bold text-sm text-red-400">
@@ -348,7 +350,7 @@ export function ResumePortfolio() {
                 </a>
               </div>
             </div>
-            <div className="w-full h-[85vh] rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
+            <div className="w-full h-[88vh] sm:h-[91vh] md:h-[93vh] rounded-xl sm:rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
               <iframe
                 src="/stacks/laravel"
                 className="w-full h-full border-0"
@@ -358,7 +360,7 @@ export function ResumePortfolio() {
           </div>
         ) : activeStack === "rails" ? (
           /* Ruby on Rails Live Stack Mode */
-          <div className="backdrop-blur-2xl bg-neutral-950/90 border border-rose-500/40 rounded-3xl p-4 sm:p-6 shadow-2xl space-y-4">
+          <div className="backdrop-blur-2xl bg-neutral-950/90 border border-rose-500/40 rounded-2xl sm:rounded-3xl p-2.5 sm:p-4 md:p-5 shadow-2xl space-y-3 sm:space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-white/10">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-xl bg-rose-950/80 border border-rose-500/50 flex items-center justify-center font-bold text-sm text-rose-400">
@@ -396,7 +398,7 @@ export function ResumePortfolio() {
                 </a>
               </div>
             </div>
-            <div className="w-full h-[85vh] rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
+            <div className="w-full h-[88vh] sm:h-[91vh] md:h-[93vh] rounded-xl sm:rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
               <iframe
                 src="/stacks/rails"
                 className="w-full h-full border-0"
@@ -406,7 +408,7 @@ export function ResumePortfolio() {
           </div>
         ) : activeStack === "angular" ? (
           /* Angular Live Stack Mode */
-          <div className="backdrop-blur-2xl bg-neutral-950/90 border border-red-600/40 rounded-3xl p-4 sm:p-6 shadow-2xl space-y-4">
+          <div className="backdrop-blur-2xl bg-neutral-950/90 border border-red-600/40 rounded-2xl sm:rounded-3xl p-2.5 sm:p-4 md:p-5 shadow-2xl space-y-3 sm:space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-white/10">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-xl bg-red-950/80 border border-red-500/50 flex items-center justify-center font-bold text-sm text-red-400">
@@ -444,7 +446,7 @@ export function ResumePortfolio() {
                 </a>
               </div>
             </div>
-            <div className="w-full h-[85vh] rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
+            <div className="w-full h-[88vh] sm:h-[91vh] md:h-[93vh] rounded-xl sm:rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
               <iframe
                 src="/stacks/angular"
                 className="w-full h-full border-0"
@@ -454,7 +456,7 @@ export function ResumePortfolio() {
           </div>
         ) : activeStack === "blazor" ? (
           /* Blazor WASM Live Stack Mode */
-          <div className="backdrop-blur-2xl bg-neutral-950/90 border border-purple-600/40 rounded-3xl p-4 sm:p-6 shadow-2xl space-y-4">
+          <div className="backdrop-blur-2xl bg-neutral-950/90 border border-purple-600/40 rounded-2xl sm:rounded-3xl p-2.5 sm:p-4 md:p-5 shadow-2xl space-y-3 sm:space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-white/10">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-xl bg-purple-950/80 border border-purple-500/50 flex items-center justify-center font-bold text-sm text-purple-300">
@@ -492,7 +494,7 @@ export function ResumePortfolio() {
                 </a>
               </div>
             </div>
-            <div className="w-full h-[85vh] rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
+            <div className="w-full h-[88vh] sm:h-[91vh] md:h-[93vh] rounded-xl sm:rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
               <iframe
                 src="/stacks/blazor"
                 className="w-full h-full border-0"
@@ -502,7 +504,7 @@ export function ResumePortfolio() {
           </div>
         ) : activeStack === "buffalo" ? (
           /* Go Buffalo Live Stack Mode */
-          <div className="backdrop-blur-2xl bg-neutral-950/90 border border-cyan-500/40 rounded-3xl p-4 sm:p-6 shadow-2xl space-y-4">
+          <div className="backdrop-blur-2xl bg-neutral-950/90 border border-cyan-500/40 rounded-2xl sm:rounded-3xl p-2.5 sm:p-4 md:p-5 shadow-2xl space-y-3 sm:space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-white/10">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-xl bg-cyan-950/80 border border-cyan-500/50 flex items-center justify-center font-bold text-sm text-cyan-300">
@@ -540,7 +542,7 @@ export function ResumePortfolio() {
                 </a>
               </div>
             </div>
-            <div className="w-full h-[85vh] rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
+            <div className="w-full h-[88vh] sm:h-[91vh] md:h-[93vh] rounded-xl sm:rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
               <iframe
                 src="/stacks/buffalo"
                 className="w-full h-full border-0"
@@ -550,7 +552,7 @@ export function ResumePortfolio() {
           </div>
         ) : activeStack === "leptos" ? (
           /* Leptos Live Stack Mode */
-          <div className="backdrop-blur-2xl bg-neutral-950/90 border border-orange-500/40 rounded-3xl p-4 sm:p-6 shadow-2xl space-y-4">
+          <div className="backdrop-blur-2xl bg-neutral-950/90 border border-orange-500/40 rounded-2xl sm:rounded-3xl p-2.5 sm:p-4 md:p-5 shadow-2xl space-y-3 sm:space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-white/10">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-xl bg-orange-950/80 border border-orange-500/50 flex items-center justify-center font-bold text-sm text-orange-400">
@@ -588,7 +590,7 @@ export function ResumePortfolio() {
                 </a>
               </div>
             </div>
-            <div className="w-full h-[85vh] rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
+            <div className="w-full h-[88vh] sm:h-[91vh] md:h-[93vh] rounded-xl sm:rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
               <iframe
                 src="/stacks/leptos"
                 className="w-full h-full border-0"
@@ -598,7 +600,7 @@ export function ResumePortfolio() {
           </div>
         ) : activeStack === "jaspr" ? (
           /* Jaspr Live Stack Mode */
-          <div className="backdrop-blur-2xl bg-neutral-950/90 border border-emerald-500/40 rounded-3xl p-4 sm:p-6 shadow-2xl space-y-4">
+          <div className="backdrop-blur-2xl bg-neutral-950/90 border border-emerald-500/40 rounded-2xl sm:rounded-3xl p-2.5 sm:p-4 md:p-5 shadow-2xl space-y-3 sm:space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-white/10">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-xl bg-emerald-950/80 border border-emerald-500/50 flex items-center justify-center font-bold text-sm text-emerald-400">
@@ -636,7 +638,7 @@ export function ResumePortfolio() {
                 </a>
               </div>
             </div>
-            <div className="w-full h-[85vh] rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
+            <div className="w-full h-[88vh] sm:h-[91vh] md:h-[93vh] rounded-xl sm:rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
               <iframe
                 src="/stacks/jaspr"
                 className="w-full h-full border-0"
@@ -646,7 +648,7 @@ export function ResumePortfolio() {
           </div>
         ) : activeStack === "vapor" ? (
           /* Vapor Live Stack Mode */
-          <div className="backdrop-blur-2xl bg-neutral-950/90 border border-sky-500/40 rounded-3xl p-4 sm:p-6 shadow-2xl space-y-4">
+          <div className="backdrop-blur-2xl bg-neutral-950/90 border border-sky-500/40 rounded-2xl sm:rounded-3xl p-2.5 sm:p-4 md:p-5 shadow-2xl space-y-3 sm:space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-white/10">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-xl bg-sky-950/80 border border-sky-500/50 flex items-center justify-center font-bold text-sm text-sky-400">
@@ -683,7 +685,7 @@ export function ResumePortfolio() {
                 </a>
               </div>
             </div>
-            <div className="w-full h-[85vh] rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
+            <div className="w-full h-[88vh] sm:h-[91vh] md:h-[93vh] rounded-xl sm:rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
               <iframe
                 src="/stacks/vapor"
                 className="w-full h-full border-0"
@@ -1855,14 +1857,14 @@ export function ResumePortfolio() {
       </div>
 
       {/* Floating Bottom Stack Dock */}
-      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 no-print">
-        <div className="backdrop-blur-xl bg-black/90 border border-white/20 rounded-full py-1.5 px-3.5 shadow-2xl flex items-center gap-2 text-xs">
+      <div className="fixed bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-50 no-print w-[96vw] sm:w-auto max-w-[96vw]">
+        <div className="backdrop-blur-xl bg-black/90 border border-white/20 rounded-full py-1.5 px-3 shadow-2xl flex items-center gap-1.5 sm:gap-2 text-xs overflow-x-auto no-scrollbar scroll-smooth">
           <span className="text-[11px] font-mono text-neutral-400 hidden sm:inline">Stack:</span>
           
           <button
             type="button"
             onClick={() => switchStack("nextjs")}
-            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-semibold transition-all ${
+            className={`shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full font-semibold transition-all ${
               activeStack === "nextjs"
                 ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 shadow-sm"
                 : "text-neutral-400 hover:text-white hover:bg-white/10"
@@ -1875,7 +1877,7 @@ export function ResumePortfolio() {
           <button
             type="button"
             onClick={() => switchStack("nuxt")}
-            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-semibold transition-all ${
+            className={`shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full font-semibold transition-all ${
               activeStack === "nuxt"
                 ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-sm"
                 : "text-neutral-400 hover:text-white hover:bg-white/10"
@@ -1888,7 +1890,7 @@ export function ResumePortfolio() {
           <button
             type="button"
             onClick={() => switchStack("django")}
-            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-semibold transition-all ${
+            className={`shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full font-semibold transition-all ${
               activeStack === "django"
                 ? "bg-amber-500/20 text-amber-300 border border-amber-500/40 shadow-sm"
                 : "text-neutral-400 hover:text-white hover:bg-white/10"
@@ -1901,7 +1903,7 @@ export function ResumePortfolio() {
           <button
             type="button"
             onClick={() => switchStack("springboot")}
-            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-semibold transition-all ${
+            className={`shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full font-semibold transition-all ${
               activeStack === "springboot"
                 ? "bg-lime-500/20 text-lime-300 border border-lime-500/40 shadow-sm"
                 : "text-neutral-400 hover:text-white hover:bg-white/10"
@@ -1914,7 +1916,7 @@ export function ResumePortfolio() {
           <button
             type="button"
             onClick={() => switchStack("laravel")}
-            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-semibold transition-all ${
+            className={`shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full font-semibold transition-all ${
               activeStack === "laravel"
                 ? "bg-red-500/20 text-red-300 border border-red-500/40 shadow-sm"
                 : "text-neutral-400 hover:text-white hover:bg-white/10"
@@ -1927,7 +1929,7 @@ export function ResumePortfolio() {
           <button
             type="button"
             onClick={() => switchStack("rails")}
-            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-semibold transition-all ${
+            className={`shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full font-semibold transition-all ${
               activeStack === "rails"
                 ? "bg-rose-500/20 text-rose-300 border border-rose-500/40 shadow-sm"
                 : "text-neutral-400 hover:text-white hover:bg-white/10"
@@ -1940,7 +1942,7 @@ export function ResumePortfolio() {
           <button
             type="button"
             onClick={() => switchStack("angular")}
-            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-semibold transition-all ${
+            className={`shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full font-semibold transition-all ${
               activeStack === "angular"
                 ? "bg-red-500/20 text-red-300 border border-red-500/40 shadow-sm"
                 : "text-neutral-400 hover:text-white hover:bg-white/10"
@@ -1953,7 +1955,7 @@ export function ResumePortfolio() {
           <button
             type="button"
             onClick={() => switchStack("blazor")}
-            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-semibold transition-all ${
+            className={`shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full font-semibold transition-all ${
               activeStack === "blazor"
                 ? "bg-purple-600/20 text-purple-300 border border-purple-500/40 shadow-sm"
                 : "text-neutral-400 hover:text-white hover:bg-white/10"
@@ -1966,7 +1968,7 @@ export function ResumePortfolio() {
           <button
             type="button"
             onClick={() => switchStack("buffalo")}
-            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-semibold transition-all ${
+            className={`shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full font-semibold transition-all ${
               activeStack === "buffalo"
                 ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 shadow-sm"
                 : "text-neutral-400 hover:text-white hover:bg-white/10"
@@ -1979,7 +1981,7 @@ export function ResumePortfolio() {
           <button
             type="button"
             onClick={() => switchStack("leptos")}
-            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-semibold transition-all ${
+            className={`shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full font-semibold transition-all ${
               activeStack === "leptos"
                 ? "bg-orange-500/20 text-orange-300 border border-orange-500/40 shadow-sm"
                 : "text-neutral-400 hover:text-white hover:bg-white/10"
@@ -1992,7 +1994,7 @@ export function ResumePortfolio() {
           <button
             type="button"
             onClick={() => switchStack("jaspr")}
-            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-semibold transition-all ${
+            className={`shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full font-semibold transition-all ${
               activeStack === "jaspr"
                 ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-sm"
                 : "text-neutral-400 hover:text-white hover:bg-white/10"
@@ -2005,7 +2007,7 @@ export function ResumePortfolio() {
           <button
             type="button"
             onClick={() => switchStack("vapor")}
-            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-semibold transition-all ${
+            className={`shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full font-semibold transition-all ${
               activeStack === "vapor"
                 ? "bg-sky-500/20 text-sky-300 border border-sky-500/40 shadow-sm"
                 : "text-neutral-400 hover:text-white hover:bg-white/10"

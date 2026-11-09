@@ -72,6 +72,29 @@
         display: flex; flex-direction: column; align-items: center; justify-content: center;
         background: #050505; color: #fff; z-index: 9999;
       }
+    
+    /* Full-screen & smartphone responsive optimizations */
+    html, body {
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    html.is-embedded body,
+    .is-embedded main,
+    .is-embedded section {
+      max-width: 100% !important;
+    }
+    html.is-embedded .floating-stack-dock,
+    .is-embedded .floating-stack-dock {
+      display: none !important;
+    }
+
     </style>
 </head>
 <body class="bg-[#050505] text-neutral-100 min-h-screen">
@@ -90,5 +113,667 @@
         <a href="" class="reload text-purple-400 underline">Reload</a>
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
-</body>
+      <!-- Floating Bottom Stack Dock (All 12 Stacks - Mobile Optimized) -->
+      <div class="floating-stack-dock fixed bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-50 no-print w-[96vw] sm:w-auto max-w-[96vw]">
+        <div class="backdrop-blur-xl bg-black/90 border border-white/20 rounded-full py-1.5 px-3 shadow-2xl flex items-center gap-1.5 sm:gap-2 text-xs overflow-x-auto no-scrollbar scroll-smooth">
+          <span class="text-[11px] font-mono text-neutral-400 hidden md:inline shrink-0">Stack:</span>
+          <a href="/" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Next.js"><span>Next.js</span></a>
+          <a href="/stacks/nuxt" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Nuxt 3"><span>Nuxt 3</span></a>
+          <a href="/stacks/django" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Django"><span>Django</span></a>
+          <a href="/stacks/springboot" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Spring Boot"><span>Spring Boot</span></a>
+          <a href="/stacks/laravel" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Laravel"><span>Laravel</span></a>
+          <a href="/stacks/rails" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Rails"><span>Rails</span></a>
+          <a href="/stacks/angular" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Angular"><span>Angular</span></a>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 font-semibold shadow-sm shrink-0 whitespace-nowrap"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span><span>Blazor</span></span>
+          <a href="/stacks/buffalo" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Buffalo"><span>Buffalo</span></a>
+          <a href="/stacks/leptos" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Leptos"><span>Leptos</span></a>
+          <a href="/stacks/jaspr" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Jaspr"><span>Jaspr</span></a>
+          <a href="/stacks/vapor" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Vapor"><span>Vapor</span></a>
+        </div>
+      </div>
+      <!-- 4. Multi-Stack Architecture Section -->
+      <section class="py-8 border-b border-white/10" id="stacks">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+          <div>
+            <h2 class="text-base sm:text-lg font-bold text-white flex items-center gap-2 tracking-wide">
+              <span class="text-cyan-400">⚡</span> MULTI-STACK ARCHITECTURE
+            </h2>
+            <p class="text-xs text-neutral-400 font-mono">
+              Explore this exact resume portfolio built across 12 modern engineering stacks
+            </p>
+          </div>
+          <div class="text-[11px] font-mono text-red-400 bg-red-500/10 px-2.5 py-1 rounded-md border border-red-500/20 self-start sm:self-auto">
+            12 Stacks Available
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5">
+          <!-- Next.js 14 Card -->
+          <div class="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border-white/10 hover:border-cyan-500/30 border transition-all flex flex-col justify-between space-y-3">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2">
+                  <div class="w-7 h-7 rounded-lg bg-black border-white/20 text-white border flex items-center justify-center font-bold text-xs">
+                    N
+                  </div>
+                  <span class="font-bold text-sm text-white">Next.js 14</span>
+                </div>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                  PRODUCTION
+                </span>
+              </div>
+              <p class="text-xs text-neutral-400 mb-2 leading-relaxed">
+                React 18 · App Router · TypeScript · Tailwind CSS · Vercel Edge.
+              </p>
+              <div class="text-[11px] font-mono text-cyan-400">
+                Production: reginaldalfret.tech
+              </div>
+            </div>
+            <div class="space-y-2 pt-2 border-t border-white/10">
+              
+                <a
+                  href="/"
+                  target="_top"
+                  class="w-full py-2 px-3 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 font-semibold text-xs border border-cyan-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+                >
+                  <span>Switch to Next.js 14 Website</span>
+                </a>
+              <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
+                <a
+                  href="/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 hover:text-cyan-400 transition-colors"
+                >
+                  <span>Direct Link ↗</span>
+                </a>
+                <a
+                  href="https://github.com/reginaldalfret/portfolio-website"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 hover:text-white transition-colors"
+                >
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nuxt 3 Card -->
+          <div class="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border-white/10 hover:border-emerald-500/30 border transition-all flex flex-col justify-between space-y-3">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2">
+                  <div class="w-7 h-7 rounded-lg bg-emerald-950/80 border-emerald-500/50 text-emerald-400 border flex items-center justify-center font-bold text-xs">
+                    ▲
+                  </div>
+                  <span class="font-bold text-sm text-white">Nuxt 3</span>
+                </div>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  VUE 3
+                </span>
+              </div>
+              <p class="text-xs text-neutral-400 mb-2 leading-relaxed">
+                Vue 3 · Nitro Engine · Vite · TypeScript · Composition API.
+              </p>
+              <div class="text-[11px] font-mono text-emerald-400">
+                Live Route: /stacks/nuxt
+              </div>
+            </div>
+            <div class="space-y-2 pt-2 border-t border-white/10">
+              
+                <a
+                  href="/stacks/nuxt"
+                  target="_top"
+                  class="w-full py-2 px-3 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 font-semibold text-xs border border-emerald-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+                >
+                  <span>Switch to Nuxt 3 Website</span>
+                </a>
+              <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
+                <a
+                  href="/stacks/nuxt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 hover:text-emerald-400 transition-colors"
+                >
+                  <span>Direct Link ↗</span>
+                </a>
+                <a
+                  href="https://github.com/reginaldalfret/portfolio-nuxt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 hover:text-white transition-colors"
+                >
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Django 6 Card -->
+          <div class="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border-white/10 hover:border-amber-500/30 border transition-all flex flex-col justify-between space-y-3">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2">
+                  <div class="w-7 h-7 rounded-lg bg-emerald-950/80 border-emerald-600/50 text-emerald-300 border flex items-center justify-center font-bold text-xs">
+                    dj
+                  </div>
+                  <span class="font-bold text-sm text-white">Django 6</span>
+                </div>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                  PYTHON 3.13
+                </span>
+              </div>
+              <p class="text-xs text-neutral-400 mb-2 leading-relaxed">
+                Python 3.13 · Django SSR Templates · Tailwind CSS · Static Engine.
+              </p>
+              <div class="text-[11px] font-mono text-amber-400">
+                Live Route: /stacks/django
+              </div>
+            </div>
+            <div class="space-y-2 pt-2 border-t border-white/10">
+              
+                <a
+                  href="/stacks/django"
+                  target="_top"
+                  class="w-full py-2 px-3 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-semibold text-xs border border-amber-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+                >
+                  <span>Switch to Django 6 Website</span>
+                </a>
+              <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
+                <a
+                  href="/stacks/django"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 hover:text-amber-400 transition-colors"
+                >
+                  <span>Direct Link ↗</span>
+                </a>
+                <a
+                  href="https://github.com/reginaldalfret/portfolio-django"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 hover:text-white transition-colors"
+                >
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Spring Boot Card -->
+          <div class="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border-white/10 hover:border-lime-500/30 border transition-all flex flex-col justify-between space-y-3">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2">
+                  <div class="w-7 h-7 rounded-lg bg-lime-950/60 border-lime-500/40 text-lime-400 border flex items-center justify-center font-bold text-xs">
+                    🍃
+                  </div>
+                  <span class="font-bold text-sm text-white">Spring Boot</span>
+                </div>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-lime-500/10 text-lime-400 border border-lime-500/20">
+                  JAVA 21
+                </span>
+              </div>
+              <p class="text-xs text-neutral-400 mb-2 leading-relaxed">
+                Java 21 · Spring Boot 3.4 · Thymeleaf SSR · Embedded Tomcat · Maven.
+              </p>
+              <div class="text-[11px] font-mono text-lime-400">
+                Live Route: /stacks/springboot
+              </div>
+            </div>
+            <div class="space-y-2 pt-2 border-t border-white/10">
+              
+                <a
+                  href="/stacks/springboot"
+                  target="_top"
+                  class="w-full py-2 px-3 rounded-xl bg-lime-500/20 hover:bg-lime-500/30 text-lime-300 font-semibold text-xs border border-lime-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+                >
+                  <span>Switch to Spring Boot Website</span>
+                </a>
+              <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
+                <a
+                  href="/stacks/springboot"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 hover:text-lime-400 transition-colors"
+                >
+                  <span>Direct Link ↗</span>
+                </a>
+                <a
+                  href="https://github.com/reginaldalfret/portfolio-springboot"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 hover:text-white transition-colors"
+                >
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Laravel 11/12 Card -->
+          <div class="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border-white/10 hover:border-red-500/30 border transition-all flex flex-col justify-between space-y-3">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2">
+                  <div class="w-7 h-7 rounded-lg bg-red-950/60 border-red-500/40 text-red-400 border flex items-center justify-center font-bold text-xs">
+                    ▲
+                  </div>
+                  <span class="font-bold text-sm text-white">Laravel 11/12</span>
+                </div>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-red-500/10 text-red-400 border border-red-500/20">
+                  PHP 8.4
+                </span>
+              </div>
+              <p class="text-xs text-neutral-400 mb-2 leading-relaxed">
+                PHP 8.4 · Laravel MVC · Blade Templates · Tailwind CSS · Artisan.
+              </p>
+              <div class="text-[11px] font-mono text-red-400">
+                Live Route: /stacks/laravel
+              </div>
+            </div>
+            <div class="space-y-2 pt-2 border-t border-white/10">
+              
+                <a
+                  href="/stacks/laravel"
+                  target="_top"
+                  class="w-full py-2 px-3 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-red-300 font-semibold text-xs border border-red-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+                >
+                  <span>Switch to Laravel 11/12 Website</span>
+                </a>
+              <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
+                <a
+                  href="/stacks/laravel"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 hover:text-red-400 transition-colors"
+                >
+                  <span>Direct Link ↗</span>
+                </a>
+                <a
+                  href="https://github.com/reginaldalfret/portfolio-laravel"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 hover:text-white transition-colors"
+                >
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rails 8 Card -->
+          <div class="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border-white/10 hover:border-rose-500/30 border transition-all flex flex-col justify-between space-y-3">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2">
+                  <div class="w-7 h-7 rounded-lg bg-rose-950/60 border-rose-500/40 text-rose-400 border flex items-center justify-center font-bold text-xs">
+                    💎
+                  </div>
+                  <span class="font-bold text-sm text-white">Rails 8</span>
+                </div>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-rose-500/10 text-rose-400 border border-rose-500/20">
+                  RUBY 3.4
+                </span>
+              </div>
+              <p class="text-xs text-neutral-400 mb-2 leading-relaxed">
+                Ruby 3.4 · Rails 8 · ActionView ERB · Tailwind CSS · Puma.
+              </p>
+              <div class="text-[11px] font-mono text-rose-400">
+                Live Route: /stacks/rails
+              </div>
+            </div>
+            <div class="space-y-2 pt-2 border-t border-white/10">
+              
+                <a
+                  href="/stacks/rails"
+                  target="_top"
+                  class="w-full py-2 px-3 rounded-xl bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 font-semibold text-xs border border-rose-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+                >
+                  <span>Switch to Rails 8 Website</span>
+                </a>
+              <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
+                <a
+                  href="/stacks/rails"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 hover:text-rose-400 transition-colors"
+                >
+                  <span>Direct Link ↗</span>
+                </a>
+                <a
+                  href="https://github.com/reginaldalfret/portfolio-rails"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 hover:text-white transition-colors"
+                >
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Angular Card -->
+          <div class="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border-white/10 hover:border-red-500/30 border transition-all flex flex-col justify-between space-y-3">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2">
+                  <div class="w-7 h-7 rounded-lg bg-red-950/60 border-red-500/40 text-red-400 border flex items-center justify-center font-bold text-xs">
+                    A
+                  </div>
+                  <span class="font-bold text-sm text-white">Angular</span>
+                </div>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-red-500/10 text-red-400 border border-red-500/20">
+                  TS 6.0
+                </span>
+              </div>
+              <p class="text-xs text-neutral-400 mb-2 leading-relaxed">
+                Angular 19/22 · Signals · Standalone Components · Tailwind CSS.
+              </p>
+              <div class="text-[11px] font-mono text-red-400">
+                Live Route: /stacks/angular
+              </div>
+            </div>
+            <div class="space-y-2 pt-2 border-t border-white/10">
+              
+                <a
+                  href="/stacks/angular"
+                  target="_top"
+                  class="w-full py-2 px-3 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-red-300 font-semibold text-xs border border-red-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+                >
+                  <span>Switch to Angular Website</span>
+                </a>
+              <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
+                <a
+                  href="/stacks/angular"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 hover:text-red-400 transition-colors"
+                >
+                  <span>Direct Link ↗</span>
+                </a>
+                <a
+                  href="https://github.com/reginaldalfret/portfolio-angular"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 hover:text-white transition-colors"
+                >
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Blazor Card -->
+          <div class="p-4 rounded-2xl bg-gradient-to-b from-purple-500/10 to-transparent border-purple-500/30 border transition-all flex flex-col justify-between space-y-3">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2">
+                  <div class="w-7 h-7 rounded-lg bg-purple-950/60 border-purple-500/40 text-purple-300 border flex items-center justify-center font-bold text-xs">
+                    B
+                  </div>
+                  <span class="font-bold text-sm text-white">Blazor</span>
+                </div>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                  .NET 8
+                </span>
+              </div>
+              <p class="text-xs text-neutral-400 mb-2 leading-relaxed">
+                .NET 8 · C# Client-Side WASM · Standalone SPA · Tailwind CSS.
+              </p>
+              <div class="text-[11px] font-mono text-purple-400">
+                Live Route: /stacks/blazor
+              </div>
+            </div>
+            <div class="space-y-2 pt-2 border-t border-white/10">
+              
+                <span class="w-full py-2 px-3 rounded-xl bg-purple-500/20 text-purple-300 border border-purple-500/30 font-semibold text-xs shadow-sm flex items-center justify-center gap-1.5">
+                  <span>Viewing Active Blazor</span>
+                </span>
+              <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
+                <a
+                  href="/stacks/blazor"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 hover:text-purple-400 transition-colors"
+                >
+                  <span>Direct Link ↗</span>
+                </a>
+                <a
+                  href="https://github.com/reginaldalfret/portfolio-blazor"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 hover:text-white transition-colors"
+                >
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Buffalo Card -->
+          <div class="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border-white/10 hover:border-cyan-500/30 border transition-all flex flex-col justify-between space-y-3">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2">
+                  <div class="w-7 h-7 rounded-lg bg-cyan-950/60 border-cyan-500/40 text-cyan-300 border flex items-center justify-center font-bold text-xs">
+                    🦬
+                  </div>
+                  <span class="font-bold text-sm text-white">Buffalo</span>
+                </div>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                  GO 1.27
+                </span>
+              </div>
+              <p class="text-xs text-neutral-400 mb-2 leading-relaxed">
+                Go 1.27 · Buffalo Web Framework · Plush SSR · Gorilla Mux · Tailwind CSS.
+              </p>
+              <div class="text-[11px] font-mono text-cyan-400">
+                Live Route: /stacks/buffalo
+              </div>
+            </div>
+            <div class="space-y-2 pt-2 border-t border-white/10">
+              
+                <a
+                  href="/stacks/buffalo"
+                  target="_top"
+                  class="w-full py-2 px-3 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 font-semibold text-xs border border-cyan-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+                >
+                  <span>Switch to Buffalo Website</span>
+                </a>
+              <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
+                <a
+                  href="/stacks/buffalo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 hover:text-cyan-400 transition-colors"
+                >
+                  <span>Direct Link ↗</span>
+                </a>
+                <a
+                  href="https://github.com/reginaldalfret/portfolio-buffalo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 hover:text-white transition-colors"
+                >
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Leptos Card -->
+          <div class="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border-white/10 hover:border-orange-500/30 border transition-all flex flex-col justify-between space-y-3">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2">
+                  <div class="w-7 h-7 rounded-lg bg-orange-950/60 border-orange-500/40 text-orange-400 border flex items-center justify-center font-bold text-xs">
+                    🦀
+                  </div>
+                  <span class="font-bold text-sm text-white">Leptos</span>
+                </div>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20">
+                  RUST 1.99
+                </span>
+              </div>
+              <p class="text-xs text-neutral-400 mb-2 leading-relaxed">
+                Rust WebAssembly · Leptos 0.7 · Client-Side Rendering · Trunk · Tailwind CSS.
+              </p>
+              <div class="text-[11px] font-mono text-orange-400">
+                Live Route: /stacks/leptos
+              </div>
+            </div>
+            <div class="space-y-2 pt-2 border-t border-white/10">
+              
+                <a
+                  href="/stacks/leptos"
+                  target="_top"
+                  class="w-full py-2 px-3 rounded-xl bg-orange-500/20 hover:bg-orange-500/30 text-orange-300 font-semibold text-xs border border-orange-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+                >
+                  <span>Switch to Leptos Website</span>
+                </a>
+              <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
+                <a
+                  href="/stacks/leptos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 hover:text-orange-400 transition-colors"
+                >
+                  <span>Direct Link ↗</span>
+                </a>
+                <a
+                  href="https://github.com/reginaldalfret/portfolio-leptos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 hover:text-white transition-colors"
+                >
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Jaspr (Dart Web) Card -->
+          <div class="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border-white/10 hover:border-emerald-500/30 border transition-all flex flex-col justify-between space-y-3">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2">
+                  <div class="w-7 h-7 rounded-lg bg-emerald-950/60 border-emerald-500/40 text-emerald-300 border flex items-center justify-center font-bold text-xs">
+                    🎯
+                  </div>
+                  <span class="font-bold text-sm text-white">Jaspr (Dart Web)</span>
+                </div>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  DART 3.13
+                </span>
+              </div>
+              <p class="text-xs text-neutral-400 mb-2 leading-relaxed">
+                Dart 3.13 · Jaspr SSR & Hydration · Reactive Components · Tailwind CSS.
+              </p>
+              <div class="text-[11px] font-mono text-emerald-400">
+                Live Route: /stacks/jaspr
+              </div>
+            </div>
+            <div class="space-y-2 pt-2 border-t border-white/10">
+              
+                <a
+                  href="/stacks/jaspr"
+                  target="_top"
+                  class="w-full py-2 px-3 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 font-semibold text-xs border border-emerald-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+                >
+                  <span>Switch to Jaspr (Dart Web) Website</span>
+                </a>
+              <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
+                <a
+                  href="/stacks/jaspr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 hover:text-emerald-400 transition-colors"
+                >
+                  <span>Direct Link ↗</span>
+                </a>
+                <a
+                  href="https://github.com/reginaldalfret/portfolio-jaspr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 hover:text-white transition-colors"
+                >
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vapor 4 (Swift) Card -->
+          <div class="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border-white/10 hover:border-sky-500/30 border transition-all flex flex-col justify-between space-y-3">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2">
+                  <div class="w-7 h-7 rounded-lg bg-sky-950/60 border-sky-500/40 text-sky-400 border flex items-center justify-center font-bold text-xs">
+                    💧
+                  </div>
+                  <span class="font-bold text-sm text-white">Vapor 4 (Swift)</span>
+                </div>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20">
+                  SWIFT 5.10
+                </span>
+              </div>
+              <p class="text-xs text-neutral-400 mb-2 leading-relaxed">
+                Server-Side Swift · Vapor 4 · Non-blocking Async I/O (SwiftNIO) · Leaf · Tailwind CSS.
+              </p>
+              <div class="text-[11px] font-mono text-sky-400">
+                Live Route: /stacks/vapor
+              </div>
+            </div>
+            <div class="space-y-2 pt-2 border-t border-white/10">
+              
+                <a
+                  href="/stacks/vapor"
+                  target="_top"
+                  class="w-full py-2 px-3 rounded-xl bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 font-semibold text-xs border border-sky-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+                >
+                  <span>Switch to Vapor 4 (Swift) Website</span>
+                </a>
+              <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
+                <a
+                  href="/stacks/vapor"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 hover:text-sky-400 transition-colors"
+                >
+                  <span>Direct Link ↗</span>
+                </a>
+                <a
+                  href="https://github.com/reginaldalfret/portfolio-vapor"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 hover:text-white transition-colors"
+                >
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Floating Bottom Stack Dock (All 12 Stacks - Mobile Optimized) -->
+      <div class="floating-stack-dock fixed bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-50 no-print w-[96vw] sm:w-auto max-w-[96vw]">
+        <div class="backdrop-blur-xl bg-black/90 border border-white/20 rounded-full py-1.5 px-3 shadow-2xl flex items-center gap-1.5 sm:gap-2 text-xs overflow-x-auto no-scrollbar scroll-smooth">
+          <span class="text-[11px] font-mono text-neutral-400 hidden md:inline shrink-0">Stack:</span>
+          <a href="/" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Next.js"><span>Next.js</span></a>
+          <a href="/stacks/nuxt" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Nuxt 3"><span>Nuxt 3</span></a>
+          <a href="/stacks/django" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Django"><span>Django</span></a>
+          <a href="/stacks/springboot" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Spring Boot"><span>Spring Boot</span></a>
+          <a href="/stacks/laravel" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Laravel"><span>Laravel</span></a>
+          <a href="/stacks/rails" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Rails"><span>Rails</span></a>
+          <a href="/stacks/angular" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Angular"><span>Angular</span></a>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 font-semibold shadow-sm shrink-0 whitespace-nowrap"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span><span>Blazor</span></span>
+          <a href="/stacks/buffalo" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Buffalo"><span>Buffalo</span></a>
+          <a href="/stacks/leptos" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Leptos"><span>Leptos</span></a>
+          <a href="/stacks/jaspr" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Jaspr"><span>Jaspr</span></a>
+          <a href="/stacks/vapor" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Vapor"><span>Vapor</span></a>
+        </div>
+      </div>
+  </body>
 </html>
