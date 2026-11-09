@@ -2407,95 +2407,6 @@
     </div>
   </div>
 
-  <!-- Floating Bottom Stack Dock (Hidden when embedded in parent iframe) -->
-  <div class="floating-stack-dock fixed bottom-4 left-1/2 -translate-x-1/2 z-50 no-print">
-    <div class="backdrop-blur-xl bg-black/85 border border-white/15 rounded-full py-1.5 px-3.5 shadow-2xl flex items-center gap-2 text-xs">
-      <span class="text-[11px] font-mono text-neutral-400 hidden sm:inline">Stack:</span>
-      
-      <a
-        href="/"
-        target="_top"
-        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
-        title="Switch to Next.js (Production)"
-      >
-        <span>Next.js</span>
-      </a>
-
-      <a
-        href="/stacks/nuxt"
-        target="_top"
-        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
-        title="Switch to Nuxt 3 (Vue 3)"
-      >
-        <span>Nuxt 3</span>
-      </a>
-
-      <a
-        href="/stacks/django"
-        target="_top"
-        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
-        title="Switch to Django (Python 3.13)"
-      >
-        <span>Django</span>
-      </a>
-
-      <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-lime-500/20 text-lime-300 border border-lime-500/40 font-semibold shadow-sm">
-        <span class="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse"></span>
-        Spring Boot
-      </span>
-
-      <a
-        href="/stacks/laravel"
-        target="_top"
-        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
-        title="Switch to Laravel (PHP 8.4)"
-      >
-        <span>Laravel</span>
-      </a>
-      <a
-        href="/stacks/rails"
-        target="_top"
-        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
-        title="Switch to Rails 8 (Ruby 3.4)"
-      >
-        <span>Rails</span>
-      </a>
-
-      <a
-        href="/stacks/angular"
-        target="_top"
-        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
-        title="Switch to Angular (TypeScript 6.0)"
-      >
-        <span>Angular</span>
-      </a>
-      <a
-        href="/stacks/blazor"
-        target="_top"
-        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
-        title="Switch to Blazor (.NET 8 WASM)"
-      >
-        <span>Blazor</span>
-      </a>
-      <a
-        href="/stacks/buffalo"
-        target="_top"
-        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
-        title="Switch to Go Buffalo (Go 1.27)"
-      >
-        <span>Buffalo</span>
-      </a>
-      <a
-        href="/stacks/leptos"
-        target="_top"
-        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
-        title="Switch to Leptos (Rust WebAssembly)"
-      >
-        <span>Leptos</span>
-      </a>
-    </div>
-  </div>
-
   <script>
     function setViewMode(mode) {
       const interactiveView = document.getElementById('interactive-view');
@@ -2536,24 +2447,5 @@
           <a href="/stacks/vapor" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Vapor"><span>Vapor</span></a>
         </div>
       </div>
-      <!-- Floating Bottom Stack Dock (All 12 Stacks - Mobile Optimized) -->
-      <div class="floating-stack-dock fixed bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-50 no-print w-[96vw] sm:w-auto max-w-[96vw]">
-        <div class="backdrop-blur-xl bg-black/90 border border-white/20 rounded-full py-1.5 px-3 shadow-2xl flex items-center gap-1.5 sm:gap-2 text-xs overflow-x-auto no-scrollbar scroll-smooth">
-          <span class="text-[11px] font-mono text-neutral-400 hidden md:inline shrink-0">Stack:</span>
-          <a href="/" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Next.js"><span>Next.js</span></a>
-          <a href="/stacks/nuxt" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Nuxt 3"><span>Nuxt 3</span></a>
-          <a href="/stacks/django" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Django"><span>Django</span></a>
-          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 font-semibold shadow-sm shrink-0 whitespace-nowrap"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span><span>Spring Boot</span></span>
-          <a href="/stacks/laravel" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Laravel"><span>Laravel</span></a>
-          <a href="/stacks/rails" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Rails"><span>Rails</span></a>
-          <a href="/stacks/angular" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Angular"><span>Angular</span></a>
-          <a href="/stacks/blazor" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Blazor"><span>Blazor</span></a>
-          <a href="/stacks/buffalo" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Buffalo"><span>Buffalo</span></a>
-          <a href="/stacks/leptos" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Leptos"><span>Leptos</span></a>
-          <a href="/stacks/jaspr" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Jaspr"><span>Jaspr</span></a>
-          <a href="/stacks/vapor" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Vapor"><span>Vapor</span></a>
-        </div>
-      </div>
-  </body>
+        </body>
 </html>
-
