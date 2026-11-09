@@ -1857,7 +1857,7 @@ export function ResumePortfolio() {
       </div>
 
       {/* Floating Bottom Stack Dock */}
-      <div className="fixed bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-50 no-print w-[96vw] sm:w-auto max-w-[96vw]">
+      <div className="floating-stack-dock fixed bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-50 no-print w-[96vw] sm:w-auto max-w-[96vw]">
         <div className="backdrop-blur-xl bg-black/90 border border-white/20 rounded-full py-1.5 px-3 shadow-2xl flex items-center gap-1.5 sm:gap-2 text-xs overflow-x-auto no-scrollbar scroll-smooth">
           <span className="text-[11px] font-mono text-neutral-400 hidden sm:inline">Stack:</span>
           
