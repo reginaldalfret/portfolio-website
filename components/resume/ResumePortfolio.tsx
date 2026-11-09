@@ -1188,7 +1188,7 @@ export function ResumePortfolio() {
 
             {/* 4. Multi-Stack Switcher Section */}
             <section className="py-8 border-b border-white/10 space-y-8" id="stacks">
-              <EngineeringLab onSelectStack={switchStack} />
+              <EngineeringLab onSelectStack={(id) => switchStack(id as any)} />
 
               <div className="pt-6 border-t border-white/10">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">

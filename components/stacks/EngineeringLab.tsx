@@ -21,8 +21,22 @@ import {
 } from "lucide-react";
 import rawBenchmarks from "@/data/stack-benchmarks.json";
 
+export type StackId =
+  | "nextjs"
+  | "nuxt"
+  | "django"
+  | "springboot"
+  | "laravel"
+  | "rails"
+  | "angular"
+  | "blazor"
+  | "buffalo"
+  | "leptos"
+  | "jaspr"
+  | "vapor";
+
 export interface StackBenchmark {
-  id: string;
+  id: StackId;
   name: string;
   language: string;
   runtime: string;
@@ -96,7 +110,7 @@ const ARCHITECTURES_MAP: Record<string, { diagram: string; description: string }
   }
 };
 
-export function EngineeringLab({ onSelectStack }: { onSelectStack?: (stackId: string) => void }) {
+export function EngineeringLab({ onSelectStack }: { onSelectStack?: (stackId: StackId) => void }) {
   const [selectedLanguage, setSelectedLanguage] = useState<string>("All");
   const [selectedRenderType, setSelectedRenderType] = useState<string>("All");
   const [sortBy, setSortBy] = useState<"lighthouse" | "fcp" | "build" | "bundle">("lighthouse");
