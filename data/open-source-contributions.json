@@ -1,5 +1,33 @@
 [
   {
+    "id": "armmbed-dapjs-131",
+    "organization": "Armmbed",
+    "orgKey": "armmbed",
+    "organizationUrl": "https://github.com/ARMmbed",
+    "repository": "ARMmbed/dapjs",
+    "repositoryUrl": "https://github.com/ARMmbed/dapjs",
+    "prNumber": 131,
+    "title": "Add package.json exports to support ES modules in Node",
+    "url": "https://github.com/ARMmbed/dapjs/pull/131",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "MAINTENANCE",
+    "contribution": "Adds an exports field to package.json to properly support ECMAScript Module (ESM) imports in modern Node.js and modern test runners (such as Vitest).",
+    "description": "Adds an exports field to package.json to properly support ECMAScript Module (ESM) imports in modern Node.js and modern test runners (such as Vitest).",
+    "labels": [],
+    "date": "2026-11-08T16:59:09.000Z",
+    "mergedAt": "2026-11-08T16:59:09.000Z",
+    "displayDate": "Nov 8, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
     "id": "netflix-spectator-1307",
     "organization": "Netflix",
     "orgKey": "netflix",
