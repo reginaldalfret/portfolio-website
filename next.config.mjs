@@ -22,6 +22,14 @@ const nextConfig = {
         source: "/stacks/:stack/",
         destination: "/stacks/:stack/index.html",
       },
+      {
+        source: "/portfolio-leptos-:file*",
+        destination: "/stacks/leptos/portfolio-leptos-:file*",
+      },
+      {
+        source: "/static/portfolio/:file*",
+        destination: "/:file*",
+      },
     ];
   },
 };

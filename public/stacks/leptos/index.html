@@ -66,20 +66,20 @@
     </style>
 
     
-<script type="module">
-import init, * as bindings from '/portfolio-leptos-707dbf2c102f1def.js';
-const wasm = await init({ module_or_path: '/portfolio-leptos-2e81afb124cab55e_bg.wasm' });
+    <link rel="modulepreload" href="/stacks/leptos/portfolio-leptos-707dbf2c102f1def.js" />
+    <link rel="preload" href="/stacks/leptos/portfolio-leptos-2e81afb124cab55e_bg.wasm" as="fetch" type="application/wasm" crossorigin="anonymous" />
 
-
-window.wasmBindings = bindings;
-
-
-dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
-
-</script>
-    
-    
-  <link rel="modulepreload" href="/portfolio-leptos-707dbf2c102f1def.js" crossorigin="anonymous" integrity="sha384-vS2SlA8GYwSMAkRrRSPl7sXGwdKbFfkzjGe7hD9klmFeDdwxDB8s+LJ91hs26EG1"><link rel="preload" href="/portfolio-leptos-2e81afb124cab55e_bg.wasm" crossorigin="anonymous" integrity="sha384-b2aIErJlWhfsaTUeWKamSDWqUkA3GQbW0U0lmCNkHq+E7awVaIXPvem3Xpx4z4vU" as="fetch" type="application/wasm"></head>
+    <script type="module">
+      import init, * as bindings from '/stacks/leptos/portfolio-leptos-707dbf2c102f1def.js';
+      try {
+        const wasm = await init({ module_or_path: '/stacks/leptos/portfolio-leptos-2e81afb124cab55e_bg.wasm' });
+        window.wasmBindings = bindings;
+        window.dispatchEvent(new CustomEvent("TrunkApplicationStarted", { detail: { wasm } }));
+      } catch (err) {
+        console.error("Error initializing Leptos WASM:", err);
+      }
+    </script>
+  </head>
   <body class="bg-[#050505] text-neutral-100 min-h-screen selection:bg-orange-500/20 selection:text-orange-200">
     <div id="app"></div>
   </body>

@@ -1191,15 +1191,15 @@ export function ResumePortfolio() {
                     <span className="text-cyan-400">⚡</span> MULTI-STACK ARCHITECTURE
                   </h2>
                   <p className="text-xs text-neutral-400 font-mono">
-                    Explore this exact resume portfolio built across 5 modern engineering stacks
+                    Explore this exact resume portfolio built across 12 modern engineering stacks
                   </p>
                 </div>
                 <div className="text-[11px] font-mono text-red-400 bg-red-500/10 px-2.5 py-1 rounded-md border border-red-500/20 self-start sm:self-auto">
-                  10 Stacks Available
+                  12 Stacks Available
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5">
                 {/* Next.js (Active Production) */}
                 <div className="p-4 rounded-2xl bg-gradient-to-b from-cyan-500/10 to-transparent border border-cyan-500/30 relative flex flex-col justify-between space-y-3">
                   <div>
@@ -1457,7 +1457,7 @@ export function ResumePortfolio() {
                       </a>
                     </div>
                   </div>
-               
+                </div>
 
                 {/* Ruby on Rails */}
                 <div className="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border border-white/10 hover:border-rose-500/30 transition-all flex flex-col justify-between space-y-3">
@@ -1833,7 +1833,6 @@ export function ResumePortfolio() {
                   </div>
                 </div>
               </div>
-            </div>
             </section>
 
             {/* 5. Footer */}
