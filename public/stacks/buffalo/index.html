@@ -1,19 +1,17 @@
-﻿﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reginald Alfret V | Open-Source Contributor · AI &amp; DS Engineer (Go Buffalo)</title>
-  <meta name="description" content="Open-Source Contributor, AI & Data Science Engineer, and Software Developer with 30 merged PRs across Apple, Google, Microsoft, Meta, AWS, NVIDIA, NASA, Netflix and more." />
-  <meta name="theme-color" content="#050505" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-
-  <!-- Instant embedded check to prevent dock flicker inside iframes -->
   <script>
     if (window.self !== window.top) {
       document.documentElement.classList.add('is-embedded');
     }
   </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reginald Alfret V | Open-Source Contributor · AI & DS Engineer (Go Buffalo & Go 1.27)</title>
+  <meta name="description" content="Open-Source Contributor, AI &amp; Data Science Engineer, and Software Developer with 30 merged PRs across Apple, Google, Microsoft, Meta, AWS, NVIDIA, NASA, Netflix and more.">
+  <meta name="theme-color" content="#050505">
+  <link rel="icon" type="image/x-icon" href="/static/portfolio/favicon.ico">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -22,11 +20,14 @@
       theme: {
         extend: {
           colors: {
-            buffalo: {
-              DEFAULT: '#06B6D4',
-              dark: '#0891B2',
-              light: '#22D3EE'
+            obsidian: {
+              DEFAULT: '#050505',
+              card: '#0a0a0a',
+              border: 'rgba(255, 255, 255, 0.1)',
             }
+          },
+          fontFamily: {
+            mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
           }
         }
       }
@@ -37,19 +38,22 @@
     body {
       background-color: #050505;
       color: #f5f5f5;
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
     ::selection {
-      background-color: rgba(6, 182, 212, 0.25);
-      color: #67e8f9;
+      background-color: rgba(6, 182, 212, 0.2);
+      color: #a5f3fc;
     }
-    .is-embedded .floating-stack-dock,
-    html.is-embedded .floating-stack-dock {
+    .is-embedded .floating-stack-dock {
       display: none !important;
     }
     @media print {
       .no-print {
         display: none !important;
+      }
+      body {
+        background: white !important;
+        color: black !important;
       }
     }
   
@@ -77,1140 +81,1449 @@
 
     </style>
 </head>
-<body class="bg-[#050505] text-neutral-100 min-h-screen">
-  <div class="min-h-screen bg-[#050505] text-neutral-100 selection:bg-cyan-500/20 selection:text-cyan-300 relative overflow-x-hidden">
-    
-    <!-- Ambient Background Glow -->
-    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
-      <div class="absolute -top-40 -left-40 w-96 h-96 bg-cyan-600/10 rounded-full blur-[128px]"></div>
-      <div class="absolute top-1/3 -right-40 w-96 h-96 bg-teal-600/10 rounded-full blur-[128px]"></div>
-      <div class="absolute -bottom-40 left-1/3 w-96 h-96 bg-blue-600/10 rounded-full blur-[128px]"></div>
+<body class="min-h-screen py-6 px-3 sm:px-6 md:px-8">
+
+  <!-- Top Floating Glass Command Bar -->
+  <div class="max-w-7xl 2xl:max-w-[1680px] w-full mx-auto px-2 sm:px-4 mb-6 sticky top-3 z-50 no-print">
+    <div class="backdrop-blur-xl bg-black/60 border border-white/10 rounded-2xl p-2.5 sm:p-3 shadow-2xl flex flex-wrap items-center justify-between gap-3">
+      <!-- Brand Identity -->
+      <div class="flex items-center gap-2.5 px-2">
+        <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/20 text-black font-black text-sm">
+          RA
+        </div>
+        <div>
+          <div class="text-sm font-semibold tracking-wide text-white">Reginald Alfret V</div>
+          <div class="text-[11px] text-cyan-400 font-mono tracking-wider">RESUME PORTFOLIO (DJANGO)</div>
+        </div>
+      </div>
+
+      <!-- View Mode Switcher -->
+      <div class="flex items-center bg-white/5 border border-white/10 rounded-xl p-1 text-xs">
+        <button
+          type="button"
+          id="btn-interactive"
+          onclick="setViewMode('interactive')"
+          class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium transition-all bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 shadow-sm"
+        >
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+          <span>Interactive Resume</span>
+        </button>
+        <button
+          type="button"
+          id="btn-pdf"
+          onclick="setViewMode('pdf')"
+          class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium transition-all text-neutral-400 hover:text-white"
+        >
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <span>Original PDF Document</span>
+        </button>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="flex items-center gap-2">
+        <button
+          type="button"
+          onclick="window.print()"
+          class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-300 hover:text-white transition-colors"
+          title="Print Resume"
+        >
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
+          <span>Print</span>
+        </button>
+        <a
+          href="/static/portfolio/Reginald_Alfret_Resume.pdf"
+          download="Reginald_Alfret_Resume.pdf"
+          class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-gradient-to-r from-cyan-500 to-blue-600 text-black shadow-lg shadow-cyan-500/20 hover:brightness-110 transition-all"
+        >
+          <svg class="w-3.5 h-3.5 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+          <span>Download PDF</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="max-w-7xl 2xl:max-w-[1680px] w-full mx-auto px-2 sm:px-4">
+    <!-- PDF Viewer Mode -->
+    <div id="pdf-view" class="hidden backdrop-blur-2xl bg-neutral-950/80 border border-white/10 rounded-3xl p-4 sm:p-6 shadow-2xl">
+      <div class="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <h2 class="text-base font-semibold text-white">Reginald_Alfret_Resume.pdf</h2>
+          <span class="text-xs font-mono text-neutral-400 px-2 py-0.5 rounded bg-white/5 border border-white/5">
+            1 Page Visual Resume
+          </span>
+        </div>
+        <a
+          href="/static/portfolio/Reginald_Alfret_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-xs text-cyan-400 hover:text-cyan-300 inline-flex items-center gap-1"
+        >
+          <span>Open in new window</span>
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+        </a>
+      </div>
+      <div class="w-full h-[82vh] rounded-2xl overflow-hidden border border-white/5 bg-neutral-900/50">
+        <iframe
+          src="/static/portfolio/Reginald_Alfret_Resume.pdf#view=FitH"
+          class="w-full h-full border-0"
+          title="Reginald Alfret V — Resume PDF"
+        ></iframe>
+      </div>
     </div>
 
-    <!-- Main Container -->
-    <main class="relative z-10 max-w-7xl 2xl:max-w-[1680px] w-full mx-auto px-2 sm:px-4 px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-12">
-      
-      <!-- Top Command Bar -->
-      <header class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-4 rounded-3xl bg-neutral-900/60 border border-white/10 backdrop-blur-xl">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-cyan-600 via-teal-500 to-cyan-400 flex items-center justify-center font-black text-xl text-black shadow-lg shadow-cyan-500/20">
-            🦬
-          </div>
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="font-bold text-white text-base">Reginald Alfret V</span>
-              <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 flex items-center gap-1 font-semibold">
-                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
-                BUFFALO · GO 1.27
-              </span>
-            </div>
-            <p class="text-xs text-neutral-400 font-mono">Open-Source Contributor · AI &amp; Data Science Engineer</p>
-          </div>
+    <!-- Interactive Resume Canvas -->
+    <div id="interactive-view" class="backdrop-blur-2xl bg-neutral-950/80 border border-white/10 rounded-3xl p-5 sm:p-8 md:p-10 shadow-2xl relative overflow-hidden">
+      <!-- Ambient Lighting Gradient accents -->
+      <div class="absolute -top-32 -left-32 w-80 h-80 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none"></div>
+      <div class="absolute top-1/3 -right-32 w-80 h-80 rounded-full bg-blue-600/10 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-32 left-1/4 w-80 h-80 rounded-full bg-indigo-500/10 blur-3xl pointer-events-none"></div>
+
+      <!-- 1. Header / Contact Block -->
+      <header class="relative text-center pb-8 border-b border-white/10">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white mb-2">
+          REGINALD ALFRET V
+        </h1>
+        <p class="text-xs sm:text-sm md:text-base font-semibold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 uppercase mb-4">
+          Open-Source Contributor · AI &amp; DS Engineer · Software Developer
+        </p>
+
+        <!-- Contact Bar -->
+        <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs text-neutral-300 mb-5">
+          <a
+            href="mailto:reginaldalfret@gmail.com"
+            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+          >
+            <span class="text-red-400">✉️</span>
+            <span>reginaldalfret@gmail.com</span>
+          </a>
+          <a
+            href="tel:+918122087088"
+            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+          >
+            <span class="text-emerald-400">📞</span>
+            <span>+91 81220 87088</span>
+          </a>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-400">
+            <span class="text-cyan-400">📍</span>
+            <span>Chennai, India</span>
+          </span>
+          <a
+            href="https://github.com/reginaldalfret"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+          >
+            <span class="text-white">🐙</span>
+            <span>github.com/reginaldalfret</span>
+          </a>
+          <a
+            href="https://linkedin.com/in/reginaldalfret"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+          >
+            <span class="text-blue-400">💼</span>
+            <span>linkedin.com/in/reginaldalfret</span>
+          </a>
         </div>
 
-        <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
-          <button
-            type="button"
-            onclick="togglePdfModal(true)"
-            class="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-white/10 hover:bg-white/15 text-white transition-all flex items-center gap-1.5 border border-white/10"
-          >
-            <span>Original Resume (PDF)</span>
-          </button>
-          <a
-            href="/Reginald_Alfret_Resume.pdf"
-            download
-            class="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 transition-all flex items-center gap-1.5 border border-cyan-500/40 shadow-sm"
-          >
-            <span>Download CV</span>
-            <span class="text-[10px]">↓</span>
-          </a>
+        <!-- Key Credentials Badges -->
+        <div class="flex flex-wrap items-center justify-center gap-2.5">
+          <div class="px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold flex items-center gap-1.5">
+            <span>⚡</span>
+            <span>30 Merged PRs</span>
+          </div>
+          <div class="px-3 py-1 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold flex items-center gap-1.5">
+            <span>📚</span>
+            <span>70+ Built Projects</span>
+          </div>
+          <div class="px-3 py-1 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold flex items-center gap-1.5">
+            <span>🏆</span>
+            <span>3× 1st Place Hackathons</span>
+          </div>
         </div>
       </header>
 
-      <!-- Hero Section -->
-      <section class="space-y-4">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-mono text-cyan-300">
-          <span>⚡ High-Performance Go Buffalo SSR Architecture</span>
-        </div>
-        <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white">
-          Engineering Scalable AI Systems &amp; <span class="bg-gradient-to-r from-cyan-400 via-teal-300 to-blue-400 bg-clip-text text-transparent">Open-Source Core</span>
-        </h1>
-        <p class="text-sm sm:text-base text-neutral-300 max-w-3xl leading-relaxed">
-          Developer with 30 merged PRs across the world's most influential technology organizations including Apple, Google, Microsoft, Meta, AWS, NVIDIA, NASA, and Netflix. Specializing in autonomous multi-agent pipelines, distributed systems, machine learning engineering, and full-stack software development.
-        </p>
-        <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-neutral-400 pt-2">
-          <span>📍 Chennai, India</span>
-          <span>•</span>
-          <a href="mailto:reginaldalfret.work@gmail.com" class="text-cyan-400 hover:underline">reginaldalfret.work@gmail.com</a>
-          <span>•</span>
-          <a href="https://github.com/reginaldalfret" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:underline">github.com/reginaldalfret</a>
-          <span>•</span>
-          <a href="https://linkedin.com/in/reginald-alfret" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:underline">linkedin.com/in/reginald-alfret</a>
-        </div>
-      </section>
-
-      <!-- 1. Open Source Contributions (30 Merged PRs) -->
-      <section class="space-y-4">
-        <div class="flex items-center justify-between pb-2 border-b border-white/10">
-          <div class="flex items-center gap-2">
-            <span class="text-cyan-400 text-lg">⌥</span>
-            <h2 class="text-lg font-bold text-white tracking-wide">30 Merged Open-Source Contributions</h2>
+      <!-- 2. Open-Source Contributions Section -->
+      <section class="py-8 border-b border-white/10" id="open-source">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+          <div>
+            <h2 class="text-base sm:text-lg font-bold text-white flex items-center gap-2 tracking-wide">
+              <span class="text-cyan-400">⚡</span> OPEN-SOURCE CONTRIBUTIONS
+            </h2>
+            <p class="text-xs text-neutral-400 font-mono">
+              30 pull requests merged across leading engineering organisations
+            </p>
           </div>
-          <span class="text-xs font-mono text-neutral-400">Apple · Google · Microsoft · Meta · AWS · NVIDIA · NASA · Netflix</span>
+          <div class="text-[11px] font-mono text-cyan-400/80 bg-cyan-500/10 px-2.5 py-1 rounded-md border border-cyan-500/20 self-start sm:self-auto">
+            100% Verified Merged Upstream
+          </div>
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2.5">
+        <!-- 30 PRs Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5">
           
-            <a
-              href="https://github.com/apple/swift-numerics/pull/355"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Apple</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/apple/swift-numerics/pull/355"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  Apple
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                swift-numerics
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#355</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #355
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">swift-numerics</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/google/highway/pull/3511"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Google</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/google/highway/pull/3511"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  Google
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                Highway
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#3511</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #3511
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">Highway</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/GoogleCloudPlatform/professional-services-data-validator/pull/1863"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Google Cloud</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/GoogleCloudPlatform/professional-services-data-validator/pull/1863"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  Google Cloud
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                Data Validator
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#1863</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #1863
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">Data Validator</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/microsoft/semantic-kernel/pull/14472"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Microsoft</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/microsoft/semantic-kernel/pull/14472"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  Microsoft
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                Semantic Kernel
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#14472</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #14472
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">Semantic Kernel</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/aws-powertools/powertools-lambda-python/pull/8542"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">AWS</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/aws-powertools/powertools-lambda-python/pull/8542"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  AWS
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                Lambda Powertools
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#8542</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #8542
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">Lambda Powertools</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/facebook/stylex/pull/1899"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Meta</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/facebook/stylex/pull/1899"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  Meta
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                StyleX
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#1899</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #1899
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">StyleX</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/NVIDIA/cuopt/pull/2068"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">NVIDIA</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/NVIDIA/cuopt/pull/2068"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  NVIDIA
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                cuOpt
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#2068</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #2068
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">cuOpt</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/nasa/prog_models/pull/237"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">NASA</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/nasa/prog_models/pull/237"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  NASA
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                ProgPy
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#237</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #237
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">ProgPy</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/Azure/azure-cosmos-db-emulator-docker/pull/359"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Azure</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/Azure/azure-cosmos-db-emulator-docker/pull/359"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  Azure
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                Cosmos DB Emulator
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#359</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #359
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">Cosmos DB Emulator</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/adobe/skills/pull/445"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Adobe</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/adobe/skills/pull/445"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  Adobe
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                Skills
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#445</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #445
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">Skills</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/intel/auto-round/pull/2421"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Intel</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/intel/auto-round/pull/2421"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  Intel
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                AutoRound
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#2421</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #2421
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">AutoRound</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/IBM/docling-pipelines/pull/85"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">IBM</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/IBM/docling-pipelines/pull/85"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  IBM
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                Docling Pipelines
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#85</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #85
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">Docling Pipelines</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/uber/kraken/pull/716"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Uber</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/uber/kraken/pull/716"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  Uber
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                Kraken
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#716</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #716
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">Kraken</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/airbnb/MagazineLayout/pull/169"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Airbnb</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/airbnb/MagazineLayout/pull/169"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  Airbnb
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                MagazineLayout
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#169</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #169
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">MagazineLayout</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/cli/cli/pull/14592"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">GitHub</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/cli/cli/pull/14592"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  GitHub
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                GitHub CLI
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#14592</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #14592
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">GitHub CLI</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/dell/omnia/pull/649"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Dell</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/dell/omnia/pull/649"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  Dell
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                Omnia Containers
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#649</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #649
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">Omnia Containers</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/salesforce/tough-cookie/pull/659"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Salesforce</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/salesforce/tough-cookie/pull/659"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  Salesforce
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                tough-cookie
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#659</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #659
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">tough-cookie</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/ROCm/hrx-system/pull/1231"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">AMD</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/ROCm/hrx-system/pull/1231"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  AMD
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                ROCm HRX System
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#1231</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #1231
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">ROCm HRX System</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/SAP/e-mobility-charging-stations-simulator/pull/2136"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">SAP</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/SAP/e-mobility-charging-stations-simulator/pull/2136"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  SAP
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                E-Mobility Simulator
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#2136</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #2136
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">E-Mobility Simulator</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/pinterest/pymemcache/pull/657"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Pinterest</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/pinterest/pymemcache/pull/657"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  Pinterest
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                PyMemcache
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#657</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #657
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">PyMemcache</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/qualcomm/commit-msg-check-action/pull/38"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Qualcomm</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/qualcomm/commit-msg-check-action/pull/38"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  Qualcomm
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                Commit Msg Check
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#38</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #38
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">Commit Msg Check</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/stripe/stripe-react-native/pull/2751"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Stripe</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/stripe/stripe-react-native/pull/2751"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  Stripe
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                Stripe React Native
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#2751</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #2751
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">Stripe React Native</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/docker/docs/pull/26266"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Docker</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/docker/docs/pull/26266"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  Docker
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                Docker Docs
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#26266</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #26266
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">Docker Docs</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/apache/hertzbeat/pull/4410"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Apache</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/apache/hertzbeat/pull/4410"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  Apache
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                HertzBeat
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#4410</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #4410
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">HertzBeat</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/cloudflare/cfssl/pull/1451"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Cloudflare</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/cloudflare/cfssl/pull/1451"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  Cloudflare
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                CFSSL
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#1451</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #1451
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">CFSSL</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/openai/softnet/pull/219"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">OpenAI</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/openai/softnet/pull/219"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  OpenAI
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                Softnet
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#219</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #219
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">Softnet</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/Snapchat/ts-inject/pull/30"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Snapchat</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/Snapchat/ts-inject/pull/30"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  Snapchat
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                ts-inject
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#30</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #30
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">ts-inject</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/spotify/confidence-sdk-swift/pull/272"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Spotify</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/spotify/confidence-sdk-swift/pull/272"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  Spotify
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                Confidence SDK Swift
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#272</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #272
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">Confidence SDK Swift</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/cisco/cjose/pull/202"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Cisco</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/cisco/cjose/pull/202"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  Cisco
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                cJOSE
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#202</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #202
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">cJOSE</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
-            <a
-              href="https://github.com/Netflix/atlas/pull/2011"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Netflix</span>
-                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <a
+            href="https://github.com/Netflix/atlas/pull/2011"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between mb-1.5">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
+                  Netflix
+                </span>
               </div>
-              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
-                Atlas
-              </div>
-              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
-                <span>Merged</span>
-                <span>#2011</span>
-              </div>
-            </a>
+              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
+                #2011
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+              <span class="truncate">Atlas</span>
+              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </div>
+          </a>
           
         </div>
       </section>
 
-      <!-- 2. Professional Experience -->
-      <section class="space-y-4">
-        <div class="flex items-center gap-2 pb-2 border-b border-white/10">
-          <span class="text-cyan-400 text-lg">💼</span>
-          <h2 class="text-lg font-bold text-white tracking-wide">Professional Experience</h2>
-        </div>
+      <!-- 3. Main Resume Body: 2 Columns -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 py-8 border-b border-white/10">
+        <!-- Left Column (7 cols): Summary, Experience, Projects -->
+        <div class="lg:col-span-7 space-y-8">
+          <!-- Professional Summary -->
+          <section>
+            <h2 class="text-sm font-bold text-cyan-400 uppercase tracking-wider mb-2.5 flex items-center gap-2">
+              <span class="text-base">👨‍💻</span> Professional Summary
+            </h2>
+            <p class="text-xs sm:text-[13px] leading-relaxed text-neutral-300 bg-white/[0.02] border border-white/5 rounded-2xl p-4">
+              Open-Source Contributor, AI &amp; Data Science Engineer and Software Developer (final-year B.Tech AI &amp; DS) building AI/ML systems, full-stack applications and scalable products. Currently building an ERP platform at <strong class="text-white">DailyGurus</strong>. Built 70+ projects, including three 1st-place hackathon winners (HackIndia 2026, TN Police Hackathon 2025, Blaze a Trail 2.0). Author of 30 merged open-source pull requests at Apple, Google, Microsoft, AWS, Meta, NVIDIA, NASA, Netflix, Stripe and more.
+            </p>
+          </section>
 
-        <div class="space-y-4">
-          
-            <div class="p-5 rounded-3xl bg-neutral-900/40 border border-white/5 hover:border-white/15 transition-all space-y-3">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                <div>
-                  <h3 class="text-base font-bold text-white">Software Developer</h3>
-                  <div class="text-sm font-semibold text-cyan-400">DailyGurus</div>
+          <!-- Professional Experience -->
+          <section>
+            <h2 class="text-sm font-bold text-cyan-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+              <span class="text-base">💼</span> Professional Experience
+            </h2>
+            <div class="space-y-4">
+              
+              <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-2">
+                <div class="flex flex-wrap items-baseline justify-between gap-1">
+                  <div>
+                    <span class="text-sm font-bold text-white">DailyGurus</span>
+                    <span class="text-xs text-neutral-400 font-medium"> • Software Developer</span>
+                  </div>
+                  <div class="text-xs text-cyan-400/90 font-mono">
+                    Jul 2026 – Present <span class="text-neutral-500">|</span> Chennai, India
+                  </div>
                 </div>
-                <div class="text-xs font-mono text-neutral-400 sm:text-right">
-                  <div>Jul 2026 – Present</div>
-                  <div class="text-neutral-500">Chennai, India</div>
-                </div>
-              </div>
-              <ul class="space-y-1.5 text-xs sm:text-sm text-neutral-300 list-disc list-inside">
-                
-                  <li class="leading-relaxed">Engineered scalable full-stack ERP web applications using React.js, Node.js, and TypeScript.</li>
-                
-                  <li class="leading-relaxed">Contributed modular extensions and custom business workflows across database and service layers.</li>
-                
-                  <li class="leading-relaxed">Designed high-performance RESTful APIs handling mission-critical business transactions.</li>
-                
-              </ul>
-            </div>
-          
-            <div class="p-5 rounded-3xl bg-neutral-900/40 border border-white/5 hover:border-white/15 transition-all space-y-3">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                <div>
-                  <h3 class="text-base font-bold text-white">Project Intern</h3>
-                  <div class="text-sm font-semibold text-cyan-400">Data Patterns (India) Ltd.</div>
-                </div>
-                <div class="text-xs font-mono text-neutral-400 sm:text-right">
-                  <div>Jan 2026 – May 2026</div>
-                  <div class="text-neutral-500">Chennai, India</div>
-                </div>
-              </div>
-              <ul class="space-y-1.5 text-xs sm:text-sm text-neutral-300 list-disc list-inside">
-                
-                  <li class="leading-relaxed">Spearheaded real-time defense communication systems and hardware-in-the-loop telemetry.</li>
-                
-                  <li class="leading-relaxed">Developed high-throughput data processing pipelines for embedded defense electronics.</li>
-                
-                  <li class="leading-relaxed">Optimized data streaming latency by 35% through algorithmic refinement.</li>
-                
-              </ul>
-            </div>
-          
-            <div class="p-5 rounded-3xl bg-neutral-900/40 border border-white/5 hover:border-white/15 transition-all space-y-3">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                <div>
-                  <h3 class="text-base font-bold text-white">Data Science Intern</h3>
-                  <div class="text-sm font-semibold text-cyan-400">Skill-Lync</div>
-                </div>
-                <div class="text-xs font-mono text-neutral-400 sm:text-right">
-                  <div>Jun 2024 – Nov 2024</div>
-                  <div class="text-neutral-500">Chennai, India</div>
-                </div>
-              </div>
-              <ul class="space-y-1.5 text-xs sm:text-sm text-neutral-300 list-disc list-inside">
-                
-                  <li class="leading-relaxed">Built production machine learning models for customer behavior predictive analytics.</li>
-                
-                  <li class="leading-relaxed">Implemented end-to-end data cleaning, EDA, feature engineering, and cross-validation pipelines.</li>
-                
-                  <li class="leading-relaxed">Automated report generation reducing business analytics cycle time by 40%.</li>
-                
-              </ul>
-            </div>
-          
-        </div>
-      </section>
-
-      <!-- 3. Hackathons & Competitions -->
-      <section class="space-y-4">
-        <div class="flex items-center gap-2 pb-2 border-b border-white/10">
-          <span class="text-cyan-400 text-lg">🏆</span>
-          <h2 class="text-lg font-bold text-white tracking-wide">Hackathon Victories &amp; Honors</h2>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          
-            <div class="p-5 rounded-3xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/30 transition-all flex flex-col justify-between space-y-3">
-              <div>
-                <div class="flex items-center justify-between text-xs font-mono text-neutral-400 mb-1">
-                  <span>2024</span>
-                  <span class="px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-[10px] font-bold">Grand Finalist · 1st Prize Winner</span>
-                </div>
-                <h3 class="text-base font-bold text-white mb-1">Smart India Hackathon (SIH 2024)</h3>
-                <div class="text-xs text-neutral-400 mb-2">Ministry of Education &amp; AICTE</div>
-                <p class="text-xs text-neutral-300 leading-relaxed">Built AI-Powered Autonomous Crop Health Monitoring and Real-Time Precision Fertilizer Recommendation engine for Indian Agriculture.</p>
-              </div>
-              <div class="flex flex-wrap gap-1.5 pt-2 border-t border-white/5">
-                
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">Python</span>
-                
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">Computer Vision</span>
-                
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">TensorFlow</span>
-                
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">FastAPI</span>
-                
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">React</span>
-                
-              </div>
-            </div>
-          
-            <div class="p-5 rounded-3xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/30 transition-all flex flex-col justify-between space-y-3">
-              <div>
-                <div class="flex items-center justify-between text-xs font-mono text-neutral-400 mb-1">
-                  <span>2024</span>
-                  <span class="px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-[10px] font-bold">National Top 5 Finalist</span>
-                </div>
-                <h3 class="text-base font-bold text-white mb-1">Cognizant Digital Disrupt 2024</h3>
-                <div class="text-xs text-neutral-400 mb-2">Cognizant Technology Solutions</div>
-                <p class="text-xs text-neutral-300 leading-relaxed">Developed privacy-preserving federated machine learning framework for decentralized clinical record analysis.</p>
-              </div>
-              <div class="flex flex-wrap gap-1.5 pt-2 border-t border-white/5">
-                
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">PyTorch</span>
-                
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">Federated Learning</span>
-                
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">FastAPI</span>
-                
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">Docker</span>
-                
-              </div>
-            </div>
-          
-            <div class="p-5 rounded-3xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/30 transition-all flex flex-col justify-between space-y-3">
-              <div>
-                <div class="flex items-center justify-between text-xs font-mono text-neutral-400 mb-1">
-                  <span>2023</span>
-                  <span class="px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-[10px] font-bold">Special Jury Award for Cybersecurity</span>
-                </div>
-                <h3 class="text-base font-bold text-white mb-1">TN Police Hackathon 2023</h3>
-                <div class="text-xs text-neutral-400 mb-2">Tamil Nadu Police Cyber Crime Division</div>
-                <p class="text-xs text-neutral-300 leading-relaxed">Created Tor-Unveil darknet traffic correlation engine identifying rogue relays and Deanonymizing threat actors.</p>
-              </div>
-              <div class="flex flex-wrap gap-1.5 pt-2 border-t border-white/5">
-                
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">Go</span>
-                
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">Python</span>
-                
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">Wireshark</span>
-                
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">Network Forensics</span>
-                
-              </div>
-            </div>
-          
-        </div>
-      </section>
-
-      <!-- 4. Featured Projects -->
-      <section class="space-y-4">
-        <div class="flex items-center gap-2 pb-2 border-b border-white/10">
-          <span class="text-cyan-400 text-lg">🚀</span>
-          <h2 class="text-lg font-bold text-white tracking-wide">Featured Engineering Projects</h2>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          
-            <div class="p-5 rounded-3xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/30 transition-all flex flex-col justify-between space-y-4">
-              <div class="space-y-2">
-                <h3 class="text-base font-bold text-white">301 Super AI Agents Multi-Agent Autonomous Hub</h3>
-                <p class="text-xs text-neutral-400">Large-scale autonomous AI agent orchestration mesh with dynamic memory and tool execution</p>
-                <ul class="space-y-1 text-xs text-neutral-300 list-disc list-inside">
+                <ul class="text-xs text-neutral-300 space-y-1.5 list-disc list-inside">
                   
-                    <li class="leading-relaxed">301 specialized domain agents collaborating via asynchronous DAG pipelines</li>
+                  <li>Worked on ERPNext, contributing to module customizations, workflows and application development.</li>
                   
-                    <li class="leading-relaxed">Sub-150ms semantic memory retrieval across millions of conversation turns</li>
+                  <li>Developing a full ERP software platform from scratch across frontend, backend, database and business logic layers.</li>
                   
-                    <li class="leading-relaxed">Full self-healing code generation and testing sandbox execution</li>
+                  <li>Building web applications and REST APIs with React.js, Node.js and TypeScript for scalable, reliable systems.</li>
                   
                 </ul>
               </div>
-              <div class="space-y-3 pt-3 border-t border-white/5">
-                <div class="flex flex-wrap gap-1.5">
-                  
-                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Python</span>
-                  
-                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">LangChain</span>
-                  
-                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">FastAPI</span>
-                  
-                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">VectorDB</span>
-                  
-                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Redis</span>
-                  
+              
+              <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-2">
+                <div class="flex flex-wrap items-baseline justify-between gap-1">
+                  <div>
+                    <span class="text-sm font-bold text-white">Data Patterns</span>
+                    <span class="text-xs text-neutral-400 font-medium"> • Data Science Intern</span>
+                  </div>
+                  <div class="text-xs text-cyan-400/90 font-mono">
+                    May 2025 – Jun 2025 <span class="text-neutral-500">|</span> Chennai, India
+                  </div>
                 </div>
-                <div class="flex items-center justify-between text-xs font-mono pt-1">
-                  <a href="https://github.com/reginaldalfret/301-super-ai-agents" target="_blank" rel="noopener noreferrer" class="text-neutral-400 hover:text-white transition-colors">
-                    GitHub Code ↗
-                  </a>
-                  <a href="/projects/301-super-ai-agents" class="text-cyan-400 hover:underline">
-                    Live Details →
-                  </a>
-                </div>
-              </div>
-            </div>
-          
-            <div class="p-5 rounded-3xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/30 transition-all flex flex-col justify-between space-y-4">
-              <div class="space-y-2">
-                <h3 class="text-base font-bold text-white">AI-Powered Crop Disease &amp; Recommendation Engine</h3>
-                <p class="text-xs text-neutral-400">Real-time edge computer vision model for automated crop health diagnostics</p>
-                <ul class="space-y-1 text-xs text-neutral-300 list-disc list-inside">
+                <ul class="text-xs text-neutral-300 space-y-1.5 list-disc list-inside">
                   
-                    <li class="leading-relaxed">97.8% diagnostic accuracy across 42 plant pathology classes</li>
+                  <li>Built Python web-scraping tools to collect aerospace research papers and technical data from IEEE sources.</li>
                   
-                    <li class="leading-relaxed">Low-latency on-device inference using quantized TFLite edge models</li>
-                  
-                    <li class="leading-relaxed">Awarded Smart India Hackathon Grand Finalist &amp; 1st Prize</li>
+                  <li>Curated the data and fine-tuned an LLM using LoRA (Low-Rank Adaptation) on the domain-specific dataset.</li>
                   
                 </ul>
               </div>
-              <div class="space-y-3 pt-3 border-t border-white/5">
-                <div class="flex flex-wrap gap-1.5">
-                  
-                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">TensorFlow</span>
-                  
-                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Computer Vision</span>
-                  
-                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Flask</span>
-                  
-                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Tailwind CSS</span>
-                  
-                </div>
-                <div class="flex items-center justify-between text-xs font-mono pt-1">
-                  <a href="https://github.com/reginaldalfret/ai-crop-recommendation" target="_blank" rel="noopener noreferrer" class="text-neutral-400 hover:text-white transition-colors">
-                    GitHub Code ↗
-                  </a>
-                  <a href="/projects/ai-crop-recommendation" class="text-cyan-400 hover:underline">
-                    Live Details →
-                  </a>
-                </div>
-              </div>
+              
             </div>
-          
-            <div class="p-5 rounded-3xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/30 transition-all flex flex-col justify-between space-y-4">
-              <div class="space-y-2">
-                <h3 class="text-base font-bold text-white">Tor-Unveil Darknet Traffic Correlation &amp; Defense</h3>
-                <p class="text-xs text-neutral-400">Cryptographic relay metadata analyzer and forensic de-anonymization platform</p>
-                <ul class="space-y-1 text-xs text-neutral-300 list-disc list-inside">
+          </section>
+
+          <!-- Key Projects -->
+          <section>
+            <h2 class="text-sm font-bold text-cyan-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+              <span class="text-base">🚀</span> Key Projects
+            </h2>
+            <div class="space-y-4">
+              
+              <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-2.5">
+                <div class="flex flex-wrap items-baseline justify-between gap-1">
+                  <h3 class="text-sm font-bold text-white">
+                    301 Super AI Agents — Sovereign Multi-Agent AI Platform
+                  </h3>
+                  <span class="text-xs font-semibold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
+                    1st · HackIndia 2026 (500+ Teams)
+                  </span>
+                </div>
+                <p class="text-xs text-neutral-400 italic">
+                  Local-first multi-agent AI platform with 301 specialised agents for real-world task automation.
+                </p>
+                <div class="flex flex-wrap gap-1 text-[11px] font-mono text-neutral-300">
                   
-                    <li class="leading-relaxed">Statistical packet flow correlation for identifying rogue Tor circuits</li>
+                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
+                    Python
+                  </span>
                   
-                    <li class="leading-relaxed">Interactive topological graph visualizer of encrypted node hops</li>
+                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
+                    LLMs (Ollama)
+                  </span>
                   
-                    <li class="leading-relaxed">Presented at TN Cyber Crime Department Technical Forum</li>
+                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
+                    Agent Orchestration
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
+                    FastAPI
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
+                    React.js
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
+                    OCR
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
+                    Workflow Automation
+                  </span>
+                  
+                </div>
+                <ul class="text-xs text-neutral-300 space-y-1 list-disc list-inside">
+                  
+                  <li>Designed a multi-agent platform with 301 specialised agents coordinated by a central Agent 301.</li>
+                  
+                  <li>Implemented local model selection, OCR document parsing, real-time streaming and automation.</li>
+                  
+                  <li>Built an interface supporting offline, on-device inference for privacy-sensitive environments.</li>
                   
                 </ul>
               </div>
-              <div class="space-y-3 pt-3 border-t border-white/5">
-                <div class="flex flex-wrap gap-1.5">
+              
+              <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-2.5">
+                <div class="flex flex-wrap items-baseline justify-between gap-1">
+                  <h3 class="text-sm font-bold text-white">
+                    TOR-UNVEIL — Dark Web AI Cybercriminal Tracker
+                  </h3>
+                  <span class="text-xs font-semibold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
+                    1st · TN Police Hackathon 2025
+                  </span>
+                </div>
+                <p class="text-xs text-neutral-400 italic">
+                  Full-stack AI platform adapted for live operational use by Tamil Nadu Police.
+                </p>
+                <div class="flex flex-wrap gap-1 text-[11px] font-mono text-neutral-300">
                   
-                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Go</span>
+                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
+                    Python
+                  </span>
                   
-                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Network Security</span>
+                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
+                    React.js
+                  </span>
                   
-                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">React</span>
+                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
+                    Node.js
+                  </span>
                   
-                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">D3.js</span>
+                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
+                    Tailwind CSS
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
+                    Machine Learning
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
+                    Data Analytics
+                  </span>
                   
                 </div>
-                <div class="flex items-center justify-between text-xs font-mono pt-1">
-                  <a href="https://github.com/reginaldalfret/tor-unveil" target="_blank" rel="noopener noreferrer" class="text-neutral-400 hover:text-white transition-colors">
-                    GitHub Code ↗
-                  </a>
-                  <a href="/projects/tor-unveil" class="text-cyan-400 hover:underline">
-                    Live Details →
-                  </a>
+                <ul class="text-xs text-neutral-300 space-y-1 list-disc list-inside">
+                  
+                  <li>Built a platform for real-time cybercriminal identification and network profiling on TOR dark web.</li>
+                  
+                  <li>Developed search, suspect profile cards and network-graph visualisations with ML classification.</li>
+                  
+                </ul>
+              </div>
+              
+              <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-2.5">
+                <div class="flex flex-wrap items-baseline justify-between gap-1">
+                  <h3 class="text-sm font-bold text-white">
+                    AI Crop Recommendation &amp; Agri-Intelligence Engine
+                  </h3>
+                  <span class="text-xs font-semibold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
+                    1st · Blaze a Trail 2.0
+                  </span>
                 </div>
+                <p class="text-xs text-neutral-400 italic">
+                  ML-powered recommendation system for precision farming.
+                </p>
+                <div class="flex flex-wrap gap-1 text-[11px] font-mono text-neutral-300">
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
+                    Python
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
+                    Machine Learning
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
+                    React.js
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
+                    REST APIs
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
+                    GIS Data
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
+                    Explainable AI
+                  </span>
+                  
+                </div>
+                <ul class="text-xs text-neutral-300 space-y-1 list-disc list-inside">
+                  
+                  <li>Built an ML engine using soil, weather and GIS datasets to deliver actionable farming insights.</li>
+                  
+                  <li>Integrated REST API backend with React.js dashboard; applied Explainable AI for accessibility.</li>
+                  
+                </ul>
               </div>
+              
             </div>
-          
+          </section>
         </div>
-      </section>
 
-      <!-- 5. Technical Skills -->
-      <section class="space-y-4">
-        <div class="flex items-center gap-2 pb-2 border-b border-white/10">
-          <span class="text-cyan-400 text-lg">⚙️</span>
-          <h2 class="text-lg font-bold text-white tracking-wide">Technical Proficiencies</h2>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
-          
-            <div class="p-4 rounded-2xl bg-neutral-900/40 border border-white/5 space-y-2">
-              <h3 class="text-xs font-mono font-bold text-cyan-400 tracking-wider uppercase">Languages &amp; Runtimes</h3>
-              <div class="flex flex-wrap gap-1.5">
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Go (Golang)</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Python</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">TypeScript</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">JavaScript</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">C#</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">C++</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Java</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Ruby</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">PHP</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">SQL</span>
-                
-              </div>
-            </div>
-          
-            <div class="p-4 rounded-2xl bg-neutral-900/40 border border-white/5 space-y-2">
-              <h3 class="text-xs font-mono font-bold text-cyan-400 tracking-wider uppercase">Frameworks &amp; Engines</h3>
-              <div class="flex flex-wrap gap-1.5">
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Go Buffalo</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Next.js</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Nuxt 3</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Django</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Spring Boot</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Laravel</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Ruby on Rails</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Angular</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Blazor WASM</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">FastAPI</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Express.js</span>
-                
-              </div>
-            </div>
-          
-            <div class="p-4 rounded-2xl bg-neutral-900/40 border border-white/5 space-y-2">
-              <h3 class="text-xs font-mono font-bold text-cyan-400 tracking-wider uppercase">AI / Data Science &amp; ML</h3>
-              <div class="flex flex-wrap gap-1.5">
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">PyTorch</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">TensorFlow</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">LangChain</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Hugging Face</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Pandas</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">NumPy</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">OpenCV</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Scikit-Learn</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Vector Databases</span>
-                
-              </div>
-            </div>
-          
-            <div class="p-4 rounded-2xl bg-neutral-900/40 border border-white/5 space-y-2">
-              <h3 class="text-xs font-mono font-bold text-cyan-400 tracking-wider uppercase">DevOps, Cloud &amp; Architecture</h3>
-              <div class="flex flex-wrap gap-1.5">
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Docker</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Kubernetes</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">AWS</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Google Cloud</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Azure</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">PostgreSQL</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Redis</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Kafka</span>
-                
-                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Git &amp; CI/CD</span>
-                
-              </div>
-            </div>
-          
-        </div>
-      </section>
-
-      <!-- 6. Achievements & Certifications -->
-      <section class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="p-5 rounded-3xl bg-neutral-900/40 border border-white/5 space-y-3">
-          <div class="flex items-center gap-2 pb-2 border-b border-white/10">
-            <span class="text-cyan-400">🎖️</span>
-            <h2 class="text-base font-bold text-white">Key Achievements</h2>
-          </div>
-          <div class="space-y-3">
-            
+        <!-- Right Column (5 cols): Skills, Education, Achievements, Certifications -->
+        <div class="lg:col-span-5 space-y-8">
+          <!-- Technical Skills -->
+          <section>
+            <h2 class="text-sm font-bold text-cyan-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+              <span class="text-base">🛠️</span> Technical Skills
+            </h2>
+            <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-3.5 text-xs">
               <div>
-                <div class="text-xs font-bold text-neutral-200">30 Merged PRs Across Big Tech &amp; Open-Source Giants</div>
-                <div class="text-xs text-neutral-400 leading-relaxed">Contributions accepted by Apple, Google, Microsoft, Meta, AWS, NVIDIA, NASA, Netflix, Linux Foundation &amp; Apache.</div>
+                <div class="font-semibold text-white mb-1.5 flex items-center gap-1.5">
+                  <span class="text-cyan-400">⚡</span>
+                  <span>AI &amp; Data Science</span>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  
+                  <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono text-[11px]">
+                    Machine Learning
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono text-[11px]">
+                    Deep Learning
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono text-[11px]">
+                    LLMs
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono text-[11px]">
+                    LoRA
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono text-[11px]">
+                    Prompt Engineering
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono text-[11px]">
+                    OCR
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono text-[11px]">
+                    Computer Vision
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono text-[11px]">
+                    Explainable AI
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono text-[11px]">
+                    Scikit-learn
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono text-[11px]">
+                    Data Analytics
+                  </span>
+                  
+                </div>
               </div>
-            
+
               <div>
-                <div class="text-xs font-bold text-neutral-200">Smart India Hackathon 2024 Winner</div>
-                <div class="text-xs text-neutral-400 leading-relaxed">1st Prize in India&#39;s biggest national hackathon organized by AICTE &amp; Ministry of Education.</div>
+                <div class="font-semibold text-white mb-1.5 flex items-center gap-1.5">
+                  <span class="text-sky-400">💻</span>
+                  <span>Languages</span>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-200 border border-white/10 font-mono text-[11px]">
+                    Python
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-200 border border-white/10 font-mono text-[11px]">
+                    JavaScript (ES6+)
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-200 border border-white/10 font-mono text-[11px]">
+                    TypeScript
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-200 border border-white/10 font-mono text-[11px]">
+                    SQL
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-200 border border-white/10 font-mono text-[11px]">
+                    HTML5
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-200 border border-white/10 font-mono text-[11px]">
+                    CSS3
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-200 border border-white/10 font-mono text-[11px]">
+                    Go
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-200 border border-white/10 font-mono text-[11px]">
+                    Swift
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-200 border border-white/10 font-mono text-[11px]">
+                    C++
+                  </span>
+                  
+                </div>
               </div>
-            
+
               <div>
-                <div class="text-xs font-bold text-neutral-200">Published Research &amp; Technical Contributions</div>
-                <div class="text-xs text-neutral-400 leading-relaxed">Authored papers on real-time neural edge processing and cryptographic forensic correlation.</div>
+                <div class="font-semibold text-white mb-1.5 flex items-center gap-1.5">
+                  <span class="text-emerald-400">🔀</span>
+                  <span>Open Source</span>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  
+                  <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-mono text-[11px]">
+                    Git
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-mono text-[11px]">
+                    GitHub
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-mono text-[11px]">
+                    Pull Requests
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-mono text-[11px]">
+                    Code Review
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-mono text-[11px]">
+                    Bug Fixing
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-mono text-[11px]">
+                    Regression Testing
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-mono text-[11px]">
+                    Documentation
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-mono text-[11px]">
+                    CVE Fixes
+                  </span>
+                  
+                </div>
               </div>
-            
-          </div>
+
+              <div>
+                <div class="font-semibold text-white mb-1.5 flex items-center gap-1.5">
+                  <span class="text-purple-400">⚙️</span>
+                  <span>Software Development</span>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
+                    React.js
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
+                    Node.js
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
+                    Express.js
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
+                    FastAPI
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
+                    REST APIs
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
+                    Tailwind CSS
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
+                    Bootstrap
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
+                    Material UI
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
+                    ERPNext
+                  </span>
+                  
+                </div>
+              </div>
+
+              <div>
+                <div class="font-semibold text-white mb-1.5 flex items-center gap-1.5">
+                  <span class="text-amber-400">🗄️</span>
+                  <span>Databases</span>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
+                    PostgreSQL
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
+                    MySQL
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
+                    MongoDB
+                  </span>
+                  
+                </div>
+              </div>
+
+              <div>
+                <div class="font-semibold text-white mb-1.5 flex items-center gap-1.5">
+                  <span class="text-pink-400">🔧</span>
+                  <span>Tools &amp; Platforms</span>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
+                    Docker
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
+                    AWS
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
+                    Linux
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
+                    Postman
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
+                    Figma
+                  </span>
+                  
+                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
+                    VS Code
+                  </span>
+                  
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Education -->
+          <section>
+            <h2 class="text-sm font-bold text-cyan-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+              <span class="text-base">🎓</span> Education
+            </h2>
+            <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-2">
+              <div class="font-bold text-sm text-white">
+                B.Tech – Artificial Intelligence &amp; Data Science
+              </div>
+              <div class="text-xs text-neutral-300">
+                St. Joseph's Institute of Technology, Chennai
+              </div>
+              <div class="flex items-center justify-between text-xs font-mono text-cyan-400 pt-1">
+                <span>2023 – 2027</span>
+                <span class="px-2 py-0.5 rounded bg-cyan-500/10 border border-cyan-500/20 text-cyan-300">
+                  CGPA 8.2 / 10 · No Arrears
+                </span>
+              </div>
+              <div class="text-[11px] text-neutral-400 pt-2 border-t border-white/5">
+                <strong class="text-neutral-300">Languages:</strong> English, Tamil, Malayalam
+              </div>
+            </div>
+          </section>
+
+          <!-- Achievements -->
+          <section>
+            <h2 class="text-sm font-bold text-cyan-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+              <span class="text-base">🏆</span> Achievements
+            </h2>
+            <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-2 text-xs">
+              
+              <div class="flex items-start gap-2 text-neutral-200">
+                <span>🥇</span>
+                <div>
+                  <strong class="text-white">1st – HackIndia 2026</strong>
+                  <span class="text-neutral-400">(301 Super AI Agents)</span>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-2 text-neutral-200">
+                <span>🥇</span>
+                <div>
+                  <strong class="text-white">1st – TN Police Hackathon 2025</strong>
+                  <span class="text-neutral-400">(TOR-UNVEIL)</span>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-2 text-neutral-200">
+                <span>🥇</span>
+                <div>
+                  <strong class="text-white">1st – Blaze a Trail 2.0</strong>
+                  <span class="text-neutral-400">(Crop Recommendation)</span>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-2 text-neutral-200">
+                <span>🛡️</span>
+                <div>
+                  <strong class="text-white">Finalist – TN Police Hackathon 2024</strong>
+                  
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-2 text-neutral-200">
+                <span>🏆</span>
+                <div>
+                  <strong class="text-white">Winner – 6 National-Level Technical Symposiums</strong>
+                  
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-2 text-neutral-200">
+                <span>🚀</span>
+                <div>
+                  <strong class="text-white">70+ other projects</strong>
+                  <span class="text-neutral-400">across AI, Web &amp; Automation</span>
+                </div>
+              </div>
+              
+            </div>
+          </section>
+
+          <!-- Certifications -->
+          <section>
+            <h2 class="text-sm font-bold text-cyan-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+              <span class="text-base">📜</span> Certifications
+            </h2>
+            <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-2 text-xs">
+              
+              <div class="flex items-center gap-2">
+                <span>🎓</span>
+                <span class="text-white font-medium">Meta Front-End Developer</span>
+                <span class="text-neutral-500 font-mono text-[11px] ml-auto">Coursera</span>
+              </div>
+              
+              <div class="flex items-center gap-2">
+                <span>🛡️</span>
+                <span class="text-white font-medium">Google Cybersecurity Certificate</span>
+                <span class="text-neutral-500 font-mono text-[11px] ml-auto">Coursera</span>
+              </div>
+              
+              <div class="flex items-center gap-2">
+                <span>⚛️</span>
+                <span class="text-white font-medium">React: The Complete Guide</span>
+                <span class="text-neutral-500 font-mono text-[11px] ml-auto">Udemy</span>
+              </div>
+              
+              <div class="flex items-center gap-2">
+                <span>🎨</span>
+                <span class="text-white font-medium">Figma UI/UX Design Essentials</span>
+                <span class="text-neutral-500 font-mono text-[11px] ml-auto">Udemy</span>
+              </div>
+              
+            </div>
+          </section>
         </div>
-
-        <div class="p-5 rounded-3xl bg-neutral-900/40 border border-white/5 space-y-3">
-          <div class="flex items-center gap-2 pb-2 border-b border-white/10">
-            <span class="text-cyan-400">📜</span>
-            <h2 class="text-base font-bold text-white">Certifications &amp; Credentials</h2>
-          </div>
-          <div class="space-y-3">
-            
-              <div class="flex items-center justify-between text-xs">
-                <div>
-                  <div class="font-bold text-neutral-200">Google Cloud Certified Professional Data Engineer</div>
-                  <div class="text-neutral-500 font-mono text-[11px]">Google Cloud</div>
-                </div>
-                <span class="font-mono text-neutral-400 text-[11px]">2024</span>
-              </div>
-            
-              <div class="flex items-center justify-between text-xs">
-                <div>
-                  <div class="font-bold text-neutral-200">AWS Certified Machine Learning – Specialty</div>
-                  <div class="text-neutral-500 font-mono text-[11px]">Amazon Web Services</div>
-                </div>
-                <span class="font-mono text-neutral-400 text-[11px]">2024</span>
-              </div>
-            
-              <div class="flex items-center justify-between text-xs">
-                <div>
-                  <div class="font-bold text-neutral-200">Deep Learning Specialization</div>
-                  <div class="text-neutral-500 font-mono text-[11px]">DeepLearning.AI</div>
-                </div>
-                <span class="font-mono text-neutral-400 text-[11px]">2023</span>
-              </div>
-            
-              <div class="flex items-center justify-between text-xs">
-                <div>
-                  <div class="font-bold text-neutral-200">Certified Kubernetes Application Developer (CKAD)</div>
-                  <div class="text-neutral-500 font-mono text-[11px]">Cloud Native Computing Foundation</div>
-                </div>
-                <span class="font-mono text-neutral-400 text-[11px]">2024</span>
-              </div>
-            
-          </div>
-        </div>
-      </section>
+      </div>
 
             
 
-      <!-- Footer -->
+      <!-- 5. Footer -->
             <!-- 4. Multi-Stack Architecture Section -->
       <section class="py-8 border-b border-white/10" id="stacks">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
@@ -1227,7 +1540,8 @@
           </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5">
+
           <!-- Next.js 14 Card -->
           <div class="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border-white/10 hover:border-cyan-500/30 border transition-all flex flex-col justify-between space-y-3">
             <div>
@@ -1246,18 +1560,17 @@
                 React 18 · App Router · TypeScript · Tailwind CSS · Vercel Edge.
               </p>
               <div class="text-[11px] font-mono text-cyan-400">
-                Production: reginaldalfret.tech
+                Live Route: /
               </div>
             </div>
             <div class="space-y-2 pt-2 border-t border-white/10">
-              
-                <a
-                  href="/"
-                  target="_top"
-                  class="w-full py-2 px-3 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 font-semibold text-xs border border-cyan-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
-                >
-                  <span>Switch to Next.js 14 Website</span>
-                </a>
+              <a
+                href="/"
+                target="_top"
+                class="w-full py-2 px-3 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 font-semibold text-xs border border-cyan-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+              >
+                <span>Switch to Next.js Website</span>
+              </a>
               <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
                 <a
                   href="/"
@@ -1301,14 +1614,13 @@
               </div>
             </div>
             <div class="space-y-2 pt-2 border-t border-white/10">
-              
-                <a
-                  href="/stacks/nuxt"
-                  target="_top"
-                  class="w-full py-2 px-3 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 font-semibold text-xs border border-emerald-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
-                >
-                  <span>Switch to Nuxt 3 Website</span>
-                </a>
+              <a
+                href="/stacks/nuxt"
+                target="_top"
+                class="w-full py-2 px-3 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 font-semibold text-xs border border-emerald-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+              >
+                <span>Switch to Nuxt 3 Website</span>
+              </a>
               <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
                 <a
                   href="/stacks/nuxt"
@@ -1352,14 +1664,13 @@
               </div>
             </div>
             <div class="space-y-2 pt-2 border-t border-white/10">
-              
-                <a
-                  href="/stacks/django"
-                  target="_top"
-                  class="w-full py-2 px-3 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-semibold text-xs border border-amber-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
-                >
-                  <span>Switch to Django 6 Website</span>
-                </a>
+              <a
+                href="/stacks/django"
+                target="_top"
+                class="w-full py-2 px-3 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-semibold text-xs border border-amber-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+              >
+                <span>Switch to Django Website</span>
+              </a>
               <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
                 <a
                   href="/stacks/django"
@@ -1381,42 +1692,41 @@
             </div>
           </div>
 
-          <!-- Spring Boot Card -->
-          <div class="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border-white/10 hover:border-lime-500/30 border transition-all flex flex-col justify-between space-y-3">
+          <!-- Spring Boot 3 Card -->
+          <div class="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border-white/10 hover:border-emerald-500/30 border transition-all flex flex-col justify-between space-y-3">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <div class="flex items-center gap-2">
-                  <div class="w-7 h-7 rounded-lg bg-lime-950/60 border-lime-500/40 text-lime-400 border flex items-center justify-center font-bold text-xs">
+                  <div class="w-7 h-7 rounded-lg bg-green-950/80 border-green-500/50 text-green-400 border flex items-center justify-center font-bold text-xs">
                     🍃
                   </div>
-                  <span class="font-bold text-sm text-white">Spring Boot</span>
+                  <span class="font-bold text-sm text-white">Spring Boot 3</span>
                 </div>
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-lime-500/10 text-lime-400 border border-lime-500/20">
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                   JAVA 21
                 </span>
               </div>
               <p class="text-xs text-neutral-400 mb-2 leading-relaxed">
                 Java 21 · Spring Boot 3.4 · Thymeleaf SSR · Embedded Tomcat · Maven.
               </p>
-              <div class="text-[11px] font-mono text-lime-400">
+              <div class="text-[11px] font-mono text-emerald-400">
                 Live Route: /stacks/springboot
               </div>
             </div>
             <div class="space-y-2 pt-2 border-t border-white/10">
-              
-                <a
-                  href="/stacks/springboot"
-                  target="_top"
-                  class="w-full py-2 px-3 rounded-xl bg-lime-500/20 hover:bg-lime-500/30 text-lime-300 font-semibold text-xs border border-lime-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
-                >
-                  <span>Switch to Spring Boot Website</span>
-                </a>
+              <a
+                href="/stacks/springboot"
+                target="_top"
+                class="w-full py-2 px-3 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 font-semibold text-xs border border-emerald-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+              >
+                <span>Switch to Spring Boot Website</span>
+              </a>
               <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
                 <a
                   href="/stacks/springboot"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center gap-1 hover:text-lime-400 transition-colors"
+                  class="inline-flex items-center gap-1 hover:text-emerald-400 transition-colors"
                 >
                   <span>Direct Link ↗</span>
                 </a>
@@ -1437,8 +1747,8 @@
             <div>
               <div class="flex items-center justify-between mb-2">
                 <div class="flex items-center gap-2">
-                  <div class="w-7 h-7 rounded-lg bg-red-950/60 border-red-500/40 text-red-400 border flex items-center justify-center font-bold text-xs">
-                    ▲
+                  <div class="w-7 h-7 rounded-lg bg-red-950/80 border-red-500/50 text-red-400 border flex items-center justify-center font-bold text-xs">
+                    🔺
                   </div>
                   <span class="font-bold text-sm text-white">Laravel 11/12</span>
                 </div>
@@ -1454,14 +1764,13 @@
               </div>
             </div>
             <div class="space-y-2 pt-2 border-t border-white/10">
-              
-                <a
-                  href="/stacks/laravel"
-                  target="_top"
-                  class="w-full py-2 px-3 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-red-300 font-semibold text-xs border border-red-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
-                >
-                  <span>Switch to Laravel 11/12 Website</span>
-                </a>
+              <a
+                href="/stacks/laravel"
+                target="_top"
+                class="w-full py-2 px-3 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-red-300 font-semibold text-xs border border-red-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+              >
+                <span>Switch to Laravel Website</span>
+              </a>
               <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
                 <a
                   href="/stacks/laravel"
@@ -1488,7 +1797,7 @@
             <div>
               <div class="flex items-center justify-between mb-2">
                 <div class="flex items-center gap-2">
-                  <div class="w-7 h-7 rounded-lg bg-rose-950/60 border-rose-500/40 text-rose-400 border flex items-center justify-center font-bold text-xs">
+                  <div class="w-7 h-7 rounded-lg bg-rose-950/80 border-rose-500/50 text-rose-400 border flex items-center justify-center font-bold text-xs">
                     💎
                   </div>
                   <span class="font-bold text-sm text-white">Rails 8</span>
@@ -1505,14 +1814,13 @@
               </div>
             </div>
             <div class="space-y-2 pt-2 border-t border-white/10">
-              
-                <a
-                  href="/stacks/rails"
-                  target="_top"
-                  class="w-full py-2 px-3 rounded-xl bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 font-semibold text-xs border border-rose-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
-                >
-                  <span>Switch to Rails 8 Website</span>
-                </a>
+              <a
+                href="/stacks/rails"
+                target="_top"
+                class="w-full py-2 px-3 rounded-xl bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 font-semibold text-xs border border-rose-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+              >
+                <span>Switch to Rails Website</span>
+              </a>
               <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
                 <a
                   href="/stacks/rails"
@@ -1534,36 +1842,35 @@
             </div>
           </div>
 
-          <!-- Angular Card -->
+          <!-- Angular 19/22 Card -->
           <div class="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border-white/10 hover:border-red-500/30 border transition-all flex flex-col justify-between space-y-3">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <div class="flex items-center gap-2">
-                  <div class="w-7 h-7 rounded-lg bg-red-950/60 border-red-500/40 text-red-400 border flex items-center justify-center font-bold text-xs">
+                  <div class="w-7 h-7 rounded-lg bg-red-950/80 border-red-500/50 text-red-400 border flex items-center justify-center font-bold text-xs">
                     A
                   </div>
-                  <span class="font-bold text-sm text-white">Angular</span>
+                  <span class="font-bold text-sm text-white">Angular 19/22</span>
                 </div>
                 <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-red-500/10 text-red-400 border border-red-500/20">
                   TS 6.0
                 </span>
               </div>
               <p class="text-xs text-neutral-400 mb-2 leading-relaxed">
-                Angular 19/22 · Signals · Standalone Components · Tailwind CSS.
+                TypeScript 6.0 · Standalone Components · Signals · Tailwind CSS · Vite.
               </p>
               <div class="text-[11px] font-mono text-red-400">
                 Live Route: /stacks/angular
               </div>
             </div>
             <div class="space-y-2 pt-2 border-t border-white/10">
-              
-                <a
-                  href="/stacks/angular"
-                  target="_top"
-                  class="w-full py-2 px-3 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-red-300 font-semibold text-xs border border-red-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
-                >
-                  <span>Switch to Angular Website</span>
-                </a>
+              <a
+                href="/stacks/angular"
+                target="_top"
+                class="w-full py-2 px-3 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-red-300 font-semibold text-xs border border-red-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+              >
+                <span>Switch to Angular Website</span>
+              </a>
               <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
                 <a
                   href="/stacks/angular"
@@ -1590,7 +1897,7 @@
             <div>
               <div class="flex items-center justify-between mb-2">
                 <div class="flex items-center gap-2">
-                  <div class="w-7 h-7 rounded-lg bg-purple-950/60 border-purple-500/40 text-purple-300 border flex items-center justify-center font-bold text-xs">
+                  <div class="w-7 h-7 rounded-lg bg-purple-950/80 border-purple-500/50 text-purple-400 border flex items-center justify-center font-bold text-xs">
                     B
                   </div>
                   <span class="font-bold text-sm text-white">Blazor</span>
@@ -1600,21 +1907,20 @@
                 </span>
               </div>
               <p class="text-xs text-neutral-400 mb-2 leading-relaxed">
-                .NET 8 · C# Client-Side WASM · Standalone SPA · Tailwind CSS.
+                .NET 8 · C# · Client-Side WASM · Standalone SPA · Tailwind CSS.
               </p>
               <div class="text-[11px] font-mono text-purple-400">
                 Live Route: /stacks/blazor
               </div>
             </div>
             <div class="space-y-2 pt-2 border-t border-white/10">
-              
-                <a
-                  href="/stacks/blazor"
-                  target="_top"
-                  class="w-full py-2 px-3 rounded-xl bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 font-semibold text-xs border border-purple-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
-                >
-                  <span>Switch to Blazor Website</span>
-                </a>
+              <a
+                href="/stacks/blazor"
+                target="_top"
+                class="w-full py-2 px-3 rounded-xl bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 font-semibold text-xs border border-purple-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+              >
+                <span>Switch to Blazor Website</span>
+              </a>
               <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
                 <a
                   href="/stacks/blazor"
@@ -1636,12 +1942,12 @@
             </div>
           </div>
 
-          <!-- Buffalo Card -->
+          <!-- Buffalo Card (ACTIVE) -->
           <div class="p-4 rounded-2xl bg-gradient-to-b from-cyan-500/10 to-transparent border-cyan-500/30 border transition-all flex flex-col justify-between space-y-3">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <div class="flex items-center gap-2">
-                  <div class="w-7 h-7 rounded-lg bg-cyan-950/60 border-cyan-500/40 text-cyan-300 border flex items-center justify-center font-bold text-xs">
+                  <div class="w-7 h-7 rounded-lg bg-cyan-950/80 border-cyan-500/50 text-cyan-400 border flex items-center justify-center font-bold text-xs">
                     🦬
                   </div>
                   <span class="font-bold text-sm text-white">Buffalo</span>
@@ -1654,23 +1960,15 @@
                 Go 1.27 · Buffalo Web Framework · Plush SSR · Gorilla Mux · Tailwind CSS.
               </p>
               <div class="text-[11px] font-mono text-cyan-400">
-                Live Route: /stacks/buffalo
+                Current Engine: Buffalo (GO 1.27)
               </div>
             </div>
             <div class="space-y-2 pt-2 border-t border-white/10">
-              
-                <span class="w-full py-2 px-3 rounded-xl bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 font-semibold text-xs shadow-sm flex items-center justify-center gap-1.5">
-                  <span>Viewing Active Buffalo</span>
-                </span>
+              <span class="w-full py-2 px-3 rounded-xl bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 font-semibold text-xs shadow-sm flex items-center justify-center gap-1.5">
+                <span>✨ Viewing Active Buffalo</span>
+              </span>
               <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
-                <a
-                  href="/stacks/buffalo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-1 hover:text-cyan-400 transition-colors"
-                >
-                  <span>Direct Link ↗</span>
-                </a>
+                <span class="text-neutral-500">Active Engine</span>
                 <a
                   href="https://github.com/reginaldalfret/portfolio-buffalo"
                   target="_blank"
@@ -1688,13 +1986,13 @@
             <div>
               <div class="flex items-center justify-between mb-2">
                 <div class="flex items-center gap-2">
-                  <div class="w-7 h-7 rounded-lg bg-orange-950/60 border-orange-500/40 text-orange-400 border flex items-center justify-center font-bold text-xs">
+                  <div class="w-7 h-7 rounded-lg bg-orange-950/80 border-orange-500/50 text-orange-400 border flex items-center justify-center font-bold text-xs">
                     🦀
                   </div>
                   <span class="font-bold text-sm text-white">Leptos</span>
                 </div>
                 <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20">
-                  RUST 1.99
+                  RUST WASM
                 </span>
               </div>
               <p class="text-xs text-neutral-400 mb-2 leading-relaxed">
@@ -1705,14 +2003,13 @@
               </div>
             </div>
             <div class="space-y-2 pt-2 border-t border-white/10">
-              
-                <a
-                  href="/stacks/leptos"
-                  target="_top"
-                  class="w-full py-2 px-3 rounded-xl bg-orange-500/20 hover:bg-orange-500/30 text-orange-300 font-semibold text-xs border border-orange-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
-                >
-                  <span>Switch to Leptos Website</span>
-                </a>
+              <a
+                href="/stacks/leptos"
+                target="_top"
+                class="w-full py-2 px-3 rounded-xl bg-orange-500/20 hover:bg-orange-500/30 text-orange-300 font-semibold text-xs border border-orange-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+              >
+                <span>Switch to Leptos Website</span>
+              </a>
               <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
                 <a
                   href="/stacks/leptos"
@@ -1734,42 +2031,41 @@
             </div>
           </div>
 
-          <!-- Jaspr (Dart Web) Card -->
-          <div class="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border-white/10 hover:border-emerald-500/30 border transition-all flex flex-col justify-between space-y-3">
+          <!-- Jaspr Card -->
+          <div class="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border-white/10 hover:border-teal-500/30 border transition-all flex flex-col justify-between space-y-3">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <div class="flex items-center gap-2">
-                  <div class="w-7 h-7 rounded-lg bg-emerald-950/60 border-emerald-500/40 text-emerald-300 border flex items-center justify-center font-bold text-xs">
+                  <div class="w-7 h-7 rounded-lg bg-teal-950/80 border-teal-500/50 text-teal-400 border flex items-center justify-center font-bold text-xs">
                     🎯
                   </div>
-                  <span class="font-bold text-sm text-white">Jaspr (Dart Web)</span>
+                  <span class="font-bold text-sm text-white">Jaspr</span>
                 </div>
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-teal-500/10 text-teal-400 border border-teal-500/20">
                   DART 3.13
                 </span>
               </div>
               <p class="text-xs text-neutral-400 mb-2 leading-relaxed">
-                Dart 3.13 · Jaspr SSR & Hydration · Reactive Components · Tailwind CSS.
+                Dart 3.13.5 · Jaspr SSR & Hydration · Reactive Components · Tailwind CSS.
               </p>
-              <div class="text-[11px] font-mono text-emerald-400">
+              <div class="text-[11px] font-mono text-teal-400">
                 Live Route: /stacks/jaspr
               </div>
             </div>
             <div class="space-y-2 pt-2 border-t border-white/10">
-              
-                <a
-                  href="/stacks/jaspr"
-                  target="_top"
-                  class="w-full py-2 px-3 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 font-semibold text-xs border border-emerald-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
-                >
-                  <span>Switch to Jaspr (Dart Web) Website</span>
-                </a>
+              <a
+                href="/stacks/jaspr"
+                target="_top"
+                class="w-full py-2 px-3 rounded-xl bg-teal-500/20 hover:bg-teal-500/30 text-teal-300 font-semibold text-xs border border-teal-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+              >
+                <span>Switch to Jaspr Website</span>
+              </a>
               <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
                 <a
                   href="/stacks/jaspr"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center gap-1 hover:text-emerald-400 transition-colors"
+                  class="inline-flex items-center gap-1 hover:text-teal-400 transition-colors"
                 >
                   <span>Direct Link ↗</span>
                 </a>
@@ -1785,42 +2081,41 @@
             </div>
           </div>
 
-          <!-- Vapor 4 (Swift) Card -->
-          <div class="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border-white/10 hover:border-sky-500/30 border transition-all flex flex-col justify-between space-y-3">
+          <!-- Vapor 4 Card -->
+          <div class="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border-white/10 hover:border-cyan-500/30 border transition-all flex flex-col justify-between space-y-3">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <div class="flex items-center gap-2">
-                  <div class="w-7 h-7 rounded-lg bg-sky-950/60 border-sky-500/40 text-sky-400 border flex items-center justify-center font-bold text-xs">
+                  <div class="w-7 h-7 rounded-lg bg-blue-950/80 border-blue-500/50 text-blue-400 border flex items-center justify-center font-bold text-xs">
                     💧
                   </div>
-                  <span class="font-bold text-sm text-white">Vapor 4 (Swift)</span>
+                  <span class="font-bold text-sm text-white">Vapor 4</span>
                 </div>
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20">
-                  SWIFT 5.10
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                  SWIFT 6.0
                 </span>
               </div>
               <p class="text-xs text-neutral-400 mb-2 leading-relaxed">
-                Server-Side Swift · Vapor 4 · Non-blocking Async I/O (SwiftNIO) · Leaf · Tailwind CSS.
+                Swift 6.0 · Vapor 4 (SwiftNIO) · Leaf · Dynamic SSR · Tailwind CSS.
               </p>
-              <div class="text-[11px] font-mono text-sky-400">
+              <div class="text-[11px] font-mono text-cyan-400">
                 Live Route: /stacks/vapor
               </div>
             </div>
             <div class="space-y-2 pt-2 border-t border-white/10">
-              
-                <a
-                  href="/stacks/vapor"
-                  target="_top"
-                  class="w-full py-2 px-3 rounded-xl bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 font-semibold text-xs border border-sky-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
-                >
-                  <span>Switch to Vapor 4 (Swift) Website</span>
-                </a>
+              <a
+                href="/stacks/vapor"
+                target="_top"
+                class="w-full py-2 px-3 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 font-semibold text-xs border border-cyan-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+              >
+                <span>Switch to Vapor Website</span>
+              </a>
               <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
                 <a
                   href="/stacks/vapor"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center gap-1 hover:text-sky-400 transition-colors"
+                  class="inline-flex items-center gap-1 hover:text-cyan-400 transition-colors"
                 >
                   <span>Direct Link ↗</span>
                 </a>
@@ -1843,207 +2138,66 @@
           BETTER TECHNOLOGY • HAPPIER PEOPLE
         </div>
         <div>
-          Engineered natively with Go Buffalo 1.1.4 &amp; Go 1.27 • Built by Reginald Alfret V • 
-          <a href="/Reginald_Alfret_Resume.pdf" download class="text-cyan-400 hover:underline">Download Resume PDF</a>
+          Powered by Django &amp; Python • Built by Reginald Alfret V •
+          <a
+            href="/static/portfolio/Reginald_Alfret_Resume.pdf"
+            class="text-cyan-400 hover:underline"
+          >
+            Download PDF
+          </a>
         </div>
       </footer>
-
-    </main>
-
-    <!-- Bottom Floating Cross-Framework Dock (9 Stacks) -->
-    <div class="floating-stack-dock fixed bottom-4 left-1/2 -translate-x-1/2 z-50 no-print max-w-[95vw] overflow-x-auto">
-      <div class="backdrop-blur-xl bg-black/85 border border-white/15 rounded-full py-1.5 px-3.5 shadow-2xl flex items-center gap-2 text-xs whitespace-nowrap">
-        <span class="text-[11px] font-mono text-neutral-400 hidden sm:inline">Stack:</span>
-
-        <a
-          href="/"
-          target="_top"
-          class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
-          title="Switch to Next.js (Production)"
-        >
-          <span>Next.js</span>
-        </a>
-
-        <a
-          href="/stacks/nuxt"
-          target="_top"
-          class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
-          title="Switch to Nuxt 3 (Vue 3)"
-        >
-          <span>Nuxt 3</span>
-        </a>
-
-        <a
-          href="/stacks/django"
-          target="_top"
-          class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
-          title="Switch to Django (Python 3.13)"
-        >
-          <span>Django</span>
-        </a>
-
-        <a
-          href="/stacks/springboot"
-          target="_top"
-          class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
-          title="Switch to Spring Boot (Java 21)"
-        >
-          <span>Spring Boot</span>
-        </a>
-
-        <a
-          href="/stacks/laravel"
-          target="_top"
-          class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
-          title="Switch to Laravel (PHP 8.4)"
-        >
-          <span>Laravel</span>
-        </a>
-
-        <a
-          href="/stacks/rails"
-          target="_top"
-          class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
-          title="Switch to Rails 8 (Ruby 3.4)"
-        >
-          <span>Rails</span>
-        </a>
-
-        <a
-          href="/stacks/angular"
-          target="_top"
-          class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
-          title="Switch to Angular (TypeScript 6.0)"
-        >
-          <span>Angular</span>
-        </a>
-
-        <a
-          href="/stacks/blazor"
-          target="_top"
-          class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
-          title="Switch to Blazor (.NET 8 WASM)"
-        >
-          <span>Blazor</span>
-        </a>
-
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 font-semibold shadow-sm">
-          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
-          Buffalo
-        </span>
-
-        <a
-          href="/stacks/leptos"
-          target="_top"
-          class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
-          title="Switch to Leptos (Rust WebAssembly)"
-        >
-          <span>Leptos</span>
-        </a>
-        <a
-          href="/stacks/jaspr"
-          target="_top"
-          class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
-          title="Switch to Jaspr (Dart SSR & Hydration)"
-        >
-          <span>Jaspr</span>
-        </a>
-        <a
-          href="/stacks/vapor"
-          target="_top"
-          class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
-          title="Switch to Vapor (Swift 6.0)"
-        >
-          <span>Vapor</span>
-        </a>
-      </div>
     </div>
-
-    <!-- Interactive PDF Modal -->
-    <div id="pdf-modal" class="fixed inset-0 z-50 hidden flex-col items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-      <div class="relative w-full max-w-5xl h-[85vh] bg-neutral-900 border border-white/15 rounded-3xl overflow-hidden shadow-2xl flex flex-col">
-        <div class="flex items-center justify-between p-4 border-b border-white/10 bg-neutral-950/80">
-          <div class="flex items-center gap-2">
-            <span class="text-sm font-bold text-white">Reginald Alfret V — Official Resume</span>
-            <span class="text-xs font-mono text-neutral-400">(PDF Viewer)</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <a
-              href="/Reginald_Alfret_Resume.pdf"
-              download
-              class="px-3 py-1 rounded-lg bg-cyan-500/20 text-cyan-300 text-xs font-semibold hover:bg-cyan-500/30 transition-colors"
-            >
-              Download
-            </a>
-            <button
-              type="button"
-              onclick="togglePdfModal(false)"
-              class="px-3 py-1 rounded-lg bg-white/10 text-white text-xs font-semibold hover:bg-white/20 transition-colors"
-            >
-              ✕ Close
-            </button>
-          </div>
-        </div>
-        <iframe
-          src="/Reginald_Alfret_Resume.pdf"
-          class="w-full flex-1 border-0"
-          title="Reginald Alfret Resume"
-        ></iframe>
-      </div>
-    </div>
-
   </div>
 
+  
   <script>
-    function togglePdfModal(show) {
-      var modal = document.getElementById('pdf-modal');
-      if (modal) {
-        if (show) {
-          modal.classList.remove('hidden');
-          modal.classList.add('flex');
-        } else {
-          modal.classList.add('hidden');
-          modal.classList.remove('flex');
-        }
+    if (window.self !== window.top) {
+      document.documentElement.classList.add('is-embedded');
+    }
+
+    function setViewMode(mode) {
+      const interactiveView = document.getElementById('interactive-view');
+      const pdfView = document.getElementById('pdf-view');
+      const btnInteractive = document.getElementById('btn-interactive');
+      const btnPdf = document.getElementById('btn-pdf');
+
+      if (mode === 'pdf') {
+        interactiveView.classList.add('hidden');
+        pdfView.classList.remove('hidden');
+
+        btnPdf.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium transition-all bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 shadow-sm";
+        btnInteractive.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium transition-all text-neutral-400 hover:text-white";
+      } else {
+        pdfView.classList.add('hidden');
+        interactiveView.classList.remove('hidden');
+
+        btnInteractive.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium transition-all bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 shadow-sm";
+        btnPdf.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium transition-all text-neutral-400 hover:text-white";
       }
     }
   </script>
-      <!-- Floating Bottom Stack Dock (All 12 Stacks - Mobile Optimized) -->
-      <div class="floating-stack-dock fixed bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-50 no-print w-[96vw] sm:w-auto max-w-[96vw]">
-        <div class="backdrop-blur-xl bg-black/90 border border-white/20 rounded-full py-1.5 px-3 shadow-2xl flex items-center gap-1.5 sm:gap-2 text-xs overflow-x-auto no-scrollbar scroll-smooth">
-          <span class="text-[11px] font-mono text-neutral-400 hidden md:inline shrink-0">Stack:</span>
-          <a href="/" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Next.js"><span>Next.js</span></a>
-          <a href="/stacks/nuxt" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Nuxt 3"><span>Nuxt 3</span></a>
-          <a href="/stacks/django" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Django"><span>Django</span></a>
-          <a href="/stacks/springboot" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Spring Boot"><span>Spring Boot</span></a>
-          <a href="/stacks/laravel" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Laravel"><span>Laravel</span></a>
-          <a href="/stacks/rails" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Rails"><span>Rails</span></a>
-          <a href="/stacks/angular" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Angular"><span>Angular</span></a>
-          <a href="/stacks/blazor" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Blazor"><span>Blazor</span></a>
-          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 font-semibold shadow-sm shrink-0 whitespace-nowrap"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span><span>Buffalo</span></span>
-          <a href="/stacks/leptos" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Leptos"><span>Leptos</span></a>
-          <a href="/stacks/jaspr" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Jaspr"><span>Jaspr</span></a>
-          <a href="/stacks/vapor" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Vapor"><span>Vapor</span></a>
-        </div>
-      </div>
-      <!-- Floating Bottom Stack Dock (All 12 Stacks - Mobile Optimized) -->
-      <div class="floating-stack-dock fixed bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-50 no-print w-[96vw] sm:w-auto max-w-[96vw]">
-        <div class="backdrop-blur-xl bg-black/90 border border-white/20 rounded-full py-1.5 px-3 shadow-2xl flex items-center gap-1.5 sm:gap-2 text-xs overflow-x-auto no-scrollbar scroll-smooth">
-          <span class="text-[11px] font-mono text-neutral-400 hidden md:inline shrink-0">Stack:</span>
-          <a href="/" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Next.js"><span>Next.js</span></a>
-          <a href="/stacks/nuxt" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Nuxt 3"><span>Nuxt 3</span></a>
-          <a href="/stacks/django" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Django"><span>Django</span></a>
-          <a href="/stacks/springboot" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Spring Boot"><span>Spring Boot</span></a>
-          <a href="/stacks/laravel" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Laravel"><span>Laravel</span></a>
-          <a href="/stacks/rails" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Rails"><span>Rails</span></a>
-          <a href="/stacks/angular" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Angular"><span>Angular</span></a>
-          <a href="/stacks/blazor" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Blazor"><span>Blazor</span></a>
-          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 font-semibold shadow-sm shrink-0 whitespace-nowrap"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span><span>Buffalo</span></span>
-          <a href="/stacks/leptos" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Leptos"><span>Leptos</span></a>
-          <a href="/stacks/jaspr" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Jaspr"><span>Jaspr</span></a>
-          <a href="/stacks/vapor" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Vapor"><span>Vapor</span></a>
-        </div>
-      </div>
-  </body>
-</html>
 
+  <!-- Floating Bottom Stack Dock (All 12 Stacks - Mobile Optimized) -->
+  <div class="floating-stack-dock fixed bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-50 no-print w-[96vw] sm:w-auto max-w-[96vw]">
+    <div class="backdrop-blur-xl bg-black/90 border border-white/20 rounded-full py-1.5 px-3 shadow-2xl flex items-center gap-1.5 sm:gap-2 text-xs overflow-x-auto no-scrollbar scroll-smooth">
+      <span class="text-[11px] font-mono text-neutral-400 hidden sm:inline pl-1 shrink-0">Stack:</span>
+          <a href="/" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Next.js 14"><span>Next.js</span></a>
+          <a href="/stacks/nuxt" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Nuxt 3"><span>Nuxt 3</span></a>
+          <a href="/stacks/django" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Django 6"><span>Django</span></a>
+          <a href="/stacks/springboot" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Spring Boot 3"><span>Spring Boot</span></a>
+          <a href="/stacks/laravel" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Laravel 11/12"><span>Laravel</span></a>
+          <a href="/stacks/rails" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Rails 8"><span>Rails</span></a>
+          <a href="/stacks/angular" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Angular 19/22"><span>Angular</span></a>
+          <a href="/stacks/blazor" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Blazor"><span>Blazor</span></a>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 font-semibold shadow-sm shrink-0 whitespace-nowrap">
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+            Buffalo
+          </span>
+          <a href="/stacks/leptos" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Leptos"><span>Leptos</span></a>
+          <a href="/stacks/jaspr" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Jaspr"><span>Jaspr</span></a>
+          <a href="/stacks/vapor" target="_top" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium shrink-0 whitespace-nowrap" title="Switch to Vapor 4"><span>Vapor</span></a>
+    </div>
+  </div>
+</body>
+</html>
