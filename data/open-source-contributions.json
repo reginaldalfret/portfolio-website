@@ -1,5 +1,63 @@
 [
   {
+    "id": "vercel-v0-sdk-268",
+    "organization": "Vercel",
+    "orgKey": "vercel",
+    "organizationUrl": "https://github.com/vercel",
+    "repository": "vercel/v0-sdk",
+    "repositoryUrl": "https://github.com/vercel/v0-sdk",
+    "prNumber": 268,
+    "title": "fix(payload): allow omitted edits in toDesignModeMessage and fix clean script",
+    "url": "https://github.com/vercel/v0-sdk/pull/268",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "BUG FIX",
+    "contribution": "1. Default edits to [] when input['edits'] === undefined in toDesignModeMessage (packages/v0-sdk/src/design-mode/payload.ts). 2. Remove unexpanded .tsbuildinfo glob from create-v0-sdk-app's clean script (packages/crea…",
+    "description": "1. Default edits to [] when input['edits'] === undefined in toDesignModeMessage (packages/v0-sdk/src/design-mode/payload.ts). 2. Remove unexpanded .tsbuildinfo glob from create-v0-sdk-app's clean script (packages/crea…",
+    "labels": [],
+    "date": "2026-11-09T15:13:42.000Z",
+    "mergedAt": "2026-11-09T15:13:42.000Z",
+    "displayDate": "Nov 9, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
+    "id": "mozilla-remote-settings-1682",
+    "organization": "Mozilla",
+    "orgKey": "mozilla",
+    "organizationUrl": "https://github.com/mozilla",
+    "repository": "mozilla/remote-settings",
+    "repositoryUrl": "https://github.com/mozilla/remote-settings",
+    "prNumber": 1682,
+    "title": "fix(cronjobs): retry ChunkedEncodingError and transient 5xx in KintoClient",
+    "url": "https://github.com/mozilla/remote-settings/pull/1682",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "BUG FIX",
+    "contribution": "Closes 1657 and addresses 1667 (Jira: RMST-573 and RMST-580).",
+    "description": "Closes 1657 and addresses 1667 (Jira: RMST-573 and RMST-580).",
+    "labels": [
+      "bug"
+    ],
+    "date": "2026-11-09T11:27:56.000Z",
+    "mergedAt": "2026-11-09T11:27:56.000Z",
+    "displayDate": "Nov 9, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
     "id": "armmbed-dapjs-131",
     "organization": "Armmbed",
     "orgKey": "armmbed",
