@@ -66,20 +66,19 @@ const CONTRIBUTIONS = [
 
 export function ResumePortfolio() {
   const [viewMode, setViewMode] = useState<"interactive" | "pdf">("interactive");
-  const [activeStack, setActiveStack] = useState<"nextjs" | "nuxt" | "django" | "springboot" | "laravel" | "rails" | "angular">("nextjs");
+  const [activeStack, setActiveStack] = useState<"nextjs" | "nuxt" | "django" | "springboot" | "laravel" | "rails" | "angular" | "blazor">("nextjs");
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const params = new URLSearchParams(window.location.search);
       const stack = params.get("stack");
-      if (stack === "nuxt" || stack === "django" || stack === "nextjs" || stack === "springboot" || stack === "laravel" || stack === "rails") {
-
-        setActiveStack(stack as "nextjs" | "nuxt" | "django" | "springboot" | "laravel" | "rails");
+      if (stack === "nuxt" || stack === "django" || stack === "nextjs" || stack === "springboot" || stack === "laravel" || stack === "rails" || stack === "angular" || stack === "blazor") {
+        setActiveStack(stack as "nextjs" | "nuxt" | "django" | "springboot" | "laravel" | "rails" | "angular" | "blazor");
       }
     }
   }, []);
 
-  const switchStack = (stack: "nextjs" | "nuxt" | "django" | "springboot" | "laravel" | "rails" | "angular") => {
+  const switchStack = (stack: "nextjs" | "nuxt" | "django" | "springboot" | "laravel" | "rails" | "angular" | "blazor") => {
     setActiveStack(stack);
     if (typeof window !== "undefined") {
       const url = new URL(window.location.href);
@@ -450,6 +449,54 @@ export function ResumePortfolio() {
                 src="/stacks/angular"
                 className="w-full h-full border-0"
                 title="Angular Stack Portfolio"
+              />
+            </div>
+          </div>
+        ) : activeStack === "blazor" ? (
+          /* Blazor WASM Live Stack Mode */
+          <div className="backdrop-blur-2xl bg-neutral-950/90 border border-purple-600/40 rounded-3xl p-4 sm:p-6 shadow-2xl space-y-4">
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-white/10">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-purple-950/80 border border-purple-500/50 flex items-center justify-center font-bold text-sm text-purple-300">
+                  B
+                </div>
+                <div>
+                  <div className="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+                    <span>.NET 8 Blazor WASM Architecture</span>
+                    <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/40 flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
+                      LIVE
+                    </span>
+                  </div>
+                  <div className="text-xs text-neutral-400 font-mono">
+                    .NET 8 · C# Client-Side WASM · Standalone SPA · Tailwind CSS
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => switchStack("nextjs")}
+                  className="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-white/10 hover:bg-white/15 text-white transition-colors"
+                >
+                  ← Back to Next.js
+                </button>
+                <a
+                  href="/stacks/blazor"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 border border-purple-500/40 transition-colors"
+                >
+                  <span>Open Full Window</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+            <div className="w-full h-[85vh] rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
+              <iframe
+                src="/stacks/blazor"
+                className="w-full h-full border-0"
+                title="Blazor WASM Stack Portfolio"
               />
             </div>
           </div>
@@ -957,11 +1004,11 @@ export function ResumePortfolio() {
                   </p>
                 </div>
                 <div className="text-[11px] font-mono text-red-400 bg-red-500/10 px-2.5 py-1 rounded-md border border-red-500/20 self-start sm:self-auto">
-                  7 Stacks Available
+                  8 Stacks Available
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-7 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-8 gap-3">
                 {/* Next.js (Active Production) */}
                 <div className="p-4 rounded-2xl bg-gradient-to-b from-cyan-500/10 to-transparent border border-cyan-500/30 relative flex flex-col justify-between space-y-3">
                   <div>
@@ -1325,6 +1372,59 @@ export function ResumePortfolio() {
                       </a>
                     </div>
                   </div>
+                </div>
+
+                {/* Blazor WASM */}
+                <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all flex flex-col justify-between space-y-3">
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-2">
+                        <div className="w-7 h-7 rounded-lg bg-purple-950/60 border border-purple-500/40 flex items-center justify-center font-bold text-xs text-purple-300">
+                          B
+                        </div>
+                        <span className="font-bold text-sm text-white">Blazor</span>
+                      </div>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                        .NET 8
+                      </span>
+                    </div>
+                    <p className="text-xs text-neutral-400 mb-2">
+                      .NET 8 · C# Client-Side WASM · Standalone SPA · Tailwind CSS.
+                    </p>
+                    <div className="text-[11px] font-mono text-neutral-400">
+                      Live Route: <a href="/stacks/blazor" className="text-purple-400 hover:underline">/stacks/blazor</a>
+                    </div>
+                  </div>
+                  <div className="space-y-2 pt-2 border-t border-white/10">
+                    <button
+                      type="button"
+                      onClick={() => switchStack("blazor")}
+                      className="w-full py-2 px-3 rounded-xl bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 font-semibold text-xs border border-purple-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+                    >
+                      <Sparkles className="w-3.5 h-3.5" />
+                      <span>Switch to Blazor Website</span>
+                    </button>
+                    <div className="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
+                      <a
+                        href="/stacks/blazor"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 hover:text-purple-400 transition-colors"
+                      >
+                        <span>Direct Link</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                      <a
+                        href="https://github.com/reginaldalfret/portfolio-blazor"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 hover:text-white transition-colors"
+                      >
+                        <Github className="w-3.5 h-3.5" />
+                        <span>Source Code</span>
+                      </a>
+                    </div>
+                  </div>
                 </div> </div>
               </div>
             </section>
@@ -1442,6 +1542,19 @@ export function ResumePortfolio() {
           >
             {activeStack === "angular" && <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse" />}
             <span>Angular</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => switchStack("blazor")}
+            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-semibold transition-all ${
+              activeStack === "blazor"
+                ? "bg-purple-600/20 text-purple-300 border border-purple-500/40 shadow-sm"
+                : "text-neutral-400 hover:text-white hover:bg-white/10"
+            }`}
+          >
+            {activeStack === "blazor" && <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />}
+            <span>Blazor</span>
           </button>
         </div>
       </div>

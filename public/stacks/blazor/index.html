@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reginald Alfret V | Open-Source Contributor · AI &amp; DS Engineer (Blazor)</title>
+    <base href="/stacks/blazor/" />
+    <script>
+      if (window.location.pathname.indexOf('/stacks/blazor') !== -1) {
+        document.getElementsByTagName('base')[0].setAttribute('href', '/stacks/blazor/');
+      }
+    </script>
+    <meta name="description" content="Open-Source Contributor, AI & Data Science Engineer, and Software Developer with 30 merged PRs across Apple, Google, Microsoft, Meta, AWS, NVIDIA, NASA, Netflix and more." />
+    <meta name="theme-color" content="#050505" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <!-- Instant embedded check to prevent dock flicker inside iframes -->
+    <script>
+      if (window.self !== window.top) {
+        document.documentElement.classList.add('is-embedded');
+      }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              blazor: {
+                DEFAULT: '#512BD4',
+                dark: '#3f1f9e',
+                gradient: '#7e57c2'
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      body {
+        background-color: #050505;
+        color: #f5f5f5;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      }
+      ::selection {
+        background-color: rgba(81, 43, 212, 0.25);
+        color: #d8b4fe;
+      }
+      .is-embedded .floating-stack-dock,
+      html.is-embedded .floating-stack-dock {
+        display: none !important;
+      }
+      @media print {
+        .no-print {
+          display: none !important;
+        }
+      }
+      .blazor-loader {
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        background: #050505; color: #fff; z-index: 9999;
+      }
+    </style>
+</head>
+<body class="bg-[#050505] text-neutral-100 min-h-screen">
+    <div id="app">
+        <div class="blazor-loader font-mono text-center space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-700 via-indigo-600 to-purple-500 flex items-center justify-center shadow-xl shadow-purple-500/20 text-white font-black text-xl animate-pulse mx-auto">
+                B
+            </div>
+            <div class="text-sm font-semibold tracking-wide text-neutral-200">Loading Blazor WebAssembly...</div>
+            <div class="text-xs text-purple-400">.NET 8 · C# WASM Runtime</div>
+        </div>
+    </div>
+
+    <div id="blazor-error-ui" class="hidden">
+        An unhandled error has occurred.
+        <a href="" class="reload text-purple-400 underline">Reload</a>
+    </div>
+    <script src="_framework/blazor.webassembly.js"></script>
+</body>
+</html>
