@@ -206,7 +206,7 @@ export function ResumePortfolio() {
             </div>
             <div className="w-full h-[85vh] rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
               <iframe
-                src="/stacks/nuxt/"
+                src="/stacks/nuxt"
                 className="w-full h-full border-0"
                 title="Nuxt 3 Stack Portfolio"
               />
@@ -254,7 +254,7 @@ export function ResumePortfolio() {
             </div>
             <div className="w-full h-[85vh] rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
               <iframe
-                src="/stacks/django/"
+                src="/stacks/django"
                 className="w-full h-full border-0"
                 title="Django Stack Portfolio"
               />
