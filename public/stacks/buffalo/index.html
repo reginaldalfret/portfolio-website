@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reginald Alfret V | Open-Source Contributor · AI &amp; DS Engineer (Go Buffalo)</title>
+  <meta name="description" content="Open-Source Contributor, AI & Data Science Engineer, and Software Developer with 30 merged PRs across Apple, Google, Microsoft, Meta, AWS, NVIDIA, NASA, Netflix and more." />
+  <meta name="theme-color" content="#050505" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+  <!-- Instant embedded check to prevent dock flicker inside iframes -->
+  <script>
+    if (window.self !== window.top) {
+      document.documentElement.classList.add('is-embedded');
+    }
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            buffalo: {
+              DEFAULT: '#06B6D4',
+              dark: '#0891B2',
+              light: '#22D3EE'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #050505;
+      color: #f5f5f5;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    ::selection {
+      background-color: rgba(6, 182, 212, 0.25);
+      color: #67e8f9;
+    }
+    .is-embedded .floating-stack-dock,
+    html.is-embedded .floating-stack-dock {
+      display: none !important;
+    }
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#050505] text-neutral-100 min-h-screen">
+  <div class="min-h-screen bg-[#050505] text-neutral-100 selection:bg-cyan-500/20 selection:text-cyan-300 relative overflow-x-hidden">
+    
+    <!-- Ambient Background Glow -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+      <div class="absolute -top-40 -left-40 w-96 h-96 bg-cyan-600/10 rounded-full blur-[128px]"></div>
+      <div class="absolute top-1/3 -right-40 w-96 h-96 bg-teal-600/10 rounded-full blur-[128px]"></div>
+      <div class="absolute -bottom-40 left-1/3 w-96 h-96 bg-blue-600/10 rounded-full blur-[128px]"></div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-12">
+      
+      <!-- Top Command Bar -->
+      <header class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-4 rounded-3xl bg-neutral-900/60 border border-white/10 backdrop-blur-xl">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-cyan-600 via-teal-500 to-cyan-400 flex items-center justify-center font-black text-xl text-black shadow-lg shadow-cyan-500/20">
+            🦬
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-white text-base">Reginald Alfret V</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 flex items-center gap-1 font-semibold">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                BUFFALO · GO 1.27
+              </span>
+            </div>
+            <p class="text-xs text-neutral-400 font-mono">Open-Source Contributor · AI &amp; Data Science Engineer</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+          <button
+            type="button"
+            onclick="togglePdfModal(true)"
+            class="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-white/10 hover:bg-white/15 text-white transition-all flex items-center gap-1.5 border border-white/10"
+          >
+            <span>Original Resume (PDF)</span>
+          </button>
+          <a
+            href="/Reginald_Alfret_Resume.pdf"
+            download
+            class="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 transition-all flex items-center gap-1.5 border border-cyan-500/40 shadow-sm"
+          >
+            <span>Download CV</span>
+            <span class="text-[10px]">↓</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-mono text-cyan-300">
+          <span>⚡ High-Performance Go Buffalo SSR Architecture</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white">
+          Engineering Scalable AI Systems &amp; <span class="bg-gradient-to-r from-cyan-400 via-teal-300 to-blue-400 bg-clip-text text-transparent">Open-Source Core</span>
+        </h1>
+        <p class="text-sm sm:text-base text-neutral-300 max-w-3xl leading-relaxed">
+          Developer with 30 merged PRs across the world's most influential technology organizations including Apple, Google, Microsoft, Meta, AWS, NVIDIA, NASA, and Netflix. Specializing in autonomous multi-agent pipelines, distributed systems, machine learning engineering, and full-stack software development.
+        </p>
+        <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-neutral-400 pt-2">
+          <span>📍 Chennai, India</span>
+          <span>•</span>
+          <a href="mailto:reginaldalfret.work@gmail.com" class="text-cyan-400 hover:underline">reginaldalfret.work@gmail.com</a>
+          <span>•</span>
+          <a href="https://github.com/reginaldalfret" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:underline">github.com/reginaldalfret</a>
+          <span>•</span>
+          <a href="https://linkedin.com/in/reginald-alfret" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:underline">linkedin.com/in/reginald-alfret</a>
+        </div>
+      </section>
+
+      <!-- 1. Open Source Contributions (30 Merged PRs) -->
+      <section class="space-y-4">
+        <div class="flex items-center justify-between pb-2 border-b border-white/10">
+          <div class="flex items-center gap-2">
+            <span class="text-cyan-400 text-lg">⌥</span>
+            <h2 class="text-lg font-bold text-white tracking-wide">30 Merged Open-Source Contributions</h2>
+          </div>
+          <span class="text-xs font-mono text-neutral-400">Apple · Google · Microsoft · Meta · AWS · NVIDIA · NASA · Netflix</span>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2.5">
+          
+            <a
+              href="https://github.com/apple/swift-numerics/pull/355"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Apple</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                swift-numerics
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#355</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/google/highway/pull/3511"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Google</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                Highway
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#3511</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/GoogleCloudPlatform/professional-services-data-validator/pull/1863"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Google Cloud</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                Data Validator
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#1863</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/microsoft/semantic-kernel/pull/14472"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Microsoft</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                Semantic Kernel
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#14472</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/aws-powertools/powertools-lambda-python/pull/8542"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">AWS</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                Lambda Powertools
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#8542</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/facebook/stylex/pull/1899"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Meta</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                StyleX
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#1899</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/NVIDIA/cuopt/pull/2068"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">NVIDIA</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                cuOpt
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#2068</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/nasa/prog_models/pull/237"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">NASA</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                ProgPy
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#237</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/Azure/azure-cosmos-db-emulator-docker/pull/359"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Azure</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                Cosmos DB Emulator
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#359</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/adobe/skills/pull/445"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Adobe</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                Skills
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#445</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/intel/auto-round/pull/2421"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Intel</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                AutoRound
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#2421</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/IBM/docling-pipelines/pull/85"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">IBM</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                Docling Pipelines
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#85</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/uber/kraken/pull/716"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Uber</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                Kraken
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#716</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/airbnb/MagazineLayout/pull/169"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Airbnb</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                MagazineLayout
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#169</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/cli/cli/pull/14592"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">GitHub</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                GitHub CLI
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#14592</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/dell/omnia/pull/649"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Dell</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                Omnia Containers
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#649</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/salesforce/tough-cookie/pull/659"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Salesforce</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                tough-cookie
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#659</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/ROCm/hrx-system/pull/1231"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">AMD</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                ROCm HRX System
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#1231</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/SAP/e-mobility-charging-stations-simulator/pull/2136"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">SAP</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                E-Mobility Simulator
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#2136</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/pinterest/pymemcache/pull/657"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Pinterest</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                PyMemcache
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#657</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/qualcomm/commit-msg-check-action/pull/38"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Qualcomm</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                Commit Msg Check
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#38</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/stripe/stripe-react-native/pull/2751"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Stripe</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                Stripe React Native
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#2751</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/docker/docs/pull/26266"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Docker</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                Docker Docs
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#26266</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/apache/hertzbeat/pull/4410"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Apache</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                HertzBeat
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#4410</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/cloudflare/cfssl/pull/1451"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Cloudflare</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                CFSSL
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#1451</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/openai/softnet/pull/219"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">OpenAI</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                Softnet
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#219</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/Snapchat/ts-inject/pull/30"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Snapchat</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                ts-inject
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#30</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/spotify/confidence-sdk-swift/pull/272"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Spotify</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                Confidence SDK Swift
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#272</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/cisco/cjose/pull/202"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Cisco</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                cJOSE
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#202</span>
+              </div>
+            </a>
+          
+            <a
+              href="https://github.com/Netflix/atlas/pull/2011"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group p-3 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/40 hover:bg-neutral-900/80 transition-all flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Netflix</span>
+                <span class="text-[10px] font-mono text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+              <div class="mt-2 text-[11px] font-mono text-neutral-400 truncate">
+                Atlas
+              </div>
+              <div class="mt-1 text-[10px] font-mono text-emerald-400/90 flex items-center gap-1">
+                <span>Merged</span>
+                <span>#2011</span>
+              </div>
+            </a>
+          
+        </div>
+      </section>
+
+      <!-- 2. Professional Experience -->
+      <section class="space-y-4">
+        <div class="flex items-center gap-2 pb-2 border-b border-white/10">
+          <span class="text-cyan-400 text-lg">💼</span>
+          <h2 class="text-lg font-bold text-white tracking-wide">Professional Experience</h2>
+        </div>
+
+        <div class="space-y-4">
+          
+            <div class="p-5 rounded-3xl bg-neutral-900/40 border border-white/5 hover:border-white/15 transition-all space-y-3">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                <div>
+                  <h3 class="text-base font-bold text-white">Software Developer</h3>
+                  <div class="text-sm font-semibold text-cyan-400">DailyGurus</div>
+                </div>
+                <div class="text-xs font-mono text-neutral-400 sm:text-right">
+                  <div>Jul 2026 – Present</div>
+                  <div class="text-neutral-500">Chennai, India</div>
+                </div>
+              </div>
+              <ul class="space-y-1.5 text-xs sm:text-sm text-neutral-300 list-disc list-inside">
+                
+                  <li class="leading-relaxed">Engineered scalable full-stack ERP web applications using React.js, Node.js, and TypeScript.</li>
+                
+                  <li class="leading-relaxed">Contributed modular extensions and custom business workflows across database and service layers.</li>
+                
+                  <li class="leading-relaxed">Designed high-performance RESTful APIs handling mission-critical business transactions.</li>
+                
+              </ul>
+            </div>
+          
+            <div class="p-5 rounded-3xl bg-neutral-900/40 border border-white/5 hover:border-white/15 transition-all space-y-3">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                <div>
+                  <h3 class="text-base font-bold text-white">Project Intern</h3>
+                  <div class="text-sm font-semibold text-cyan-400">Data Patterns (India) Ltd.</div>
+                </div>
+                <div class="text-xs font-mono text-neutral-400 sm:text-right">
+                  <div>Jan 2026 – May 2026</div>
+                  <div class="text-neutral-500">Chennai, India</div>
+                </div>
+              </div>
+              <ul class="space-y-1.5 text-xs sm:text-sm text-neutral-300 list-disc list-inside">
+                
+                  <li class="leading-relaxed">Spearheaded real-time defense communication systems and hardware-in-the-loop telemetry.</li>
+                
+                  <li class="leading-relaxed">Developed high-throughput data processing pipelines for embedded defense electronics.</li>
+                
+                  <li class="leading-relaxed">Optimized data streaming latency by 35% through algorithmic refinement.</li>
+                
+              </ul>
+            </div>
+          
+            <div class="p-5 rounded-3xl bg-neutral-900/40 border border-white/5 hover:border-white/15 transition-all space-y-3">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                <div>
+                  <h3 class="text-base font-bold text-white">Data Science Intern</h3>
+                  <div class="text-sm font-semibold text-cyan-400">Skill-Lync</div>
+                </div>
+                <div class="text-xs font-mono text-neutral-400 sm:text-right">
+                  <div>Jun 2024 – Nov 2024</div>
+                  <div class="text-neutral-500">Chennai, India</div>
+                </div>
+              </div>
+              <ul class="space-y-1.5 text-xs sm:text-sm text-neutral-300 list-disc list-inside">
+                
+                  <li class="leading-relaxed">Built production machine learning models for customer behavior predictive analytics.</li>
+                
+                  <li class="leading-relaxed">Implemented end-to-end data cleaning, EDA, feature engineering, and cross-validation pipelines.</li>
+                
+                  <li class="leading-relaxed">Automated report generation reducing business analytics cycle time by 40%.</li>
+                
+              </ul>
+            </div>
+          
+        </div>
+      </section>
+
+      <!-- 3. Hackathons & Competitions -->
+      <section class="space-y-4">
+        <div class="flex items-center gap-2 pb-2 border-b border-white/10">
+          <span class="text-cyan-400 text-lg">🏆</span>
+          <h2 class="text-lg font-bold text-white tracking-wide">Hackathon Victories &amp; Honors</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          
+            <div class="p-5 rounded-3xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/30 transition-all flex flex-col justify-between space-y-3">
+              <div>
+                <div class="flex items-center justify-between text-xs font-mono text-neutral-400 mb-1">
+                  <span>2024</span>
+                  <span class="px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-[10px] font-bold">Grand Finalist · 1st Prize Winner</span>
+                </div>
+                <h3 class="text-base font-bold text-white mb-1">Smart India Hackathon (SIH 2024)</h3>
+                <div class="text-xs text-neutral-400 mb-2">Ministry of Education &amp; AICTE</div>
+                <p class="text-xs text-neutral-300 leading-relaxed">Built AI-Powered Autonomous Crop Health Monitoring and Real-Time Precision Fertilizer Recommendation engine for Indian Agriculture.</p>
+              </div>
+              <div class="flex flex-wrap gap-1.5 pt-2 border-t border-white/5">
+                
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">Python</span>
+                
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">Computer Vision</span>
+                
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">TensorFlow</span>
+                
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">FastAPI</span>
+                
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">React</span>
+                
+              </div>
+            </div>
+          
+            <div class="p-5 rounded-3xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/30 transition-all flex flex-col justify-between space-y-3">
+              <div>
+                <div class="flex items-center justify-between text-xs font-mono text-neutral-400 mb-1">
+                  <span>2024</span>
+                  <span class="px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-[10px] font-bold">National Top 5 Finalist</span>
+                </div>
+                <h3 class="text-base font-bold text-white mb-1">Cognizant Digital Disrupt 2024</h3>
+                <div class="text-xs text-neutral-400 mb-2">Cognizant Technology Solutions</div>
+                <p class="text-xs text-neutral-300 leading-relaxed">Developed privacy-preserving federated machine learning framework for decentralized clinical record analysis.</p>
+              </div>
+              <div class="flex flex-wrap gap-1.5 pt-2 border-t border-white/5">
+                
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">PyTorch</span>
+                
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">Federated Learning</span>
+                
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">FastAPI</span>
+                
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">Docker</span>
+                
+              </div>
+            </div>
+          
+            <div class="p-5 rounded-3xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/30 transition-all flex flex-col justify-between space-y-3">
+              <div>
+                <div class="flex items-center justify-between text-xs font-mono text-neutral-400 mb-1">
+                  <span>2023</span>
+                  <span class="px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-[10px] font-bold">Special Jury Award for Cybersecurity</span>
+                </div>
+                <h3 class="text-base font-bold text-white mb-1">TN Police Hackathon 2023</h3>
+                <div class="text-xs text-neutral-400 mb-2">Tamil Nadu Police Cyber Crime Division</div>
+                <p class="text-xs text-neutral-300 leading-relaxed">Created Tor-Unveil darknet traffic correlation engine identifying rogue relays and Deanonymizing threat actors.</p>
+              </div>
+              <div class="flex flex-wrap gap-1.5 pt-2 border-t border-white/5">
+                
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">Go</span>
+                
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">Python</span>
+                
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">Wireshark</span>
+                
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-neutral-300">Network Forensics</span>
+                
+              </div>
+            </div>
+          
+        </div>
+      </section>
+
+      <!-- 4. Featured Projects -->
+      <section class="space-y-4">
+        <div class="flex items-center gap-2 pb-2 border-b border-white/10">
+          <span class="text-cyan-400 text-lg">🚀</span>
+          <h2 class="text-lg font-bold text-white tracking-wide">Featured Engineering Projects</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          
+            <div class="p-5 rounded-3xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/30 transition-all flex flex-col justify-between space-y-4">
+              <div class="space-y-2">
+                <h3 class="text-base font-bold text-white">301 Super AI Agents Multi-Agent Autonomous Hub</h3>
+                <p class="text-xs text-neutral-400">Large-scale autonomous AI agent orchestration mesh with dynamic memory and tool execution</p>
+                <ul class="space-y-1 text-xs text-neutral-300 list-disc list-inside">
+                  
+                    <li class="leading-relaxed">301 specialized domain agents collaborating via asynchronous DAG pipelines</li>
+                  
+                    <li class="leading-relaxed">Sub-150ms semantic memory retrieval across millions of conversation turns</li>
+                  
+                    <li class="leading-relaxed">Full self-healing code generation and testing sandbox execution</li>
+                  
+                </ul>
+              </div>
+              <div class="space-y-3 pt-3 border-t border-white/5">
+                <div class="flex flex-wrap gap-1.5">
+                  
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Python</span>
+                  
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">LangChain</span>
+                  
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">FastAPI</span>
+                  
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">VectorDB</span>
+                  
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Redis</span>
+                  
+                </div>
+                <div class="flex items-center justify-between text-xs font-mono pt-1">
+                  <a href="https://github.com/reginaldalfret/301-super-ai-agents" target="_blank" rel="noopener noreferrer" class="text-neutral-400 hover:text-white transition-colors">
+                    GitHub Code ↗
+                  </a>
+                  <a href="/projects/301-super-ai-agents" class="text-cyan-400 hover:underline">
+                    Live Details →
+                  </a>
+                </div>
+              </div>
+            </div>
+          
+            <div class="p-5 rounded-3xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/30 transition-all flex flex-col justify-between space-y-4">
+              <div class="space-y-2">
+                <h3 class="text-base font-bold text-white">AI-Powered Crop Disease &amp; Recommendation Engine</h3>
+                <p class="text-xs text-neutral-400">Real-time edge computer vision model for automated crop health diagnostics</p>
+                <ul class="space-y-1 text-xs text-neutral-300 list-disc list-inside">
+                  
+                    <li class="leading-relaxed">97.8% diagnostic accuracy across 42 plant pathology classes</li>
+                  
+                    <li class="leading-relaxed">Low-latency on-device inference using quantized TFLite edge models</li>
+                  
+                    <li class="leading-relaxed">Awarded Smart India Hackathon Grand Finalist &amp; 1st Prize</li>
+                  
+                </ul>
+              </div>
+              <div class="space-y-3 pt-3 border-t border-white/5">
+                <div class="flex flex-wrap gap-1.5">
+                  
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">TensorFlow</span>
+                  
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Computer Vision</span>
+                  
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Flask</span>
+                  
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Tailwind CSS</span>
+                  
+                </div>
+                <div class="flex items-center justify-between text-xs font-mono pt-1">
+                  <a href="https://github.com/reginaldalfret/ai-crop-recommendation" target="_blank" rel="noopener noreferrer" class="text-neutral-400 hover:text-white transition-colors">
+                    GitHub Code ↗
+                  </a>
+                  <a href="/projects/ai-crop-recommendation" class="text-cyan-400 hover:underline">
+                    Live Details →
+                  </a>
+                </div>
+              </div>
+            </div>
+          
+            <div class="p-5 rounded-3xl bg-neutral-900/40 border border-white/5 hover:border-cyan-500/30 transition-all flex flex-col justify-between space-y-4">
+              <div class="space-y-2">
+                <h3 class="text-base font-bold text-white">Tor-Unveil Darknet Traffic Correlation &amp; Defense</h3>
+                <p class="text-xs text-neutral-400">Cryptographic relay metadata analyzer and forensic de-anonymization platform</p>
+                <ul class="space-y-1 text-xs text-neutral-300 list-disc list-inside">
+                  
+                    <li class="leading-relaxed">Statistical packet flow correlation for identifying rogue Tor circuits</li>
+                  
+                    <li class="leading-relaxed">Interactive topological graph visualizer of encrypted node hops</li>
+                  
+                    <li class="leading-relaxed">Presented at TN Cyber Crime Department Technical Forum</li>
+                  
+                </ul>
+              </div>
+              <div class="space-y-3 pt-3 border-t border-white/5">
+                <div class="flex flex-wrap gap-1.5">
+                  
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Go</span>
+                  
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Network Security</span>
+                  
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">React</span>
+                  
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">D3.js</span>
+                  
+                </div>
+                <div class="flex items-center justify-between text-xs font-mono pt-1">
+                  <a href="https://github.com/reginaldalfret/tor-unveil" target="_blank" rel="noopener noreferrer" class="text-neutral-400 hover:text-white transition-colors">
+                    GitHub Code ↗
+                  </a>
+                  <a href="/projects/tor-unveil" class="text-cyan-400 hover:underline">
+                    Live Details →
+                  </a>
+                </div>
+              </div>
+            </div>
+          
+        </div>
+      </section>
+
+      <!-- 5. Technical Skills -->
+      <section class="space-y-4">
+        <div class="flex items-center gap-2 pb-2 border-b border-white/10">
+          <span class="text-cyan-400 text-lg">⚙️</span>
+          <h2 class="text-lg font-bold text-white tracking-wide">Technical Proficiencies</h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+          
+            <div class="p-4 rounded-2xl bg-neutral-900/40 border border-white/5 space-y-2">
+              <h3 class="text-xs font-mono font-bold text-cyan-400 tracking-wider uppercase">Languages &amp; Runtimes</h3>
+              <div class="flex flex-wrap gap-1.5">
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Go (Golang)</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Python</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">TypeScript</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">JavaScript</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">C#</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">C++</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Java</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Ruby</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">PHP</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">SQL</span>
+                
+              </div>
+            </div>
+          
+            <div class="p-4 rounded-2xl bg-neutral-900/40 border border-white/5 space-y-2">
+              <h3 class="text-xs font-mono font-bold text-cyan-400 tracking-wider uppercase">Frameworks &amp; Engines</h3>
+              <div class="flex flex-wrap gap-1.5">
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Go Buffalo</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Next.js</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Nuxt 3</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Django</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Spring Boot</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Laravel</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Ruby on Rails</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Angular</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Blazor WASM</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">FastAPI</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Express.js</span>
+                
+              </div>
+            </div>
+          
+            <div class="p-4 rounded-2xl bg-neutral-900/40 border border-white/5 space-y-2">
+              <h3 class="text-xs font-mono font-bold text-cyan-400 tracking-wider uppercase">AI / Data Science &amp; ML</h3>
+              <div class="flex flex-wrap gap-1.5">
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">PyTorch</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">TensorFlow</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">LangChain</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Hugging Face</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Pandas</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">NumPy</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">OpenCV</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Scikit-Learn</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Vector Databases</span>
+                
+              </div>
+            </div>
+          
+            <div class="p-4 rounded-2xl bg-neutral-900/40 border border-white/5 space-y-2">
+              <h3 class="text-xs font-mono font-bold text-cyan-400 tracking-wider uppercase">DevOps, Cloud &amp; Architecture</h3>
+              <div class="flex flex-wrap gap-1.5">
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Docker</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Kubernetes</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">AWS</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Google Cloud</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Azure</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">PostgreSQL</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Redis</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Kafka</span>
+                
+                  <span class="text-xs px-2.5 py-1 rounded-xl bg-white/5 text-neutral-200 border border-white/5">Git &amp; CI/CD</span>
+                
+              </div>
+            </div>
+          
+        </div>
+      </section>
+
+      <!-- 6. Achievements & Certifications -->
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="p-5 rounded-3xl bg-neutral-900/40 border border-white/5 space-y-3">
+          <div class="flex items-center gap-2 pb-2 border-b border-white/10">
+            <span class="text-cyan-400">🎖️</span>
+            <h2 class="text-base font-bold text-white">Key Achievements</h2>
+          </div>
+          <div class="space-y-3">
+            
+              <div>
+                <div class="text-xs font-bold text-neutral-200">30 Merged PRs Across Big Tech &amp; Open-Source Giants</div>
+                <div class="text-xs text-neutral-400 leading-relaxed">Contributions accepted by Apple, Google, Microsoft, Meta, AWS, NVIDIA, NASA, Netflix, Linux Foundation &amp; Apache.</div>
+              </div>
+            
+              <div>
+                <div class="text-xs font-bold text-neutral-200">Smart India Hackathon 2024 Winner</div>
+                <div class="text-xs text-neutral-400 leading-relaxed">1st Prize in India&#39;s biggest national hackathon organized by AICTE &amp; Ministry of Education.</div>
+              </div>
+            
+              <div>
+                <div class="text-xs font-bold text-neutral-200">Published Research &amp; Technical Contributions</div>
+                <div class="text-xs text-neutral-400 leading-relaxed">Authored papers on real-time neural edge processing and cryptographic forensic correlation.</div>
+              </div>
+            
+          </div>
+        </div>
+
+        <div class="p-5 rounded-3xl bg-neutral-900/40 border border-white/5 space-y-3">
+          <div class="flex items-center gap-2 pb-2 border-b border-white/10">
+            <span class="text-cyan-400">📜</span>
+            <h2 class="text-base font-bold text-white">Certifications &amp; Credentials</h2>
+          </div>
+          <div class="space-y-3">
+            
+              <div class="flex items-center justify-between text-xs">
+                <div>
+                  <div class="font-bold text-neutral-200">Google Cloud Certified Professional Data Engineer</div>
+                  <div class="text-neutral-500 font-mono text-[11px]">Google Cloud</div>
+                </div>
+                <span class="font-mono text-neutral-400 text-[11px]">2024</span>
+              </div>
+            
+              <div class="flex items-center justify-between text-xs">
+                <div>
+                  <div class="font-bold text-neutral-200">AWS Certified Machine Learning – Specialty</div>
+                  <div class="text-neutral-500 font-mono text-[11px]">Amazon Web Services</div>
+                </div>
+                <span class="font-mono text-neutral-400 text-[11px]">2024</span>
+              </div>
+            
+              <div class="flex items-center justify-between text-xs">
+                <div>
+                  <div class="font-bold text-neutral-200">Deep Learning Specialization</div>
+                  <div class="text-neutral-500 font-mono text-[11px]">DeepLearning.AI</div>
+                </div>
+                <span class="font-mono text-neutral-400 text-[11px]">2023</span>
+              </div>
+            
+              <div class="flex items-center justify-between text-xs">
+                <div>
+                  <div class="font-bold text-neutral-200">Certified Kubernetes Application Developer (CKAD)</div>
+                  <div class="text-neutral-500 font-mono text-[11px]">Cloud Native Computing Foundation</div>
+                </div>
+                <span class="font-mono text-neutral-400 text-[11px]">2024</span>
+              </div>
+            
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Multi-Stack Architecture Showcase (9 Stacks Available) -->
+      <section class="p-6 rounded-3xl bg-neutral-900/40 border border-white/10 space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-white/10">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-cyan-400 text-lg">🌐</span>
+              <h2 class="text-lg font-bold text-white tracking-wide">Multi-Framework Architecture Showcase</h2>
+            </div>
+            <p class="text-xs text-neutral-400 mt-1">
+              The exact same full portfolio engineered natively across 9 major web development stacks.
+            </p>
+          </div>
+          <div class="text-xs font-mono px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 self-start sm:self-auto">
+            9 Stacks Available
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-3">
+          
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-cyan-500/30 transition-all flex flex-col justify-between space-y-3">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-lg bg-black border border-white/20 flex items-center justify-center font-black text-xs text-white">
+                      N
+                    </div>
+                    <span class="font-bold text-sm text-white">Next.js 14</span>
+                  </div>
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                    ACTIVE CORE
+                  </span>
+                </div>
+                <p class="text-xs text-neutral-400 mb-2">
+                  React 18 · App Router · TypeScript · Tailwind CSS · Vercel Edge.
+                </p>
+                <div class="text-[11px] font-mono text-neutral-400">
+                  Live Route: <a href="/" target="_top" class="text-cyan-400 hover:underline">/</a>
+                </div>
+              </div>
+              <div class="space-y-2 pt-2 border-t border-white/10">
+                
+                  <a
+                    href="/"
+                    target="_top"
+                    class="w-full py-2 px-3 rounded-xl bg-white/5 hover:bg-white/10 text-neutral-200 font-semibold text-xs border border-white/10 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+                  >
+                    <span>Switch to Next.js 14 Website</span>
+                  </a>
+                
+                <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
+                  <a
+                    href="/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 hover:text-cyan-400 transition-colors"
+                  >
+                    <span>Direct Link ↗</span>
+                  </a>
+                  <a
+                    href="https://github.com/reginaldalfret/portfolio-website"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 hover:text-white transition-colors"
+                  >
+                    <span>Source Code</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          
+            <div class="p-4 rounded-2xl bg-white/[0.03] border hover:border-emerald-500/40 transition-all flex flex-col justify-between space-y-3">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-lg bg-black border border-white/20 flex items-center justify-center font-black text-xs text-white">
+                      ▲
+                    </div>
+                    <span class="font-bold text-sm text-white">Nuxt 3</span>
+                  </div>
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    VUE 3
+                  </span>
+                </div>
+                <p class="text-xs text-neutral-400 mb-2">
+                  Vue 3 · Composition API · Nitro Engine · Vite · SSR.
+                </p>
+                <div class="text-[11px] font-mono text-neutral-400">
+                  Live Route: <a href="/stacks/nuxt" target="_top" class="text-cyan-400 hover:underline">/stacks/nuxt</a>
+                </div>
+              </div>
+              <div class="space-y-2 pt-2 border-t border-white/10">
+                
+                  <a
+                    href="/stacks/nuxt"
+                    target="_top"
+                    class="w-full py-2 px-3 rounded-xl bg-white/5 hover:bg-white/10 text-neutral-200 font-semibold text-xs border border-white/10 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+                  >
+                    <span>Switch to Nuxt 3 Website</span>
+                  </a>
+                
+                <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
+                  <a
+                    href="/stacks/nuxt"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 hover:text-cyan-400 transition-colors"
+                  >
+                    <span>Direct Link ↗</span>
+                  </a>
+                  <a
+                    href="https://github.com/reginaldalfret/portfolio-nuxt"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 hover:text-white transition-colors"
+                  >
+                    <span>Source Code</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          
+            <div class="p-4 rounded-2xl bg-white/[0.03] border hover:border-amber-500/40 transition-all flex flex-col justify-between space-y-3">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-lg bg-black border border-white/20 flex items-center justify-center font-black text-xs text-white">
+                      DJ
+                    </div>
+                    <span class="font-bold text-sm text-white">Django</span>
+                  </div>
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                    PYTHON 3.13
+                  </span>
+                </div>
+                <p class="text-xs text-neutral-400 mb-2">
+                  Python 3.13 · Django SSR Templates · Tailwind CSS · Static Engine.
+                </p>
+                <div class="text-[11px] font-mono text-neutral-400">
+                  Live Route: <a href="/stacks/django" target="_top" class="text-cyan-400 hover:underline">/stacks/django</a>
+                </div>
+              </div>
+              <div class="space-y-2 pt-2 border-t border-white/10">
+                
+                  <a
+                    href="/stacks/django"
+                    target="_top"
+                    class="w-full py-2 px-3 rounded-xl bg-white/5 hover:bg-white/10 text-neutral-200 font-semibold text-xs border border-white/10 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+                  >
+                    <span>Switch to Django Website</span>
+                  </a>
+                
+                <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
+                  <a
+                    href="/stacks/django"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 hover:text-cyan-400 transition-colors"
+                  >
+                    <span>Direct Link ↗</span>
+                  </a>
+                  <a
+                    href="https://github.com/reginaldalfret/portfolio-django"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 hover:text-white transition-colors"
+                  >
+                    <span>Source Code</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          
+            <div class="p-4 rounded-2xl bg-white/[0.03] border hover:border-lime-500/40 transition-all flex flex-col justify-between space-y-3">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-lg bg-black border border-white/20 flex items-center justify-center font-black text-xs text-white">
+                      🍃
+                    </div>
+                    <span class="font-bold text-sm text-white">Spring Boot</span>
+                  </div>
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-lime-500/10 text-lime-400 border border-lime-500/20">
+                    JAVA 21
+                  </span>
+                </div>
+                <p class="text-xs text-neutral-400 mb-2">
+                  Java 21 LTS · Thymeleaf SSR · Spring MVC · Maven · Tomcat.
+                </p>
+                <div class="text-[11px] font-mono text-neutral-400">
+                  Live Route: <a href="/stacks/springboot" target="_top" class="text-cyan-400 hover:underline">/stacks/springboot</a>
+                </div>
+              </div>
+              <div class="space-y-2 pt-2 border-t border-white/10">
+                
+                  <a
+                    href="/stacks/springboot"
+                    target="_top"
+                    class="w-full py-2 px-3 rounded-xl bg-white/5 hover:bg-white/10 text-neutral-200 font-semibold text-xs border border-white/10 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+                  >
+                    <span>Switch to Spring Boot Website</span>
+                  </a>
+                
+                <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
+                  <a
+                    href="/stacks/springboot"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 hover:text-cyan-400 transition-colors"
+                  >
+                    <span>Direct Link ↗</span>
+                  </a>
+                  <a
+                    href="https://github.com/reginaldalfret/portfolio-springboot"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 hover:text-white transition-colors"
+                  >
+                    <span>Source Code</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          
+            <div class="p-4 rounded-2xl bg-white/[0.03] border hover:border-red-500/40 transition-all flex flex-col justify-between space-y-3">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-lg bg-black border border-white/20 flex items-center justify-center font-black text-xs text-white">
+                      L
+                    </div>
+                    <span class="font-bold text-sm text-white">Laravel</span>
+                  </div>
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-red-500/10 text-red-400 border border-red-500/20">
+                    PHP 8.4
+                  </span>
+                </div>
+                <p class="text-xs text-neutral-400 mb-2">
+                  PHP 8.4 · Blade Templates · Artisan · Vite · Tailwind CSS.
+                </p>
+                <div class="text-[11px] font-mono text-neutral-400">
+                  Live Route: <a href="/stacks/laravel" target="_top" class="text-cyan-400 hover:underline">/stacks/laravel</a>
+                </div>
+              </div>
+              <div class="space-y-2 pt-2 border-t border-white/10">
+                
+                  <a
+                    href="/stacks/laravel"
+                    target="_top"
+                    class="w-full py-2 px-3 rounded-xl bg-white/5 hover:bg-white/10 text-neutral-200 font-semibold text-xs border border-white/10 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+                  >
+                    <span>Switch to Laravel Website</span>
+                  </a>
+                
+                <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
+                  <a
+                    href="/stacks/laravel"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 hover:text-cyan-400 transition-colors"
+                  >
+                    <span>Direct Link ↗</span>
+                  </a>
+                  <a
+                    href="https://github.com/reginaldalfret/portfolio-laravel"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 hover:text-white transition-colors"
+                  >
+                    <span>Source Code</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          
+            <div class="p-4 rounded-2xl bg-white/[0.03] border hover:border-rose-500/40 transition-all flex flex-col justify-between space-y-3">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-lg bg-black border border-white/20 flex items-center justify-center font-black text-xs text-white">
+                      💎
+                    </div>
+                    <span class="font-bold text-sm text-white">Ruby on Rails</span>
+                  </div>
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-rose-500/10 text-rose-400 border border-rose-500/20">
+                    RAILS 8
+                  </span>
+                </div>
+                <p class="text-xs text-neutral-400 mb-2">
+                  Ruby 3.4 · Rails 8 · ActionView ERB SSR · Puma Server.
+                </p>
+                <div class="text-[11px] font-mono text-neutral-400">
+                  Live Route: <a href="/stacks/rails" target="_top" class="text-cyan-400 hover:underline">/stacks/rails</a>
+                </div>
+              </div>
+              <div class="space-y-2 pt-2 border-t border-white/10">
+                
+                  <a
+                    href="/stacks/rails"
+                    target="_top"
+                    class="w-full py-2 px-3 rounded-xl bg-white/5 hover:bg-white/10 text-neutral-200 font-semibold text-xs border border-white/10 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+                  >
+                    <span>Switch to Ruby on Rails Website</span>
+                  </a>
+                
+                <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
+                  <a
+                    href="/stacks/rails"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 hover:text-cyan-400 transition-colors"
+                  >
+                    <span>Direct Link ↗</span>
+                  </a>
+                  <a
+                    href="https://github.com/reginaldalfret/portfolio-rails"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 hover:text-white transition-colors"
+                  >
+                    <span>Source Code</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          
+            <div class="p-4 rounded-2xl bg-white/[0.03] border hover:border-red-500/40 transition-all flex flex-col justify-between space-y-3">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-lg bg-black border border-white/20 flex items-center justify-center font-black text-xs text-white">
+                      A
+                    </div>
+                    <span class="font-bold text-sm text-white">Angular</span>
+                  </div>
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-red-500/10 text-red-400 border border-red-500/20">
+                    TS 6.0
+                  </span>
+                </div>
+                <p class="text-xs text-neutral-400 mb-2">
+                  Angular 19/22 · Signals · Standalone Components · Tailwind CSS.
+                </p>
+                <div class="text-[11px] font-mono text-neutral-400">
+                  Live Route: <a href="/stacks/angular" target="_top" class="text-cyan-400 hover:underline">/stacks/angular</a>
+                </div>
+              </div>
+              <div class="space-y-2 pt-2 border-t border-white/10">
+                
+                  <a
+                    href="/stacks/angular"
+                    target="_top"
+                    class="w-full py-2 px-3 rounded-xl bg-white/5 hover:bg-white/10 text-neutral-200 font-semibold text-xs border border-white/10 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+                  >
+                    <span>Switch to Angular Website</span>
+                  </a>
+                
+                <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
+                  <a
+                    href="/stacks/angular"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 hover:text-cyan-400 transition-colors"
+                  >
+                    <span>Direct Link ↗</span>
+                  </a>
+                  <a
+                    href="https://github.com/reginaldalfret/portfolio-angular"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 hover:text-white transition-colors"
+                  >
+                    <span>Source Code</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          
+            <div class="p-4 rounded-2xl bg-white/[0.03] border hover:border-purple-500/40 transition-all flex flex-col justify-between space-y-3">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-lg bg-black border border-white/20 flex items-center justify-center font-black text-xs text-white">
+                      B
+                    </div>
+                    <span class="font-bold text-sm text-white">Blazor WASM</span>
+                  </div>
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                    .NET 8
+                  </span>
+                </div>
+                <p class="text-xs text-neutral-400 mb-2">
+                  .NET 8 · C# Client-Side WASM · Standalone SPA · Tailwind CSS.
+                </p>
+                <div class="text-[11px] font-mono text-neutral-400">
+                  Live Route: <a href="/stacks/blazor" target="_top" class="text-cyan-400 hover:underline">/stacks/blazor</a>
+                </div>
+              </div>
+              <div class="space-y-2 pt-2 border-t border-white/10">
+                
+                  <a
+                    href="/stacks/blazor"
+                    target="_top"
+                    class="w-full py-2 px-3 rounded-xl bg-white/5 hover:bg-white/10 text-neutral-200 font-semibold text-xs border border-white/10 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+                  >
+                    <span>Switch to Blazor WASM Website</span>
+                  </a>
+                
+                <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
+                  <a
+                    href="/stacks/blazor"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 hover:text-cyan-400 transition-colors"
+                  >
+                    <span>Direct Link ↗</span>
+                  </a>
+                  <a
+                    href="https://github.com/reginaldalfret/portfolio-blazor"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 hover:text-white transition-colors"
+                  >
+                    <span>Source Code</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-cyan-500/40 transition-all flex flex-col justify-between space-y-3">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-lg bg-black border border-white/20 flex items-center justify-center font-black text-xs text-white">
+                      🦬
+                    </div>
+                    <span class="font-bold text-sm text-white">Go Buffalo</span>
+                  </div>
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">
+                    GO 1.27
+                  </span>
+                </div>
+                <p class="text-xs text-neutral-400 mb-2">
+                  Go 1.27 · Buffalo Web Framework · Plush SSR · Gorilla Mux.
+                </p>
+                <div class="text-[11px] font-mono text-neutral-400">
+                  Live Route: <a href="/stacks/buffalo" target="_top" class="text-cyan-400 hover:underline">/stacks/buffalo</a>
+                </div>
+              </div>
+              <div class="space-y-2 pt-2 border-t border-white/10">
+                
+                  <div class="w-full py-2 px-3 rounded-xl bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 font-semibold text-xs shadow-sm flex items-center justify-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                    <span>Viewing Active Go Buffalo</span>
+                  </div>
+                
+                <div class="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
+                  <a
+                    href="/stacks/buffalo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 hover:text-cyan-400 transition-colors"
+                  >
+                    <span>Direct Link ↗</span>
+                  </a>
+                  <a
+                    href="https://github.com/reginaldalfret/portfolio-buffalo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 hover:text-white transition-colors"
+                  >
+                    <span>Source Code</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="pt-6 text-center text-xs text-neutral-500 space-y-2 font-mono">
+        <div class="text-neutral-400">
+          BETTER TECHNOLOGY • HAPPIER PEOPLE
+        </div>
+        <div>
+          Engineered natively with Go Buffalo 1.1.4 &amp; Go 1.27 • Built by Reginald Alfret V • 
+          <a href="/Reginald_Alfret_Resume.pdf" download class="text-cyan-400 hover:underline">Download Resume PDF</a>
+        </div>
+      </footer>
+
+    </main>
+
+    <!-- Bottom Floating Cross-Framework Dock (9 Stacks) -->
+    <div class="floating-stack-dock fixed bottom-4 left-1/2 -translate-x-1/2 z-50 no-print max-w-[95vw] overflow-x-auto">
+      <div class="backdrop-blur-xl bg-black/85 border border-white/15 rounded-full py-1.5 px-3.5 shadow-2xl flex items-center gap-2 text-xs whitespace-nowrap">
+        <span class="text-[11px] font-mono text-neutral-400 hidden sm:inline">Stack:</span>
+
+        <a
+          href="/"
+          target="_top"
+          class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
+          title="Switch to Next.js (Production)"
+        >
+          <span>Next.js</span>
+        </a>
+
+        <a
+          href="/stacks/nuxt"
+          target="_top"
+          class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
+          title="Switch to Nuxt 3 (Vue 3)"
+        >
+          <span>Nuxt 3</span>
+        </a>
+
+        <a
+          href="/stacks/django"
+          target="_top"
+          class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
+          title="Switch to Django (Python 3.13)"
+        >
+          <span>Django</span>
+        </a>
+
+        <a
+          href="/stacks/springboot"
+          target="_top"
+          class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
+          title="Switch to Spring Boot (Java 21)"
+        >
+          <span>Spring Boot</span>
+        </a>
+
+        <a
+          href="/stacks/laravel"
+          target="_top"
+          class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
+          title="Switch to Laravel (PHP 8.4)"
+        >
+          <span>Laravel</span>
+        </a>
+
+        <a
+          href="/stacks/rails"
+          target="_top"
+          class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
+          title="Switch to Rails 8 (Ruby 3.4)"
+        >
+          <span>Rails</span>
+        </a>
+
+        <a
+          href="/stacks/angular"
+          target="_top"
+          class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
+          title="Switch to Angular (TypeScript 6.0)"
+        >
+          <span>Angular</span>
+        </a>
+
+        <a
+          href="/stacks/blazor"
+          target="_top"
+          class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
+          title="Switch to Blazor (.NET 8 WASM)"
+        >
+          <span>Blazor</span>
+        </a>
+
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 font-semibold shadow-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+          Buffalo
+        </span>
+      </div>
+    </div>
+
+    <!-- Interactive PDF Modal -->
+    <div id="pdf-modal" class="fixed inset-0 z-50 hidden flex-col items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+      <div class="relative w-full max-w-5xl h-[85vh] bg-neutral-900 border border-white/15 rounded-3xl overflow-hidden shadow-2xl flex flex-col">
+        <div class="flex items-center justify-between p-4 border-b border-white/10 bg-neutral-950/80">
+          <div class="flex items-center gap-2">
+            <span class="text-sm font-bold text-white">Reginald Alfret V — Official Resume</span>
+            <span class="text-xs font-mono text-neutral-400">(PDF Viewer)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <a
+              href="/Reginald_Alfret_Resume.pdf"
+              download
+              class="px-3 py-1 rounded-lg bg-cyan-500/20 text-cyan-300 text-xs font-semibold hover:bg-cyan-500/30 transition-colors"
+            >
+              Download
+            </a>
+            <button
+              type="button"
+              onclick="togglePdfModal(false)"
+              class="px-3 py-1 rounded-lg bg-white/10 text-white text-xs font-semibold hover:bg-white/20 transition-colors"
+            >
+              ✕ Close
+            </button>
+          </div>
+        </div>
+        <iframe
+          src="/Reginald_Alfret_Resume.pdf"
+          class="w-full flex-1 border-0"
+          title="Reginald Alfret Resume"
+        ></iframe>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function togglePdfModal(show) {
+      var modal = document.getElementById('pdf-modal');
+      if (modal) {
+        if (show) {
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+        } else {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }
+      }
+    }
+  </script>
+</body>
+</html>
