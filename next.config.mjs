@@ -12,6 +12,18 @@ const nextConfig = {
       },
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: "/stacks/:stack",
+        destination: "/stacks/:stack/index.html",
+      },
+      {
+        source: "/stacks/:stack/",
+        destination: "/stacks/:stack/index.html",
+      },
+    ];
+  },
 };
 
 export default nextConfig;
