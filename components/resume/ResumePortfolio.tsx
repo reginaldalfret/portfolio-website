@@ -66,19 +66,19 @@ const CONTRIBUTIONS = [
 
 export function ResumePortfolio() {
   const [viewMode, setViewMode] = useState<"interactive" | "pdf">("interactive");
-  const [activeStack, setActiveStack] = useState<"nextjs" | "nuxt" | "django" | "springboot" | "laravel" | "rails" | "angular" | "blazor" | "buffalo" | "leptos" | "jaspr">("nextjs");
+  const [activeStack, setActiveStack] = useState<"nextjs" | "nuxt" | "django" | "springboot" | "laravel" | "rails" | "angular" | "blazor" | "buffalo" | "leptos" | "jaspr" | "vapor">("nextjs");
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const params = new URLSearchParams(window.location.search);
       const stack = params.get("stack");
-      if (stack === "nuxt" || stack === "django" || stack === "nextjs" || stack === "springboot" || stack === "laravel" || stack === "rails" || stack === "angular" || stack === "blazor" || stack === "buffalo" || stack === "leptos" || stack === "jaspr") {
-        setActiveStack(stack as "nextjs" | "nuxt" | "django" | "springboot" | "laravel" | "rails" | "angular" | "blazor" | "buffalo" | "leptos" | "jaspr");
+      if (stack === "nuxt" || stack === "django" || stack === "nextjs" || stack === "springboot" || stack === "laravel" || stack === "rails" || stack === "angular" || stack === "blazor" || stack === "buffalo" || stack === "leptos" || stack === "jaspr" || stack === "vapor") {
+        setActiveStack(stack as "nextjs" | "nuxt" | "django" | "springboot" | "laravel" | "rails" | "angular" | "blazor" | "buffalo" | "leptos" | "jaspr" | "vapor");
       }
     }
   }, []);
 
-  const switchStack = (stack: "nextjs" | "nuxt" | "django" | "springboot" | "laravel" | "rails" | "angular" | "blazor" | "buffalo" | "leptos" | "jaspr") => {
+  const switchStack = (stack: "nextjs" | "nuxt" | "django" | "springboot" | "laravel" | "rails" | "angular" | "blazor" | "buffalo" | "leptos" | "jaspr" | "vapor") => {
     setActiveStack(stack);
     if (typeof window !== "undefined") {
       const url = new URL(window.location.href);
@@ -641,6 +641,53 @@ export function ResumePortfolio() {
                 src="/stacks/jaspr"
                 className="w-full h-full border-0"
                 title="Jaspr Stack Portfolio"
+              />
+            </div>
+          </div>
+        ) : activeStack === "vapor" ? (
+          /* Vapor Live Stack Mode */
+          <div className="backdrop-blur-2xl bg-neutral-950/90 border border-sky-500/40 rounded-3xl p-4 sm:p-6 shadow-2xl space-y-4">
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-white/10">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-sky-950/80 border border-sky-500/50 flex items-center justify-center font-bold text-sm text-sky-400">
+                  💧
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="font-bold text-white text-base">Vapor 4 Architecture</span>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/30">
+                      LIVE
+                    </span>
+                  </div>
+                  <div className="text-xs text-neutral-400 font-mono">
+                    Swift 5.10 / 6.0 · Vapor 4 (SwiftNIO) · Leaf / Dynamic SSR · Tailwind CSS
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => switchStack("nextjs")}
+                  className="px-3 py-1.5 rounded-xl text-xs font-mono bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-300 hover:text-white transition-colors"
+                >
+                  ← Back to Next.js
+                </button>
+                <a
+                  href="/stacks/vapor"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/40 transition-colors"
+                >
+                  <span>Open Full Window</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+            <div className="w-full h-[85vh] rounded-2xl overflow-hidden border border-white/10 bg-[#050505]">
+              <iframe
+                src="/stacks/vapor"
+                className="w-full h-full border-0"
+                title="Vapor Stack Portfolio"
               />
             </div>
           </div>
@@ -1731,6 +1778,60 @@ export function ResumePortfolio() {
                     </div>
                   </div>
                 </div>
+
+                {/* Vapor */}
+                <div className="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border border-white/10 hover:border-sky-500/30 transition-all flex flex-col justify-between space-y-3">
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-2">
+                        <div className="w-7 h-7 rounded-lg bg-sky-950/60 border border-sky-500/40 flex items-center justify-center font-bold text-xs text-sky-400">
+                          💧
+                        </div>
+                        <span className="font-bold text-sm text-white">Vapor 4 (Swift)</span>
+                      </div>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20">
+                        SWIFT 5.10
+                      </span>
+                    </div>
+                    <p className="text-xs text-neutral-400 mb-2">
+                      Server-Side Swift · Vapor 4 · Non-blocking Async I/O (SwiftNIO) · Leaf · Tailwind CSS.
+                    </p>
+                    <div className="text-[11px] font-mono text-neutral-400">
+                      Live: <a href="/stacks/vapor" className="text-sky-400 hover:underline">/stacks/vapor</a>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <button
+                      type="button"
+                      onClick={() => switchStack("vapor")}
+                      className="w-full py-2 px-3 rounded-xl bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 font-semibold text-xs border border-sky-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
+                    >
+                      <Sparkles className="w-3.5 h-3.5" />
+                      <span>Switch to Vapor Website</span>
+                    </button>
+                    <div className="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
+                      <a
+                        href="/stacks/vapor"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 hover:text-sky-400 transition-colors"
+                      >
+                        <span>Direct Link</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                      <a
+                        href="https://github.com/reginaldalfret/portfolio-vapor"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 hover:text-white transition-colors"
+                      >
+                        <Github className="w-3.5 h-3.5" />
+                        <span>Source Code</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             </section>
@@ -1900,6 +2001,19 @@ export function ResumePortfolio() {
           >
             {activeStack === "jaspr" && <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />}
             <span>Jaspr</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => switchStack("vapor")}
+            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-semibold transition-all ${
+              activeStack === "vapor"
+                ? "bg-sky-500/20 text-sky-300 border border-sky-500/40 shadow-sm"
+                : "text-neutral-400 hover:text-white hover:bg-white/10"
+            }`}
+          >
+            {activeStack === "vapor" && <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />}
+            <span>Vapor</span>
           </button>
         </div>
       </div>
