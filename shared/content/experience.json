@@ -1,0 +1,67 @@
+[
+  {
+    "company": "DailyGurus Technology Solutions",
+    "role": "Full-Stack AI & ERP Engineer",
+    "period": "2024 — Present",
+    "location": "Chennai, India",
+    "type": "Full-time / Core Team",
+    "current": true,
+    "points": [
+      "Architected and deployed a multi-tenant Enterprise Resource Planning (ERP) platform streamlining inventory, automated invoicing, customer lifecycle management, and real-time ledger accounting.",
+      "Engineered automated price-list aggregation algorithms ingesting high-volume wholesale catalog data, cutting manual pricing updates by 85%.",
+      "Designed and deployed local AI assist agents for automated document categorization, receipts extraction, and conversational reporting.",
+      "Hardened system security with RBAC, cryptographic audit trails, automated PostgreSQL snapshots, and automated CI/CD pipelines on Vercel and Railway."
+    ],
+    "technologies": [
+      "Next.js 14",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Prisma",
+      "Docker",
+      "RESTful APIs"
+    ]
+  },
+  {
+    "company": "CodeAlpha",
+    "role": "Software Engineering Intern",
+    "period": "2024",
+    "location": "Remote",
+    "type": "Internship",
+    "current": false,
+    "points": [
+      "Developed high-throughput network monitoring scripts and cryptographic hashing utilities in Python.",
+      "Engineered responsive UI modules using React and Tailwind CSS with 99%+ mobile compatibility.",
+      "Contributed to code refactoring and automated unit tests across team pull requests."
+    ],
+    "technologies": [
+      "Python",
+      "React",
+      "JavaScript",
+      "Git",
+      "Tailwind CSS"
+    ]
+  },
+  {
+    "company": "Cognifyz Technologies",
+    "role": "AI / Machine Learning Intern",
+    "period": "2023 — 2024",
+    "location": "Remote",
+    "type": "Internship",
+    "current": false,
+    "points": [
+      "Constructed predictive regression and classification pipelines for tabular customer churn and demand estimation.",
+      "Performed data cleansing, exploratory data analysis (EDA), feature engineering, and cross-validation.",
+      "Implemented model evaluation suites utilizing ROC-AUC, precision-recall curves, and confusion matrices."
+    ],
+    "technologies": [
+      "Python",
+      "scikit-learn",
+      "Pandas",
+      "NumPy",
+      "Matplotlib",
+      "Seaborn"
+    ]
+  }
+]

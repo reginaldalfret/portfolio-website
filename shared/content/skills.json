@@ -1,0 +1,168 @@
+{
+  "languages": [
+    {
+      "name": "Python",
+      "level": "Expert",
+      "years": 4
+    },
+    {
+      "name": "TypeScript / JavaScript",
+      "level": "Expert",
+      "years": 3
+    },
+    {
+      "name": "Java",
+      "level": "Proficient",
+      "years": 3
+    },
+    {
+      "name": "Go",
+      "level": "Proficient",
+      "years": 2
+    },
+    {
+      "name": "Rust",
+      "level": "Intermediate",
+      "years": 1
+    },
+    {
+      "name": "C# / .NET",
+      "level": "Intermediate",
+      "years": 2
+    },
+    {
+      "name": "PHP",
+      "level": "Proficient",
+      "years": 2
+    },
+    {
+      "name": "Ruby",
+      "level": "Intermediate",
+      "years": 1
+    },
+    {
+      "name": "Dart",
+      "level": "Intermediate",
+      "years": 1
+    },
+    {
+      "name": "Swift",
+      "level": "Intermediate",
+      "years": 1
+    },
+    {
+      "name": "C / C++",
+      "level": "Proficient",
+      "years": 3
+    },
+    {
+      "name": "SQL",
+      "level": "Expert",
+      "years": 3
+    }
+  ],
+  "frameworks": [
+    {
+      "name": "Next.js / React",
+      "category": "Frontend / Full-Stack"
+    },
+    {
+      "name": "Nuxt 3 / Vue.js",
+      "category": "Frontend"
+    },
+    {
+      "name": "Django / FastAPI",
+      "category": "Backend"
+    },
+    {
+      "name": "Spring Boot 3",
+      "category": "Backend"
+    },
+    {
+      "name": "Laravel 11",
+      "category": "Backend"
+    },
+    {
+      "name": "Ruby on Rails 8",
+      "category": "Backend"
+    },
+    {
+      "name": "Angular 19",
+      "category": "Frontend"
+    },
+    {
+      "name": "Blazor WASM",
+      "category": "Frontend"
+    },
+    {
+      "name": "Go Buffalo",
+      "category": "Backend"
+    },
+    {
+      "name": "Leptos Rust",
+      "category": "Full-Stack WASM"
+    },
+    {
+      "name": "Jaspr Dart",
+      "category": "Full-Stack"
+    },
+    {
+      "name": "Vapor Swift",
+      "category": "Backend"
+    }
+  ],
+  "ai_ml": [
+    {
+      "name": "LangChain & Multi-Agent Swarms"
+    },
+    {
+      "name": "PyTorch & TensorFlow"
+    },
+    {
+      "name": "Quantised LLM Execution (Ollama/GGUF)"
+    },
+    {
+      "name": "Computer Vision & OCR"
+    },
+    {
+      "name": "Vector Databases & RAG (Chroma/Pinecone)"
+    },
+    {
+      "name": "scikit-learn & Predictive Modeling"
+    }
+  ],
+  "cloud_devops": [
+    {
+      "name": "Docker & Containerization"
+    },
+    {
+      "name": "GitHub Actions & Automated CI/CD"
+    },
+    {
+      "name": "Vercel / Railway / Cloudflare Edge"
+    },
+    {
+      "name": "Linux System Administration"
+    },
+    {
+      "name": "Nginx & Reverse Proxies"
+    }
+  ],
+  "databases": [
+    {
+      "name": "PostgreSQL"
+    },
+    {
+      "name": "MongoDB"
+    },
+    {
+      "name": "Redis"
+    },
+    {
+      "name": "SQLite"
+    },
+    {
+      "name": "Prisma & SQLAlchemy ORMs"
+    }
+  ]
+}

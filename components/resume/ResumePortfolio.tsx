@@ -30,6 +30,7 @@ import {
   BookOpen,
 } from "lucide-react";
 import { OrgLogo } from "@/components/opensource/OrgLogos";
+import { EngineeringLab } from "@/components/stacks/EngineeringLab";
 
 const CONTRIBUTIONS = [
   { org: "Apple", repo: "swift-numerics", pr: "#355", url: "https://github.com/apple/swift-numerics/pull/355", key: "apple" },
@@ -1186,7 +1187,10 @@ export function ResumePortfolio() {
             </div>
 
             {/* 4. Multi-Stack Switcher Section */}
-            <section className="py-8 border-b border-white/10" id="stacks">
+            <section className="py-8 border-b border-white/10 space-y-8" id="stacks">
+              <EngineeringLab onSelectStack={switchStack} />
+
+              <div className="pt-6 border-t border-white/10">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
                 <div>
                   <h2 className="text-base sm:text-lg font-bold text-white flex items-center gap-2 tracking-wide">
@@ -1835,6 +1839,7 @@ export function ResumePortfolio() {
                   </div>
                 </div>
               </div>
+            </div>
             </section>
 
             {/* 5. Footer */}

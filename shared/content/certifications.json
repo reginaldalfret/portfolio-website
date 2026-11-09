@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Deep Learning Specialization",
+    "issuer": "DeepLearning.AI",
+    "platform": "Coursera"
+  },
+  {
+    "name": "Machine Learning with Python",
+    "issuer": "IBM",
+    "platform": "edX"
+  },
+  {
+    "name": "Google Cloud Fundamentals: Core Infrastructure",
+    "issuer": "Google Cloud",
+    "platform": "Coursera"
+  },
+  {
+    "name": "Python for Data Science and Machine Learning",
+    "issuer": "Udemy",
+    "platform": "Online"
+  },
+  {
+    "name": "PostgreSQL Advanced Queries & Indexing",
+    "issuer": "Codecademy",
+    "platform": "Online"
+  }
+]

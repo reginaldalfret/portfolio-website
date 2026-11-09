@@ -9,6 +9,9 @@
     "lint": "next lint",
     "sync:open-source": "node scripts/sync-open-source.mjs",
     "test:open-source": "node --test scripts/sync-open-source.test.mjs",
+    "validate:content": "node scripts/validate_shared_content.js",
+    "test:stacks": "node scripts/test_all_stacks.js",
+    "benchmarks": "node scripts/measure_or_compile_benchmarks.js",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

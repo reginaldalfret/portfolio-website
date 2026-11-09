@@ -1,0 +1,30 @@
+[
+  {
+    "title": "1st Place Winner",
+    "event": "HackIndia 2026 National Hackathon",
+    "year": "2026",
+    "highlight": true,
+    "description": "Awarded 1st place nationwide out of 500+ engineering teams for engineering the 301 Super AI Agents sovereign platform."
+  },
+  {
+    "title": "1st Place Winner",
+    "event": "Tamil Nadu Police Hackathon 2025",
+    "year": "2025",
+    "highlight": true,
+    "description": "Honoured by the Director General of Police (DGP) for building the TOR-UNVEIL forensic network intelligence system."
+  },
+  {
+    "title": "1st Place Winner",
+    "event": "Blaze a Trail 2.0 Hackathon",
+    "year": "2024",
+    "highlight": true,
+    "description": "Champion of sustainable agritech engineering for AI-powered plant pathology and crop forecasting."
+  },
+  {
+    "title": "Elite Silver Medalist",
+    "event": "NPTEL National Certification",
+    "year": "2024",
+    "highlight": false,
+    "description": "Scored in top 5% nationally in advanced algorithms and system architectures."
+  }
+]

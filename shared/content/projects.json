@@ -1,0 +1,108 @@
+[
+  {
+    "id": "project-301",
+    "number": "01",
+    "title": "301 Super AI Agents",
+    "tagline": "Sovereign Multi-Agent AI Platform",
+    "description": "A sovereign, local-first multi-agent orchestration architecture uniting 301 specialised autonomous agents. Features offline model execution, OCR document intelligence, streaming responses, and sovereign privacy.",
+    "award": {
+      "title": "1st Place Winner — HackIndia 2026",
+      "context": "Selected 1st out of 500+ competing engineering teams nationwide"
+    },
+    "technologies": [
+      "Python",
+      "LangChain",
+      "FastAPI",
+      "React",
+      "Local LLMs",
+      "OCR",
+      "WebSockets"
+    ],
+    "points": [
+      "Engineered a distributed swarm coordinator handling task delegation across 301 specialized domain agents.",
+      "Implemented sovereign offline execution utilizing quantised local LLMs (GGUF/Ollama) with zero external telemetry.",
+      "Built multi-modal OCR ingestion for rapid structured entity extraction from complex scanned legal and medical records."
+    ],
+    "github": "https://github.com/reginaldalfret/301-super-ai-agents"
+  },
+  {
+    "id": "project-tor",
+    "number": "02",
+    "title": "TOR-UNVEIL",
+    "tagline": "Onion Routing De-anonymisation & Cyber Defense System",
+    "description": "Advanced cyber defense and traffic correlation platform built for law enforcement, detecting anomalous routing patterns and Deanonymizing malicious relay behavior without breaking transport crypto.",
+    "award": {
+      "title": "1st Place Winner — Tamil Nadu Police Hackathon 2025",
+      "context": "Honoured by the Director General of Police (DGP) & Cyber Crime Division"
+    },
+    "technologies": [
+      "Python",
+      "Network Forensics",
+      "Packet Inspection",
+      "Graph Neural Networks",
+      "Docker"
+    ],
+    "points": [
+      "Engineered passive packet correlation algorithms analyzing circuit timing jitter and packet size distributions.",
+      "Created an interactive forensic dashboard visualizing onion relay topological graphs with sub-second latency.",
+      "Directly validated by senior cyber investigators during real-time mock investigations."
+    ],
+    "github": "https://github.com/reginaldalfret/tor-unveil"
+  },
+  {
+    "id": "project-crop",
+    "number": "03",
+    "title": "AI Powered Crop Recommendation & Plant Pathology",
+    "tagline": "Precision Agriculture Intelligence Engine",
+    "description": "End-to-end agritech platform combining soil chemistry analysis, weather forecasts, and Computer Vision leaf pathology to predict optimal crops and identify 40+ botanical pathogens.",
+    "award": {
+      "title": "1st Place Winner — Blaze a Trail 2.0 Hackathon",
+      "context": "Top honors for high-impact social and agricultural engineering"
+    },
+    "technologies": [
+      "PyTorch",
+      "Computer Vision",
+      "FastAPI",
+      "Next.js",
+      "GIS Mapping",
+      "Random Forest"
+    ],
+    "points": [
+      "Trained a convolutional neural network achieving 96.8% accuracy on real-world leaf disease diagnostic datasets.",
+      "Integrated N-P-K sensor readings with geographical climate data to forecast yield and recommend rotation regimens.",
+      "Packaged as a lightweight Progressive Web App accessible to farmers over low-bandwidth cellular networks."
+    ],
+    "github": "https://github.com/reginaldalfret/agri-ai-assistant"
+  },
+  {
+    "id": "project-polyglot",
+    "number": "04",
+    "title": "12 Stacks. 1 Product. — Polyglot Architecture Experiment",
+    "tagline": "Comprehensive Multi-Framework Engineering Showcase",
+    "description": "A signature engineering experiment proving 12 distinct programming languages and web frameworks implementing the identical obsidian resume product natively.",
+    "award": {
+      "title": "Signature Architecture Showcase",
+      "context": "Implemented across Next.js, Nuxt, Django, Spring Boot, Laravel, Rails, Angular, Blazor, Buffalo, Leptos, Jaspr, and Vapor"
+    },
+    "technologies": [
+      "Next.js",
+      "Nuxt 3",
+      "Django",
+      "Spring Boot",
+      "Laravel",
+      "Rails",
+      "Angular",
+      "Blazor",
+      "Buffalo",
+      "Leptos",
+      "Jaspr",
+      "Vapor"
+    ],
+    "points": [
+      "Engineered 12 independent, idiomatically built applications across TypeScript, Vue, Python, Java, PHP, Ruby, C#, Go, Rust, Dart, and Swift.",
+      "Maintained 100% visual and functional fidelity, rendering all 30 merged PRs, interactive resume canvas, and responsive viewports.",
+      "Unified performance metrics dashboard benchmarking FCP, LCP, CLS, TTFB, and artifact payload sizes."
+    ],
+    "github": "https://github.com/reginaldalfret/portfolio-website"
+  }
+]
