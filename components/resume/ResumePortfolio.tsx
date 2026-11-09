@@ -99,9 +99,9 @@ export function ResumePortfolio() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] text-neutral-100 py-6 px-3 sm:px-6 md:px-8 selection:bg-cyan-500/20 selection:text-cyan-200">
+    <div className="min-h-screen bg-[#050505] text-neutral-100 py-3 sm:py-5 px-2 sm:px-4 md:px-6 lg:px-8 selection:bg-cyan-500/20 selection:text-cyan-200 w-full overflow-x-hidden">
       {/* Top Floating Glass Command Bar */}
-      <div className={`mx-auto mb-4 sm:mb-6 sticky top-2 sm:top-3 z-50 transition-all ${activeStack === "nextjs" ? "max-w-6xl px-2 sm:px-4" : "w-full max-w-[99vw] 2xl:max-w-[1750px] px-1 sm:px-2"}`}>
+      <div className={`mx-auto mb-4 sm:mb-6 sticky top-2 sm:top-3 z-50 transition-all w-full max-w-[99vw] 2xl:max-w-[1750px] px-1 sm:px-2`}>
 
         <div className="backdrop-blur-xl bg-black/60 border border-white/10 rounded-2xl p-2.5 sm:p-3 shadow-2xl flex flex-wrap items-center justify-between gap-3">
           {/* Brand Identity */}
@@ -164,7 +164,7 @@ export function ResumePortfolio() {
       </div>
 
       {/* Main Container */}
-      <div className={`mx-auto w-full transition-all ${activeStack === "nextjs" ? "max-w-6xl px-2 sm:px-4" : "w-full max-w-[99vw] 2xl:max-w-[1750px] px-1 sm:px-2"}`}>
+      <div className={`mx-auto w-full transition-all w-full max-w-[99vw] 2xl:max-w-[1750px] px-1 sm:px-2`}>
 
         {activeStack === "nuxt" ? (
           /* Nuxt 3 Live Stack Mode */
@@ -813,7 +813,7 @@ export function ResumePortfolio() {
               </div>
 
               {/* 30 PRs Grid: 5 columns on desktop, 3 on tablet, 2 on mobile */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 2xl:grid-cols-6 gap-2.5">
                 {CONTRIBUTIONS.map((item, idx) => (
                   <a
                     key={idx}
@@ -1201,7 +1201,7 @@ export function ResumePortfolio() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-3.5">
                 {/* Next.js (Active Production) */}
                 <div className="p-4 rounded-2xl bg-gradient-to-b from-cyan-500/10 to-transparent border border-cyan-500/30 relative flex flex-col justify-between space-y-3">
                   <div>
