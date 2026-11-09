@@ -1,4 +1,4 @@
-﻿
+﻿{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +7,7 @@
   <title>Reginald Alfret V | Open-Source Contributor · AI &amp; DS Engineer (Django)</title>
   <meta name="description" content="Open-Source Contributor, AI &amp; Data Science Engineer, and Software Developer with 30 merged PRs across Apple, Google, Microsoft, Meta, AWS, NVIDIA, NASA, Netflix and more.">
   <meta name="theme-color" content="#050505">
-  <link rel="icon" type="image/x-icon" href="/stacks/django/static/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="{% static 'portfolio/favicon.ico' %}">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -39,6 +39,9 @@
     ::selection {
       background-color: rgba(6, 182, 212, 0.2);
       color: #a5f3fc;
+    }
+    .is-embedded .floating-stack-dock {
+      display: none !important;
     }
     @media print {
       .no-print {
@@ -101,7 +104,7 @@
           <span>Print</span>
         </button>
         <a
-          href="/stacks/django/static/Reginald_Alfret_Resume.pdf"
+          href="{% static 'portfolio/Reginald_Alfret_Resume.pdf' %}"
           download="Reginald_Alfret_Resume.pdf"
           class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-gradient-to-r from-cyan-500 to-blue-600 text-black shadow-lg shadow-cyan-500/20 hover:brightness-110 transition-all"
         >
@@ -125,7 +128,7 @@
           </span>
         </div>
         <a
-          href="/stacks/django/static/Reginald_Alfret_Resume.pdf"
+          href="{% static 'portfolio/Reginald_Alfret_Resume.pdf' %}"
           target="_blank"
           rel="noopener noreferrer"
           class="text-xs text-cyan-400 hover:text-cyan-300 inline-flex items-center gap-1"
@@ -136,7 +139,7 @@
       </div>
       <div class="w-full h-[82vh] rounded-2xl overflow-hidden border border-white/5 bg-neutral-900/50">
         <iframe
-          src="/stacks/django/static/Reginald_Alfret_Resume.pdf#view=FitH"
+          src="{% static 'portfolio/Reginald_Alfret_Resume.pdf' %}#view=FitH"
           class="w-full h-full border-0"
           title="Reginald Alfret V — Resume PDF"
         ></iframe>
@@ -234,9 +237,9 @@
 
         <!-- 30 PRs Grid -->
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5">
-          
+          {% for item in contributions %}
           <a
-            href="https://github.com/apple/swift-numerics/pull/355"
+            href="{{ item.url }}"
             target="_blank"
             rel="noopener noreferrer"
             class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
@@ -244,657 +247,19 @@
             <div class="flex items-center justify-between mb-1.5">
               <div class="flex items-center gap-2 min-w-0">
                 <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  Apple
+                  {{ item.org }}
                 </span>
               </div>
               <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #355
+                {{ item.pr }}
               </span>
             </div>
             <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">swift-numerics</span>
+              <span class="truncate">{{ item.repo }}</span>
               <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
             </div>
           </a>
-          
-          <a
-            href="https://github.com/google/highway/pull/3511"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  Google
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #3511
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">Highway</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/GoogleCloudPlatform/professional-services-data-validator/pull/1863"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  Google Cloud
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #1863
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">Data Validator</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/microsoft/semantic-kernel/pull/14472"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  Microsoft
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #14472
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">Semantic Kernel</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/aws-powertools/powertools-lambda-python/pull/8542"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  AWS
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #8542
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">Lambda Powertools</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/facebook/stylex/pull/1899"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  Meta
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #1899
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">StyleX</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/NVIDIA/cuopt/pull/2068"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  NVIDIA
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #2068
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">cuOpt</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/nasa/prog_models/pull/237"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  NASA
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #237
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">ProgPy</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/Azure/azure-cosmos-db-emulator-docker/pull/359"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  Azure
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #359
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">Cosmos DB Emulator</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/adobe/skills/pull/445"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  Adobe
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #445
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">Skills</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/intel/auto-round/pull/2421"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  Intel
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #2421
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">AutoRound</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/IBM/docling-pipelines/pull/85"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  IBM
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #85
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">Docling Pipelines</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/uber/kraken/pull/716"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  Uber
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #716
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">Kraken</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/airbnb/MagazineLayout/pull/169"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  Airbnb
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #169
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">MagazineLayout</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/cli/cli/pull/14592"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  GitHub
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #14592
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">GitHub CLI</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/dell/omnia/pull/649"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  Dell
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #649
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">Omnia Containers</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/salesforce/tough-cookie/pull/659"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  Salesforce
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #659
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">tough-cookie</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/ROCm/hrx-system/pull/1231"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  AMD
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #1231
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">ROCm HRX System</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/SAP/e-mobility-charging-stations-simulator/pull/2136"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  SAP
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #2136
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">E-Mobility Simulator</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/pinterest/pymemcache/pull/657"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  Pinterest
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #657
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">PyMemcache</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/qualcomm/commit-msg-check-action/pull/38"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  Qualcomm
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #38
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">Commit Msg Check</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/stripe/stripe-react-native/pull/2751"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  Stripe
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #2751
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">Stripe React Native</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/docker/docs/pull/26266"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  Docker
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #26266
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">Docker Docs</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/apache/hertzbeat/pull/4410"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  Apache
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #4410
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">HertzBeat</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/cloudflare/cfssl/pull/1451"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  Cloudflare
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #1451
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">CFSSL</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/openai/softnet/pull/219"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  OpenAI
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #219
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">Softnet</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/Snapchat/ts-inject/pull/30"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  Snapchat
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #30
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">ts-inject</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/spotify/confidence-sdk-swift/pull/272"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  Spotify
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #272
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">Confidence SDK Swift</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/cisco/cjose/pull/202"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  Cisco
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #202
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">cJOSE</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
-          <a
-            href="https://github.com/Netflix/atlas/pull/2011"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between mb-1.5">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
-                  Netflix
-                </span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 group-hover:bg-cyan-500/20 shrink-0">
-                #2011
-              </span>
-            </div>
-            <div class="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
-              <span class="truncate">Atlas</span>
-              <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 shrink-0 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-            </div>
-          </a>
-          
+          {% endfor %}
         </div>
       </section>
 
@@ -918,47 +283,24 @@
               <span class="text-base">💼</span> Professional Experience
             </h2>
             <div class="space-y-4">
-              
+              {% for exp in experiences %}
               <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-2">
                 <div class="flex flex-wrap items-baseline justify-between gap-1">
                   <div>
-                    <span class="text-sm font-bold text-white">DailyGurus</span>
-                    <span class="text-xs text-neutral-400 font-medium"> • Software Developer</span>
+                    <span class="text-sm font-bold text-white">{{ exp.company }}</span>
+                    <span class="text-xs text-neutral-400 font-medium"> • {{ exp.role }}</span>
                   </div>
                   <div class="text-xs text-cyan-400/90 font-mono">
-                    Jul 2026 – Present <span class="text-neutral-500">|</span> Chennai, India
+                    {{ exp.period }} <span class="text-neutral-500">|</span> {{ exp.location }}
                   </div>
                 </div>
                 <ul class="text-xs text-neutral-300 space-y-1.5 list-disc list-inside">
-                  
-                  <li>Worked on ERPNext, contributing to module customizations, workflows and application development.</li>
-                  
-                  <li>Developing a full ERP software platform from scratch across frontend, backend, database and business logic layers.</li>
-                  
-                  <li>Building web applications and REST APIs with React.js, Node.js and TypeScript for scalable, reliable systems.</li>
-                  
+                  {% for bullet in exp.bullets %}
+                  <li>{{ bullet }}</li>
+                  {% endfor %}
                 </ul>
               </div>
-              
-              <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-2">
-                <div class="flex flex-wrap items-baseline justify-between gap-1">
-                  <div>
-                    <span class="text-sm font-bold text-white">Data Patterns</span>
-                    <span class="text-xs text-neutral-400 font-medium"> • Data Science Intern</span>
-                  </div>
-                  <div class="text-xs text-cyan-400/90 font-mono">
-                    May 2025 – Jun 2025 <span class="text-neutral-500">|</span> Chennai, India
-                  </div>
-                </div>
-                <ul class="text-xs text-neutral-300 space-y-1.5 list-disc list-inside">
-                  
-                  <li>Built Python web-scraping tools to collect aerospace research papers and technical data from IEEE sources.</li>
-                  
-                  <li>Curated the data and fine-tuned an LLM using LoRA (Low-Rank Adaptation) on the domain-specific dataset.</li>
-                  
-                </ul>
-              </div>
-              
+              {% endfor %}
             </div>
           </section>
 
@@ -968,157 +310,33 @@
               <span class="text-base">🚀</span> Key Projects
             </h2>
             <div class="space-y-4">
-              
+              {% for proj in projects %}
               <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-2.5">
                 <div class="flex flex-wrap items-baseline justify-between gap-1">
                   <h3 class="text-sm font-bold text-white">
-                    301 Super AI Agents — Sovereign Multi-Agent AI Platform
+                    {{ proj.title }}
                   </h3>
                   <span class="text-xs font-semibold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
-                    1st · HackIndia 2026 (500+ Teams)
+                    {{ proj.badge }}
                   </span>
                 </div>
                 <p class="text-xs text-neutral-400 italic">
-                  Local-first multi-agent AI platform with 301 specialised agents for real-world task automation.
+                  {{ proj.description }}
                 </p>
                 <div class="flex flex-wrap gap-1 text-[11px] font-mono text-neutral-300">
-                  
+                  {% for tag in proj.tags %}
                   <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
-                    Python
+                    {{ tag }}
                   </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
-                    LLMs (Ollama)
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
-                    Agent Orchestration
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
-                    FastAPI
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
-                    React.js
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
-                    OCR
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
-                    Workflow Automation
-                  </span>
-                  
+                  {% endfor %}
                 </div>
                 <ul class="text-xs text-neutral-300 space-y-1 list-disc list-inside">
-                  
-                  <li>Designed a multi-agent platform with 301 specialised agents coordinated by a central Agent 301.</li>
-                  
-                  <li>Implemented local model selection, OCR document parsing, real-time streaming and automation.</li>
-                  
-                  <li>Built an interface supporting offline, on-device inference for privacy-sensitive environments.</li>
-                  
+                  {% for bullet in proj.bullets %}
+                  <li>{{ bullet }}</li>
+                  {% endfor %}
                 </ul>
               </div>
-              
-              <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-2.5">
-                <div class="flex flex-wrap items-baseline justify-between gap-1">
-                  <h3 class="text-sm font-bold text-white">
-                    TOR-UNVEIL — Dark Web AI Cybercriminal Tracker
-                  </h3>
-                  <span class="text-xs font-semibold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
-                    1st · TN Police Hackathon 2025
-                  </span>
-                </div>
-                <p class="text-xs text-neutral-400 italic">
-                  Full-stack AI platform adapted for live operational use by Tamil Nadu Police.
-                </p>
-                <div class="flex flex-wrap gap-1 text-[11px] font-mono text-neutral-300">
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
-                    Python
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
-                    React.js
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
-                    Node.js
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
-                    Tailwind CSS
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
-                    Machine Learning
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
-                    Data Analytics
-                  </span>
-                  
-                </div>
-                <ul class="text-xs text-neutral-300 space-y-1 list-disc list-inside">
-                  
-                  <li>Built a platform for real-time cybercriminal identification and network profiling on TOR dark web.</li>
-                  
-                  <li>Developed search, suspect profile cards and network-graph visualisations with ML classification.</li>
-                  
-                </ul>
-              </div>
-              
-              <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-2.5">
-                <div class="flex flex-wrap items-baseline justify-between gap-1">
-                  <h3 class="text-sm font-bold text-white">
-                    AI Crop Recommendation &amp; Agri-Intelligence Engine
-                  </h3>
-                  <span class="text-xs font-semibold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
-                    1st · Blaze a Trail 2.0
-                  </span>
-                </div>
-                <p class="text-xs text-neutral-400 italic">
-                  ML-powered recommendation system for precision farming.
-                </p>
-                <div class="flex flex-wrap gap-1 text-[11px] font-mono text-neutral-300">
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
-                    Python
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
-                    Machine Learning
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
-                    React.js
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
-                    REST APIs
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
-                    GIS Data
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 border border-white/5">
-                    Explainable AI
-                  </span>
-                  
-                </div>
-                <ul class="text-xs text-neutral-300 space-y-1 list-disc list-inside">
-                  
-                  <li>Built an ML engine using soil, weather and GIS datasets to deliver actionable farming insights.</li>
-                  
-                  <li>Integrated REST API backend with React.js dashboard; applied Explainable AI for accessibility.</li>
-                  
-                </ul>
-              </div>
-              
+              {% endfor %}
             </div>
           </section>
         </div>
@@ -1137,47 +355,11 @@
                   <span>AI &amp; Data Science</span>
                 </div>
                 <div class="flex flex-wrap gap-1">
-                  
+                  {% for s in skills.ai %}
                   <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono text-[11px]">
-                    Machine Learning
+                    {{ s }}
                   </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono text-[11px]">
-                    Deep Learning
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono text-[11px]">
-                    LLMs
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono text-[11px]">
-                    LoRA
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono text-[11px]">
-                    Prompt Engineering
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono text-[11px]">
-                    OCR
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono text-[11px]">
-                    Computer Vision
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono text-[11px]">
-                    Explainable AI
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono text-[11px]">
-                    Scikit-learn
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono text-[11px]">
-                    Data Analytics
-                  </span>
-                  
+                  {% endfor %}
                 </div>
               </div>
 
@@ -1187,43 +369,11 @@
                   <span>Languages</span>
                 </div>
                 <div class="flex flex-wrap gap-1">
-                  
+                  {% for s in skills.languages %}
                   <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-200 border border-white/10 font-mono text-[11px]">
-                    Python
+                    {{ s }}
                   </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-200 border border-white/10 font-mono text-[11px]">
-                    JavaScript (ES6+)
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-200 border border-white/10 font-mono text-[11px]">
-                    TypeScript
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-200 border border-white/10 font-mono text-[11px]">
-                    SQL
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-200 border border-white/10 font-mono text-[11px]">
-                    HTML5
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-200 border border-white/10 font-mono text-[11px]">
-                    CSS3
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-200 border border-white/10 font-mono text-[11px]">
-                    Go
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-200 border border-white/10 font-mono text-[11px]">
-                    Swift
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-200 border border-white/10 font-mono text-[11px]">
-                    C++
-                  </span>
-                  
+                  {% endfor %}
                 </div>
               </div>
 
@@ -1233,39 +383,11 @@
                   <span>Open Source</span>
                 </div>
                 <div class="flex flex-wrap gap-1">
-                  
+                  {% for s in skills.opensource %}
                   <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-mono text-[11px]">
-                    Git
+                    {{ s }}
                   </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-mono text-[11px]">
-                    GitHub
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-mono text-[11px]">
-                    Pull Requests
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-mono text-[11px]">
-                    Code Review
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-mono text-[11px]">
-                    Bug Fixing
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-mono text-[11px]">
-                    Regression Testing
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-mono text-[11px]">
-                    Documentation
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-mono text-[11px]">
-                    CVE Fixes
-                  </span>
-                  
+                  {% endfor %}
                 </div>
               </div>
 
@@ -1275,43 +397,11 @@
                   <span>Software Development</span>
                 </div>
                 <div class="flex flex-wrap gap-1">
-                  
+                  {% for s in skills.dev %}
                   <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
-                    React.js
+                    {{ s }}
                   </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
-                    Node.js
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
-                    Express.js
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
-                    FastAPI
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
-                    REST APIs
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
-                    Tailwind CSS
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
-                    Bootstrap
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
-                    Material UI
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
-                    ERPNext
-                  </span>
-                  
+                  {% endfor %}
                 </div>
               </div>
 
@@ -1321,19 +411,11 @@
                   <span>Databases</span>
                 </div>
                 <div class="flex flex-wrap gap-1">
-                  
+                  {% for s in skills.databases %}
                   <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
-                    PostgreSQL
+                    {{ s }}
                   </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
-                    MySQL
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
-                    MongoDB
-                  </span>
-                  
+                  {% endfor %}
                 </div>
               </div>
 
@@ -1343,31 +425,11 @@
                   <span>Tools &amp; Platforms</span>
                 </div>
                 <div class="flex flex-wrap gap-1">
-                  
+                  {% for s in skills.tools %}
                   <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
-                    Docker
+                    {{ s }}
                   </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
-                    AWS
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
-                    Linux
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
-                    Postman
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
-                    Figma
-                  </span>
-                  
-                  <span class="px-2 py-0.5 rounded bg-white/5 text-neutral-300 border border-white/10 font-mono text-[11px]">
-                    VS Code
-                  </span>
-                  
+                  {% endfor %}
                 </div>
               </div>
             </div>
@@ -1403,55 +465,15 @@
               <span class="text-base">🏆</span> Achievements
             </h2>
             <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-2 text-xs">
-              
+              {% for ach in achievements %}
               <div class="flex items-start gap-2 text-neutral-200">
-                <span>🥇</span>
+                <span>{{ ach.icon }}</span>
                 <div>
-                  <strong class="text-white">1st – HackIndia 2026</strong>
-                  <span class="text-neutral-400">(301 Super AI Agents)</span>
+                  <strong class="text-white">{{ ach.title }}</strong>
+                  {% if ach.subtitle %}<span class="text-neutral-400">{{ ach.subtitle }}</span>{% endif %}
                 </div>
               </div>
-              
-              <div class="flex items-start gap-2 text-neutral-200">
-                <span>🥇</span>
-                <div>
-                  <strong class="text-white">1st – TN Police Hackathon 2025</strong>
-                  <span class="text-neutral-400">(TOR-UNVEIL)</span>
-                </div>
-              </div>
-              
-              <div class="flex items-start gap-2 text-neutral-200">
-                <span>🥇</span>
-                <div>
-                  <strong class="text-white">1st – Blaze a Trail 2.0</strong>
-                  <span class="text-neutral-400">(Crop Recommendation)</span>
-                </div>
-              </div>
-              
-              <div class="flex items-start gap-2 text-neutral-200">
-                <span>🛡️</span>
-                <div>
-                  <strong class="text-white">Finalist – TN Police Hackathon 2024</strong>
-                  
-                </div>
-              </div>
-              
-              <div class="flex items-start gap-2 text-neutral-200">
-                <span>🏆</span>
-                <div>
-                  <strong class="text-white">Winner – 6 National-Level Technical Symposiums</strong>
-                  
-                </div>
-              </div>
-              
-              <div class="flex items-start gap-2 text-neutral-200">
-                <span>🚀</span>
-                <div>
-                  <strong class="text-white">70+ other projects</strong>
-                  <span class="text-neutral-400">across AI, Web &amp; Automation</span>
-                </div>
-              </div>
-              
+              {% endfor %}
             </div>
           </section>
 
@@ -1461,31 +483,13 @@
               <span class="text-base">📜</span> Certifications
             </h2>
             <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-2 text-xs">
-              
+              {% for cert in certifications %}
               <div class="flex items-center gap-2">
-                <span>🎓</span>
-                <span class="text-white font-medium">Meta Front-End Developer</span>
-                <span class="text-neutral-500 font-mono text-[11px] ml-auto">Coursera</span>
+                <span>{{ cert.icon }}</span>
+                <span class="text-white font-medium">{{ cert.title }}</span>
+                <span class="text-neutral-500 font-mono text-[11px] ml-auto">{{ cert.issuer }}</span>
               </div>
-              
-              <div class="flex items-center gap-2">
-                <span>🛡️</span>
-                <span class="text-white font-medium">Google Cybersecurity Certificate</span>
-                <span class="text-neutral-500 font-mono text-[11px] ml-auto">Coursera</span>
-              </div>
-              
-              <div class="flex items-center gap-2">
-                <span>⚛️</span>
-                <span class="text-white font-medium">React: The Complete Guide</span>
-                <span class="text-neutral-500 font-mono text-[11px] ml-auto">Udemy</span>
-              </div>
-              
-              <div class="flex items-center gap-2">
-                <span>🎨</span>
-                <span class="text-white font-medium">Figma UI/UX Design Essentials</span>
-                <span class="text-neutral-500 font-mono text-[11px] ml-auto">Udemy</span>
-              </div>
-              
+              {% endfor %}
             </div>
           </section>
         </div>
@@ -1622,7 +626,7 @@
         <div>
           Powered by Django &amp; Python • Built by Reginald Alfret V •
           <a
-            href="/stacks/django/static/Reginald_Alfret_Resume.pdf"
+            href="{% static 'portfolio/Reginald_Alfret_Resume.pdf' %}"
             class="text-cyan-400 hover:underline"
           >
             Download PDF
@@ -1632,31 +636,27 @@
     </div>
   </div>
 
-  <!-- Floating Bottom Stack Dock -->
-  <div class="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 no-print">
+  <!-- Floating Bottom Stack Dock (Hidden when embedded in parent iframe) -->
+  <div class="floating-stack-dock fixed bottom-4 left-1/2 -translate-x-1/2 z-50 no-print">
     <div class="backdrop-blur-xl bg-black/85 border border-white/15 rounded-full py-1.5 px-3.5 shadow-2xl flex items-center gap-2 text-xs">
       <span class="text-[11px] font-mono text-neutral-400 hidden sm:inline">Stack:</span>
       
       <a
-        href="https://reginaldalfret.tech"
-        target="_blank"
-        rel="noopener noreferrer"
+        href="/"
+        target="_top"
         class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
-        title="Production Next.js Version"
+        title="Switch to Next.js (Production)"
       >
         <span>Next.js</span>
-        <svg class="w-3 h-3 opacity-60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
       </a>
 
       <a
-        href="https://github.com/reginaldalfret/portfolio-nuxt"
-        target="_blank"
-        rel="noopener noreferrer"
+        href="/stacks/nuxt"
+        target="_top"
         class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-neutral-400 hover:text-white hover:bg-white/10 transition-colors font-medium"
         title="Switch to Nuxt 3 (Vue 3)"
       >
         <span>Nuxt 3</span>
-        <svg class="w-3 h-3 opacity-60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
       </a>
 
       <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 font-semibold shadow-sm">
@@ -1667,6 +667,10 @@
   </div>
 
   <script>
+    if (window.self !== window.top) {
+      document.documentElement.classList.add('is-embedded');
+    }
+
     function setViewMode(mode) {
       const interactiveView = document.getElementById('interactive-view');
       const pdfView = document.getElementById('pdf-view');
