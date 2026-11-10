@@ -28,6 +28,7 @@ import {
   Cpu,
   Wrench,
   BookOpen,
+  Activity,
 } from "lucide-react";
 import { OrgLogo } from "@/components/opensource/OrgLogos";
 import { EngineeringLab } from "@/components/stacks/EngineeringLab";
