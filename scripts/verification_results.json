@@ -55,58 +55,58 @@
     {
       "stack": "Go Buffalo",
       "port": 8087,
-      "lang": "Go 1.27",
-      "framework": "Buffalo Plush",
-      "active": false,
-      "statusCode": null,
-      "serverHeader": null,
-      "error": "connect ECONNREFUSED 127.0.0.1:8087"
+      "lang": "Go 1.24/1.27",
+      "framework": "Buffalo Plush Engine",
+      "active": true,
+      "statusCode": 200,
+      "serverHeader": "none",
+      "error": null
     },
     {
       "stack": "Spring Boot",
       "port": 8082,
-      "lang": "Java 21",
-      "framework": "Spring MVC Tomcat",
-      "active": false,
-      "statusCode": null,
-      "serverHeader": null,
-      "error": "connect ECONNREFUSED 127.0.0.1:8082"
+      "lang": "Java 21 LTS",
+      "framework": "Spring MVC Embedded Tomcat",
+      "active": true,
+      "statusCode": 200,
+      "serverHeader": "none",
+      "error": null
     },
     {
       "stack": "Django",
-      "port": 8000,
+      "port": 8083,
       "lang": "Python 3.13",
-      "framework": "Django SSR",
+      "framework": "Django 6 Gunicorn WSGI",
       "active": true,
       "statusCode": 200,
-      "serverHeader": "PHP/8.4.24",
+      "serverHeader": "gunicorn",
       "error": null
     },
     {
       "stack": "Laravel",
-      "port": 8001,
+      "port": 8085,
       "lang": "PHP 8.4",
-      "framework": "Laravel Blade",
-      "active": false,
-      "statusCode": null,
-      "serverHeader": null,
-      "error": "connect ECONNREFUSED 127.0.0.1:8001"
+      "framework": "Laravel 11 Artisan Blade",
+      "active": true,
+      "statusCode": 200,
+      "serverHeader": "PHP/8.4.27",
+      "error": null
     },
     {
       "stack": "Ruby on Rails",
-      "port": 3000,
+      "port": 8084,
       "lang": "Ruby 3.4",
-      "framework": "Rails 8 Puma",
+      "framework": "Rails 8 Puma Rack",
       "active": false,
       "statusCode": null,
       "serverHeader": null,
-      "error": "connect ECONNREFUSED 127.0.0.1:3000"
+      "error": "connect ECONNREFUSED 127.0.0.1:8084"
     },
     {
       "stack": "Vapor 4",
       "port": 8086,
       "lang": "Swift 6.0",
-      "framework": "SwiftNIO",
+      "framework": "SwiftNIO Non-blocking I/O",
       "active": false,
       "statusCode": null,
       "serverHeader": null,

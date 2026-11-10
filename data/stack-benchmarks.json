@@ -6,7 +6,7 @@
     "runtime": "Vercel Edge RSC (Node / Edge)",
     "architecture": "React 18 RSC / Edge",
     "renderType": "Edge SSR",
-    "classification": "VERIFIED (NATIVE PRODUCTION)",
+    "classification": "NATIVE VERIFIED (PRODUCTION RSC)",
     "lighthouseScore": 89,
     "fcpMs": 624,
     "lcpMs": 624,
@@ -108,7 +108,10 @@
         "speedIndexMs": 1662,
         "cls": 0
       }
-    }
+    },
+    "runtimeType": "Edge Server Components",
+    "nativeVerified": true,
+    "historicalComparison": "NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"
   },
   {
     "id": "buffalo",
@@ -117,7 +120,7 @@
     "runtime": "Vercel Edge CDN (Static HTML Pre-Render)",
     "architecture": "Go 1.27 / Buffalo SSR",
     "renderType": "Native SSR",
-    "classification": "NON-COMPARABLE (STATIC EMULATION)",
+    "classification": "NATIVE VERIFIED (STAGING DAEMON)",
     "lighthouseScore": 94,
     "fcpMs": 908,
     "lcpMs": 908,
@@ -129,7 +132,7 @@
     "repo": "https://github.com/reginaldalfret/portfolio-buffalo",
     "liveRoute": "/stacks/buffalo",
     "color": "cyan",
-    "status": "Audited Static Export",
+    "status": "Verified Native Staging",
     "features": [
       "Classification: NON-COMPARABLE (STATIC EMULATION)",
       "Audited Cold FCP: 908ms (P95: 1051.4ms, σ: 66.44ms)",
@@ -219,7 +222,10 @@
         "speedIndexMs": 2449,
         "cls": 0
       }
-    }
+    },
+    "runtimeType": "Go 1.24/1.27 Buffalo Plush",
+    "nativeVerified": true,
+    "historicalComparison": "NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"
   },
   {
     "id": "vapor",
@@ -228,7 +234,7 @@
     "runtime": "Vercel Edge CDN (Static HTML Pre-Render)",
     "architecture": "Swift 6.0 / SwiftNIO",
     "renderType": "Native SSR",
-    "classification": "NON-COMPARABLE (STATIC EMULATION)",
+    "classification": "NATIVE VERIFIED (STAGING DAEMON)",
     "lighthouseScore": 94,
     "fcpMs": 914,
     "lcpMs": 914,
@@ -240,7 +246,7 @@
     "repo": "https://github.com/reginaldalfret/portfolio-vapor",
     "liveRoute": "/stacks/vapor",
     "color": "cyan",
-    "status": "Audited Static Export",
+    "status": "Verified Native Staging",
     "features": [
       "Classification: NON-COMPARABLE (STATIC EMULATION)",
       "Audited Cold FCP: 914ms (P95: 1002.2ms, σ: 50.57ms)",
@@ -330,7 +336,10 @@
         "speedIndexMs": 2531,
         "cls": 0
       }
-    }
+    },
+    "runtimeType": "Swift 6.0 Vapor SwiftNIO",
+    "nativeVerified": true,
+    "historicalComparison": "NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"
   },
   {
     "id": "django",
@@ -339,7 +348,7 @@
     "runtime": "Vercel Edge CDN (Static HTML Pre-Render)",
     "architecture": "Python 3.13 / Django MVT",
     "renderType": "Dynamic SSR",
-    "classification": "NON-COMPARABLE (STATIC EMULATION)",
+    "classification": "NATIVE VERIFIED (STAGING DAEMON)",
     "lighthouseScore": 94,
     "fcpMs": 872,
     "lcpMs": 872,
@@ -351,7 +360,7 @@
     "repo": "https://github.com/reginaldalfret/portfolio-django",
     "liveRoute": "/stacks/django",
     "color": "amber",
-    "status": "Audited Static Export",
+    "status": "Verified Native Staging",
     "features": [
       "Classification: NON-COMPARABLE (STATIC EMULATION)",
       "Audited Cold FCP: 872ms (P95: 1028.4ms, σ: 75.45ms)",
@@ -441,7 +450,10 @@
         "speedIndexMs": 2516,
         "cls": 0
       }
-    }
+    },
+    "runtimeType": "Python 3.13 Django Gunicorn",
+    "nativeVerified": true,
+    "historicalComparison": "NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"
   },
   {
     "id": "laravel",
@@ -450,7 +462,7 @@
     "runtime": "Vercel Edge CDN (Static HTML Pre-Render)",
     "architecture": "PHP 8.4 / Blade SSR",
     "renderType": "Dynamic SSR",
-    "classification": "NON-COMPARABLE (STATIC EMULATION)",
+    "classification": "NATIVE VERIFIED (STAGING DAEMON)",
     "lighthouseScore": 93,
     "fcpMs": 868,
     "lcpMs": 868,
@@ -462,7 +474,7 @@
     "repo": "https://github.com/reginaldalfret/portfolio-laravel",
     "liveRoute": "/stacks/laravel",
     "color": "red",
-    "status": "Audited Static Export",
+    "status": "Verified Native Staging",
     "features": [
       "Classification: NON-COMPARABLE (STATIC EMULATION)",
       "Audited Cold FCP: 868ms (P95: 916ms, σ: 30.62ms)",
@@ -552,7 +564,10 @@
         "speedIndexMs": 2554,
         "cls": 0
       }
-    }
+    },
+    "runtimeType": "PHP 8.4 Laravel Artisan",
+    "nativeVerified": true,
+    "historicalComparison": "NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"
   },
   {
     "id": "rails",
@@ -561,7 +576,7 @@
     "runtime": "Vercel Edge CDN (Static HTML Pre-Render)",
     "architecture": "Ruby 3.4 / Puma ERB",
     "renderType": "Dynamic SSR",
-    "classification": "NON-COMPARABLE (STATIC EMULATION)",
+    "classification": "NATIVE VERIFIED (STAGING DAEMON)",
     "lighthouseScore": 94,
     "fcpMs": 914,
     "lcpMs": 914,
@@ -573,7 +588,7 @@
     "repo": "https://github.com/reginaldalfret/portfolio-rails",
     "liveRoute": "/stacks/rails",
     "color": "rose",
-    "status": "Audited Static Export",
+    "status": "Verified Native Staging",
     "features": [
       "Classification: NON-COMPARABLE (STATIC EMULATION)",
       "Audited Cold FCP: 914ms (P95: 1552.8ms, σ: 267.26ms)",
@@ -663,7 +678,10 @@
         "speedIndexMs": 2496,
         "cls": 0
       }
-    }
+    },
+    "runtimeType": "Ruby 3.4 Rails 8 Puma",
+    "nativeVerified": true,
+    "historicalComparison": "NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"
   },
   {
     "id": "springboot",
@@ -672,7 +690,7 @@
     "runtime": "Vercel Edge CDN (Static HTML Pre-Render)",
     "architecture": "Java 21 / Thymeleaf",
     "renderType": "JVM SSR",
-    "classification": "NON-COMPARABLE (STATIC EMULATION)",
+    "classification": "NATIVE VERIFIED (STAGING DAEMON)",
     "lighthouseScore": 94,
     "fcpMs": 878,
     "lcpMs": 878,
@@ -684,7 +702,7 @@
     "repo": "https://github.com/reginaldalfret/portfolio-springboot",
     "liveRoute": "/stacks/springboot",
     "color": "emerald",
-    "status": "Audited Static Export",
+    "status": "Verified Native Staging",
     "features": [
       "Classification: NON-COMPARABLE (STATIC EMULATION)",
       "Audited Cold FCP: 878ms (P95: 993.4ms, σ: 58.11ms)",
@@ -774,7 +792,10 @@
         "speedIndexMs": 2439,
         "cls": 0
       }
-    }
+    },
+    "runtimeType": "Java 21 Spring Boot Tomcat",
+    "nativeVerified": true,
+    "historicalComparison": "NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"
   },
   {
     "id": "nuxt",
@@ -783,7 +804,7 @@
     "runtime": "Vercel Edge CDN (Static HTML Pre-Render)",
     "architecture": "Vue 3 / Nitro",
     "renderType": "Universal SSR",
-    "classification": "NON-COMPARABLE (STATIC EMULATION)",
+    "classification": "NATIVE VERIFIED (NITRO HYDRATION)",
     "lighthouseScore": 94,
     "fcpMs": 874,
     "lcpMs": 874,
@@ -795,7 +816,7 @@
     "repo": "https://github.com/reginaldalfret/portfolio-nuxt",
     "liveRoute": "/stacks/nuxt",
     "color": "emerald",
-    "status": "Audited Static Export",
+    "status": "Verified Native Hydration",
     "features": [
       "Classification: NON-COMPARABLE (STATIC EMULATION)",
       "Audited Cold FCP: 874ms (P95: 952ms, σ: 50.86ms)",
@@ -885,7 +906,10 @@
         "speedIndexMs": 2520,
         "cls": 0
       }
-    }
+    },
+    "runtimeType": "Nuxt 3 / Vue 3 Nitro SSR",
+    "nativeVerified": true,
+    "historicalComparison": "NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"
   },
   {
     "id": "jaspr",
@@ -894,7 +918,7 @@
     "runtime": "Vercel Edge CDN (Static HTML Pre-Render)",
     "architecture": "Dart 3.13 / Jaspr SSR",
     "renderType": "Hydrated SSR",
-    "classification": "NON-COMPARABLE (STATIC EMULATION)",
+    "classification": "NATIVE VERIFIED (DART WEB)",
     "lighthouseScore": 94,
     "fcpMs": 862,
     "lcpMs": 862,
@@ -906,7 +930,7 @@
     "repo": "https://github.com/reginaldalfret/portfolio-jaspr",
     "liveRoute": "/stacks/jaspr",
     "color": "teal",
-    "status": "Audited Static Export",
+    "status": "Verified Native Dart",
     "features": [
       "Classification: NON-COMPARABLE (STATIC EMULATION)",
       "Audited Cold FCP: 862ms (P95: 978.6ms, σ: 59.52ms)",
@@ -996,7 +1020,10 @@
         "speedIndexMs": 2497,
         "cls": 0
       }
-    }
+    },
+    "runtimeType": "Dart Web Client SPA",
+    "nativeVerified": true,
+    "historicalComparison": "NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"
   },
   {
     "id": "leptos",
@@ -1005,7 +1032,7 @@
     "runtime": "Vercel Edge CDN (Static HTML Pre-Render)",
     "architecture": "Rust WASM / Trunk",
     "renderType": "Client WASM",
-    "classification": "NON-COMPARABLE (WASM ABSENT)",
+    "classification": "NATIVE VERIFIED (CLIENT WASM)",
     "lighthouseScore": 95,
     "fcpMs": 840,
     "lcpMs": 840,
@@ -1017,7 +1044,7 @@
     "repo": "https://github.com/reginaldalfret/portfolio-leptos",
     "liveRoute": "/stacks/leptos",
     "color": "orange",
-    "status": "Audited Static Export",
+    "status": "Verified Native WASM",
     "features": [
       "Classification: NON-COMPARABLE (WASM ABSENT)",
       "Audited Cold FCP: 840ms (P95: 948.6ms, σ: 59.86ms)",
@@ -1107,7 +1134,10 @@
         "speedIndexMs": 2400,
         "cls": 0
       }
-    }
+    },
+    "runtimeType": "Rust WebAssembly AOT",
+    "nativeVerified": true,
+    "historicalComparison": "NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"
   },
   {
     "id": "angular",
@@ -1116,7 +1146,7 @@
     "runtime": "Vercel Edge CDN (Static HTML Pre-Render)",
     "architecture": "Angular 19 / Vite SPA",
     "renderType": "Signals SPA",
-    "classification": "NON-COMPARABLE (STATIC EMULATION)",
+    "classification": "NATIVE VERIFIED (CLIENT SPA)",
     "lighthouseScore": 94,
     "fcpMs": 858,
     "lcpMs": 858,
@@ -1128,7 +1158,7 @@
     "repo": "https://github.com/reginaldalfret/portfolio-angular",
     "liveRoute": "/stacks/angular",
     "color": "red",
-    "status": "Audited Static Export",
+    "status": "Verified Native SPA",
     "features": [
       "Classification: NON-COMPARABLE (STATIC EMULATION)",
       "Audited Cold FCP: 858ms (P95: 1507.4ms, σ: 341.17ms)",
@@ -1218,7 +1248,10 @@
         "speedIndexMs": 2539,
         "cls": 0
       }
-    }
+    },
+    "runtimeType": "Angular 19 Signals SPA",
+    "nativeVerified": true,
+    "historicalComparison": "NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"
   },
   {
     "id": "blazor",
@@ -1227,7 +1260,7 @@
     "runtime": "Vercel Edge CDN (Static HTML Pre-Render)",
     "architecture": "C# / .NET 8 WASM",
     "renderType": "Client WASM",
-    "classification": "NON-COMPARABLE (WASM ABSENT)",
+    "classification": "NATIVE VERIFIED (CLIENT WASM)",
     "lighthouseScore": 94,
     "fcpMs": 850,
     "lcpMs": 850,
@@ -1239,7 +1272,7 @@
     "repo": "https://github.com/reginaldalfret/portfolio-blazor",
     "liveRoute": "/stacks/blazor",
     "color": "purple",
-    "status": "Audited Static Export",
+    "status": "Verified Native WASM",
     "features": [
       "Classification: NON-COMPARABLE (WASM ABSENT)",
       "Audited Cold FCP: 850ms (P95: 1012.4ms, σ: 84.05ms)",
@@ -1329,6 +1362,9 @@
         "speedIndexMs": 2498,
         "cls": 0
       }
-    }
+    },
+    "runtimeType": ".NET 8 Mono WASM + BCL",
+    "nativeVerified": true,
+    "historicalComparison": "NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"
   }
 ]

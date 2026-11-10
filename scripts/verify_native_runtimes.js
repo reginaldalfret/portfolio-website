@@ -204,12 +204,12 @@ function probeHttp(url) {
   // Probe Backend Runtimes (Local & Staging)
   console.log('\n--- Probing Backend Native Server Ports ---');
   const backendStacks = [
-    { stack: 'Go Buffalo', port: 8087, lang: 'Go 1.27', framework: 'Buffalo Plush' },
-    { stack: 'Spring Boot', port: 8082, lang: 'Java 21', framework: 'Spring MVC Tomcat' },
-    { stack: 'Django', port: 8000, lang: 'Python 3.13', framework: 'Django SSR' },
-    { stack: 'Laravel', port: 8001, lang: 'PHP 8.4', framework: 'Laravel Blade' },
-    { stack: 'Ruby on Rails', port: 3000, lang: 'Ruby 3.4', framework: 'Rails 8 Puma' },
-    { stack: 'Vapor 4', port: 8086, lang: 'Swift 6.0', framework: 'SwiftNIO' }
+    { stack: 'Go Buffalo', port: 8087, lang: 'Go 1.24/1.27', framework: 'Buffalo Plush Engine' },
+    { stack: 'Spring Boot', port: 8082, lang: 'Java 21 LTS', framework: 'Spring MVC Embedded Tomcat' },
+    { stack: 'Django', port: 8083, lang: 'Python 3.13', framework: 'Django 6 Gunicorn WSGI' },
+    { stack: 'Laravel', port: 8085, lang: 'PHP 8.4', framework: 'Laravel 11 Artisan Blade' },
+    { stack: 'Ruby on Rails', port: 8084, lang: 'Ruby 3.4', framework: 'Rails 8 Puma Rack' },
+    { stack: 'Vapor 4', port: 8086, lang: 'Swift 6.0', framework: 'SwiftNIO Non-blocking I/O' }
   ];
 
   const backendResults = [];
