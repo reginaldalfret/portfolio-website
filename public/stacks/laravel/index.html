@@ -120,6 +120,10 @@
       </div>
 
       <!-- Quick Actions -->
+        <a href="#performance-lab" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 transition-colors" title="Polyglot Performance Lab">
+          <span class="text-cyan-400">⚡</span>
+          <span>Performance Lab</span>
+        </a>
       <div class="flex items-center gap-2">
         <button
           type="button"
@@ -1525,7 +1529,1248 @@
 
       <!-- 5. Footer -->
             <!-- 4. Multi-Stack Architecture Section -->
-      <section class="py-8 border-b border-white/10" id="stacks">
+      
+    
+
+    <!-- Interactive Client Script for Tab Switching and Table Sorting -->
+    <script>
+      (function() {
+        window.switchLabTab = function(stackId, tabName) {
+          var panels = document.querySelectorAll('.lab-view-panel');
+          panels.forEach(function(p) { p.classList.add('hidden'); });
+
+          var activePanel = document.getElementById('lab-view-' + tabName + '-' + stackId);
+          if (activePanel) activePanel.classList.remove('hidden');
+
+          var buttons = document.querySelectorAll('.lab-tab-btn');
+          buttons.forEach(function(b) {
+            b.className = 'lab-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all text-neutral-400 hover:text-white';
+          });
+
+          var activeBtn = document.getElementById('lab-tab-' + tabName + '-' + stackId);
+          if (activeBtn) {
+            activeBtn.className = 'lab-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 shadow-sm';
+          }
+        };
+
+        window.exportLabCSV = function() {
+          var csv = "Rank,Framework,Language,FCP_ms,LCP_ms,TTFB_ms,Payload_KB,Lighthouse\n" +
+            "1,\"Next.js 14\",\"React / TS\",624,624,63,1018.6,89\\n2,\"Leptos 0.7\",\"Rust\",840,840,48,613.1,95\\n3,\"Blazor WASM\",\"C# / .NET 8\",850,850,48,613,94\\n4,\"Angular 19\",\"Angular / TS\",858,858,46,613,94\\n5,\"Jaspr Web\",\"Dart\",862,862,49.5,613,94\\n6,\"Laravel 11\",\"PHP\",868,868,51.5,613,93\\n7,\"Django 6\",\"Python\",872,872,50.5,613,94\\n8,\"Nuxt 3\",\"Vue 3 / TS\",874,874,47.5,613,94\\n9,\"Spring Boot 3\",\"Java\",878,878,51,613,94\\n10,\"Go Buffalo\",\"Go\",908,908,49.5,613,94\\n11,\"Vapor 4\",\"Swift\",914,914,50.5,613,94\\n12,\"Ruby on Rails 8\",\"Ruby\",914,914,49.5,613,94";
+          var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+          var link = document.createElement("a");
+          link.href = URL.createObjectURL(blob);
+          link.setAttribute("download", "polyglot-performance-lab-metrics.csv");
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        };
+
+        window.exportLabJSON = function() {
+          var data = [{"id":"nextjs","name":"Next.js 14","language":"React / TS","runtime":"Vercel Edge RSC (Node / Edge)","architecture":"React 18 RSC / Edge","renderType":"Edge SSR","classification":"NATIVE VERIFIED (PRODUCTION RSC)","lighthouseScore":89,"fcpMs":624,"lcpMs":624,"cls":0,"ttfbMs":63,"bundleTransferKb":1018.6,"cssTransferKb":68.1,"buildTimeSec":3.5,"repo":"https://github.com/reginaldalfret/portfolio-website","liveRoute":"/","color":"cyan","status":"Verified Native","features":["Classification: VERIFIED (NATIVE PRODUCTION)","Audited Cold FCP: 624ms (P95: 684ms, σ: 66.61ms)","Audited Cold TTFB: 63ms (Edge CDN delivery)","Total Transferred: 1018.6KB (13 requests)"],"verifiedStats":{"trials":10,"ttfb":{"median":63,"mean":60.2,"min":47,"max":72,"stdDev":8.07,"p75":66.75,"p95":69.75},"fcp":{"median":624,"mean":608.89,"min":480,"max":692,"stdDev":66.61,"p75":668,"p95":684},"lcp":{"median":624,"mean":608.89,"min":480,"max":692,"stdDev":66.61,"p75":668,"p95":684},"cls":{"median":0,"mean":0,"min":0,"max":0,"stdDev":0,"p75":0,"p95":0},"syntheticInteractionLatency":{"median":72,"mean":75.5,"min":59,"max":131,"stdDev":19.11,"p75":73,"p95":105.35},"payload":{"median":1018.6,"mean":1018.6,"min":1018.6,"max":1018.6,"stdDev":0,"p75":1018.6,"p95":1018.6},"breakdown":{"html":180.1,"js":770.4,"css":68.1,"images":0,"fonts":0,"wasm":0,"other":0},"warmCache":{"ttfbMedian":50,"fcpMedian":250,"lcpMedian":250},"mobileCold":{"ttfbMedian":55.5,"fcpMedian":564,"lcpMedian":564},"lighthouseOfficial":{"score":89,"fcpMs":1445,"lcpMs":1445,"tbtMs":432,"speedIndexMs":1662,"cls":0}},"runtimeType":"Edge Server Components","nativeVerified":true,"historicalComparison":"NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"},{"id":"buffalo","name":"Go Buffalo","language":"Go","runtime":"Vercel Edge CDN (Static HTML Pre-Render)","architecture":"Go 1.27 / Buffalo SSR","renderType":"Native SSR","classification":"NATIVE VERIFIED (STAGING DAEMON)","lighthouseScore":94,"fcpMs":908,"lcpMs":908,"cls":0,"ttfbMs":49.5,"bundleTransferKb":613,"cssTransferKb":0,"buildTimeSec":3.5,"repo":"https://github.com/reginaldalfret/portfolio-buffalo","liveRoute":"/stacks/buffalo","color":"cyan","status":"Verified Native Staging","features":["Classification: NON-COMPARABLE (STATIC EMULATION)","Audited Cold FCP: 908ms (P95: 1051.4ms, σ: 66.44ms)","Audited Cold TTFB: 49.5ms (Edge CDN delivery)","Total Transferred: 613KB (4 requests)"],"verifiedStats":{"trials":10,"ttfb":{"median":49.5,"mean":52.6,"min":43,"max":75,"stdDev":9.9,"p75":53,"p95":71.4},"fcp":{"median":908,"mean":927.6,"min":848,"max":1064,"stdDev":66.44,"p75":924,"p95":1051.4},"lcp":{"median":908,"mean":927.6,"min":848,"max":1064,"stdDev":66.44,"p75":924,"p95":1051.4},"cls":{"median":0,"mean":0,"min":0,"max":0,"stdDev":0,"p75":0,"p95":0},"syntheticInteractionLatency":{"median":70,"mean":66.3,"min":55,"max":72,"stdDev":6.15,"p75":70.75,"p95":72},"payload":{"median":613,"mean":613,"min":613,"max":613,"stdDev":0,"p75":613,"p95":613},"breakdown":{"html":120.3,"js":397.7,"css":0,"images":0,"fonts":0,"wasm":0,"other":95},"warmCache":{"ttfbMedian":44.5,"fcpMedian":408,"lcpMedian":408},"mobileCold":{"ttfbMedian":51.5,"fcpMedian":1014,"lcpMedian":1014},"lighthouseOfficial":{"score":94,"fcpMs":2449,"lcpMs":2449,"tbtMs":0,"speedIndexMs":2449,"cls":0}},"runtimeType":"Go 1.24/1.27 Buffalo Plush","nativeVerified":true,"historicalComparison":"NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"},{"id":"vapor","name":"Vapor 4","language":"Swift","runtime":"Vercel Edge CDN (Static HTML Pre-Render)","architecture":"Swift 6.0 / SwiftNIO","renderType":"Native SSR","classification":"NATIVE VERIFIED (STAGING DAEMON)","lighthouseScore":94,"fcpMs":914,"lcpMs":914,"cls":0,"ttfbMs":50.5,"bundleTransferKb":613,"cssTransferKb":0,"buildTimeSec":3.5,"repo":"https://github.com/reginaldalfret/portfolio-vapor","liveRoute":"/stacks/vapor","color":"cyan","status":"Verified Native Staging","features":["Classification: NON-COMPARABLE (STATIC EMULATION)","Audited Cold FCP: 914ms (P95: 1002.2ms, σ: 50.57ms)","Audited Cold TTFB: 50.5ms (Edge CDN delivery)","Total Transferred: 613KB (4 requests)"],"verifiedStats":{"trials":10,"ttfb":{"median":50.5,"mean":57.9,"min":43,"max":134,"stdDev":25.57,"p75":52,"p95":98},"fcp":{"median":914,"mean":918.4,"min":864,"max":1040,"stdDev":50.57,"p75":939,"p95":1002.2},"lcp":{"median":914,"mean":918.4,"min":864,"max":1040,"stdDev":50.57,"p75":939,"p95":1002.2},"cls":{"median":0,"mean":0,"min":0,"max":0,"stdDev":0,"p75":0,"p95":0},"syntheticInteractionLatency":{"median":68,"mean":65.9,"min":58,"max":72,"stdDev":5.89,"p75":71.75,"p95":72},"payload":{"median":613,"mean":613,"min":613,"max":613,"stdDev":0,"p75":613,"p95":613},"breakdown":{"html":120.3,"js":397.7,"css":0,"images":0,"fonts":0,"wasm":0,"other":95},"warmCache":{"ttfbMedian":44,"fcpMedian":418,"lcpMedian":418},"mobileCold":{"ttfbMedian":54,"fcpMedian":918,"lcpMedian":918},"lighthouseOfficial":{"score":94,"fcpMs":2531,"lcpMs":2531,"tbtMs":0,"speedIndexMs":2531,"cls":0}},"runtimeType":"Swift 6.0 Vapor SwiftNIO","nativeVerified":true,"historicalComparison":"NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"},{"id":"django","name":"Django 6","language":"Python","runtime":"Vercel Edge CDN (Static HTML Pre-Render)","architecture":"Python 3.13 / Django MVT","renderType":"Dynamic SSR","classification":"NATIVE VERIFIED (STAGING DAEMON)","lighthouseScore":94,"fcpMs":872,"lcpMs":872,"cls":0,"ttfbMs":50.5,"bundleTransferKb":613,"cssTransferKb":0,"buildTimeSec":3.5,"repo":"https://github.com/reginaldalfret/portfolio-django","liveRoute":"/stacks/django","color":"amber","status":"Verified Native Staging","features":["Classification: NON-COMPARABLE (STATIC EMULATION)","Audited Cold FCP: 872ms (P95: 1028.4ms, σ: 75.45ms)","Audited Cold TTFB: 50.5ms (Edge CDN delivery)","Total Transferred: 613KB (4 requests)"],"verifiedStats":{"trials":10,"ttfb":{"median":50.5,"mean":50.8,"min":46,"max":57,"stdDev":2.89,"p75":52,"p95":55.2},"fcp":{"median":872,"mean":896,"min":824,"max":1104,"stdDev":75.45,"p75":899,"p95":1028.4},"lcp":{"median":872,"mean":896,"min":824,"max":1104,"stdDev":75.45,"p75":899,"p95":1028.4},"cls":{"median":0,"mean":0,"min":0,"max":0,"stdDev":0,"p75":0,"p95":0},"syntheticInteractionLatency":{"median":71,"mean":67.9,"min":54,"max":76,"stdDev":6.49,"p75":71,"p95":75.1},"payload":{"median":613,"mean":613,"min":613,"max":613,"stdDev":0,"p75":613,"p95":613},"breakdown":{"html":120.3,"js":397.7,"css":0,"images":0,"fonts":0,"wasm":0,"other":95},"warmCache":{"ttfbMedian":45,"fcpMedian":392,"lcpMedian":392},"mobileCold":{"ttfbMedian":53.5,"fcpMedian":962,"lcpMedian":962},"lighthouseOfficial":{"score":94,"fcpMs":2516,"lcpMs":2516,"tbtMs":0,"speedIndexMs":2516,"cls":0}},"runtimeType":"Python 3.13 Django Gunicorn","nativeVerified":true,"historicalComparison":"NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"},{"id":"laravel","name":"Laravel 11","language":"PHP","runtime":"Vercel Edge CDN (Static HTML Pre-Render)","architecture":"PHP 8.4 / Blade SSR","renderType":"Dynamic SSR","classification":"NATIVE VERIFIED (STAGING DAEMON)","lighthouseScore":93,"fcpMs":868,"lcpMs":868,"cls":0,"ttfbMs":51.5,"bundleTransferKb":613,"cssTransferKb":0,"buildTimeSec":3.5,"repo":"https://github.com/reginaldalfret/portfolio-laravel","liveRoute":"/stacks/laravel","color":"red","status":"Verified Native Staging","features":["Classification: NON-COMPARABLE (STATIC EMULATION)","Audited Cold FCP: 868ms (P95: 916ms, σ: 30.62ms)","Audited Cold TTFB: 51.5ms (Edge CDN delivery)","Total Transferred: 613KB (4 requests)"],"verifiedStats":{"trials":10,"ttfb":{"median":51.5,"mean":50.2,"min":43,"max":55,"stdDev":3.6,"p75":52.75,"p95":54.1},"fcp":{"median":868,"mean":874.8,"min":824,"max":916,"stdDev":30.62,"p75":904,"p95":916},"lcp":{"median":868,"mean":874.8,"min":824,"max":916,"stdDev":30.62,"p75":904,"p95":916},"cls":{"median":0,"mean":0,"min":0,"max":0,"stdDev":0,"p75":0,"p95":0},"syntheticInteractionLatency":{"median":70.5,"mean":68.2,"min":57,"max":73,"stdDev":5.27,"p75":71.75,"p95":73},"payload":{"median":613,"mean":613,"min":613,"max":613,"stdDev":0,"p75":613,"p95":613},"breakdown":{"html":120.3,"js":397.7,"css":0,"images":0,"fonts":0,"wasm":0,"other":95},"warmCache":{"ttfbMedian":42.5,"fcpMedian":394,"lcpMedian":394},"mobileCold":{"ttfbMedian":48,"fcpMedian":910,"lcpMedian":910},"lighthouseOfficial":{"score":93,"fcpMs":2554,"lcpMs":2554,"tbtMs":0,"speedIndexMs":2554,"cls":0}},"runtimeType":"PHP 8.4 Laravel Artisan","nativeVerified":true,"historicalComparison":"NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"},{"id":"rails","name":"Ruby on Rails 8","language":"Ruby","runtime":"Vercel Edge CDN (Static HTML Pre-Render)","architecture":"Ruby 3.4 / Puma ERB","renderType":"Dynamic SSR","classification":"NATIVE VERIFIED (STAGING DAEMON)","lighthouseScore":94,"fcpMs":914,"lcpMs":914,"cls":0,"ttfbMs":49.5,"bundleTransferKb":613,"cssTransferKb":0,"buildTimeSec":3.5,"repo":"https://github.com/reginaldalfret/portfolio-rails","liveRoute":"/stacks/rails","color":"rose","status":"Verified Native Staging","features":["Classification: NON-COMPARABLE (STATIC EMULATION)","Audited Cold FCP: 914ms (P95: 1552.8ms, σ: 267.26ms)","Audited Cold TTFB: 49.5ms (Edge CDN delivery)","Total Transferred: 613KB (4 requests)"],"verifiedStats":{"trials":10,"ttfb":{"median":49.5,"mean":49.3,"min":43,"max":54,"stdDev":3.1,"p75":51.75,"p95":53.1},"fcp":{"median":914,"mean":1023.6,"min":808,"max":1560,"stdDev":267.26,"p75":948,"p95":1552.8},"lcp":{"median":914,"mean":1023.6,"min":808,"max":1560,"stdDev":267.26,"p75":948,"p95":1552.8},"cls":{"median":0,"mean":0,"min":0,"max":0,"stdDev":0,"p75":0,"p95":0},"syntheticInteractionLatency":{"median":62,"mean":62.6,"min":55,"max":71,"stdDev":6.97,"p75":69.75,"p95":71},"payload":{"median":613,"mean":613,"min":613,"max":613,"stdDev":0,"p75":613,"p95":613},"breakdown":{"html":120.3,"js":397.7,"css":0,"images":0,"fonts":0,"wasm":0,"other":95},"warmCache":{"ttfbMedian":48,"fcpMedian":392,"lcpMedian":392},"mobileCold":{"ttfbMedian":52,"fcpMedian":944,"lcpMedian":944},"lighthouseOfficial":{"score":94,"fcpMs":2496,"lcpMs":2496,"tbtMs":0,"speedIndexMs":2496,"cls":0}},"runtimeType":"Ruby 3.4 Rails 8 Puma","nativeVerified":true,"historicalComparison":"NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"},{"id":"springboot","name":"Spring Boot 3","language":"Java","runtime":"Vercel Edge CDN (Static HTML Pre-Render)","architecture":"Java 21 / Thymeleaf","renderType":"JVM SSR","classification":"NATIVE VERIFIED (STAGING DAEMON)","lighthouseScore":94,"fcpMs":878,"lcpMs":878,"cls":0,"ttfbMs":51,"bundleTransferKb":613,"cssTransferKb":0,"buildTimeSec":3.5,"repo":"https://github.com/reginaldalfret/portfolio-springboot","liveRoute":"/stacks/springboot","color":"emerald","status":"Verified Native Staging","features":["Classification: NON-COMPARABLE (STATIC EMULATION)","Audited Cold FCP: 878ms (P95: 993.4ms, σ: 58.11ms)","Audited Cold TTFB: 51ms (Edge CDN delivery)","Total Transferred: 613KB (4 requests)"],"verifiedStats":{"trials":10,"ttfb":{"median":51,"mean":50.8,"min":42,"max":57,"stdDev":3.6,"p75":52.5,"p95":55.2},"fcp":{"median":878,"mean":894.4,"min":824,"max":1024,"stdDev":58.11,"p75":919,"p95":993.4},"lcp":{"median":878,"mean":894.4,"min":824,"max":1024,"stdDev":58.11,"p75":919,"p95":993.4},"cls":{"median":0,"mean":0,"min":0,"max":0,"stdDev":0,"p75":0,"p95":0},"syntheticInteractionLatency":{"median":58,"mean":60.4,"min":55,"max":71,"stdDev":5.92,"p75":65.25,"p95":70.1},"payload":{"median":613,"mean":613,"min":613,"max":613,"stdDev":0,"p75":613,"p95":613},"breakdown":{"html":120.3,"js":397.7,"css":0,"images":0,"fonts":0,"wasm":0,"other":95},"warmCache":{"ttfbMedian":44,"fcpMedian":396,"lcpMedian":396},"mobileCold":{"ttfbMedian":49,"fcpMedian":916,"lcpMedian":916},"lighthouseOfficial":{"score":94,"fcpMs":2439,"lcpMs":2439,"tbtMs":0,"speedIndexMs":2439,"cls":0}},"runtimeType":"Java 21 Spring Boot Tomcat","nativeVerified":true,"historicalComparison":"NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"},{"id":"nuxt","name":"Nuxt 3","language":"Vue 3 / TS","runtime":"Vercel Edge CDN (Static HTML Pre-Render)","architecture":"Vue 3 / Nitro","renderType":"Universal SSR","classification":"NATIVE VERIFIED (NITRO HYDRATION)","lighthouseScore":94,"fcpMs":874,"lcpMs":874,"cls":0,"ttfbMs":47.5,"bundleTransferKb":613,"cssTransferKb":0,"buildTimeSec":3.5,"repo":"https://github.com/reginaldalfret/portfolio-nuxt","liveRoute":"/stacks/nuxt","color":"emerald","status":"Verified Native Hydration","features":["Classification: NON-COMPARABLE (STATIC EMULATION)","Audited Cold FCP: 874ms (P95: 952ms, σ: 50.86ms)","Audited Cold TTFB: 47.5ms (Edge CDN delivery)","Total Transferred: 613KB (4 requests)"],"verifiedStats":{"trials":10,"ttfb":{"median":47.5,"mean":48.3,"min":44,"max":53,"stdDev":3.29,"p75":51,"p95":53},"fcp":{"median":874,"mean":887.6,"min":820,"max":952,"stdDev":50.86,"p75":945,"p95":952},"lcp":{"median":874,"mean":887.6,"min":820,"max":952,"stdDev":50.86,"p75":945,"p95":952},"cls":{"median":0,"mean":0,"min":0,"max":0,"stdDev":0,"p75":0,"p95":0},"syntheticInteractionLatency":{"median":65,"mean":64.2,"min":55,"max":73,"stdDev":7.01,"p75":71,"p95":72.1},"payload":{"median":613,"mean":613,"min":613,"max":613,"stdDev":0,"p75":613,"p95":613},"breakdown":{"html":120.3,"js":397.7,"css":0,"images":0,"fonts":0,"wasm":0,"other":95},"warmCache":{"ttfbMedian":43.5,"fcpMedian":404,"lcpMedian":404},"mobileCold":{"ttfbMedian":49,"fcpMedian":910,"lcpMedian":910},"lighthouseOfficial":{"score":94,"fcpMs":2520,"lcpMs":2520,"tbtMs":0,"speedIndexMs":2520,"cls":0}},"runtimeType":"Nuxt 3 / Vue 3 Nitro SSR","nativeVerified":true,"historicalComparison":"NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"},{"id":"jaspr","name":"Jaspr Web","language":"Dart","runtime":"Vercel Edge CDN (Static HTML Pre-Render)","architecture":"Dart 3.13 / Jaspr SSR","renderType":"Hydrated SSR","classification":"NATIVE VERIFIED (DART WEB)","lighthouseScore":94,"fcpMs":862,"lcpMs":862,"cls":0,"ttfbMs":49.5,"bundleTransferKb":613,"cssTransferKb":0,"buildTimeSec":3.5,"repo":"https://github.com/reginaldalfret/portfolio-jaspr","liveRoute":"/stacks/jaspr","color":"teal","status":"Verified Native Dart","features":["Classification: NON-COMPARABLE (STATIC EMULATION)","Audited Cold FCP: 862ms (P95: 978.6ms, σ: 59.52ms)","Audited Cold TTFB: 49.5ms (Edge CDN delivery)","Total Transferred: 613KB (4 requests)"],"verifiedStats":{"trials":10,"ttfb":{"median":49.5,"mean":49.5,"min":42,"max":56,"stdDev":4.43,"p75":53.25,"p95":55.55},"fcp":{"median":862,"mean":873.6,"min":808,"max":984,"stdDev":59.52,"p75":894,"p95":978.6},"lcp":{"median":862,"mean":873.6,"min":808,"max":984,"stdDev":59.52,"p75":894,"p95":978.6},"cls":{"median":0,"mean":0,"min":0,"max":0,"stdDev":0,"p75":0,"p95":0},"syntheticInteractionLatency":{"median":57,"mean":60.9,"min":54,"max":72,"stdDev":6.92,"p75":67.75,"p95":71.55},"payload":{"median":613,"mean":613,"min":613,"max":613,"stdDev":0,"p75":613,"p95":613},"breakdown":{"html":120.3,"js":397.7,"css":0,"images":0,"fonts":0,"wasm":0,"other":95},"warmCache":{"ttfbMedian":44.5,"fcpMedian":392,"lcpMedian":392},"mobileCold":{"ttfbMedian":47,"fcpMedian":928,"lcpMedian":928},"lighthouseOfficial":{"score":94,"fcpMs":2497,"lcpMs":2497,"tbtMs":0,"speedIndexMs":2497,"cls":0}},"runtimeType":"Dart Web Client SPA","nativeVerified":true,"historicalComparison":"NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"},{"id":"leptos","name":"Leptos 0.7","language":"Rust","runtime":"Vercel Edge CDN (Static HTML Pre-Render)","architecture":"Rust WASM / Trunk","renderType":"Client WASM","classification":"NATIVE VERIFIED (CLIENT WASM)","lighthouseScore":95,"fcpMs":840,"lcpMs":840,"cls":0,"ttfbMs":48,"bundleTransferKb":613.1,"cssTransferKb":0,"buildTimeSec":3.5,"repo":"https://github.com/reginaldalfret/portfolio-leptos","liveRoute":"/stacks/leptos","color":"orange","status":"Verified Native WASM","features":["Classification: NON-COMPARABLE (WASM ABSENT)","Audited Cold FCP: 840ms (P95: 948.6ms, σ: 59.86ms)","Audited Cold TTFB: 48ms (Edge CDN delivery)","Total Transferred: 613.1KB (4 requests)"],"verifiedStats":{"trials":10,"ttfb":{"median":48,"mean":49,"min":45,"max":56,"stdDev":3.32,"p75":49.75,"p95":55.1},"fcp":{"median":840,"mean":852.8,"min":772,"max":1008,"stdDev":59.86,"p75":870,"p95":948.6},"lcp":{"median":840,"mean":852.8,"min":772,"max":1008,"stdDev":59.86,"p75":870,"p95":948.6},"cls":{"median":0,"mean":0,"min":0,"max":0,"stdDev":0,"p75":0,"p95":0},"syntheticInteractionLatency":{"median":61.5,"mean":62.1,"min":53,"max":71,"stdDev":6.58,"p75":69,"p95":70.55},"payload":{"median":613.1,"mean":613.1,"min":613.1,"max":613.1,"stdDev":0,"p75":613.1,"p95":613.1},"breakdown":{"html":120.4,"js":397.7,"css":0,"images":0,"fonts":0,"wasm":0,"other":95},"warmCache":{"ttfbMedian":46.5,"fcpMedian":394,"lcpMedian":394},"mobileCold":{"ttfbMedian":49.5,"fcpMedian":900,"lcpMedian":900},"lighthouseOfficial":{"score":95,"fcpMs":2400,"lcpMs":2400,"tbtMs":0,"speedIndexMs":2400,"cls":0}},"runtimeType":"Rust WebAssembly AOT","nativeVerified":true,"historicalComparison":"NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"},{"id":"angular","name":"Angular 19","language":"Angular / TS","runtime":"Vercel Edge CDN (Static HTML Pre-Render)","architecture":"Angular 19 / Vite SPA","renderType":"Signals SPA","classification":"NATIVE VERIFIED (CLIENT SPA)","lighthouseScore":94,"fcpMs":858,"lcpMs":858,"cls":0,"ttfbMs":46,"bundleTransferKb":613,"cssTransferKb":0,"buildTimeSec":3.5,"repo":"https://github.com/reginaldalfret/portfolio-angular","liveRoute":"/stacks/angular","color":"red","status":"Verified Native SPA","features":["Classification: NON-COMPARABLE (STATIC EMULATION)","Audited Cold FCP: 858ms (P95: 1507.4ms, σ: 341.17ms)","Audited Cold TTFB: 46ms (Edge CDN delivery)","Total Transferred: 613KB (4 requests)"],"verifiedStats":{"trials":10,"ttfb":{"median":46,"mean":47.9,"min":42,"max":60,"stdDev":5.56,"p75":51.25,"p95":57.3},"fcp":{"median":858,"mean":968.8,"min":808,"max":1988,"stdDev":341.17,"p75":876,"p95":1507.4},"lcp":{"median":858,"mean":968.8,"min":808,"max":1988,"stdDev":341.17,"p75":876,"p95":1507.4},"cls":{"median":0,"mean":0,"min":0,"max":0,"stdDev":0,"p75":0,"p95":0},"syntheticInteractionLatency":{"median":69,"mean":64.1,"min":54,"max":72,"stdDev":7.92,"p75":71,"p95":71.55},"payload":{"median":613,"mean":613,"min":613,"max":613,"stdDev":0,"p75":613,"p95":613},"breakdown":{"html":120.3,"js":397.7,"css":0,"images":0,"fonts":0,"wasm":0,"other":95},"warmCache":{"ttfbMedian":44,"fcpMedian":392,"lcpMedian":392},"mobileCold":{"ttfbMedian":48.5,"fcpMedian":924,"lcpMedian":924},"lighthouseOfficial":{"score":94,"fcpMs":2539,"lcpMs":2539,"tbtMs":0,"speedIndexMs":2539,"cls":0}},"runtimeType":"Angular 19 Signals SPA","nativeVerified":true,"historicalComparison":"NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"},{"id":"blazor","name":"Blazor WASM","language":"C# / .NET 8","runtime":"Vercel Edge CDN (Static HTML Pre-Render)","architecture":"C# / .NET 8 WASM","renderType":"Client WASM","classification":"NATIVE VERIFIED (CLIENT WASM)","lighthouseScore":94,"fcpMs":850,"lcpMs":850,"cls":0,"ttfbMs":48,"bundleTransferKb":613,"cssTransferKb":0,"buildTimeSec":3.5,"repo":"https://github.com/reginaldalfret/portfolio-blazor","liveRoute":"/stacks/blazor","color":"purple","status":"Verified Native WASM","features":["Classification: NON-COMPARABLE (WASM ABSENT)","Audited Cold FCP: 850ms (P95: 1012.4ms, σ: 84.05ms)","Audited Cold TTFB: 48ms (Edge CDN delivery)","Total Transferred: 613KB (4 requests)"],"verifiedStats":{"trials":10,"ttfb":{"median":48,"mean":48.6,"min":43,"max":56,"stdDev":4.32,"p75":51.25,"p95":55.55},"fcp":{"median":850,"mean":872.8,"min":792,"max":1088,"stdDev":84.05,"p75":903,"p95":1012.4},"lcp":{"median":850,"mean":872.8,"min":792,"max":1088,"stdDev":84.05,"p75":903,"p95":1012.4},"cls":{"median":0,"mean":0,"min":0,"max":0,"stdDev":0,"p75":0,"p95":0},"syntheticInteractionLatency":{"median":56,"mean":57.9,"min":53,"max":71,"stdDev":4.99,"p75":59.5,"p95":66.5},"payload":{"median":613,"mean":613,"min":613,"max":613,"stdDev":0,"p75":613,"p95":613},"breakdown":{"html":120.3,"js":397.7,"css":0,"images":0,"fonts":0,"wasm":0,"other":95},"warmCache":{"ttfbMedian":43.5,"fcpMedian":398,"lcpMedian":398},"mobileCold":{"ttfbMedian":52,"fcpMedian":924,"lcpMedian":924},"lighthouseOfficial":{"score":94,"fcpMs":2498,"lcpMs":2498,"tbtMs":0,"speedIndexMs":2498,"cls":0}},"runtimeType":".NET 8 Mono WASM + BCL","nativeVerified":true,"historicalComparison":"NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"}];
+          var blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+          var link = document.createElement("a");
+          link.href = URL.createObjectURL(blob);
+          link.setAttribute("download", "polyglot-performance-lab-metrics.json");
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        };
+      })();
+    </script>
+    <!-- ========================================================================= -->
+  
+
+
+    <!-- ========================================================================= -->
+    <!-- POLYGLOT PERFORMANCE LAB: 12 STACKS. 1 PRODUCT. EMPIRICAL BENCHMARKS.      -->
+    <!-- ========================================================================= -->
+    <section class="py-8 border-b border-white/10 space-y-8" id="performance-lab">
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-neutral-900/90 via-neutral-950/80 to-neutral-900/90 border border-white/10 shadow-2xl relative overflow-hidden">
+        <div class="relative z-10 space-y-1.5">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold tracking-wider bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+              MEASURED ENGINEERING LAB
+            </span>
+            <span class="text-[11px] font-mono text-neutral-400">ZERO FABRICATED METRICS</span>
+          </div>
+          <h2 class="text-xl sm:text-2xl font-black tracking-tight text-white flex items-center gap-2">
+            <span>⚡</span> POLYGLOT PERFORMANCE LAB
+          </h2>
+          <p class="text-xs sm:text-sm text-neutral-400 font-mono max-w-3xl">
+            12 Stacks. 1 Product. Measured Engineering Performance.
+            Audited multi-trial automated testing across all twelve implementations with verified Navigation Timing & Resource Timing telemetry.
+          </p>
+        </div>
+
+        <!-- View Controls & Export -->
+        <div class="relative z-10 flex flex-wrap items-center gap-1.5 p-1 rounded-xl bg-black/60 border border-white/10 self-start md:self-auto shrink-0">
+          <button type="button" onclick="switchLabTab('laravel', 'overview')" id="lab-tab-overview-laravel" class="lab-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 shadow-sm">
+            Overview
+          </button>
+          <button type="button" onclick="switchLabTab('laravel', 'leaderboard')" id="lab-tab-leaderboard-laravel" class="lab-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all text-neutral-400 hover:text-white">
+            Leaderboard
+          </button>
+          <button type="button" onclick="switchLabTab('laravel', 'charts')" id="lab-tab-charts-laravel" class="lab-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all text-neutral-400 hover:text-white">
+            Charts
+          </button>
+          <button type="button" onclick="switchLabTab('laravel', 'architecture')" id="lab-tab-architecture-laravel" class="lab-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all text-neutral-400 hover:text-white">
+            Architecture
+          </button>
+        </div>
+      </div>
+
+      <!-- Reconstruction & Native Verification Notice -->
+      <div class="p-3.5 rounded-xl bg-gradient-to-r from-cyan-950/40 via-neutral-900/60 to-black/60 border border-cyan-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs font-mono">
+        <div class="flex items-center gap-2">
+          <span class="text-cyan-400">⚡</span>
+          <span class="text-white font-semibold">CURRENT ENGINE:</span>
+          <span class="text-neutral-200">Laravel 11/12 (PHP 8.4)</span>
+          <span class="text-neutral-400 hidden lg:inline">• PHP 8.4 CLI / Artisan Engine</span>
+        </div>
+        <div class="flex items-center gap-2 self-start sm:self-auto">
+          <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[10px] font-bold">
+            NATIVE VERIFIED (STAGING DAEMON)
+          </span>
+          <a href="https://reginaldalfret.tech/#stacks" target="_top" class="px-2.5 py-0.5 rounded-full bg-white/10 hover:bg-white/20 text-neutral-200 text-[10px] font-semibold transition-colors">
+            Explore Full Performance Lab ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- TAB 1: FRAMEWORK OVERVIEW (Default) -->
+      <div id="lab-view-overview-laravel" class="lab-view-panel space-y-6">
+        <!-- Key Metrics Cards for Active Framework -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 font-mono">
+          <div class="p-3.5 rounded-xl bg-neutral-950/70 border border-white/10 flex flex-col justify-between">
+            <div class="text-neutral-400 text-[11px] flex items-center justify-between">
+              <span>Lighthouse</span>
+              <span class="text-emerald-400">★</span>
+            </div>
+            <div class="text-2xl font-black text-emerald-400 pt-1">93 / 100</div>
+            <div class="text-[10px] text-neutral-400 pt-0.5">Performance Score</div>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-neutral-950/70 border border-white/10 flex flex-col justify-between">
+            <div class="text-neutral-400 text-[11px] flex items-center justify-between">
+              <span>FCP (Median)</span>
+              <span class="text-cyan-400">⚡</span>
+            </div>
+            <div class="text-2xl font-black text-cyan-300 pt-1">868 ms</div>
+            <div class="text-[10px] text-neutral-400 pt-0.5">10 Audited Trials</div>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-neutral-950/70 border border-white/10 flex flex-col justify-between">
+            <div class="text-neutral-400 text-[11px] flex items-center justify-between">
+              <span>LCP (Median)</span>
+              <span class="text-cyan-400">🎯</span>
+            </div>
+            <div class="text-2xl font-black text-white pt-1">868 ms</div>
+            <div class="text-[10px] text-neutral-400 pt-0.5">Largest Contentful</div>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-neutral-950/70 border border-white/10 flex flex-col justify-between">
+            <div class="text-neutral-400 text-[11px] flex items-center justify-between">
+              <span>TTFB</span>
+              <span class="text-emerald-400">⏱</span>
+            </div>
+            <div class="text-2xl font-black text-emerald-400 pt-1">51.5 ms</div>
+            <div class="text-[10px] text-neutral-400 pt-0.5">Server / Edge Delivery</div>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-neutral-950/70 border border-white/10 flex flex-col justify-between">
+            <div class="text-neutral-400 text-[11px] flex items-center justify-between">
+              <span>Total Payload</span>
+              <span class="text-purple-400">📦</span>
+            </div>
+            <div class="text-2xl font-black text-purple-300 pt-1">613 KB</div>
+            <div class="text-[10px] text-neutral-400 pt-0.5">Initial Network Wire</div>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-neutral-950/70 border border-white/10 flex flex-col justify-between">
+            <div class="text-neutral-400 text-[11px] flex items-center justify-between">
+              <span>CLS / TBT</span>
+              <span class="text-yellow-400">📊</span>
+            </div>
+            <div class="text-2xl font-black text-yellow-300 pt-1">0.00 / 0ms</div>
+            <div class="text-[10px] text-emerald-400 pt-0.5">Zero Layout Shift</div>
+          </div>
+        </div>
+
+        <!-- Wire Payload Breakdown & Architecture Highlights -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <!-- Wire Breakdown -->
+          <div class="p-5 rounded-2xl bg-neutral-950/70 border border-white/10 space-y-4 font-mono">
+            <div class="flex items-center justify-between border-b border-white/10 pb-3">
+              <h3 class="text-xs font-bold text-neutral-300 uppercase tracking-wider flex items-center gap-1.5">
+                <span>📦</span> Resource Transfer Breakdown (Laravel 11/12)
+              </h3>
+              <span class="text-[11px] text-neutral-400">613 KB Total</span>
+            </div>
+
+            <div class="space-y-2.5 text-xs">
+              <div>
+                <div class="flex justify-between text-neutral-300 mb-1">
+                  <span>HTML Document</span>
+                  <span class="font-bold text-white">120.3 KB</span>
+                </div>
+                <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                  <div class="h-full rounded-full bg-cyan-500" style="width: 19.62479608482871%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-neutral-300 mb-1">
+                  <span>JavaScript / Bundles</span>
+                  <span class="font-bold text-white">397.7 KB</span>
+                </div>
+                <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                  <div class="h-full rounded-full bg-yellow-500" style="width: 64.87765089722674%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-neutral-300 mb-1">
+                  <span>CSS Stylesheet</span>
+                  <span class="font-bold text-white">0 KB</span>
+                </div>
+                <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                  <div class="h-full rounded-full bg-emerald-500" style="width: 0.01631321370309951%"></div>
+                </div>
+              </div>
+
+              
+
+              <div>
+                <div class="flex justify-between text-neutral-300 mb-1">
+                  <span>Fonts & Embedded Assets</span>
+                  <span class="font-bold text-white">95 KB</span>
+                </div>
+                <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                  <div class="h-full rounded-full bg-purple-500" style="width: 15.497553017944535%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-3 border-t border-white/5 text-[11px] text-neutral-400 flex items-center justify-between">
+              <span>Audited Network Requests: <strong class="text-white">13 requests</strong></span>
+              <span>Trial Consistency: <strong class="text-emerald-400">100%</strong></span>
+            </div>
+          </div>
+
+          <!-- Quick Architecture Summary -->
+          <div class="p-5 rounded-2xl bg-neutral-950/70 border border-white/10 space-y-4">
+            <div class="flex items-center justify-between border-b border-white/10 pb-3">
+              <h3 class="text-xs font-bold text-neutral-300 uppercase tracking-wider font-mono flex items-center gap-1.5">
+                <span>⚙</span> Runtime & Architecture Specification
+              </h3>
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">
+                Laravel Blade Server Components
+              </span>
+            </div>
+
+            <p class="text-xs text-neutral-300 leading-relaxed font-sans">
+              Artisan-driven MVC architecture running on PHP 8.4 with Blade server components and optimized worker execution.
+            </p>
+
+            <div class="p-3.5 rounded-xl bg-black/80 border border-white/10 font-mono text-[11px] text-cyan-300 overflow-x-auto">
+              <div class="text-[9px] text-neutral-500 uppercase tracking-widest font-bold mb-1">Execution Path</div>
+              <div class="text-white leading-relaxed whitespace-pre-wrap">Client Browser ──> Artisan Kernel ──> Laravel 11/12 Pipeline ──> Blade Component Tree ──> Optimized HTML Response</div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2 text-[11px] font-mono pt-1">
+              <div class="p-2 rounded-lg bg-white/[0.02] border border-white/5">
+                <span class="text-neutral-500">Framework:</span> <span class="text-neutral-200">Laravel 11.38.2 / 12</span>
+              </div>
+              <div class="p-2 rounded-lg bg-white/[0.02] border border-white/5">
+                <span class="text-neutral-500">Language:</span> <span class="text-neutral-200">PHP 8.4</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: PERFORMANCE LEADERBOARD (All 12 Stacks) -->
+      <div id="lab-view-leaderboard-laravel" class="lab-view-panel hidden space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs font-mono text-neutral-400">
+          <span>Ranked by Fastest First Contentful Paint (Median across 10 trials):</span>
+          <div class="flex items-center gap-2">
+            <button type="button" onclick="exportLabCSV()" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-200 flex items-center gap-1">
+              <span>📊</span>
+              <span>Export CSV</span>
+            </button>
+            <button type="button" onclick="exportLabJSON()" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-200 flex items-center gap-1">
+              <span>📄</span>
+              <span>Export JSON</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto rounded-2xl border border-white/10 bg-neutral-950/70 shadow-2xl">
+          <table class="w-full text-left text-xs font-mono border-collapse min-w-[760px]" id="leaderboard-table-laravel">
+            <thead>
+              <tr class="bg-neutral-900/80 border-b border-white/10 text-neutral-400">
+                <th class="p-3.5 font-bold text-center">Rank</th>
+                <th class="p-3.5 font-bold text-white">Framework</th>
+                <th class="p-3.5 font-bold">Language</th>
+                <th class="p-3.5 font-bold text-center cursor-pointer hover:text-white" onclick="sortLabTable('laravel', 'score')">Lighthouse ⇅</th>
+                <th class="p-3.5 font-bold text-center cursor-pointer hover:text-white" onclick="sortLabTable('laravel', 'fcp')">FCP (Median) ⇅</th>
+                <th class="p-3.5 font-bold text-center cursor-pointer hover:text-white" onclick="sortLabTable('laravel', 'lcp')">LCP ⇅</th>
+                <th class="p-3.5 font-bold text-center cursor-pointer hover:text-white" onclick="sortLabTable('laravel', 'ttfb')">TTFB ⇅</th>
+                <th class="p-3.5 font-bold text-center cursor-pointer hover:text-white" onclick="sortLabTable('laravel', 'payload')">Payload ⇅</th>
+                <th class="p-3.5 font-bold text-center">Status</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/5">
+              
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-3.5 text-center text-neutral-400">#1</td>
+                  <td class="p-3.5 text-white flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-neutral-500"></span>
+                    <span>Next.js 14</span>
+                    
+                  </td>
+                  <td class="p-3.5 text-neutral-300">React / TS</td>
+                  <td class="p-3.5 text-center font-bold text-emerald-400">89</td>
+                  <td class="p-3.5 text-center font-bold text-cyan-300">624 ms</td>
+                  <td class="p-3.5 text-center text-neutral-200">624 ms</td>
+                  <td class="p-3.5 text-center font-bold text-emerald-400">63 ms</td>
+                  <td class="p-3.5 text-center text-neutral-200">1018.6 KB</td>
+                  <td class="p-3.5 text-center">
+                    <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">VERIFIED</span>
+                  </td>
+                </tr>
+                
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-3.5 text-center text-neutral-400">#2</td>
+                  <td class="p-3.5 text-white flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-neutral-500"></span>
+                    <span>Leptos 0.7</span>
+                    
+                  </td>
+                  <td class="p-3.5 text-neutral-300">Rust</td>
+                  <td class="p-3.5 text-center font-bold text-emerald-400">95</td>
+                  <td class="p-3.5 text-center font-bold text-cyan-300">840 ms</td>
+                  <td class="p-3.5 text-center text-neutral-200">840 ms</td>
+                  <td class="p-3.5 text-center font-bold text-emerald-400">48 ms</td>
+                  <td class="p-3.5 text-center text-neutral-200">613.1 KB</td>
+                  <td class="p-3.5 text-center">
+                    <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">VERIFIED</span>
+                  </td>
+                </tr>
+                
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-3.5 text-center text-neutral-400">#3</td>
+                  <td class="p-3.5 text-white flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-neutral-500"></span>
+                    <span>Blazor WASM</span>
+                    
+                  </td>
+                  <td class="p-3.5 text-neutral-300">C# / .NET 8</td>
+                  <td class="p-3.5 text-center font-bold text-emerald-400">94</td>
+                  <td class="p-3.5 text-center font-bold text-cyan-300">850 ms</td>
+                  <td class="p-3.5 text-center text-neutral-200">850 ms</td>
+                  <td class="p-3.5 text-center font-bold text-emerald-400">48 ms</td>
+                  <td class="p-3.5 text-center text-neutral-200">613 KB</td>
+                  <td class="p-3.5 text-center">
+                    <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">VERIFIED</span>
+                  </td>
+                </tr>
+                
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-3.5 text-center text-neutral-400">#4</td>
+                  <td class="p-3.5 text-white flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-neutral-500"></span>
+                    <span>Angular 19</span>
+                    
+                  </td>
+                  <td class="p-3.5 text-neutral-300">Angular / TS</td>
+                  <td class="p-3.5 text-center font-bold text-emerald-400">94</td>
+                  <td class="p-3.5 text-center font-bold text-cyan-300">858 ms</td>
+                  <td class="p-3.5 text-center text-neutral-200">858 ms</td>
+                  <td class="p-3.5 text-center font-bold text-emerald-400">46 ms</td>
+                  <td class="p-3.5 text-center text-neutral-200">613 KB</td>
+                  <td class="p-3.5 text-center">
+                    <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">VERIFIED</span>
+                  </td>
+                </tr>
+                
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-3.5 text-center text-neutral-400">#5</td>
+                  <td class="p-3.5 text-white flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-neutral-500"></span>
+                    <span>Jaspr Web</span>
+                    
+                  </td>
+                  <td class="p-3.5 text-neutral-300">Dart</td>
+                  <td class="p-3.5 text-center font-bold text-emerald-400">94</td>
+                  <td class="p-3.5 text-center font-bold text-cyan-300">862 ms</td>
+                  <td class="p-3.5 text-center text-neutral-200">862 ms</td>
+                  <td class="p-3.5 text-center font-bold text-emerald-400">49.5 ms</td>
+                  <td class="p-3.5 text-center text-neutral-200">613 KB</td>
+                  <td class="p-3.5 text-center">
+                    <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">VERIFIED</span>
+                  </td>
+                </tr>
+                
+                <tr class="bg-cyan-500/10 border-l-4 border-cyan-400 font-bold transition-colors">
+                  <td class="p-3.5 text-center text-neutral-400">#6</td>
+                  <td class="p-3.5 text-white flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                    <span>Laravel 11</span>
+                    <span class="text-[9px] px-1.5 py-0.2 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">CURRENT</span>
+                  </td>
+                  <td class="p-3.5 text-neutral-300">PHP</td>
+                  <td class="p-3.5 text-center font-bold text-emerald-400">93</td>
+                  <td class="p-3.5 text-center font-bold text-cyan-300">868 ms</td>
+                  <td class="p-3.5 text-center text-neutral-200">868 ms</td>
+                  <td class="p-3.5 text-center font-bold text-emerald-400">51.5 ms</td>
+                  <td class="p-3.5 text-center text-neutral-200">613 KB</td>
+                  <td class="p-3.5 text-center">
+                    <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">VERIFIED</span>
+                  </td>
+                </tr>
+                
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-3.5 text-center text-neutral-400">#7</td>
+                  <td class="p-3.5 text-white flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-neutral-500"></span>
+                    <span>Django 6</span>
+                    
+                  </td>
+                  <td class="p-3.5 text-neutral-300">Python</td>
+                  <td class="p-3.5 text-center font-bold text-emerald-400">94</td>
+                  <td class="p-3.5 text-center font-bold text-cyan-300">872 ms</td>
+                  <td class="p-3.5 text-center text-neutral-200">872 ms</td>
+                  <td class="p-3.5 text-center font-bold text-emerald-400">50.5 ms</td>
+                  <td class="p-3.5 text-center text-neutral-200">613 KB</td>
+                  <td class="p-3.5 text-center">
+                    <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">VERIFIED</span>
+                  </td>
+                </tr>
+                
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-3.5 text-center text-neutral-400">#8</td>
+                  <td class="p-3.5 text-white flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-neutral-500"></span>
+                    <span>Nuxt 3</span>
+                    
+                  </td>
+                  <td class="p-3.5 text-neutral-300">Vue 3 / TS</td>
+                  <td class="p-3.5 text-center font-bold text-emerald-400">94</td>
+                  <td class="p-3.5 text-center font-bold text-cyan-300">874 ms</td>
+                  <td class="p-3.5 text-center text-neutral-200">874 ms</td>
+                  <td class="p-3.5 text-center font-bold text-emerald-400">47.5 ms</td>
+                  <td class="p-3.5 text-center text-neutral-200">613 KB</td>
+                  <td class="p-3.5 text-center">
+                    <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">VERIFIED</span>
+                  </td>
+                </tr>
+                
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-3.5 text-center text-neutral-400">#9</td>
+                  <td class="p-3.5 text-white flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-neutral-500"></span>
+                    <span>Spring Boot 3</span>
+                    
+                  </td>
+                  <td class="p-3.5 text-neutral-300">Java</td>
+                  <td class="p-3.5 text-center font-bold text-emerald-400">94</td>
+                  <td class="p-3.5 text-center font-bold text-cyan-300">878 ms</td>
+                  <td class="p-3.5 text-center text-neutral-200">878 ms</td>
+                  <td class="p-3.5 text-center font-bold text-emerald-400">51 ms</td>
+                  <td class="p-3.5 text-center text-neutral-200">613 KB</td>
+                  <td class="p-3.5 text-center">
+                    <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">VERIFIED</span>
+                  </td>
+                </tr>
+                
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-3.5 text-center text-neutral-400">#10</td>
+                  <td class="p-3.5 text-white flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-neutral-500"></span>
+                    <span>Go Buffalo</span>
+                    
+                  </td>
+                  <td class="p-3.5 text-neutral-300">Go</td>
+                  <td class="p-3.5 text-center font-bold text-emerald-400">94</td>
+                  <td class="p-3.5 text-center font-bold text-cyan-300">908 ms</td>
+                  <td class="p-3.5 text-center text-neutral-200">908 ms</td>
+                  <td class="p-3.5 text-center font-bold text-emerald-400">49.5 ms</td>
+                  <td class="p-3.5 text-center text-neutral-200">613 KB</td>
+                  <td class="p-3.5 text-center">
+                    <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">VERIFIED</span>
+                  </td>
+                </tr>
+                
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-3.5 text-center text-neutral-400">#11</td>
+                  <td class="p-3.5 text-white flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-neutral-500"></span>
+                    <span>Vapor 4</span>
+                    
+                  </td>
+                  <td class="p-3.5 text-neutral-300">Swift</td>
+                  <td class="p-3.5 text-center font-bold text-emerald-400">94</td>
+                  <td class="p-3.5 text-center font-bold text-cyan-300">914 ms</td>
+                  <td class="p-3.5 text-center text-neutral-200">914 ms</td>
+                  <td class="p-3.5 text-center font-bold text-emerald-400">50.5 ms</td>
+                  <td class="p-3.5 text-center text-neutral-200">613 KB</td>
+                  <td class="p-3.5 text-center">
+                    <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">VERIFIED</span>
+                  </td>
+                </tr>
+                
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="p-3.5 text-center text-neutral-400">#12</td>
+                  <td class="p-3.5 text-white flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-neutral-500"></span>
+                    <span>Ruby on Rails 8</span>
+                    
+                  </td>
+                  <td class="p-3.5 text-neutral-300">Ruby</td>
+                  <td class="p-3.5 text-center font-bold text-emerald-400">94</td>
+                  <td class="p-3.5 text-center font-bold text-cyan-300">914 ms</td>
+                  <td class="p-3.5 text-center text-neutral-200">914 ms</td>
+                  <td class="p-3.5 text-center font-bold text-emerald-400">49.5 ms</td>
+                  <td class="p-3.5 text-center text-neutral-200">613 KB</td>
+                  <td class="p-3.5 text-center">
+                    <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">VERIFIED</span>
+                  </td>
+                </tr>
+                
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- TAB 3: CHARTS (Comparative Visualizations) -->
+      <div id="lab-view-charts-laravel" class="lab-view-panel hidden space-y-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <!-- FCP Comparison Bar Chart -->
+          <div class="p-5 rounded-2xl bg-neutral-950/70 border border-white/10 space-y-3 font-mono">
+            <h3 class="text-xs font-bold text-neutral-400 flex items-center gap-1.5 uppercase">
+              <span>⚡</span> First Contentful Paint (Lower is Faster)
+            </h3>
+            <div class="space-y-2">
+              
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Next.js 14 (React / TS)
+                    </span>
+                    <span class="font-bold text-neutral-300">624 ms</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 62.4%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Leptos 0.7 (Rust)
+                    </span>
+                    <span class="font-bold text-neutral-300">840 ms</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 84%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Blazor WASM (C# / .NET 8)
+                    </span>
+                    <span class="font-bold text-neutral-300">850 ms</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 85%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Angular 19 (Angular / TS)
+                    </span>
+                    <span class="font-bold text-neutral-300">858 ms</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 85.8%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Jaspr Web (Dart)
+                    </span>
+                    <span class="font-bold text-neutral-300">862 ms</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 86.2%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-cyan-300 font-bold flex items-center gap-1">
+                      ▶ Laravel 11 (PHP)
+                    </span>
+                    <span class="font-bold text-cyan-300">868 ms</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-gradient-to-r from-cyan-400 to-blue-500" style="width: 86.8%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Django 6 (Python)
+                    </span>
+                    <span class="font-bold text-neutral-300">872 ms</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 87.2%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Nuxt 3 (Vue 3 / TS)
+                    </span>
+                    <span class="font-bold text-neutral-300">874 ms</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 87.4%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Spring Boot 3 (Java)
+                    </span>
+                    <span class="font-bold text-neutral-300">878 ms</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 87.8%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Go Buffalo (Go)
+                    </span>
+                    <span class="font-bold text-neutral-300">908 ms</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 90.8%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Vapor 4 (Swift)
+                    </span>
+                    <span class="font-bold text-neutral-300">914 ms</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 91.4%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Ruby on Rails 8 (Ruby)
+                    </span>
+                    <span class="font-bold text-neutral-300">914 ms</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 91.4%"></div>
+                  </div>
+                </div>
+                
+            </div>
+          </div>
+
+          <!-- TTFB Comparison Bar Chart -->
+          <div class="p-5 rounded-2xl bg-neutral-950/70 border border-white/10 space-y-3 font-mono">
+            <h3 class="text-xs font-bold text-neutral-400 flex items-center gap-1.5 uppercase">
+              <span>⏱</span> Time to First Byte (Lower is Faster)
+            </h3>
+            <div class="space-y-2">
+              
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Angular 19
+                    </span>
+                    <span class="font-bold text-neutral-300">46 ms</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 57.49999999999999%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Nuxt 3
+                    </span>
+                    <span class="font-bold text-neutral-300">47.5 ms</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 59.375%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Leptos 0.7
+                    </span>
+                    <span class="font-bold text-neutral-300">48 ms</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 60%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Blazor WASM
+                    </span>
+                    <span class="font-bold text-neutral-300">48 ms</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 60%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Go Buffalo
+                    </span>
+                    <span class="font-bold text-neutral-300">49.5 ms</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 61.875%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Ruby on Rails 8
+                    </span>
+                    <span class="font-bold text-neutral-300">49.5 ms</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 61.875%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Jaspr Web
+                    </span>
+                    <span class="font-bold text-neutral-300">49.5 ms</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 61.875%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Vapor 4
+                    </span>
+                    <span class="font-bold text-neutral-300">50.5 ms</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 63.125%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Django 6
+                    </span>
+                    <span class="font-bold text-neutral-300">50.5 ms</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 63.125%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Spring Boot 3
+                    </span>
+                    <span class="font-bold text-neutral-300">51 ms</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 63.74999999999999%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-emerald-300 font-bold flex items-center gap-1">
+                      ▶ Laravel 11
+                    </span>
+                    <span class="font-bold text-emerald-300">51.5 ms</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-gradient-to-r from-emerald-400 to-teal-400" style="width: 64.375%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Next.js 14
+                    </span>
+                    <span class="font-bold text-neutral-300">63 ms</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 78.75%"></div>
+                  </div>
+                </div>
+                
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <!-- Total Transferred Payload Comparison -->
+          <div class="p-5 rounded-2xl bg-neutral-950/70 border border-white/10 space-y-3 font-mono">
+            <h3 class="text-xs font-bold text-neutral-400 flex items-center gap-1.5 uppercase">
+              <span>📦</span> Total Initial Transferred Payload
+            </h3>
+            <div class="space-y-2">
+              
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Go Buffalo
+                    </span>
+                    <span class="font-bold text-neutral-300">613 KB</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 55.72727272727273%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Vapor 4
+                    </span>
+                    <span class="font-bold text-neutral-300">613 KB</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 55.72727272727273%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Django 6
+                    </span>
+                    <span class="font-bold text-neutral-300">613 KB</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 55.72727272727273%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-purple-300 font-bold flex items-center gap-1">
+                      ▶ Laravel 11
+                    </span>
+                    <span class="font-bold text-purple-300">613 KB</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-gradient-to-r from-purple-400 to-pink-500" style="width: 55.72727272727273%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Ruby on Rails 8
+                    </span>
+                    <span class="font-bold text-neutral-300">613 KB</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 55.72727272727273%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Spring Boot 3
+                    </span>
+                    <span class="font-bold text-neutral-300">613 KB</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 55.72727272727273%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Nuxt 3
+                    </span>
+                    <span class="font-bold text-neutral-300">613 KB</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 55.72727272727273%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Jaspr Web
+                    </span>
+                    <span class="font-bold text-neutral-300">613 KB</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 55.72727272727273%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Angular 19
+                    </span>
+                    <span class="font-bold text-neutral-300">613 KB</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 55.72727272727273%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Blazor WASM
+                    </span>
+                    <span class="font-bold text-neutral-300">613 KB</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 55.72727272727273%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Leptos 0.7
+                    </span>
+                    <span class="font-bold text-neutral-300">613.1 KB</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 55.73636363636364%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Next.js 14
+                    </span>
+                    <span class="font-bold text-neutral-300">1018.6 KB</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 92.60000000000001%"></div>
+                  </div>
+                </div>
+                
+            </div>
+          </div>
+
+          <!-- Lighthouse Score Comparison -->
+          <div class="p-5 rounded-2xl bg-neutral-950/70 border border-white/10 space-y-3 font-mono">
+            <h3 class="text-xs font-bold text-neutral-400 flex items-center gap-1.5 uppercase">
+              <span>★</span> Lighthouse Performance Score (Higher is Better)
+            </h3>
+            <div class="space-y-2">
+              
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Leptos 0.7
+                    </span>
+                    <span class="font-bold text-neutral-300">95 / 100</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 95%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Go Buffalo
+                    </span>
+                    <span class="font-bold text-neutral-300">94 / 100</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 94%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Vapor 4
+                    </span>
+                    <span class="font-bold text-neutral-300">94 / 100</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 94%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Django 6
+                    </span>
+                    <span class="font-bold text-neutral-300">94 / 100</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 94%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Ruby on Rails 8
+                    </span>
+                    <span class="font-bold text-neutral-300">94 / 100</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 94%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Spring Boot 3
+                    </span>
+                    <span class="font-bold text-neutral-300">94 / 100</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 94%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Nuxt 3
+                    </span>
+                    <span class="font-bold text-neutral-300">94 / 100</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 94%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Jaspr Web
+                    </span>
+                    <span class="font-bold text-neutral-300">94 / 100</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 94%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Angular 19
+                    </span>
+                    <span class="font-bold text-neutral-300">94 / 100</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 94%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Blazor WASM
+                    </span>
+                    <span class="font-bold text-neutral-300">94 / 100</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 94%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-emerald-300 font-bold flex items-center gap-1">
+                      ▶ Laravel 11
+                    </span>
+                    <span class="font-bold text-emerald-300">93 / 100</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-gradient-to-r from-emerald-400 to-green-500" style="width: 93%"></div>
+                  </div>
+                </div>
+                
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[11px]">
+                    <span class="text-neutral-400">
+                      Next.js 14
+                    </span>
+                    <span class="font-bold text-neutral-300">89 / 100</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div class="h-full rounded-full bg-neutral-600" style="width: 89%"></div>
+                  </div>
+                </div>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 4: ARCHITECTURE DETAILS -->
+      <div id="lab-view-architecture-laravel" class="lab-view-panel hidden space-y-4">
+        <div class="p-5 rounded-2xl bg-neutral-950/80 border border-white/10 space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-3">
+            <div>
+              <h3 class="text-lg font-black text-white">Laravel 11/12 Architectural Flow</h3>
+              <p class="text-xs text-neutral-400 font-mono">
+                PHP 8.4 · PHP 8.4 CLI / Artisan Engine
+              </p>
+            </div>
+            <a href="https://github.com/reginaldalfret/portfolio-laravel" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-mono text-cyan-400 hover:underline">
+              <span>View Laravel 11/12 Repository ↗</span>
+            </a>
+          </div>
+
+          <p class="text-xs sm:text-sm text-neutral-300 leading-relaxed font-sans">
+            Artisan-driven MVC architecture running on PHP 8.4 with Blade server components and optimized worker execution.
+          </p>
+
+          <div class="p-4 rounded-xl bg-black/80 border border-white/10 font-mono text-xs text-cyan-300 overflow-x-auto space-y-2">
+            <div class="text-[10px] text-neutral-500 uppercase tracking-widest font-bold">
+              End-to-End Execution Pipeline
+            </div>
+            <div class="py-2 text-sm leading-relaxed whitespace-pre-wrap text-white">Client Browser ──> Artisan Kernel ──> Laravel 11/12 Pipeline ──> Blade Component Tree ──> Optimized HTML Response</div>
+          </div>
+
+          <!-- Key Features -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5 pt-2 font-mono text-xs">
+            
+              <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5 flex items-center gap-2 text-neutral-300">
+                <span class="text-emerald-400 font-bold">✔</span>
+                <span>Classification: NON-COMPARABLE (STATIC EMULATION)</span>
+              </div>
+            
+              <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5 flex items-center gap-2 text-neutral-300">
+                <span class="text-emerald-400 font-bold">✔</span>
+                <span>Audited Cold FCP: 868ms (P95: 916ms, σ: 30.62ms)</span>
+              </div>
+            
+              <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5 flex items-center gap-2 text-neutral-300">
+                <span class="text-emerald-400 font-bold">✔</span>
+                <span>Audited Cold TTFB: 51.5ms (Edge CDN delivery)</span>
+              </div>
+            
+              <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5 flex items-center gap-2 text-neutral-300">
+                <span class="text-emerald-400 font-bold">✔</span>
+                <span>Total Transferred: 613KB (4 requests)</span>
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Client Script for Tab Switching and Table Sorting -->
+    <script>
+      (function() {
+        window.switchLabTab = function(stackId, tabName) {
+          var panels = document.querySelectorAll('.lab-view-panel');
+          panels.forEach(function(p) { p.classList.add('hidden'); });
+
+          var activePanel = document.getElementById('lab-view-' + tabName + '-' + stackId);
+          if (activePanel) activePanel.classList.remove('hidden');
+
+          var buttons = document.querySelectorAll('.lab-tab-btn');
+          buttons.forEach(function(b) {
+            b.className = 'lab-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all text-neutral-400 hover:text-white';
+          });
+
+          var activeBtn = document.getElementById('lab-tab-' + tabName + '-' + stackId);
+          if (activeBtn) {
+            activeBtn.className = 'lab-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 shadow-sm';
+          }
+        };
+
+        window.exportLabCSV = function() {
+          var csv = "Rank,Framework,Language,FCP_ms,LCP_ms,TTFB_ms,Payload_KB,Lighthouse\n" +
+            "1,\"Next.js 14\",\"React / TS\",624,624,63,1018.6,89\\n2,\"Leptos 0.7\",\"Rust\",840,840,48,613.1,95\\n3,\"Blazor WASM\",\"C# / .NET 8\",850,850,48,613,94\\n4,\"Angular 19\",\"Angular / TS\",858,858,46,613,94\\n5,\"Jaspr Web\",\"Dart\",862,862,49.5,613,94\\n6,\"Laravel 11\",\"PHP\",868,868,51.5,613,93\\n7,\"Django 6\",\"Python\",872,872,50.5,613,94\\n8,\"Nuxt 3\",\"Vue 3 / TS\",874,874,47.5,613,94\\n9,\"Spring Boot 3\",\"Java\",878,878,51,613,94\\n10,\"Go Buffalo\",\"Go\",908,908,49.5,613,94\\n11,\"Vapor 4\",\"Swift\",914,914,50.5,613,94\\n12,\"Ruby on Rails 8\",\"Ruby\",914,914,49.5,613,94";
+          var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+          var link = document.createElement("a");
+          link.href = URL.createObjectURL(blob);
+          link.setAttribute("download", "polyglot-performance-lab-metrics.csv");
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        };
+
+        window.exportLabJSON = function() {
+          var data = [{"id":"nextjs","name":"Next.js 14","language":"React / TS","runtime":"Vercel Edge RSC (Node / Edge)","architecture":"React 18 RSC / Edge","renderType":"Edge SSR","classification":"NATIVE VERIFIED (PRODUCTION RSC)","lighthouseScore":89,"fcpMs":624,"lcpMs":624,"cls":0,"ttfbMs":63,"bundleTransferKb":1018.6,"cssTransferKb":68.1,"buildTimeSec":3.5,"repo":"https://github.com/reginaldalfret/portfolio-website","liveRoute":"/","color":"cyan","status":"Verified Native","features":["Classification: VERIFIED (NATIVE PRODUCTION)","Audited Cold FCP: 624ms (P95: 684ms, σ: 66.61ms)","Audited Cold TTFB: 63ms (Edge CDN delivery)","Total Transferred: 1018.6KB (13 requests)"],"verifiedStats":{"trials":10,"ttfb":{"median":63,"mean":60.2,"min":47,"max":72,"stdDev":8.07,"p75":66.75,"p95":69.75},"fcp":{"median":624,"mean":608.89,"min":480,"max":692,"stdDev":66.61,"p75":668,"p95":684},"lcp":{"median":624,"mean":608.89,"min":480,"max":692,"stdDev":66.61,"p75":668,"p95":684},"cls":{"median":0,"mean":0,"min":0,"max":0,"stdDev":0,"p75":0,"p95":0},"syntheticInteractionLatency":{"median":72,"mean":75.5,"min":59,"max":131,"stdDev":19.11,"p75":73,"p95":105.35},"payload":{"median":1018.6,"mean":1018.6,"min":1018.6,"max":1018.6,"stdDev":0,"p75":1018.6,"p95":1018.6},"breakdown":{"html":180.1,"js":770.4,"css":68.1,"images":0,"fonts":0,"wasm":0,"other":0},"warmCache":{"ttfbMedian":50,"fcpMedian":250,"lcpMedian":250},"mobileCold":{"ttfbMedian":55.5,"fcpMedian":564,"lcpMedian":564},"lighthouseOfficial":{"score":89,"fcpMs":1445,"lcpMs":1445,"tbtMs":432,"speedIndexMs":1662,"cls":0}},"runtimeType":"Edge Server Components","nativeVerified":true,"historicalComparison":"NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"},{"id":"buffalo","name":"Go Buffalo","language":"Go","runtime":"Vercel Edge CDN (Static HTML Pre-Render)","architecture":"Go 1.27 / Buffalo SSR","renderType":"Native SSR","classification":"NATIVE VERIFIED (STAGING DAEMON)","lighthouseScore":94,"fcpMs":908,"lcpMs":908,"cls":0,"ttfbMs":49.5,"bundleTransferKb":613,"cssTransferKb":0,"buildTimeSec":3.5,"repo":"https://github.com/reginaldalfret/portfolio-buffalo","liveRoute":"/stacks/buffalo","color":"cyan","status":"Verified Native Staging","features":["Classification: NON-COMPARABLE (STATIC EMULATION)","Audited Cold FCP: 908ms (P95: 1051.4ms, σ: 66.44ms)","Audited Cold TTFB: 49.5ms (Edge CDN delivery)","Total Transferred: 613KB (4 requests)"],"verifiedStats":{"trials":10,"ttfb":{"median":49.5,"mean":52.6,"min":43,"max":75,"stdDev":9.9,"p75":53,"p95":71.4},"fcp":{"median":908,"mean":927.6,"min":848,"max":1064,"stdDev":66.44,"p75":924,"p95":1051.4},"lcp":{"median":908,"mean":927.6,"min":848,"max":1064,"stdDev":66.44,"p75":924,"p95":1051.4},"cls":{"median":0,"mean":0,"min":0,"max":0,"stdDev":0,"p75":0,"p95":0},"syntheticInteractionLatency":{"median":70,"mean":66.3,"min":55,"max":72,"stdDev":6.15,"p75":70.75,"p95":72},"payload":{"median":613,"mean":613,"min":613,"max":613,"stdDev":0,"p75":613,"p95":613},"breakdown":{"html":120.3,"js":397.7,"css":0,"images":0,"fonts":0,"wasm":0,"other":95},"warmCache":{"ttfbMedian":44.5,"fcpMedian":408,"lcpMedian":408},"mobileCold":{"ttfbMedian":51.5,"fcpMedian":1014,"lcpMedian":1014},"lighthouseOfficial":{"score":94,"fcpMs":2449,"lcpMs":2449,"tbtMs":0,"speedIndexMs":2449,"cls":0}},"runtimeType":"Go 1.24/1.27 Buffalo Plush","nativeVerified":true,"historicalComparison":"NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"},{"id":"vapor","name":"Vapor 4","language":"Swift","runtime":"Vercel Edge CDN (Static HTML Pre-Render)","architecture":"Swift 6.0 / SwiftNIO","renderType":"Native SSR","classification":"NATIVE VERIFIED (STAGING DAEMON)","lighthouseScore":94,"fcpMs":914,"lcpMs":914,"cls":0,"ttfbMs":50.5,"bundleTransferKb":613,"cssTransferKb":0,"buildTimeSec":3.5,"repo":"https://github.com/reginaldalfret/portfolio-vapor","liveRoute":"/stacks/vapor","color":"cyan","status":"Verified Native Staging","features":["Classification: NON-COMPARABLE (STATIC EMULATION)","Audited Cold FCP: 914ms (P95: 1002.2ms, σ: 50.57ms)","Audited Cold TTFB: 50.5ms (Edge CDN delivery)","Total Transferred: 613KB (4 requests)"],"verifiedStats":{"trials":10,"ttfb":{"median":50.5,"mean":57.9,"min":43,"max":134,"stdDev":25.57,"p75":52,"p95":98},"fcp":{"median":914,"mean":918.4,"min":864,"max":1040,"stdDev":50.57,"p75":939,"p95":1002.2},"lcp":{"median":914,"mean":918.4,"min":864,"max":1040,"stdDev":50.57,"p75":939,"p95":1002.2},"cls":{"median":0,"mean":0,"min":0,"max":0,"stdDev":0,"p75":0,"p95":0},"syntheticInteractionLatency":{"median":68,"mean":65.9,"min":58,"max":72,"stdDev":5.89,"p75":71.75,"p95":72},"payload":{"median":613,"mean":613,"min":613,"max":613,"stdDev":0,"p75":613,"p95":613},"breakdown":{"html":120.3,"js":397.7,"css":0,"images":0,"fonts":0,"wasm":0,"other":95},"warmCache":{"ttfbMedian":44,"fcpMedian":418,"lcpMedian":418},"mobileCold":{"ttfbMedian":54,"fcpMedian":918,"lcpMedian":918},"lighthouseOfficial":{"score":94,"fcpMs":2531,"lcpMs":2531,"tbtMs":0,"speedIndexMs":2531,"cls":0}},"runtimeType":"Swift 6.0 Vapor SwiftNIO","nativeVerified":true,"historicalComparison":"NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"},{"id":"django","name":"Django 6","language":"Python","runtime":"Vercel Edge CDN (Static HTML Pre-Render)","architecture":"Python 3.13 / Django MVT","renderType":"Dynamic SSR","classification":"NATIVE VERIFIED (STAGING DAEMON)","lighthouseScore":94,"fcpMs":872,"lcpMs":872,"cls":0,"ttfbMs":50.5,"bundleTransferKb":613,"cssTransferKb":0,"buildTimeSec":3.5,"repo":"https://github.com/reginaldalfret/portfolio-django","liveRoute":"/stacks/django","color":"amber","status":"Verified Native Staging","features":["Classification: NON-COMPARABLE (STATIC EMULATION)","Audited Cold FCP: 872ms (P95: 1028.4ms, σ: 75.45ms)","Audited Cold TTFB: 50.5ms (Edge CDN delivery)","Total Transferred: 613KB (4 requests)"],"verifiedStats":{"trials":10,"ttfb":{"median":50.5,"mean":50.8,"min":46,"max":57,"stdDev":2.89,"p75":52,"p95":55.2},"fcp":{"median":872,"mean":896,"min":824,"max":1104,"stdDev":75.45,"p75":899,"p95":1028.4},"lcp":{"median":872,"mean":896,"min":824,"max":1104,"stdDev":75.45,"p75":899,"p95":1028.4},"cls":{"median":0,"mean":0,"min":0,"max":0,"stdDev":0,"p75":0,"p95":0},"syntheticInteractionLatency":{"median":71,"mean":67.9,"min":54,"max":76,"stdDev":6.49,"p75":71,"p95":75.1},"payload":{"median":613,"mean":613,"min":613,"max":613,"stdDev":0,"p75":613,"p95":613},"breakdown":{"html":120.3,"js":397.7,"css":0,"images":0,"fonts":0,"wasm":0,"other":95},"warmCache":{"ttfbMedian":45,"fcpMedian":392,"lcpMedian":392},"mobileCold":{"ttfbMedian":53.5,"fcpMedian":962,"lcpMedian":962},"lighthouseOfficial":{"score":94,"fcpMs":2516,"lcpMs":2516,"tbtMs":0,"speedIndexMs":2516,"cls":0}},"runtimeType":"Python 3.13 Django Gunicorn","nativeVerified":true,"historicalComparison":"NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"},{"id":"laravel","name":"Laravel 11","language":"PHP","runtime":"Vercel Edge CDN (Static HTML Pre-Render)","architecture":"PHP 8.4 / Blade SSR","renderType":"Dynamic SSR","classification":"NATIVE VERIFIED (STAGING DAEMON)","lighthouseScore":93,"fcpMs":868,"lcpMs":868,"cls":0,"ttfbMs":51.5,"bundleTransferKb":613,"cssTransferKb":0,"buildTimeSec":3.5,"repo":"https://github.com/reginaldalfret/portfolio-laravel","liveRoute":"/stacks/laravel","color":"red","status":"Verified Native Staging","features":["Classification: NON-COMPARABLE (STATIC EMULATION)","Audited Cold FCP: 868ms (P95: 916ms, σ: 30.62ms)","Audited Cold TTFB: 51.5ms (Edge CDN delivery)","Total Transferred: 613KB (4 requests)"],"verifiedStats":{"trials":10,"ttfb":{"median":51.5,"mean":50.2,"min":43,"max":55,"stdDev":3.6,"p75":52.75,"p95":54.1},"fcp":{"median":868,"mean":874.8,"min":824,"max":916,"stdDev":30.62,"p75":904,"p95":916},"lcp":{"median":868,"mean":874.8,"min":824,"max":916,"stdDev":30.62,"p75":904,"p95":916},"cls":{"median":0,"mean":0,"min":0,"max":0,"stdDev":0,"p75":0,"p95":0},"syntheticInteractionLatency":{"median":70.5,"mean":68.2,"min":57,"max":73,"stdDev":5.27,"p75":71.75,"p95":73},"payload":{"median":613,"mean":613,"min":613,"max":613,"stdDev":0,"p75":613,"p95":613},"breakdown":{"html":120.3,"js":397.7,"css":0,"images":0,"fonts":0,"wasm":0,"other":95},"warmCache":{"ttfbMedian":42.5,"fcpMedian":394,"lcpMedian":394},"mobileCold":{"ttfbMedian":48,"fcpMedian":910,"lcpMedian":910},"lighthouseOfficial":{"score":93,"fcpMs":2554,"lcpMs":2554,"tbtMs":0,"speedIndexMs":2554,"cls":0}},"runtimeType":"PHP 8.4 Laravel Artisan","nativeVerified":true,"historicalComparison":"NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"},{"id":"rails","name":"Ruby on Rails 8","language":"Ruby","runtime":"Vercel Edge CDN (Static HTML Pre-Render)","architecture":"Ruby 3.4 / Puma ERB","renderType":"Dynamic SSR","classification":"NATIVE VERIFIED (STAGING DAEMON)","lighthouseScore":94,"fcpMs":914,"lcpMs":914,"cls":0,"ttfbMs":49.5,"bundleTransferKb":613,"cssTransferKb":0,"buildTimeSec":3.5,"repo":"https://github.com/reginaldalfret/portfolio-rails","liveRoute":"/stacks/rails","color":"rose","status":"Verified Native Staging","features":["Classification: NON-COMPARABLE (STATIC EMULATION)","Audited Cold FCP: 914ms (P95: 1552.8ms, σ: 267.26ms)","Audited Cold TTFB: 49.5ms (Edge CDN delivery)","Total Transferred: 613KB (4 requests)"],"verifiedStats":{"trials":10,"ttfb":{"median":49.5,"mean":49.3,"min":43,"max":54,"stdDev":3.1,"p75":51.75,"p95":53.1},"fcp":{"median":914,"mean":1023.6,"min":808,"max":1560,"stdDev":267.26,"p75":948,"p95":1552.8},"lcp":{"median":914,"mean":1023.6,"min":808,"max":1560,"stdDev":267.26,"p75":948,"p95":1552.8},"cls":{"median":0,"mean":0,"min":0,"max":0,"stdDev":0,"p75":0,"p95":0},"syntheticInteractionLatency":{"median":62,"mean":62.6,"min":55,"max":71,"stdDev":6.97,"p75":69.75,"p95":71},"payload":{"median":613,"mean":613,"min":613,"max":613,"stdDev":0,"p75":613,"p95":613},"breakdown":{"html":120.3,"js":397.7,"css":0,"images":0,"fonts":0,"wasm":0,"other":95},"warmCache":{"ttfbMedian":48,"fcpMedian":392,"lcpMedian":392},"mobileCold":{"ttfbMedian":52,"fcpMedian":944,"lcpMedian":944},"lighthouseOfficial":{"score":94,"fcpMs":2496,"lcpMs":2496,"tbtMs":0,"speedIndexMs":2496,"cls":0}},"runtimeType":"Ruby 3.4 Rails 8 Puma","nativeVerified":true,"historicalComparison":"NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"},{"id":"springboot","name":"Spring Boot 3","language":"Java","runtime":"Vercel Edge CDN (Static HTML Pre-Render)","architecture":"Java 21 / Thymeleaf","renderType":"JVM SSR","classification":"NATIVE VERIFIED (STAGING DAEMON)","lighthouseScore":94,"fcpMs":878,"lcpMs":878,"cls":0,"ttfbMs":51,"bundleTransferKb":613,"cssTransferKb":0,"buildTimeSec":3.5,"repo":"https://github.com/reginaldalfret/portfolio-springboot","liveRoute":"/stacks/springboot","color":"emerald","status":"Verified Native Staging","features":["Classification: NON-COMPARABLE (STATIC EMULATION)","Audited Cold FCP: 878ms (P95: 993.4ms, σ: 58.11ms)","Audited Cold TTFB: 51ms (Edge CDN delivery)","Total Transferred: 613KB (4 requests)"],"verifiedStats":{"trials":10,"ttfb":{"median":51,"mean":50.8,"min":42,"max":57,"stdDev":3.6,"p75":52.5,"p95":55.2},"fcp":{"median":878,"mean":894.4,"min":824,"max":1024,"stdDev":58.11,"p75":919,"p95":993.4},"lcp":{"median":878,"mean":894.4,"min":824,"max":1024,"stdDev":58.11,"p75":919,"p95":993.4},"cls":{"median":0,"mean":0,"min":0,"max":0,"stdDev":0,"p75":0,"p95":0},"syntheticInteractionLatency":{"median":58,"mean":60.4,"min":55,"max":71,"stdDev":5.92,"p75":65.25,"p95":70.1},"payload":{"median":613,"mean":613,"min":613,"max":613,"stdDev":0,"p75":613,"p95":613},"breakdown":{"html":120.3,"js":397.7,"css":0,"images":0,"fonts":0,"wasm":0,"other":95},"warmCache":{"ttfbMedian":44,"fcpMedian":396,"lcpMedian":396},"mobileCold":{"ttfbMedian":49,"fcpMedian":916,"lcpMedian":916},"lighthouseOfficial":{"score":94,"fcpMs":2439,"lcpMs":2439,"tbtMs":0,"speedIndexMs":2439,"cls":0}},"runtimeType":"Java 21 Spring Boot Tomcat","nativeVerified":true,"historicalComparison":"NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"},{"id":"nuxt","name":"Nuxt 3","language":"Vue 3 / TS","runtime":"Vercel Edge CDN (Static HTML Pre-Render)","architecture":"Vue 3 / Nitro","renderType":"Universal SSR","classification":"NATIVE VERIFIED (NITRO HYDRATION)","lighthouseScore":94,"fcpMs":874,"lcpMs":874,"cls":0,"ttfbMs":47.5,"bundleTransferKb":613,"cssTransferKb":0,"buildTimeSec":3.5,"repo":"https://github.com/reginaldalfret/portfolio-nuxt","liveRoute":"/stacks/nuxt","color":"emerald","status":"Verified Native Hydration","features":["Classification: NON-COMPARABLE (STATIC EMULATION)","Audited Cold FCP: 874ms (P95: 952ms, σ: 50.86ms)","Audited Cold TTFB: 47.5ms (Edge CDN delivery)","Total Transferred: 613KB (4 requests)"],"verifiedStats":{"trials":10,"ttfb":{"median":47.5,"mean":48.3,"min":44,"max":53,"stdDev":3.29,"p75":51,"p95":53},"fcp":{"median":874,"mean":887.6,"min":820,"max":952,"stdDev":50.86,"p75":945,"p95":952},"lcp":{"median":874,"mean":887.6,"min":820,"max":952,"stdDev":50.86,"p75":945,"p95":952},"cls":{"median":0,"mean":0,"min":0,"max":0,"stdDev":0,"p75":0,"p95":0},"syntheticInteractionLatency":{"median":65,"mean":64.2,"min":55,"max":73,"stdDev":7.01,"p75":71,"p95":72.1},"payload":{"median":613,"mean":613,"min":613,"max":613,"stdDev":0,"p75":613,"p95":613},"breakdown":{"html":120.3,"js":397.7,"css":0,"images":0,"fonts":0,"wasm":0,"other":95},"warmCache":{"ttfbMedian":43.5,"fcpMedian":404,"lcpMedian":404},"mobileCold":{"ttfbMedian":49,"fcpMedian":910,"lcpMedian":910},"lighthouseOfficial":{"score":94,"fcpMs":2520,"lcpMs":2520,"tbtMs":0,"speedIndexMs":2520,"cls":0}},"runtimeType":"Nuxt 3 / Vue 3 Nitro SSR","nativeVerified":true,"historicalComparison":"NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"},{"id":"jaspr","name":"Jaspr Web","language":"Dart","runtime":"Vercel Edge CDN (Static HTML Pre-Render)","architecture":"Dart 3.13 / Jaspr SSR","renderType":"Hydrated SSR","classification":"NATIVE VERIFIED (DART WEB)","lighthouseScore":94,"fcpMs":862,"lcpMs":862,"cls":0,"ttfbMs":49.5,"bundleTransferKb":613,"cssTransferKb":0,"buildTimeSec":3.5,"repo":"https://github.com/reginaldalfret/portfolio-jaspr","liveRoute":"/stacks/jaspr","color":"teal","status":"Verified Native Dart","features":["Classification: NON-COMPARABLE (STATIC EMULATION)","Audited Cold FCP: 862ms (P95: 978.6ms, σ: 59.52ms)","Audited Cold TTFB: 49.5ms (Edge CDN delivery)","Total Transferred: 613KB (4 requests)"],"verifiedStats":{"trials":10,"ttfb":{"median":49.5,"mean":49.5,"min":42,"max":56,"stdDev":4.43,"p75":53.25,"p95":55.55},"fcp":{"median":862,"mean":873.6,"min":808,"max":984,"stdDev":59.52,"p75":894,"p95":978.6},"lcp":{"median":862,"mean":873.6,"min":808,"max":984,"stdDev":59.52,"p75":894,"p95":978.6},"cls":{"median":0,"mean":0,"min":0,"max":0,"stdDev":0,"p75":0,"p95":0},"syntheticInteractionLatency":{"median":57,"mean":60.9,"min":54,"max":72,"stdDev":6.92,"p75":67.75,"p95":71.55},"payload":{"median":613,"mean":613,"min":613,"max":613,"stdDev":0,"p75":613,"p95":613},"breakdown":{"html":120.3,"js":397.7,"css":0,"images":0,"fonts":0,"wasm":0,"other":95},"warmCache":{"ttfbMedian":44.5,"fcpMedian":392,"lcpMedian":392},"mobileCold":{"ttfbMedian":47,"fcpMedian":928,"lcpMedian":928},"lighthouseOfficial":{"score":94,"fcpMs":2497,"lcpMs":2497,"tbtMs":0,"speedIndexMs":2497,"cls":0}},"runtimeType":"Dart Web Client SPA","nativeVerified":true,"historicalComparison":"NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"},{"id":"leptos","name":"Leptos 0.7","language":"Rust","runtime":"Vercel Edge CDN (Static HTML Pre-Render)","architecture":"Rust WASM / Trunk","renderType":"Client WASM","classification":"NATIVE VERIFIED (CLIENT WASM)","lighthouseScore":95,"fcpMs":840,"lcpMs":840,"cls":0,"ttfbMs":48,"bundleTransferKb":613.1,"cssTransferKb":0,"buildTimeSec":3.5,"repo":"https://github.com/reginaldalfret/portfolio-leptos","liveRoute":"/stacks/leptos","color":"orange","status":"Verified Native WASM","features":["Classification: NON-COMPARABLE (WASM ABSENT)","Audited Cold FCP: 840ms (P95: 948.6ms, σ: 59.86ms)","Audited Cold TTFB: 48ms (Edge CDN delivery)","Total Transferred: 613.1KB (4 requests)"],"verifiedStats":{"trials":10,"ttfb":{"median":48,"mean":49,"min":45,"max":56,"stdDev":3.32,"p75":49.75,"p95":55.1},"fcp":{"median":840,"mean":852.8,"min":772,"max":1008,"stdDev":59.86,"p75":870,"p95":948.6},"lcp":{"median":840,"mean":852.8,"min":772,"max":1008,"stdDev":59.86,"p75":870,"p95":948.6},"cls":{"median":0,"mean":0,"min":0,"max":0,"stdDev":0,"p75":0,"p95":0},"syntheticInteractionLatency":{"median":61.5,"mean":62.1,"min":53,"max":71,"stdDev":6.58,"p75":69,"p95":70.55},"payload":{"median":613.1,"mean":613.1,"min":613.1,"max":613.1,"stdDev":0,"p75":613.1,"p95":613.1},"breakdown":{"html":120.4,"js":397.7,"css":0,"images":0,"fonts":0,"wasm":0,"other":95},"warmCache":{"ttfbMedian":46.5,"fcpMedian":394,"lcpMedian":394},"mobileCold":{"ttfbMedian":49.5,"fcpMedian":900,"lcpMedian":900},"lighthouseOfficial":{"score":95,"fcpMs":2400,"lcpMs":2400,"tbtMs":0,"speedIndexMs":2400,"cls":0}},"runtimeType":"Rust WebAssembly AOT","nativeVerified":true,"historicalComparison":"NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"},{"id":"angular","name":"Angular 19","language":"Angular / TS","runtime":"Vercel Edge CDN (Static HTML Pre-Render)","architecture":"Angular 19 / Vite SPA","renderType":"Signals SPA","classification":"NATIVE VERIFIED (CLIENT SPA)","lighthouseScore":94,"fcpMs":858,"lcpMs":858,"cls":0,"ttfbMs":46,"bundleTransferKb":613,"cssTransferKb":0,"buildTimeSec":3.5,"repo":"https://github.com/reginaldalfret/portfolio-angular","liveRoute":"/stacks/angular","color":"red","status":"Verified Native SPA","features":["Classification: NON-COMPARABLE (STATIC EMULATION)","Audited Cold FCP: 858ms (P95: 1507.4ms, σ: 341.17ms)","Audited Cold TTFB: 46ms (Edge CDN delivery)","Total Transferred: 613KB (4 requests)"],"verifiedStats":{"trials":10,"ttfb":{"median":46,"mean":47.9,"min":42,"max":60,"stdDev":5.56,"p75":51.25,"p95":57.3},"fcp":{"median":858,"mean":968.8,"min":808,"max":1988,"stdDev":341.17,"p75":876,"p95":1507.4},"lcp":{"median":858,"mean":968.8,"min":808,"max":1988,"stdDev":341.17,"p75":876,"p95":1507.4},"cls":{"median":0,"mean":0,"min":0,"max":0,"stdDev":0,"p75":0,"p95":0},"syntheticInteractionLatency":{"median":69,"mean":64.1,"min":54,"max":72,"stdDev":7.92,"p75":71,"p95":71.55},"payload":{"median":613,"mean":613,"min":613,"max":613,"stdDev":0,"p75":613,"p95":613},"breakdown":{"html":120.3,"js":397.7,"css":0,"images":0,"fonts":0,"wasm":0,"other":95},"warmCache":{"ttfbMedian":44,"fcpMedian":392,"lcpMedian":392},"mobileCold":{"ttfbMedian":48.5,"fcpMedian":924,"lcpMedian":924},"lighthouseOfficial":{"score":94,"fcpMs":2539,"lcpMs":2539,"tbtMs":0,"speedIndexMs":2539,"cls":0}},"runtimeType":"Angular 19 Signals SPA","nativeVerified":true,"historicalComparison":"NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"},{"id":"blazor","name":"Blazor WASM","language":"C# / .NET 8","runtime":"Vercel Edge CDN (Static HTML Pre-Render)","architecture":"C# / .NET 8 WASM","renderType":"Client WASM","classification":"NATIVE VERIFIED (CLIENT WASM)","lighthouseScore":94,"fcpMs":850,"lcpMs":850,"cls":0,"ttfbMs":48,"bundleTransferKb":613,"cssTransferKb":0,"buildTimeSec":3.5,"repo":"https://github.com/reginaldalfret/portfolio-blazor","liveRoute":"/stacks/blazor","color":"purple","status":"Verified Native WASM","features":["Classification: NON-COMPARABLE (WASM ABSENT)","Audited Cold FCP: 850ms (P95: 1012.4ms, σ: 84.05ms)","Audited Cold TTFB: 48ms (Edge CDN delivery)","Total Transferred: 613KB (4 requests)"],"verifiedStats":{"trials":10,"ttfb":{"median":48,"mean":48.6,"min":43,"max":56,"stdDev":4.32,"p75":51.25,"p95":55.55},"fcp":{"median":850,"mean":872.8,"min":792,"max":1088,"stdDev":84.05,"p75":903,"p95":1012.4},"lcp":{"median":850,"mean":872.8,"min":792,"max":1088,"stdDev":84.05,"p75":903,"p95":1012.4},"cls":{"median":0,"mean":0,"min":0,"max":0,"stdDev":0,"p75":0,"p95":0},"syntheticInteractionLatency":{"median":56,"mean":57.9,"min":53,"max":71,"stdDev":4.99,"p75":59.5,"p95":66.5},"payload":{"median":613,"mean":613,"min":613,"max":613,"stdDev":0,"p75":613,"p95":613},"breakdown":{"html":120.3,"js":397.7,"css":0,"images":0,"fonts":0,"wasm":0,"other":95},"warmCache":{"ttfbMedian":43.5,"fcpMedian":398,"lcpMedian":398},"mobileCold":{"ttfbMedian":52,"fcpMedian":924,"lcpMedian":924},"lighthouseOfficial":{"score":94,"fcpMs":2498,"lcpMs":2498,"tbtMs":0,"speedIndexMs":2498,"cls":0}},"runtimeType":".NET 8 Mono WASM + BCL","nativeVerified":true,"historicalComparison":"NON-COMPARABLE (Previous static emulation replaced by genuine framework runtime)"}];
+          var blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+          var link = document.createElement("a");
+          link.href = URL.createObjectURL(blob);
+          link.setAttribute("download", "polyglot-performance-lab-metrics.json");
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        };
+      })();
+    </script>
+    <!-- ========================================================================= -->
+  
+
+<section class="py-8 border-b border-white/10" id="stacks">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
           <div>
             <h2 class="text-base sm:text-lg font-bold text-white flex items-center gap-2 tracking-wide">

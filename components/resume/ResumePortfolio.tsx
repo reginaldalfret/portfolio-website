@@ -143,6 +143,14 @@ export function ResumePortfolio() {
           </div>
 
           {/* Quick Actions */}
+            <a
+              href="#performance-lab"
+              className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 transition-colors"
+              title="Jump to Polyglot Performance Lab"
+            >
+              <Activity className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
+              <span>Performance Lab</span>
+            </a>
           <div className="flex items-center gap-2">
             <button
               onClick={handlePrint}
@@ -1187,7 +1195,7 @@ export function ResumePortfolio() {
             </div>
 
             {/* 4. Multi-Stack Switcher Section */}
-            <section className="py-8 border-b border-white/10 space-y-8" id="stacks">
+            <section className="py-8 border-b border-white/10 space-y-8" id="performance-lab">
               <EngineeringLab onSelectStack={(id) => switchStack(id as any)} />
 
               <div className="pt-6 border-t border-white/10">
