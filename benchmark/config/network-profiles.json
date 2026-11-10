@@ -1,0 +1,20 @@
+{
+  "unthrottled": {
+    "name": "Broadband / Unthrottled",
+    "downloadKbps": 0,
+    "uploadKbps": 0,
+    "latencyMs": 0
+  },
+  "fast4G": {
+    "name": "Simulated Fast 4G",
+    "downloadKbps": 9000,
+    "uploadKbps": 1500,
+    "latencyMs": 40
+  },
+  "slow4G": {
+    "name": "Simulated Slow 4G (Lighthouse Standard)",
+    "downloadKbps": 1600,
+    "uploadKbps": 750,
+    "latencyMs": 150
+  }
+}

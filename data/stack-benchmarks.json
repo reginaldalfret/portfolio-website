@@ -1,302 +1,770 @@
 [
   {
-    "id": "nextjs",
-    "name": "Next.js 14",
-    "language": "TypeScript",
-    "runtime": "Node.js 24 / Vercel Edge",
-    "architecture": "React Server Components (RSC) + App Router",
-    "renderType": "SSR / Streaming Edge",
-    "lighthouseScore": 98,
-    "fcpMs": 240,
-    "lcpMs": 580,
-    "cls": 0.002,
-    "ttfbMs": 65,
-    "bundleTransferKb": 74.2,
-    "cssTransferKb": 12.1,
-    "buildTimeSec": 14.8,
-    "repo": "https://github.com/reginaldalfret/portfolio-website",
-    "liveRoute": "/",
-    "color": "cyan",
-    "status": "Completed",
-    "features": [
-      "Incremental Static Regeneration",
-      "Zero-Bundle React Server Components",
-      "Vercel Edge Acceleration"
-    ]
-  },
-  {
-    "id": "nuxt",
-    "name": "Nuxt 3",
-    "language": "TypeScript / Vue 3",
-    "runtime": "Nitro Engine / Node.js",
-    "architecture": "Vue 3 Composition API + Nitro",
-    "renderType": "Hydrated SSR / Static Nitro",
-    "lighthouseScore": 99,
-    "fcpMs": 210,
-    "lcpMs": 540,
-    "cls": 0.001,
-    "ttfbMs": 58,
-    "bundleTransferKb": 68.4,
-    "cssTransferKb": 11.8,
-    "buildTimeSec": 12.2,
-    "repo": "https://github.com/reginaldalfret/portfolio-nuxt",
-    "liveRoute": "/stacks/nuxt",
-    "color": "emerald",
-    "status": "Completed",
-    "features": [
-      "Auto-Import Composition API",
-      "Universal Rendering",
-      "Nitro High-Speed Engine"
-    ]
-  },
-  {
-    "id": "django",
-    "name": "Django 6",
-    "language": "Python 3.13",
-    "runtime": "Python 3.13 / Gunicorn / Nginx",
-    "architecture": "Model-View-Template (MVT)",
-    "renderType": "Pure Server-Side Rendering (SSR)",
-    "lighthouseScore": 100,
-    "fcpMs": 160,
-    "lcpMs": 420,
-    "cls": 0,
-    "ttfbMs": 45,
-    "bundleTransferKb": 18.2,
-    "cssTransferKb": 14.5,
-    "buildTimeSec": 4.1,
-    "repo": "https://github.com/reginaldalfret/portfolio-django",
-    "liveRoute": "/stacks/django",
-    "color": "amber",
-    "status": "Completed",
-    "features": [
-      "Zero Client JS Hydration Overhead",
-      "Python 3.13 JIT Acceleration",
-      "Django Template Inheritance"
-    ]
-  },
-  {
-    "id": "springboot",
-    "name": "Spring Boot 3",
-    "language": "Java 21 (LTS)",
-    "runtime": "GraalVM / OpenJDK 21 / Embedded Tomcat",
-    "architecture": "Model-View-Controller (MVC) + Thymeleaf",
-    "renderType": "Server-Side Rendered (SSR)",
-    "lighthouseScore": 99,
-    "fcpMs": 180,
-    "lcpMs": 460,
-    "cls": 0,
-    "ttfbMs": 52,
-    "bundleTransferKb": 19.1,
-    "cssTransferKb": 14.2,
-    "buildTimeSec": 18.4,
-    "repo": "https://github.com/reginaldalfret/portfolio-springboot",
-    "liveRoute": "/stacks/springboot",
-    "color": "emerald",
-    "status": "Completed",
-    "features": [
-      "Virtual Threads (Project Loom)",
-      "Thymeleaf Natural Templates",
-      "Enterprise Typings"
-    ]
-  },
-  {
-    "id": "laravel",
-    "name": "Laravel 11/12",
-    "language": "PHP 8.4",
-    "runtime": "PHP 8.4 / FrankenPHP / FPM",
-    "architecture": "Laravel MVC + Blade",
-    "renderType": "Server-Side Rendered (SSR)",
-    "lighthouseScore": 100,
-    "fcpMs": 170,
-    "lcpMs": 440,
-    "cls": 0,
-    "ttfbMs": 48,
-    "bundleTransferKb": 18.8,
-    "cssTransferKb": 14.6,
-    "buildTimeSec": 6.2,
-    "repo": "https://github.com/reginaldalfret/portfolio-laravel",
-    "liveRoute": "/stacks/laravel",
-    "color": "red",
-    "status": "Completed",
-    "features": [
-      "Blade Component Architecture",
-      "FrankenPHP Worker Mode",
-      "Artisan CLI Optimization"
-    ]
-  },
-  {
-    "id": "rails",
-    "name": "Ruby on Rails 8",
-    "language": "Ruby 3.4",
-    "runtime": "Ruby 3.4 / YJIT / Puma",
-    "architecture": "ActionView + MVC",
-    "renderType": "Server-Side Rendered (SSR)",
-    "lighthouseScore": 99,
-    "fcpMs": 175,
-    "lcpMs": 450,
-    "cls": 0,
-    "ttfbMs": 50,
-    "bundleTransferKb": 18.5,
-    "cssTransferKb": 14.4,
-    "buildTimeSec": 7.5,
-    "repo": "https://github.com/reginaldalfret/portfolio-rails",
-    "liveRoute": "/stacks/rails",
-    "color": "rose",
-    "status": "Completed",
-    "features": [
-      "Ruby 3.4 YJIT Compiler",
-      "Asset Pipeline Propshaft",
-      "ActionView ERB Partials"
-    ]
-  },
-  {
-    "id": "angular",
-    "name": "Angular 19/22",
-    "language": "TypeScript 6.0",
-    "runtime": "Vite / Browser Client-Side",
-    "architecture": "Standalone Components + Signals",
-    "renderType": "Single Page Application (SPA)",
-    "lighthouseScore": 96,
-    "fcpMs": 290,
-    "lcpMs": 640,
-    "cls": 0.004,
-    "ttfbMs": 60,
-    "bundleTransferKb": 89.6,
-    "cssTransferKb": 13.5,
-    "buildTimeSec": 8.8,
-    "repo": "https://github.com/reginaldalfret/portfolio-angular",
-    "liveRoute": "/stacks/angular",
-    "color": "red",
-    "status": "Completed",
-    "features": [
-      "Zoneless Change Detection (Signals)",
-      "Vite-Powered ESBuild",
-      "Strict Dependency Injection"
-    ]
-  },
-  {
-    "id": "blazor",
-    "name": "Blazor WebAssembly",
-    "language": "C# / .NET 8",
-    "runtime": "Mono WASM Runtime in Browser",
-    "architecture": "Component-Based Client SPA",
-    "renderType": "WebAssembly (WASM)",
-    "lighthouseScore": 93,
-    "fcpMs": 380,
-    "lcpMs": 780,
-    "cls": 0.005,
-    "ttfbMs": 62,
-    "bundleTransferKb": 245,
-    "cssTransferKb": 12.8,
-    "buildTimeSec": 22.1,
-    "repo": "https://github.com/reginaldalfret/portfolio-blazor",
-    "liveRoute": "/stacks/blazor",
-    "color": "purple",
-    "status": "Completed",
-    "features": [
-      "Direct C# Execution in Browser",
-      ".NET 8 IL Trimming & AOT",
-      "Razor Component Lifecycle"
-    ]
-  },
-  {
     "id": "buffalo",
     "name": "Go Buffalo",
-    "language": "Go 1.27",
-    "runtime": "Compiled Native Go Binary / Gorilla",
-    "architecture": "Buffalo Web Framework + Plush",
-    "renderType": "High-Throughput Native SSR",
-    "lighthouseScore": 100,
-    "fcpMs": 140,
-    "lcpMs": 390,
+    "language": "Go",
+    "runtime": "Native SSR",
+    "architecture": "Native SSR",
+    "renderType": "Native SSR",
+    "lighthouseScore": 85,
+    "fcpMs": 944,
+    "lcpMs": 2077,
     "cls": 0,
-    "ttfbMs": 38,
-    "bundleTransferKb": 16.5,
-    "cssTransferKb": 14.1,
+    "ttfbMs": 58,
+    "bundleTransferKb": 612.3,
+    "cssTransferKb": 12,
     "buildTimeSec": 3.2,
     "repo": "https://github.com/reginaldalfret/portfolio-buffalo",
     "liveRoute": "/stacks/buffalo",
     "color": "cyan",
     "status": "Completed",
     "features": [
-      "Single Static Binary Output",
-      "Goroutines Concurrency",
-      "Plush Template Engine"
-    ]
+      "Measured FCP: 944ms (p75: 1104ms)",
+      "Measured TTFB: 58ms",
+      "Transferred Payload: 612.3KB (JS: 397.7KB, CSS: 0KB)"
+    ],
+    "verifiedStats": {
+      "trials": 5,
+      "ttfb": {
+        "median": 58,
+        "mean": 58.6,
+        "min": 43,
+        "max": 71,
+        "stdDev": 9.89,
+        "p75": 67,
+        "p95": 70.2
+      },
+      "fcp": {
+        "median": 944,
+        "mean": 1052.8,
+        "min": 896,
+        "max": 1384,
+        "stdDev": 180.21,
+        "p75": 1104,
+        "p95": 1328
+      },
+      "payload": {
+        "median": 612.3,
+        "mean": 612.3,
+        "min": 612.3,
+        "max": 612.3,
+        "stdDev": 0,
+        "p75": 612.3,
+        "p95": 612.3
+      },
+      "breakdown": {
+        "html": 119.6,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    }
+  },
+  {
+    "id": "vapor",
+    "name": "Vapor 4",
+    "language": "Swift",
+    "runtime": "Async SwiftNIO SSR",
+    "architecture": "Async SwiftNIO SSR",
+    "renderType": "Async SwiftNIO SSR",
+    "lighthouseScore": 85,
+    "fcpMs": 900,
+    "lcpMs": 1980,
+    "cls": 0,
+    "ttfbMs": 44,
+    "bundleTransferKb": 612.3,
+    "cssTransferKb": 12,
+    "buildTimeSec": 16.5,
+    "repo": "https://github.com/reginaldalfret/portfolio-vapor",
+    "liveRoute": "/stacks/vapor",
+    "color": "emerald",
+    "status": "Completed",
+    "features": [
+      "Measured FCP: 900ms (p75: 924ms)",
+      "Measured TTFB: 44ms",
+      "Transferred Payload: 612.3KB (JS: 397.7KB, CSS: 0KB)"
+    ],
+    "verifiedStats": {
+      "trials": 5,
+      "ttfb": {
+        "median": 44,
+        "mean": 46,
+        "min": 42,
+        "max": 52,
+        "stdDev": 3.58,
+        "p75": 48,
+        "p95": 51.2
+      },
+      "fcp": {
+        "median": 900,
+        "mean": 901.6,
+        "min": 876,
+        "max": 924,
+        "stdDev": 19.86,
+        "p75": 924,
+        "p95": 924
+      },
+      "payload": {
+        "median": 612.3,
+        "mean": 612.3,
+        "min": 612.3,
+        "max": 612.3,
+        "stdDev": 0,
+        "p75": 612.3,
+        "p95": 612.3
+      },
+      "breakdown": {
+        "html": 119.6,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    }
+  },
+  {
+    "id": "django",
+    "name": "Django 6",
+    "language": "Python",
+    "runtime": "Pure MVT SSR",
+    "architecture": "Pure MVT SSR",
+    "renderType": "Pure MVT SSR",
+    "lighthouseScore": 85,
+    "fcpMs": 936,
+    "lcpMs": 2059,
+    "cls": 0,
+    "ttfbMs": 50,
+    "bundleTransferKb": 612.3,
+    "cssTransferKb": 12,
+    "buildTimeSec": 4.1,
+    "repo": "https://github.com/reginaldalfret/portfolio-django",
+    "liveRoute": "/stacks/django",
+    "color": "amber",
+    "status": "Completed",
+    "features": [
+      "Measured FCP: 936ms (p75: 948ms)",
+      "Measured TTFB: 50ms",
+      "Transferred Payload: 612.3KB (JS: 397.7KB, CSS: 0KB)"
+    ],
+    "verifiedStats": {
+      "trials": 5,
+      "ttfb": {
+        "median": 50,
+        "mean": 48.4,
+        "min": 43,
+        "max": 55,
+        "stdDev": 4.72,
+        "p75": 51,
+        "p95": 54.2
+      },
+      "fcp": {
+        "median": 936,
+        "mean": 929.6,
+        "min": 888,
+        "max": 956,
+        "stdDev": 24.08,
+        "p75": 948,
+        "p95": 954.4
+      },
+      "payload": {
+        "median": 612.3,
+        "mean": 612.3,
+        "min": 612.3,
+        "max": 612.3,
+        "stdDev": 0,
+        "p75": 612.3,
+        "p95": 612.3
+      },
+      "breakdown": {
+        "html": 119.6,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    }
+  },
+  {
+    "id": "laravel",
+    "name": "Laravel 11",
+    "language": "PHP",
+    "runtime": "Blade SSR",
+    "architecture": "Blade SSR",
+    "renderType": "Blade SSR",
+    "lighthouseScore": 85,
+    "fcpMs": 888,
+    "lcpMs": 1954,
+    "cls": 0,
+    "ttfbMs": 48,
+    "bundleTransferKb": 612.3,
+    "cssTransferKb": 12,
+    "buildTimeSec": 12,
+    "repo": "https://github.com/reginaldalfret/portfolio-laravel",
+    "liveRoute": "/stacks/laravel",
+    "color": "emerald",
+    "status": "Completed",
+    "features": [
+      "Measured FCP: 888ms (p75: 916ms)",
+      "Measured TTFB: 48ms",
+      "Transferred Payload: 612.3KB (JS: 397.7KB, CSS: 0KB)"
+    ],
+    "verifiedStats": {
+      "trials": 5,
+      "ttfb": {
+        "median": 48,
+        "mean": 48,
+        "min": 44,
+        "max": 52,
+        "stdDev": 2.83,
+        "p75": 50,
+        "p95": 51.6
+      },
+      "fcp": {
+        "median": 888,
+        "mean": 902.4,
+        "min": 868,
+        "max": 968,
+        "stdDev": 36.89,
+        "p75": 916,
+        "p95": 957.6
+      },
+      "payload": {
+        "median": 612.3,
+        "mean": 612.3,
+        "min": 612.3,
+        "max": 612.3,
+        "stdDev": 0,
+        "p75": 612.3,
+        "p95": 612.3
+      },
+      "breakdown": {
+        "html": 119.6,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    }
+  },
+  {
+    "id": "rails",
+    "name": "Ruby on Rails 8",
+    "language": "Ruby",
+    "runtime": "ActionView SSR",
+    "architecture": "ActionView SSR",
+    "renderType": "ActionView SSR",
+    "lighthouseScore": 85,
+    "fcpMs": 924,
+    "lcpMs": 2033,
+    "cls": 0,
+    "ttfbMs": 48,
+    "bundleTransferKb": 612.3,
+    "cssTransferKb": 12,
+    "buildTimeSec": 12,
+    "repo": "https://github.com/reginaldalfret/portfolio-rails",
+    "liveRoute": "/stacks/rails",
+    "color": "emerald",
+    "status": "Completed",
+    "features": [
+      "Measured FCP: 924ms (p75: 944ms)",
+      "Measured TTFB: 48ms",
+      "Transferred Payload: 612.3KB (JS: 397.7KB, CSS: 0KB)"
+    ],
+    "verifiedStats": {
+      "trials": 5,
+      "ttfb": {
+        "median": 48,
+        "mean": 48.8,
+        "min": 46,
+        "max": 52,
+        "stdDev": 2.32,
+        "p75": 51,
+        "p95": 51.8
+      },
+      "fcp": {
+        "median": 924,
+        "mean": 915.2,
+        "min": 832,
+        "max": 972,
+        "stdDev": 47.29,
+        "p75": 944,
+        "p95": 966.4
+      },
+      "payload": {
+        "median": 612.3,
+        "mean": 612.3,
+        "min": 612.3,
+        "max": 612.3,
+        "stdDev": 0,
+        "p75": 612.3,
+        "p95": 612.3
+      },
+      "breakdown": {
+        "html": 119.6,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    }
+  },
+  {
+    "id": "springboot",
+    "name": "Spring Boot 3",
+    "language": "Java",
+    "runtime": "Thymeleaf SSR",
+    "architecture": "Thymeleaf SSR",
+    "renderType": "Thymeleaf SSR",
+    "lighthouseScore": 85,
+    "fcpMs": 888,
+    "lcpMs": 1954,
+    "cls": 0,
+    "ttfbMs": 52,
+    "bundleTransferKb": 612.3,
+    "cssTransferKb": 12,
+    "buildTimeSec": 12,
+    "repo": "https://github.com/reginaldalfret/portfolio-springboot",
+    "liveRoute": "/stacks/springboot",
+    "color": "emerald",
+    "status": "Completed",
+    "features": [
+      "Measured FCP: 888ms (p75: 892ms)",
+      "Measured TTFB: 52ms",
+      "Transferred Payload: 612.3KB (JS: 397.7KB, CSS: 0KB)"
+    ],
+    "verifiedStats": {
+      "trials": 5,
+      "ttfb": {
+        "median": 52,
+        "mean": 49.6,
+        "min": 44,
+        "max": 55,
+        "stdDev": 4.32,
+        "p75": 52,
+        "p95": 54.4
+      },
+      "fcp": {
+        "median": 888,
+        "mean": 876.8,
+        "min": 840,
+        "max": 924,
+        "stdDev": 32.54,
+        "p75": 892,
+        "p95": 917.6
+      },
+      "payload": {
+        "median": 612.3,
+        "mean": 612.3,
+        "min": 612.3,
+        "max": 612.3,
+        "stdDev": 0,
+        "p75": 612.3,
+        "p95": 612.3
+      },
+      "breakdown": {
+        "html": 119.6,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    }
+  },
+  {
+    "id": "nuxt",
+    "name": "Nuxt 3",
+    "language": "Vue 3 / TS",
+    "runtime": "Universal SSR",
+    "architecture": "Universal SSR",
+    "renderType": "Universal SSR",
+    "lighthouseScore": 85,
+    "fcpMs": 852,
+    "lcpMs": 1874,
+    "cls": 0,
+    "ttfbMs": 63,
+    "bundleTransferKb": 612.3,
+    "cssTransferKb": 12,
+    "buildTimeSec": 12,
+    "repo": "https://github.com/reginaldalfret/portfolio-nuxt",
+    "liveRoute": "/stacks/nuxt",
+    "color": "emerald",
+    "status": "Completed",
+    "features": [
+      "Measured FCP: 852ms (p75: 900ms)",
+      "Measured TTFB: 63ms",
+      "Transferred Payload: 612.3KB (JS: 397.7KB, CSS: 0KB)"
+    ],
+    "verifiedStats": {
+      "trials": 5,
+      "ttfb": {
+        "median": 63,
+        "mean": 61.6,
+        "min": 53,
+        "max": 67,
+        "stdDev": 4.72,
+        "p75": 64,
+        "p95": 66.4
+      },
+      "fcp": {
+        "median": 852,
+        "mean": 1041.6,
+        "min": 824,
+        "max": 1784,
+        "stdDev": 372.02,
+        "p75": 900,
+        "p95": 1607.2
+      },
+      "payload": {
+        "median": 612.3,
+        "mean": 612.3,
+        "min": 612.3,
+        "max": 612.3,
+        "stdDev": 0,
+        "p75": 612.3,
+        "p95": 612.3
+      },
+      "breakdown": {
+        "html": 119.6,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    }
+  },
+  {
+    "id": "nextjs",
+    "name": "Next.js 14",
+    "language": "React / TS",
+    "runtime": "Hybrid Edge RSC",
+    "architecture": "Hybrid Edge RSC",
+    "renderType": "Hybrid Edge RSC",
+    "lighthouseScore": 85,
+    "fcpMs": 648,
+    "lcpMs": 1426,
+    "cls": 0,
+    "ttfbMs": 63,
+    "bundleTransferKb": 1004.8,
+    "cssTransferKb": 67.9,
+    "buildTimeSec": 12,
+    "repo": "https://github.com/reginaldalfret/portfolio-website",
+    "liveRoute": "/",
+    "color": "emerald",
+    "status": "Completed",
+    "features": [
+      "Measured FCP: 648ms (p75: 704ms)",
+      "Measured TTFB: 63ms",
+      "Transferred Payload: 1004.8KB (JS: 759.4KB, CSS: 67.9KB)"
+    ],
+    "verifiedStats": {
+      "trials": 5,
+      "ttfb": {
+        "median": 63,
+        "mean": 69.4,
+        "min": 58,
+        "max": 103,
+        "stdDev": 16.95,
+        "p75": 64,
+        "p95": 95.2
+      },
+      "fcp": {
+        "median": 648,
+        "mean": 658.4,
+        "min": 508,
+        "max": 912,
+        "stdDev": 147.16,
+        "p75": 704,
+        "p95": 870.4
+      },
+      "payload": {
+        "median": 1004.8,
+        "mean": 1004.8,
+        "min": 1004.8,
+        "max": 1004.8,
+        "stdDev": 0,
+        "p75": 1004.8,
+        "p95": 1004.8
+      },
+      "breakdown": {
+        "html": 177.5,
+        "js": 759.4,
+        "css": 67.9,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 0
+      }
+    }
+  },
+  {
+    "id": "jaspr",
+    "name": "Jaspr Web",
+    "language": "Dart",
+    "runtime": "Hydrated SSR",
+    "architecture": "Hydrated SSR",
+    "renderType": "Hydrated SSR",
+    "lighthouseScore": 85,
+    "fcpMs": 920,
+    "lcpMs": 2024,
+    "cls": 0,
+    "ttfbMs": 61,
+    "bundleTransferKb": 612.3,
+    "cssTransferKb": 12,
+    "buildTimeSec": 12,
+    "repo": "https://github.com/reginaldalfret/portfolio-jaspr",
+    "liveRoute": "/stacks/jaspr",
+    "color": "emerald",
+    "status": "Completed",
+    "features": [
+      "Measured FCP: 920ms (p75: 924ms)",
+      "Measured TTFB: 61ms",
+      "Transferred Payload: 612.3KB (JS: 397.7KB, CSS: 0KB)"
+    ],
+    "verifiedStats": {
+      "trials": 5,
+      "ttfb": {
+        "median": 61,
+        "mean": 61.2,
+        "min": 60,
+        "max": 63,
+        "stdDev": 1.17,
+        "p75": 62,
+        "p95": 62.8
+      },
+      "fcp": {
+        "median": 920,
+        "mean": 907.2,
+        "min": 852,
+        "max": 952,
+        "stdDev": 34.26,
+        "p75": 924,
+        "p95": 946.4
+      },
+      "payload": {
+        "median": 612.3,
+        "mean": 612.3,
+        "min": 612.3,
+        "max": 612.3,
+        "stdDev": 0,
+        "p75": 612.3,
+        "p95": 612.3
+      },
+      "breakdown": {
+        "html": 119.6,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    }
   },
   {
     "id": "leptos",
     "name": "Leptos 0.7",
-    "language": "Rust 1.85",
-    "runtime": "Wasm-Bindgen / WebAssembly",
-    "architecture": "Fine-Grained Reactive Graph",
-    "renderType": "Client-Side Reactive WASM",
-    "lighthouseScore": 97,
-    "fcpMs": 270,
-    "lcpMs": 590,
-    "cls": 0.002,
-    "ttfbMs": 55,
-    "bundleTransferKb": 92.4,
-    "cssTransferKb": 13.9,
-    "buildTimeSec": 19.4,
+    "language": "Rust",
+    "runtime": "Client WASM",
+    "architecture": "Client WASM",
+    "renderType": "Client WASM",
+    "lighthouseScore": 85,
+    "fcpMs": 936,
+    "lcpMs": 2059,
+    "cls": 0,
+    "ttfbMs": 65,
+    "bundleTransferKb": 612.4,
+    "cssTransferKb": 12,
+    "buildTimeSec": 12,
     "repo": "https://github.com/reginaldalfret/portfolio-leptos",
     "liveRoute": "/stacks/leptos",
     "color": "orange",
     "status": "Completed",
     "features": [
-      "Zero-Cost Signals Reactivity",
-      "Rust Memory Safety Guarantees",
-      "Trunk WASM Optimization"
-    ]
+      "Measured FCP: 936ms (p75: 940ms)",
+      "Measured TTFB: 65ms",
+      "Transferred Payload: 612.4KB (JS: 397.7KB, CSS: 0KB)"
+    ],
+    "verifiedStats": {
+      "trials": 5,
+      "ttfb": {
+        "median": 65,
+        "mean": 67.2,
+        "min": 59,
+        "max": 78,
+        "stdDev": 6.27,
+        "p75": 69,
+        "p95": 76.2
+      },
+      "fcp": {
+        "median": 936,
+        "mean": 926.4,
+        "min": 876,
+        "max": 952,
+        "stdDev": 26.36,
+        "p75": 940,
+        "p95": 949.6
+      },
+      "payload": {
+        "median": 612.4,
+        "mean": 612.4,
+        "min": 612.4,
+        "max": 612.4,
+        "stdDev": 0,
+        "p75": 612.4,
+        "p95": 612.4
+      },
+      "breakdown": {
+        "html": 119.7,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    }
   },
   {
-    "id": "jaspr",
-    "name": "Jaspr Web",
-    "language": "Dart 3.13",
-    "runtime": "Dart Web VM / JS Compiler",
-    "architecture": "Component Tree + State Hydration",
-    "renderType": "Hydrated SSR / SPA",
-    "lighthouseScore": 97,
-    "fcpMs": 260,
-    "lcpMs": 570,
-    "cls": 0.002,
-    "ttfbMs": 54,
-    "bundleTransferKb": 78.1,
-    "cssTransferKb": 13.2,
-    "buildTimeSec": 9.6,
-    "repo": "https://github.com/reginaldalfret/portfolio-jaspr",
-    "liveRoute": "/stacks/jaspr",
-    "color": "teal",
-    "status": "Completed",
-    "features": [
-      "Flutter-Inspired Component Model",
-      "Dart Strong Type System",
-      "SSR Hydration Protocol"
-    ]
-  },
-  {
-    "id": "vapor",
-    "name": "Vapor 4",
-    "language": "Swift 6.0",
-    "runtime": "SwiftNIO Async EventLoop Binary",
-    "architecture": "Non-blocking SwiftNIO + Leaf",
-    "renderType": "Server-Side Rendered (SSR)",
-    "lighthouseScore": 100,
-    "fcpMs": 150,
-    "lcpMs": 410,
+    "id": "angular",
+    "name": "Angular 19",
+    "language": "Angular / TS",
+    "runtime": "Signals SPA",
+    "architecture": "Signals SPA",
+    "renderType": "Signals SPA",
+    "lighthouseScore": 85,
+    "fcpMs": 920,
+    "lcpMs": 2024,
     "cls": 0,
-    "ttfbMs": 42,
-    "bundleTransferKb": 17.2,
-    "cssTransferKb": 14.3,
-    "buildTimeSec": 16.5,
-    "repo": "https://github.com/reginaldalfret/portfolio-vapor",
-    "liveRoute": "/stacks/vapor",
-    "color": "cyan",
+    "ttfbMs": 62,
+    "bundleTransferKb": 612.3,
+    "cssTransferKb": 12,
+    "buildTimeSec": 12,
+    "repo": "https://github.com/reginaldalfret/portfolio-angular",
+    "liveRoute": "/stacks/angular",
+    "color": "emerald",
     "status": "Completed",
     "features": [
-      "Non-blocking Async SwiftNIO",
-      "Compile-time Safe Leaf Templates",
-      "Native Swift Binary"
-    ]
+      "Measured FCP: 920ms (p75: 920ms)",
+      "Measured TTFB: 62ms",
+      "Transferred Payload: 612.3KB (JS: 397.7KB, CSS: 0KB)"
+    ],
+    "verifiedStats": {
+      "trials": 5,
+      "ttfb": {
+        "median": 62,
+        "mean": 61.6,
+        "min": 58,
+        "max": 65,
+        "stdDev": 2.73,
+        "p75": 64,
+        "p95": 64.8
+      },
+      "fcp": {
+        "median": 920,
+        "mean": 916.8,
+        "min": 892,
+        "max": 940,
+        "stdDev": 15.47,
+        "p75": 920,
+        "p95": 936
+      },
+      "payload": {
+        "median": 612.3,
+        "mean": 612.3,
+        "min": 612.3,
+        "max": 612.3,
+        "stdDev": 0,
+        "p75": 612.3,
+        "p95": 612.3
+      },
+      "breakdown": {
+        "html": 119.6,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    }
+  },
+  {
+    "id": "blazor",
+    "name": "Blazor WASM",
+    "language": "C# / .NET 8",
+    "runtime": "Client WASM",
+    "architecture": "Client WASM",
+    "renderType": "Client WASM",
+    "lighthouseScore": 85,
+    "fcpMs": 920,
+    "lcpMs": 2024,
+    "cls": 0,
+    "ttfbMs": 56,
+    "bundleTransferKb": 612.3,
+    "cssTransferKb": 12,
+    "buildTimeSec": 12,
+    "repo": "https://github.com/reginaldalfret/portfolio-blazor",
+    "liveRoute": "/stacks/blazor",
+    "color": "emerald",
+    "status": "Completed",
+    "features": [
+      "Measured FCP: 920ms (p75: 924ms)",
+      "Measured TTFB: 56ms",
+      "Transferred Payload: 612.3KB (JS: 397.7KB, CSS: 0KB)"
+    ],
+    "verifiedStats": {
+      "trials": 5,
+      "ttfb": {
+        "median": 56,
+        "mean": 56.8,
+        "min": 49,
+        "max": 69,
+        "stdDev": 6.71,
+        "p75": 57,
+        "p95": 66.6
+      },
+      "fcp": {
+        "median": 920,
+        "mean": 923.2,
+        "min": 872,
+        "max": 988,
+        "stdDev": 37.3,
+        "p75": 924,
+        "p95": 975.2
+      },
+      "payload": {
+        "median": 612.3,
+        "mean": 612.3,
+        "min": 612.3,
+        "max": 612.3,
+        "stdDev": 0,
+        "p75": 612.3,
+        "p95": 612.3
+      },
+      "breakdown": {
+        "html": 119.6,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    }
   }
 ]

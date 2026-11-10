@@ -1,0 +1,13 @@
+Rank,Framework,Language,Architecture,Lighthouse,FCP_Median_ms,FCP_P75_ms,TTFB_Median_ms,Payload_Median_KB,HTML_KB,JS_KB,CSS_KB,WASM_KB
+1,"Next.js 14","React / TS","Hybrid Edge RSC",85,648,704,63,1004.8,177.5,759.4,67.9,0
+2,"Nuxt 3","Vue 3 / TS","Universal SSR",85,852,900,63,612.3,119.6,397.7,0,0
+3,"Laravel 11","PHP","Blade SSR",85,888,916,48,612.3,119.6,397.7,0,0
+4,"Spring Boot 3","Java","Thymeleaf SSR",85,888,892,52,612.3,119.6,397.7,0,0
+5,"Vapor 4","Swift","Async SwiftNIO SSR",85,900,924,44,612.3,119.6,397.7,0,0
+6,"Jaspr Web","Dart","Hydrated SSR",85,920,924,61,612.3,119.6,397.7,0,0
+7,"Angular 19","Angular / TS","Signals SPA",85,920,920,62,612.3,119.6,397.7,0,0
+8,"Blazor WASM","C# / .NET 8","Client WASM",85,920,924,56,612.3,119.6,397.7,0,0
+9,"Ruby on Rails 8","Ruby","ActionView SSR",85,924,944,48,612.3,119.6,397.7,0,0
+10,"Django 6","Python","Pure MVT SSR",85,936,948,50,612.3,119.6,397.7,0,0
+11,"Leptos 0.7","Rust","Client WASM",85,936,940,65,612.4,119.7,397.7,0,0
+12,"Go Buffalo","Go","Native SSR",85,944,1104,58,612.3,119.6,397.7,0,0

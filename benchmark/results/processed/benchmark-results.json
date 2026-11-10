@@ -1,0 +1,878 @@
+[
+  {
+    "id": "buffalo",
+    "name": "Go Buffalo",
+    "language": "Go",
+    "architecture": "Native SSR",
+    "trialsCount": 5,
+    "viewport": "mobile",
+    "cache": "cold",
+    "ttfb": {
+      "median": 58,
+      "mean": 58.6,
+      "min": 43,
+      "max": 71,
+      "stdDev": 9.89,
+      "p75": 67,
+      "p95": 70.2
+    },
+    "fcp": {
+      "median": 944,
+      "mean": 1052.8,
+      "min": 896,
+      "max": 1384,
+      "stdDev": 180.21,
+      "p75": 1104,
+      "p95": 1328
+    },
+    "loadEvent": {
+      "median": null,
+      "mean": null,
+      "min": null,
+      "max": null,
+      "stdDev": null,
+      "p75": null,
+      "p95": null
+    },
+    "cls": {
+      "median": 0,
+      "mean": 0,
+      "min": 0,
+      "max": 0,
+      "stdDev": 0,
+      "p75": 0,
+      "p95": 0
+    },
+    "scriptedInteraction": {
+      "median": 71,
+      "mean": 70.8,
+      "min": 70,
+      "max": 72,
+      "stdDev": 0.75,
+      "p75": 71,
+      "p95": 71.8
+    },
+    "payloadKb": {
+      "median": 612.3,
+      "mean": 612.3,
+      "min": 612.3,
+      "max": 612.3,
+      "stdDev": 0,
+      "p75": 612.3,
+      "p95": 612.3
+    },
+    "breakdownKb": {
+      "html": 119.6,
+      "js": 397.7,
+      "css": 0,
+      "images": 0,
+      "fonts": 0,
+      "wasm": 0,
+      "other": 95
+    },
+    "lighthouseScore": 85
+  },
+  {
+    "id": "vapor",
+    "name": "Vapor 4",
+    "language": "Swift",
+    "architecture": "Async SwiftNIO SSR",
+    "trialsCount": 5,
+    "viewport": "mobile",
+    "cache": "cold",
+    "ttfb": {
+      "median": 44,
+      "mean": 46,
+      "min": 42,
+      "max": 52,
+      "stdDev": 3.58,
+      "p75": 48,
+      "p95": 51.2
+    },
+    "fcp": {
+      "median": 900,
+      "mean": 901.6,
+      "min": 876,
+      "max": 924,
+      "stdDev": 19.86,
+      "p75": 924,
+      "p95": 924
+    },
+    "loadEvent": {
+      "median": null,
+      "mean": null,
+      "min": null,
+      "max": null,
+      "stdDev": null,
+      "p75": null,
+      "p95": null
+    },
+    "cls": {
+      "median": 0,
+      "mean": 0,
+      "min": 0,
+      "max": 0,
+      "stdDev": 0,
+      "p75": 0,
+      "p95": 0
+    },
+    "scriptedInteraction": {
+      "median": 69,
+      "mean": 70,
+      "min": 69,
+      "max": 72,
+      "stdDev": 1.26,
+      "p75": 71,
+      "p95": 71.8
+    },
+    "payloadKb": {
+      "median": 612.3,
+      "mean": 612.3,
+      "min": 612.3,
+      "max": 612.3,
+      "stdDev": 0,
+      "p75": 612.3,
+      "p95": 612.3
+    },
+    "breakdownKb": {
+      "html": 119.6,
+      "js": 397.7,
+      "css": 0,
+      "images": 0,
+      "fonts": 0,
+      "wasm": 0,
+      "other": 95
+    },
+    "lighthouseScore": 85
+  },
+  {
+    "id": "django",
+    "name": "Django 6",
+    "language": "Python",
+    "architecture": "Pure MVT SSR",
+    "trialsCount": 5,
+    "viewport": "mobile",
+    "cache": "cold",
+    "ttfb": {
+      "median": 50,
+      "mean": 48.4,
+      "min": 43,
+      "max": 55,
+      "stdDev": 4.72,
+      "p75": 51,
+      "p95": 54.2
+    },
+    "fcp": {
+      "median": 936,
+      "mean": 929.6,
+      "min": 888,
+      "max": 956,
+      "stdDev": 24.08,
+      "p75": 948,
+      "p95": 954.4
+    },
+    "loadEvent": {
+      "median": null,
+      "mean": null,
+      "min": null,
+      "max": null,
+      "stdDev": null,
+      "p75": null,
+      "p95": null
+    },
+    "cls": {
+      "median": 0,
+      "mean": 0,
+      "min": 0,
+      "max": 0,
+      "stdDev": 0,
+      "p75": 0,
+      "p95": 0
+    },
+    "scriptedInteraction": {
+      "median": 72,
+      "mean": 71.6,
+      "min": 70,
+      "max": 73,
+      "stdDev": 1.02,
+      "p75": 72,
+      "p95": 72.8
+    },
+    "payloadKb": {
+      "median": 612.3,
+      "mean": 612.3,
+      "min": 612.3,
+      "max": 612.3,
+      "stdDev": 0,
+      "p75": 612.3,
+      "p95": 612.3
+    },
+    "breakdownKb": {
+      "html": 119.6,
+      "js": 397.7,
+      "css": 0,
+      "images": 0,
+      "fonts": 0,
+      "wasm": 0,
+      "other": 95
+    },
+    "lighthouseScore": 85
+  },
+  {
+    "id": "laravel",
+    "name": "Laravel 11",
+    "language": "PHP",
+    "architecture": "Blade SSR",
+    "trialsCount": 5,
+    "viewport": "mobile",
+    "cache": "cold",
+    "ttfb": {
+      "median": 48,
+      "mean": 48,
+      "min": 44,
+      "max": 52,
+      "stdDev": 2.83,
+      "p75": 50,
+      "p95": 51.6
+    },
+    "fcp": {
+      "median": 888,
+      "mean": 902.4,
+      "min": 868,
+      "max": 968,
+      "stdDev": 36.89,
+      "p75": 916,
+      "p95": 957.6
+    },
+    "loadEvent": {
+      "median": null,
+      "mean": null,
+      "min": null,
+      "max": null,
+      "stdDev": null,
+      "p75": null,
+      "p95": null
+    },
+    "cls": {
+      "median": 0,
+      "mean": 0,
+      "min": 0,
+      "max": 0,
+      "stdDev": 0,
+      "p75": 0,
+      "p95": 0
+    },
+    "scriptedInteraction": {
+      "median": 70,
+      "mean": 70.6,
+      "min": 69,
+      "max": 72,
+      "stdDev": 1.2,
+      "p75": 72,
+      "p95": 72
+    },
+    "payloadKb": {
+      "median": 612.3,
+      "mean": 612.3,
+      "min": 612.3,
+      "max": 612.3,
+      "stdDev": 0,
+      "p75": 612.3,
+      "p95": 612.3
+    },
+    "breakdownKb": {
+      "html": 119.6,
+      "js": 397.7,
+      "css": 0,
+      "images": 0,
+      "fonts": 0,
+      "wasm": 0,
+      "other": 95
+    },
+    "lighthouseScore": 85
+  },
+  {
+    "id": "rails",
+    "name": "Ruby on Rails 8",
+    "language": "Ruby",
+    "architecture": "ActionView SSR",
+    "trialsCount": 5,
+    "viewport": "mobile",
+    "cache": "cold",
+    "ttfb": {
+      "median": 48,
+      "mean": 48.8,
+      "min": 46,
+      "max": 52,
+      "stdDev": 2.32,
+      "p75": 51,
+      "p95": 51.8
+    },
+    "fcp": {
+      "median": 924,
+      "mean": 915.2,
+      "min": 832,
+      "max": 972,
+      "stdDev": 47.29,
+      "p75": 944,
+      "p95": 966.4
+    },
+    "loadEvent": {
+      "median": null,
+      "mean": null,
+      "min": null,
+      "max": null,
+      "stdDev": null,
+      "p75": null,
+      "p95": null
+    },
+    "cls": {
+      "median": 0,
+      "mean": 0,
+      "min": 0,
+      "max": 0,
+      "stdDev": 0,
+      "p75": 0,
+      "p95": 0
+    },
+    "scriptedInteraction": {
+      "median": 71,
+      "mean": 70,
+      "min": 66,
+      "max": 71,
+      "stdDev": 2,
+      "p75": 71,
+      "p95": 71
+    },
+    "payloadKb": {
+      "median": 612.3,
+      "mean": 612.3,
+      "min": 612.3,
+      "max": 612.3,
+      "stdDev": 0,
+      "p75": 612.3,
+      "p95": 612.3
+    },
+    "breakdownKb": {
+      "html": 119.6,
+      "js": 397.7,
+      "css": 0,
+      "images": 0,
+      "fonts": 0,
+      "wasm": 0,
+      "other": 95
+    },
+    "lighthouseScore": 85
+  },
+  {
+    "id": "springboot",
+    "name": "Spring Boot 3",
+    "language": "Java",
+    "architecture": "Thymeleaf SSR",
+    "trialsCount": 5,
+    "viewport": "mobile",
+    "cache": "cold",
+    "ttfb": {
+      "median": 52,
+      "mean": 49.6,
+      "min": 44,
+      "max": 55,
+      "stdDev": 4.32,
+      "p75": 52,
+      "p95": 54.4
+    },
+    "fcp": {
+      "median": 888,
+      "mean": 876.8,
+      "min": 840,
+      "max": 924,
+      "stdDev": 32.54,
+      "p75": 892,
+      "p95": 917.6
+    },
+    "loadEvent": {
+      "median": null,
+      "mean": null,
+      "min": null,
+      "max": null,
+      "stdDev": null,
+      "p75": null,
+      "p95": null
+    },
+    "cls": {
+      "median": 0,
+      "mean": 0,
+      "min": 0,
+      "max": 0,
+      "stdDev": 0,
+      "p75": 0,
+      "p95": 0
+    },
+    "scriptedInteraction": {
+      "median": 71,
+      "mean": 71.4,
+      "min": 71,
+      "max": 72,
+      "stdDev": 0.49,
+      "p75": 72,
+      "p95": 72
+    },
+    "payloadKb": {
+      "median": 612.3,
+      "mean": 612.3,
+      "min": 612.3,
+      "max": 612.3,
+      "stdDev": 0,
+      "p75": 612.3,
+      "p95": 612.3
+    },
+    "breakdownKb": {
+      "html": 119.6,
+      "js": 397.7,
+      "css": 0,
+      "images": 0,
+      "fonts": 0,
+      "wasm": 0,
+      "other": 95
+    },
+    "lighthouseScore": 85
+  },
+  {
+    "id": "nuxt",
+    "name": "Nuxt 3",
+    "language": "Vue 3 / TS",
+    "architecture": "Universal SSR",
+    "trialsCount": 5,
+    "viewport": "mobile",
+    "cache": "cold",
+    "ttfb": {
+      "median": 63,
+      "mean": 61.6,
+      "min": 53,
+      "max": 67,
+      "stdDev": 4.72,
+      "p75": 64,
+      "p95": 66.4
+    },
+    "fcp": {
+      "median": 852,
+      "mean": 1041.6,
+      "min": 824,
+      "max": 1784,
+      "stdDev": 372.02,
+      "p75": 900,
+      "p95": 1607.2
+    },
+    "loadEvent": {
+      "median": null,
+      "mean": null,
+      "min": null,
+      "max": null,
+      "stdDev": null,
+      "p75": null,
+      "p95": null
+    },
+    "cls": {
+      "median": 0,
+      "mean": 0,
+      "min": 0,
+      "max": 0,
+      "stdDev": 0,
+      "p75": 0,
+      "p95": 0
+    },
+    "scriptedInteraction": {
+      "median": 71,
+      "mean": 67.6,
+      "min": 55,
+      "max": 71,
+      "stdDev": 6.31,
+      "p75": 71,
+      "p95": 71
+    },
+    "payloadKb": {
+      "median": 612.3,
+      "mean": 612.3,
+      "min": 612.3,
+      "max": 612.3,
+      "stdDev": 0,
+      "p75": 612.3,
+      "p95": 612.3
+    },
+    "breakdownKb": {
+      "html": 119.6,
+      "js": 397.7,
+      "css": 0,
+      "images": 0,
+      "fonts": 0,
+      "wasm": 0,
+      "other": 95
+    },
+    "lighthouseScore": 85
+  },
+  {
+    "id": "nextjs",
+    "name": "Next.js 14",
+    "language": "React / TS",
+    "architecture": "Hybrid Edge RSC",
+    "trialsCount": 5,
+    "viewport": "mobile",
+    "cache": "cold",
+    "ttfb": {
+      "median": 63,
+      "mean": 69.4,
+      "min": 58,
+      "max": 103,
+      "stdDev": 16.95,
+      "p75": 64,
+      "p95": 95.2
+    },
+    "fcp": {
+      "median": 648,
+      "mean": 658.4,
+      "min": 508,
+      "max": 912,
+      "stdDev": 147.16,
+      "p75": 704,
+      "p95": 870.4
+    },
+    "loadEvent": {
+      "median": null,
+      "mean": null,
+      "min": null,
+      "max": null,
+      "stdDev": null,
+      "p75": null,
+      "p95": null
+    },
+    "cls": {
+      "median": 0,
+      "mean": 0,
+      "min": 0,
+      "max": 0,
+      "stdDev": 0,
+      "p75": 0,
+      "p95": 0
+    },
+    "scriptedInteraction": {
+      "median": 72,
+      "mean": 71.8,
+      "min": 71,
+      "max": 73,
+      "stdDev": 0.75,
+      "p75": 72,
+      "p95": 72.8
+    },
+    "payloadKb": {
+      "median": 1004.8,
+      "mean": 1004.8,
+      "min": 1004.8,
+      "max": 1004.8,
+      "stdDev": 0,
+      "p75": 1004.8,
+      "p95": 1004.8
+    },
+    "breakdownKb": {
+      "html": 177.5,
+      "js": 759.4,
+      "css": 67.9,
+      "images": 0,
+      "fonts": 0,
+      "wasm": 0,
+      "other": 0
+    },
+    "lighthouseScore": 85
+  },
+  {
+    "id": "jaspr",
+    "name": "Jaspr Web",
+    "language": "Dart",
+    "architecture": "Hydrated SSR",
+    "trialsCount": 5,
+    "viewport": "mobile",
+    "cache": "cold",
+    "ttfb": {
+      "median": 61,
+      "mean": 61.2,
+      "min": 60,
+      "max": 63,
+      "stdDev": 1.17,
+      "p75": 62,
+      "p95": 62.8
+    },
+    "fcp": {
+      "median": 920,
+      "mean": 907.2,
+      "min": 852,
+      "max": 952,
+      "stdDev": 34.26,
+      "p75": 924,
+      "p95": 946.4
+    },
+    "loadEvent": {
+      "median": null,
+      "mean": null,
+      "min": null,
+      "max": null,
+      "stdDev": null,
+      "p75": null,
+      "p95": null
+    },
+    "cls": {
+      "median": 0,
+      "mean": 0,
+      "min": 0,
+      "max": 0,
+      "stdDev": 0,
+      "p75": 0,
+      "p95": 0
+    },
+    "scriptedInteraction": {
+      "median": 69,
+      "mean": 64,
+      "min": 54,
+      "max": 72,
+      "stdDev": 8.22,
+      "p75": 71,
+      "p95": 71.8
+    },
+    "payloadKb": {
+      "median": 612.3,
+      "mean": 612.3,
+      "min": 612.3,
+      "max": 612.3,
+      "stdDev": 0,
+      "p75": 612.3,
+      "p95": 612.3
+    },
+    "breakdownKb": {
+      "html": 119.6,
+      "js": 397.7,
+      "css": 0,
+      "images": 0,
+      "fonts": 0,
+      "wasm": 0,
+      "other": 95
+    },
+    "lighthouseScore": 85
+  },
+  {
+    "id": "leptos",
+    "name": "Leptos 0.7",
+    "language": "Rust",
+    "architecture": "Client WASM",
+    "trialsCount": 5,
+    "viewport": "mobile",
+    "cache": "cold",
+    "ttfb": {
+      "median": 65,
+      "mean": 67.2,
+      "min": 59,
+      "max": 78,
+      "stdDev": 6.27,
+      "p75": 69,
+      "p95": 76.2
+    },
+    "fcp": {
+      "median": 936,
+      "mean": 926.4,
+      "min": 876,
+      "max": 952,
+      "stdDev": 26.36,
+      "p75": 940,
+      "p95": 949.6
+    },
+    "loadEvent": {
+      "median": null,
+      "mean": null,
+      "min": null,
+      "max": null,
+      "stdDev": null,
+      "p75": null,
+      "p95": null
+    },
+    "cls": {
+      "median": 0,
+      "mean": 0,
+      "min": 0,
+      "max": 0,
+      "stdDev": 0,
+      "p75": 0,
+      "p95": 0
+    },
+    "scriptedInteraction": {
+      "median": 68,
+      "mean": 65.8,
+      "min": 53,
+      "max": 72,
+      "stdDev": 6.71,
+      "p75": 70,
+      "p95": 71.6
+    },
+    "payloadKb": {
+      "median": 612.4,
+      "mean": 612.4,
+      "min": 612.4,
+      "max": 612.4,
+      "stdDev": 0,
+      "p75": 612.4,
+      "p95": 612.4
+    },
+    "breakdownKb": {
+      "html": 119.7,
+      "js": 397.7,
+      "css": 0,
+      "images": 0,
+      "fonts": 0,
+      "wasm": 0,
+      "other": 95
+    },
+    "lighthouseScore": 85
+  },
+  {
+    "id": "angular",
+    "name": "Angular 19",
+    "language": "Angular / TS",
+    "architecture": "Signals SPA",
+    "trialsCount": 5,
+    "viewport": "mobile",
+    "cache": "cold",
+    "ttfb": {
+      "median": 62,
+      "mean": 61.6,
+      "min": 58,
+      "max": 65,
+      "stdDev": 2.73,
+      "p75": 64,
+      "p95": 64.8
+    },
+    "fcp": {
+      "median": 920,
+      "mean": 916.8,
+      "min": 892,
+      "max": 940,
+      "stdDev": 15.47,
+      "p75": 920,
+      "p95": 936
+    },
+    "loadEvent": {
+      "median": null,
+      "mean": null,
+      "min": null,
+      "max": null,
+      "stdDev": null,
+      "p75": null,
+      "p95": null
+    },
+    "cls": {
+      "median": 0,
+      "mean": 0,
+      "min": 0,
+      "max": 0,
+      "stdDev": 0,
+      "p75": 0,
+      "p95": 0
+    },
+    "scriptedInteraction": {
+      "median": 71,
+      "mean": 71.4,
+      "min": 70,
+      "max": 73,
+      "stdDev": 1.02,
+      "p75": 72,
+      "p95": 72.8
+    },
+    "payloadKb": {
+      "median": 612.3,
+      "mean": 612.3,
+      "min": 612.3,
+      "max": 612.3,
+      "stdDev": 0,
+      "p75": 612.3,
+      "p95": 612.3
+    },
+    "breakdownKb": {
+      "html": 119.6,
+      "js": 397.7,
+      "css": 0,
+      "images": 0,
+      "fonts": 0,
+      "wasm": 0,
+      "other": 95
+    },
+    "lighthouseScore": 85
+  },
+  {
+    "id": "blazor",
+    "name": "Blazor WASM",
+    "language": "C# / .NET 8",
+    "architecture": "Client WASM",
+    "trialsCount": 5,
+    "viewport": "mobile",
+    "cache": "cold",
+    "ttfb": {
+      "median": 56,
+      "mean": 56.8,
+      "min": 49,
+      "max": 69,
+      "stdDev": 6.71,
+      "p75": 57,
+      "p95": 66.6
+    },
+    "fcp": {
+      "median": 920,
+      "mean": 923.2,
+      "min": 872,
+      "max": 988,
+      "stdDev": 37.3,
+      "p75": 924,
+      "p95": 975.2
+    },
+    "loadEvent": {
+      "median": null,
+      "mean": null,
+      "min": null,
+      "max": null,
+      "stdDev": null,
+      "p75": null,
+      "p95": null
+    },
+    "cls": {
+      "median": 0,
+      "mean": 0,
+      "min": 0,
+      "max": 0,
+      "stdDev": 0,
+      "p75": 0,
+      "p95": 0
+    },
+    "scriptedInteraction": {
+      "median": 69,
+      "mean": 67,
+      "min": 55,
+      "max": 72,
+      "stdDev": 6.16,
+      "p75": 71,
+      "p95": 71.8
+    },
+    "payloadKb": {
+      "median": 612.3,
+      "mean": 612.3,
+      "min": 612.3,
+      "max": 612.3,
+      "stdDev": 0,
+      "p75": 612.3,
+      "p95": 612.3
+    },
+    "breakdownKb": {
+      "html": 119.6,
+      "js": 397.7,
+      "css": 0,
+      "images": 0,
+      "fonts": 0,
+      "wasm": 0,
+      "other": 95
+    },
+    "lighthouseScore": 85
+  }
+]

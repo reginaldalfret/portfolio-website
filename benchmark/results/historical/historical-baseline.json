@@ -1,0 +1,126 @@
+{
+  "auditStatus": "Investigated & Audited",
+  "notes": "The historical numbers reflected unverified baseline values. Investigation revealed that historical 'Payload' was limited to compressed base HTML or un-hydrated bundles, excluding WASM runtimes and full asset cascades. The new benchmark harness captures exact Resource Timing and Navigation Timing across the full network cascade.",
+  "records": [
+    {
+      "id": "buffalo",
+      "name": "Go Buffalo",
+      "lighthouse": 100,
+      "fcp": 140,
+      "ttfb": 38,
+      "payloadKb": 16.5,
+      "verified": false,
+      "limitation": "Excluded full asset cascade"
+    },
+    {
+      "id": "vapor",
+      "name": "Vapor",
+      "lighthouse": 100,
+      "fcp": 150,
+      "ttfb": 42,
+      "payloadKb": 17.2,
+      "verified": false,
+      "limitation": "Excluded full asset cascade"
+    },
+    {
+      "id": "django",
+      "name": "Django",
+      "lighthouse": 100,
+      "fcp": 160,
+      "ttfb": 45,
+      "payloadKb": 18.2,
+      "verified": false,
+      "limitation": "Excluded full asset cascade"
+    },
+    {
+      "id": "laravel",
+      "name": "Laravel",
+      "lighthouse": 100,
+      "fcp": 170,
+      "ttfb": 48,
+      "payloadKb": 18.8,
+      "verified": false,
+      "limitation": "Excluded full asset cascade"
+    },
+    {
+      "id": "rails",
+      "name": "Rails",
+      "lighthouse": 99,
+      "fcp": 175,
+      "ttfb": 50,
+      "payloadKb": 18.5,
+      "verified": false,
+      "limitation": "Excluded full asset cascade"
+    },
+    {
+      "id": "springboot",
+      "name": "Spring Boot",
+      "lighthouse": 99,
+      "fcp": 180,
+      "ttfb": 52,
+      "payloadKb": 19.1,
+      "verified": false,
+      "limitation": "Excluded full asset cascade"
+    },
+    {
+      "id": "nuxt",
+      "name": "Nuxt",
+      "lighthouse": 99,
+      "fcp": 210,
+      "ttfb": 58,
+      "payloadKb": 68.4,
+      "verified": false,
+      "limitation": "Excluded full asset cascade"
+    },
+    {
+      "id": "nextjs",
+      "name": "Next.js",
+      "lighthouse": 98,
+      "fcp": 240,
+      "ttfb": 65,
+      "payloadKb": 74.2,
+      "verified": false,
+      "limitation": "Excluded full asset cascade"
+    },
+    {
+      "id": "jaspr",
+      "name": "Jaspr",
+      "lighthouse": 97,
+      "fcp": 260,
+      "ttfb": 54,
+      "payloadKb": 78.1,
+      "verified": false,
+      "limitation": "Excluded full asset cascade"
+    },
+    {
+      "id": "leptos",
+      "name": "Leptos",
+      "lighthouse": 97,
+      "fcp": 270,
+      "ttfb": 55,
+      "payloadKb": 92.4,
+      "verified": false,
+      "limitation": "Excluded full asset cascade"
+    },
+    {
+      "id": "angular",
+      "name": "Angular",
+      "lighthouse": 96,
+      "fcp": 290,
+      "ttfb": 60,
+      "payloadKb": 89.6,
+      "verified": false,
+      "limitation": "Excluded full asset cascade"
+    },
+    {
+      "id": "blazor",
+      "name": "Blazor",
+      "lighthouse": 93,
+      "fcp": 380,
+      "ttfb": 62,
+      "payloadKb": 245,
+      "verified": false,
+      "limitation": "Excluded full asset cascade"
+    }
+  ]
+}

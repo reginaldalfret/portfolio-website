@@ -1,0 +1,38 @@
+{
+  "desktop": {
+    "name": "Desktop Standard",
+    "width": 1366,
+    "height": 768,
+    "deviceScaleFactor": 1,
+    "isMobile": false
+  },
+  "mobile": {
+    "name": "Mobile Standard (iPhone 14 / Pixel 7)",
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 3,
+    "isMobile": true
+  },
+  "responsiveGrid": [
+    {
+      "name": "Mobile Compact",
+      "width": 360,
+      "height": 740
+    },
+    {
+      "name": "Tablet Portrait",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "name": "Laptop Standard",
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "name": "Full HD Desktop",
+      "width": 1920,
+      "height": 1080
+    }
+  ]
+}

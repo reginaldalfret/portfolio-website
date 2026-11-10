@@ -1,0 +1,16 @@
+{
+  "hardware": {
+    "cpu": "AMD Ryzen / Intel Core x86_64",
+    "cores": "Multi-core 8+ threads",
+    "ram": "16 GB+",
+    "os": "Windows 11 / Linux (CI Edge)"
+  },
+  "software": {
+    "browser": "Microsoft Edge / Chromium Headless (Channel: msedge)",
+    "automationEngine": "Playwright v1.65.0",
+    "nodeVersion": "v24.18.0",
+    "platform": "win32"
+  },
+  "productionEndpoint": "https://reginaldalfret.tech",
+  "cdn": "Vercel Edge Network (Global Anycast CDN)"
+}

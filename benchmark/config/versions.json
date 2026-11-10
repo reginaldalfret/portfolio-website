@@ -1,0 +1,112 @@
+{
+  "stacks": [
+    {
+      "id": "buffalo",
+      "name": "Go Buffalo",
+      "language": "Go",
+      "version": "1.27",
+      "frameworkVersion": "Buffalo 0.18.x",
+      "architecture": "Native Compiled SSR",
+      "profile": "Historical / Stable"
+    },
+    {
+      "id": "vapor",
+      "name": "Vapor 4",
+      "language": "Swift",
+      "version": "6.0",
+      "frameworkVersion": "Vapor 4.x",
+      "architecture": "Async SwiftNIO SSR",
+      "profile": "Historical / Stable"
+    },
+    {
+      "id": "django",
+      "name": "Django 6",
+      "language": "Python",
+      "version": "3.13",
+      "frameworkVersion": "Django 6.0",
+      "architecture": "Pure MVT SSR",
+      "profile": "Historical / Stable"
+    },
+    {
+      "id": "laravel",
+      "name": "Laravel 11",
+      "language": "PHP",
+      "version": "8.4",
+      "frameworkVersion": "Laravel 11.x",
+      "architecture": "Artisan Blade SSR",
+      "profile": "Historical / Stable"
+    },
+    {
+      "id": "rails",
+      "name": "Ruby on Rails 8",
+      "language": "Ruby",
+      "version": "3.4",
+      "frameworkVersion": "Rails 8.0",
+      "architecture": "ActionView YJIT SSR",
+      "profile": "Historical / Stable"
+    },
+    {
+      "id": "springboot",
+      "name": "Spring Boot 3",
+      "language": "Java",
+      "version": "21 LTS",
+      "frameworkVersion": "Spring Boot 3.4",
+      "architecture": "Thymeleaf MVC SSR",
+      "profile": "Historical / Stable"
+    },
+    {
+      "id": "nuxt",
+      "name": "Nuxt 3",
+      "language": "TypeScript / Vue",
+      "version": "3.x",
+      "frameworkVersion": "Nuxt 3.12+",
+      "architecture": "Universal Hydrated SSR",
+      "profile": "Historical / Stable"
+    },
+    {
+      "id": "nextjs",
+      "name": "Next.js 14",
+      "language": "TypeScript / React",
+      "version": "React 18",
+      "frameworkVersion": "Next.js 14.2.35",
+      "architecture": "Hybrid Edge RSC",
+      "profile": "Historical / Stable"
+    },
+    {
+      "id": "jaspr",
+      "name": "Jaspr",
+      "language": "Dart",
+      "version": "3.13",
+      "frameworkVersion": "Jaspr Web",
+      "architecture": "Hydrated SSR / Dart Web",
+      "profile": "Historical / Stable"
+    },
+    {
+      "id": "leptos",
+      "name": "Leptos 0.7",
+      "language": "Rust",
+      "version": "1.85",
+      "frameworkVersion": "Leptos 0.7",
+      "architecture": "Fine-Grained Reactive WASM",
+      "profile": "Historical / Stable"
+    },
+    {
+      "id": "angular",
+      "name": "Angular 19",
+      "language": "TypeScript",
+      "version": "6.0",
+      "frameworkVersion": "Angular 19.x",
+      "architecture": "Standalone Signals SPA",
+      "profile": "Historical / Stable"
+    },
+    {
+      "id": "blazor",
+      "name": "Blazor WASM",
+      "language": "C# / .NET",
+      "version": ".NET 8",
+      "frameworkVersion": "Blazor WebAssembly",
+      "architecture": "Client Mono WASM",
+      "profile": "Historical / Stable"
+    }
+  ]
+}

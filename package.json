@@ -12,6 +12,12 @@
     "validate:content": "node scripts/validate_shared_content.js",
     "test:stacks": "node scripts/test_all_stacks.js",
     "benchmarks": "node scripts/measure_or_compile_benchmarks.js",
+    "benchmark:all": "node benchmark/scripts/run-all.js",
+    "benchmark:desktop": "node benchmark/scripts/run-desktop.js",
+    "benchmark:mobile": "node benchmark/scripts/run-mobile.js",
+    "benchmark:cold": "node benchmark/scripts/run-cold.js",
+    "benchmark:warm": "node benchmark/scripts/run-warm.js",
+    "benchmark:validate": "node benchmark/scripts/validate-results.js",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
