@@ -1,62 +1,65 @@
-# Polyglot Architecture & Deployment Specification
-## 12 Stacks. 1 Product. Native Runtime Reconstruction
+# Deployment Architecture & Production Isolation Specification
+## Polyglot Portfolio Showcase (12 Stacks. 1 Product.)
+
+**Primary Domain:** [https://reginaldalfret.tech](https://reginaldalfret.tech)  
+**Host & CDN:** Vercel Global Edge Network  
+**DNS Target:** `reginaldalfret.tech` → Vercel CNAME/A records  
+**Active Project:** `reginald-portfolio` (`team_8XqJNYywz1iaqRon9EAPQlGt`)  
+**Production Branch:** `main` (Protected; manual approval required for deployment)
 
 ---
 
-### Executive Overview
-
-The **12 Stacks. 1 Product.** initiative represents an architectural experiment demonstrating how twelve modern software engineering ecosystems implement the identical obsidian resume portfolio (`https://reginaldalfret.tech`).
-
-Following an independent scientific audit, the project transitioned away from static HTML emulation to **genuine, native framework runtimes**. Each application compiles and executes using its native language compiler, toolchain, runtime, and deployment model.
-
----
-
-### Classification of the 12 Native Implementations
-
-The twelve implementations are organized into four distinct architectural tiers:
+### 1. Two-Tier Production URL Topology
 
 ```
-┌────────────────────────────────────────────────────────────────────────┐
-│                      12 STACKS ARCHITECTURAL TIERS                     │
-├──────────────────┬──────────────────┬─────────────────┬────────────────┤
-│ Client WASM      │ Client SPA       │ Full-Stack SSR  │ Backend MVC    │
-│ (Ahead-of-Time)  │ (Component DOM)  │ (Edge Hydrated) │ (Daemon Engine)│
-├──────────────────┼──────────────────┼─────────────────┼────────────────┤
-│ • Leptos (Rust)  │ • Angular (TS)   │ • Next.js (RSC) │ • Go Buffalo   │
-│ • Blazor (C#)    │ • Jaspr (Dart)   │ • Nuxt 3 (Vue)  │ • Vapor (Swift)│
-│                  │                  │                 │ • Django (Py)  │
-│                  │                  │                 │ • Laravel (PHP)│
-│                  │                  │                 │ • Rails (Ruby) │
-│                  │                  │                 │ • Spring (Java)│
-└──────────────────┴──────────────────┴─────────────────┴────────────────┘
+https://reginaldalfret.tech/
+├── /                              ──> Experience A: Personal Portfolio (Recruiter & Professional Focus)
+├── /lab                           ──> Experience B: Engineering Lab (12 Stacks. 1 Product. Showcase)
+└── /stacks/<stack-id>/            ──> Native Framework Preview Endpoints (Isolated Iframe & Direct Access)
+    ├── /stacks/nuxt/              ──> Nuxt 3 Client Hydrated Bundle
+    ├── /stacks/angular/           ──> Angular 19 Standalone Signals Bundle
+    ├── /stacks/blazor/            ──> Blazor Mono WebAssembly Runtime & Assemblies
+    ├── /stacks/leptos/            ──> Leptos Rust WebAssembly Binary
+    ├── /stacks/jaspr/             ──> Jaspr Dart Web Compiled Client
+    ├── /stacks/buffalo/           ──> Go Buffalo Native HTML Output
+    ├── /stacks/vapor/             ──> Swift Vapor 4 Native HTML Output
+    ├── /stacks/springboot/        ──> Spring Boot 3 Thymeleaf HTML Output
+    ├── /stacks/django/            ──> Django 6 MVT HTML Output
+    ├── /stacks/laravel/           ──> Laravel 11 Blade HTML Output
+    └── /stacks/rails/             ──> Ruby on Rails 8 ActionView ERB Output
 ```
 
 ---
 
-### Implementation & Runtime Specifications
+### 2. Experience Separation Contract
 
-| # | Framework | Language & Toolchain | Runtime Model | Asset Signature | Port / Endpoint | Deployment Target |
-|---|---|---|---|---|---|---|
-| 1 | **Next.js 14** | TypeScript · React 18 · Node.js 24 | React Server Components · Edge SSR | `/_next/static/chunks/` | `/` (Edge) | Vercel Edge Global |
-| 2 | **Leptos 0.7** | Rust 1.99.1 · Cargo · Trunk · `wasm-bindgen` | Client-Side WebAssembly (AOT) | `portfolio-leptos-*.wasm` (626 KB) | `/stacks/leptos/` | Vercel Static + WASM |
-| 3 | **Blazor** | .NET 8 SDK · C# 12 · Blazor WASM | Mono WebAssembly Runtime + BCL | `dotnet.native.wasm`, `blazor.webassembly.js`, 31 `.wasm` DLLs | `/stacks/blazor/` | Vercel Static + WASM |
-| 4 | **Angular 19** | TypeScript 6.0 · Angular Signals · Vite | Client SPA · Standalone Components | `main-PG7KZ7NM.js` | `/stacks/angular/` | Vercel Static SPA |
-| 5 | **Nuxt 3** | Vue 3 · TypeScript · Nitro Engine | Nitro SSR Hydration · Vue Composition | `_nuxt/BLZX-NPZ.js`, `_payload.json` | `/stacks/nuxt/` | Vercel Static Hydration |
-| 6 | **Jaspr** | Dart 3.13.5 · Jaspr Web Compiler | Dart Web Runtime · DOM Hydration | `main.client.dart.js` | `/stacks/jaspr/` | Vercel Static SPA |
-| 7 | **Go Buffalo** | Go 1.27 / 1.24 · Buffalo CLI · Gorilla Mux | Native Go Binary · Plush Template SSR | `portfolio-buffalo` ELF/PE | `localhost:8087` | Container Staging / Cloud Run |
-| 8 | **Spring Boot 3** | Java 21 LTS · Maven 3.9 · Spring MVC | Embedded Apache Tomcat 10.1 · Thymeleaf | `portfolio-0.0.1-SNAPSHOT.jar` | `localhost:8082` | Container Staging / Cloud Run |
-| 9 | **Django 6** | Python 3.13 · Django MVT · Gunicorn | WSGI Application Daemon · Django SSR | `wsgi.py`, `Gunicorn 26.2` | `localhost:8083` | Container Staging / Cloud Run |
-| 10 | **Laravel 11/12** | PHP 8.4 CLI · Laravel MVC · Artisan | PHP-FPM / Artisan Built-in Server | `artisan`, Blade Engine | `localhost:8085` | Container Staging / Cloud Run |
-| 11 | **Ruby on Rails 8** | Ruby 3.4 · Rails 8 · ActionView ERB | Puma 6.5 Rack Server · Rails MVC | `puma`, ERB Engine | `localhost:8084` | Container Staging / Cloud Run |
-| 12 | **Vapor 4** | Swift 6.0 · SwiftNIO 2.65 · Leaf | Event-driven Non-blocking Async I/O | `App` Native Binary | `localhost:8086` | Container Staging / Cloud Run |
+#### Experience A: Personal Portfolio (`/`)
+- Pure recruiter focus: Who I am, core technical skills, verified experience, featured projects, open-source accomplishments (30 merged PRs across Google, Apple, Microsoft, Meta, NVIDIA, etc.), education, contact.
+- Contains a compact **"12 Stacks. 1 Product."** teaser card with direct link button: `Explore the Engineering Lab → /lab`.
+- Zero intrusive comparison tables, zero full-stack switchers.
+
+#### Experience B: Engineering Lab (`/lab`)
+- Central control and exploration layer for the polyglot experiment.
+- 12-stack explorer with native technology cards.
+- Live preview switcher with responsive iframes, loading states, error boundaries, and return links.
+- Interactive performance leaderboard (sorting by FCP, TTFB, Payload, Lighthouse score).
+- Performance comparison charts (FCP, TTFB, Payload, Lighthouse).
+- Architecture execution flow diagrams for all 12 stacks.
+- Scientific benchmark methodology documentation.
+
+#### Preview Endpoints (`/stacks/<stack-id>/`)
+- Each implementation renders its genuine framework components with native styles and reactive behaviors.
+- Each preview contains:
+  - Top context badge: `PART OF THE 12 STACKS. 1 PRODUCT. EXPERIMENT` · `Current Implementation: <Stack Name>`
+  - Return links: `Personal Portfolio → https://reginaldalfret.tech`, `Back to Engineering Lab → https://reginaldalfret.tech/lab`
+  - Unified footer with source repository link.
 
 ---
 
-### Verification Protocol
+### 3. Production Deployment Safety Rules
 
-Each implementation is subjected to strict verification criteria:
-
-1. **Native Build Output**: Artifacts must be produced by the framework's native build tools (e.g., `trunk build --release`, `dotnet publish`, `ng build`, `mvn package`, `go build`).
-2. **Runtime Execution**: The browser or container must execute the framework's native engine (WASM instantiation, JS boot, or HTTP daemon process).
-3. **Absence of Emulation**: The response must not simply be static HTML containing the framework's name; it must execute the genuine runtime lifecycle.
-4. **Data Integrity**: All twelve stacks render the authentic resume portfolio belonging to **Reginald Alfret V** with 100% verified open-source contributions.
+1. **Feature Branch Isolation:** All active engineering restructuring work is performed on isolated feature branches:
+   - Main repo: `feat/portfolio-lab-separation`
+   - Child repos: `feat/lab-integration`
+2. **Default Branch Protection:** No commits are pushed directly to `main` or `master`.
+3. **No Automatic Production Deployments:** Branch pushes to feature branches trigger preview builds only. Production deployment requires explicit user consent.

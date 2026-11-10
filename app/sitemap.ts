@@ -11,6 +11,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: updatedModified,
     },
     {
+      url: `${baseUrl}/lab`,
+      lastModified: new Date("2026-11-10T20:00:00.000Z"),
+    },
+    {
       url: `${baseUrl}/about`,
       lastModified: updatedModified,
     },

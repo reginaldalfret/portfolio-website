@@ -29,6 +29,7 @@ import {
   Wrench,
   BookOpen,
   Activity,
+  ArrowRight,
 } from "lucide-react";
 import { OrgLogo } from "@/components/opensource/OrgLogos";
 import { EngineeringLab } from "@/components/stacks/EngineeringLab";
@@ -145,12 +146,12 @@ export function ResumePortfolio() {
 
           {/* Quick Actions */}
             <a
-              href="#performance-lab"
+              href="/lab"
               className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 transition-colors"
-              title="Jump to Polyglot Performance Lab"
+              title="Explore the 12 Stacks. 1 Product. Engineering Lab"
             >
               <Activity className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
-              <span>Performance Lab</span>
+              <span>Engineering Lab</span>
             </a>
           <div className="flex items-center gap-2">
             <button
@@ -1195,666 +1196,83 @@ export function ResumePortfolio() {
               </div>
             </div>
 
-            {/* 4. Multi-Stack Switcher Section */}
-            <section className="py-8 border-b border-white/10 space-y-8" id="performance-lab">
-              <EngineeringLab onSelectStack={(id) => switchStack(id as any)} />
+            {/* 4. Compact 12 Stacks. 1 Product. Engineering Lab Teaser */}
+            <section className="py-8 border-b border-white/10 space-y-6" id="engineering-lab">
+              <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-neutral-900/90 via-neutral-950/80 to-neutral-900/90 border border-white/10 shadow-2xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-80 h-80 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
 
-              <div className="pt-6 border-t border-white/10">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-                <div>
-                  <h2 className="text-base sm:text-lg font-bold text-white flex items-center gap-2 tracking-wide">
-                    <span className="text-cyan-400">⚡</span> MULTI-STACK ARCHITECTURE
-                  </h2>
-                  <p className="text-xs text-neutral-400 font-mono">
-                    Explore this exact resume portfolio built across 12 modern engineering stacks
-                  </p>
-                </div>
-                <div className="text-[11px] font-mono text-red-400 bg-red-500/10 px-2.5 py-1 rounded-md border border-red-500/20 self-start sm:self-auto">
-                  12 Stacks Available
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-3.5">
-                {/* Next.js (Active Production) */}
-                <div className="p-4 rounded-2xl bg-gradient-to-b from-cyan-500/10 to-transparent border border-cyan-500/30 relative flex flex-col justify-between space-y-3">
-                  <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center gap-2">
-                        <div className="w-7 h-7 rounded-lg bg-black border border-white/20 flex items-center justify-center font-black text-xs text-white">
-                          N
-                        </div>
-                        <span className="font-bold text-sm text-white">Next.js 14</span>
-                      </div>
-                      <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                        ACTIVE
+                <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                  <div className="space-y-3 max-w-2xl">
+                    <div className="flex items-center gap-2">
+                      <span className="px-3 py-1 rounded-full text-[10px] font-mono font-bold tracking-wider bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 flex items-center gap-1.5">
+                        <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                        FEATURED ENGINEERING EXPERIMENT
+                      </span>
+                      <span className="text-xs font-mono text-neutral-400">
+                        12 STACKS. 1 PRODUCT.
                       </span>
                     </div>
-                    <p className="text-xs text-neutral-300 mb-2">
-                      React 18 · App Router · TypeScript · Tailwind CSS · Vercel Edge.
+
+                    <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-white flex items-center gap-2.5">
+                      <span className="text-cyan-400">⚡</span> 12 Stacks. 1 Product.
+                    </h2>
+
+                    <p className="text-sm text-neutral-300 leading-relaxed font-light">
+                      One product. Twelve technology ecosystems. A practical engineering experiment exploring how different technologies approach the same application — with genuine framework implementations, empirical benchmarks, and zero fabricated metrics.
                     </p>
-                    <div className="text-[11px] font-mono text-cyan-400">
-                      Production: <span className="text-white">reginaldalfret.tech</span>
+
+                    {/* Compact Stack Badges */}
+                    <div className="flex flex-wrap items-center gap-1.5 pt-2">
+                      {[
+                        { name: 'Next.js 14', lang: 'React / TS' },
+                        { name: 'Nuxt 3', lang: 'Vue 3 / Nitro' },
+                        { name: 'Django 6', lang: 'Python 3.13' },
+                        { name: 'Spring Boot 3', lang: 'Java 21' },
+                        { name: 'Laravel 11', lang: 'PHP 8.4' },
+                        { name: 'Ruby on Rails 8', lang: 'Ruby 3.4' },
+                        { name: 'Angular 19', lang: 'Signals SPA' },
+                        { name: 'Blazor WASM', lang: '.NET 8 C#' },
+                        { name: 'Go Buffalo', lang: 'Go 1.24' },
+                        { name: 'Leptos 0.7', lang: 'Rust WASM' },
+                        { name: 'Jaspr Web', lang: 'Dart 3.13' },
+                        { name: 'Vapor 4', lang: 'Swift 6.0' }
+                      ].map((item) => (
+                        <span
+                          key={item.name}
+                          className="px-2.5 py-1 rounded-lg bg-black/50 border border-white/10 text-xs font-mono text-neutral-300 flex items-center gap-1.5"
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400/80" />
+                          <span className="text-white font-medium">{item.name}</span>
+                          <span className="text-[10px] text-neutral-500">({item.lang})</span>
+                        </span>
+                      ))}
                     </div>
                   </div>
-                  <div className="space-y-2 pt-2 border-t border-white/10">
-                    <button
-                      type="button"
-                      onClick={() => switchStack("nextjs")}
-                      className="w-full py-2 px-3 rounded-xl bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 font-semibold text-xs shadow-sm flex items-center justify-center gap-1.5"
+
+                  {/* CTA Button to Lab */}
+                  <div className="flex flex-col sm:flex-row lg:flex-col items-start lg:items-end justify-center gap-3 pt-2 lg:pt-0 shrink-0">
+                    <a
+                      href="/lab"
+                      className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-bold text-sm shadow-xl shadow-cyan-500/20 transition-all hover:scale-[1.02]"
                     >
-                      <Sparkles className="w-3.5 h-3.5" />
-                      <span>Viewing Active Next.js</span>
-                    </button>
-                    <div className="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
-                      <a
-                        href="https://github.com/reginaldalfret/portfolio-website"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 hover:text-white transition-colors"
-                      >
-                        <Github className="w-3.5 h-3.5" />
-                        <span>Source Code</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Nuxt 3 */}
-                <div className="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border border-white/10 hover:border-emerald-500/30 transition-all flex flex-col justify-between space-y-3">
-                  <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center gap-2">
-                        <div className="w-7 h-7 rounded-lg bg-emerald-950/60 border border-emerald-500/30 flex items-center justify-center font-bold text-xs text-emerald-400">
-                          ▲
-                        </div>
-                        <span className="font-bold text-sm text-white">Nuxt 3</span>
-                      </div>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                        VUE 3
-                      </span>
-                    </div>
-                    <p className="text-xs text-neutral-400 mb-2">
-                      Vue 3 · Nitro Engine · Vite · TypeScript · Composition API.
-                    </p>
-                    <div className="text-[11px] font-mono text-neutral-400">
-                      Live Route: <a href="/stacks/nuxt" className="text-emerald-400 hover:underline">/stacks/nuxt</a>
-                    </div>
-                  </div>
-                  <div className="space-y-2 pt-2 border-t border-white/10">
-                    <button
-                      type="button"
-                      onClick={() => switchStack("nuxt")}
-                      className="w-full py-2 px-3 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 font-semibold text-xs border border-emerald-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
-                    >
-                      <Sparkles className="w-3.5 h-3.5" />
-                      <span>Switch to Nuxt 3 Website</span>
-                    </button>
-                    <div className="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
-                      <a
-                        href="/stacks/nuxt"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 hover:text-emerald-400 transition-colors"
-                      >
-                        <span>Direct Link</span>
-                        <ExternalLink className="w-3 h-3" />
-                      </a>
-                      <a
-                        href="https://github.com/reginaldalfret/portfolio-nuxt"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 hover:text-white transition-colors"
-                      >
-                        <Github className="w-3.5 h-3.5" />
-                        <span>Source Code</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Django */}
-                <div className="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border border-white/10 hover:border-amber-500/30 transition-all flex flex-col justify-between space-y-3">
-                  <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center gap-2">
-                        <div className="w-7 h-7 rounded-lg bg-emerald-950/60 border border-emerald-600/30 flex items-center justify-center font-bold text-xs text-emerald-300">
-                          dj
-                        </div>
-                        <span className="font-bold text-sm text-white">Django 6</span>
-                      </div>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
-                        PYTHON 3.13
-                      </span>
-                    </div>
-                    <p className="text-xs text-neutral-400 mb-2">
-                      Python 3.13 · Django SSR Templates · Tailwind CSS · Static Engine.
-                    </p>
-                    <div className="text-[11px] font-mono text-neutral-400">
-                      Live Route: <a href="/stacks/django" className="text-amber-400 hover:underline">/stacks/django</a>
-                    </div>
-                  </div>
-                  <div className="space-y-2 pt-2 border-t border-white/10">
-                    <button
-                      type="button"
-                      onClick={() => switchStack("django")}
-                      className="w-full py-2 px-3 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-semibold text-xs border border-amber-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
-                    >
-                      <Sparkles className="w-3.5 h-3.5" />
-                      <span>Switch to Django Website</span>
-                    </button>
-                    <div className="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
-                      <a
-                        href="/stacks/django"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 hover:text-amber-400 transition-colors"
-                      >
-                        <span>Direct Link</span>
-                        <ExternalLink className="w-3 h-3" />
-                      </a>
-                      <a
-                        href="https://github.com/reginaldalfret/portfolio-django"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 hover:text-white transition-colors"
-                      >
-                        <Github className="w-3.5 h-3.5" />
-                        <span>Source Code</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Spring Boot */}
-                <div className="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border border-white/10 hover:border-lime-500/30 transition-all flex flex-col justify-between space-y-3">
-                  <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center gap-2">
-                        <div className="w-7 h-7 rounded-lg bg-lime-950/60 border border-lime-500/40 flex items-center justify-center font-bold text-xs text-lime-400">
-                          🍃
-                        </div>
-                        <span className="font-bold text-sm text-white">Spring Boot</span>
-                      </div>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-lime-500/10 text-lime-400 border border-lime-500/20">
-                        JAVA 21
-                      </span>
-                    </div>
-                    <p className="text-xs text-neutral-400 mb-2">
-                      Java 21 · Spring Boot 3.4 · Thymeleaf SSR · Embedded Tomcat · Maven.
-                    </p>
-                    <div className="text-[11px] font-mono text-neutral-400">
-                      Live Route: <a href="/stacks/springboot" className="text-lime-400 hover:underline">/stacks/springboot</a>
-                    </div>
-                  </div>
-                  <div className="space-y-2 pt-2 border-t border-white/10">
-                    <button
-                      type="button"
-                      onClick={() => switchStack("springboot")}
-                      className="w-full py-2 px-3 rounded-xl bg-lime-500/20 hover:bg-lime-500/30 text-lime-300 font-semibold text-xs border border-lime-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
-                    >
-                      <Sparkles className="w-3.5 h-3.5" />
-                      <span>Switch to Spring Boot Website</span>
-                    </button>
-                    <div className="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
-                      <a
-                        href="/stacks/springboot"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 hover:text-lime-400 transition-colors"
-                      >
-                        <span>Direct Link</span>
-                        <ExternalLink className="w-3 h-3" />
-                      </a>
-                      <a
-                        href="https://github.com/reginaldalfret/portfolio-springboot"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 hover:text-white transition-colors"
-                      >
-                        <Github className="w-3.5 h-3.5" />
-                        <span>Source Code</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Laravel */}
-                <div className="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border border-white/10 hover:border-red-500/30 transition-all flex flex-col justify-between space-y-3">
-                  <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center gap-2">
-                        <div className="w-7 h-7 rounded-lg bg-red-950/60 border border-red-500/40 flex items-center justify-center font-bold text-xs text-red-400">
-                          ▲
-                        </div>
-                        <span className="font-bold text-sm text-white">Laravel 11/12</span>
-                      </div>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-red-500/10 text-red-400 border border-red-500/20">
-                        PHP 8.4
-                      </span>
-                    </div>
-                    <p className="text-xs text-neutral-400 mb-2">
-                      PHP 8.4 · Laravel MVC · Blade Templates · Tailwind CSS · Artisan.
-                    </p>
-                    <div className="text-[11px] font-mono text-neutral-400">
-                      Live Route: <a href="/stacks/laravel" className="text-red-400 hover:underline">/stacks/laravel</a>
-                    </div>
-                  </div>
-                  <div className="space-y-2 pt-2 border-t border-white/10">
-                    <button
-                      type="button"
-                      onClick={() => switchStack("laravel")}
-                      className="w-full py-2 px-3 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-red-300 font-semibold text-xs border border-red-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
-                    >
-                      <Sparkles className="w-3.5 h-3.5" />
-                      <span>Switch to Laravel Website</span>
-                    </button>
-
-
-                    <div className="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
-                      <a
-                        href="/stacks/laravel"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 hover:text-red-400 transition-colors"
-                      >
-                        <span>Direct Link</span>
-                        <ExternalLink className="w-3 h-3" />
-                      </a>
-                      <a
-                        href="https://github.com/reginaldalfret/portfolio-laravel"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 hover:text-white transition-colors"
-                      >
-                        <Github className="w-3.5 h-3.5" />
-                        <span>Source Code</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Ruby on Rails */}
-                <div className="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border border-white/10 hover:border-rose-500/30 transition-all flex flex-col justify-between space-y-3">
-                  <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center gap-2">
-                        <div className="w-7 h-7 rounded-lg bg-rose-950/60 border border-rose-500/40 flex items-center justify-center font-bold text-xs text-rose-400">
-                          💎
-                        </div>
-                        <span className="font-bold text-sm text-white">Rails 8</span>
-                      </div>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-rose-500/10 text-rose-400 border border-rose-500/20">
-                        Ruby 3.4
-                      </span>
-                    </div>
-                    <p className="text-xs text-neutral-400 mb-2">
-                      Ruby 3.4 · Rails 8 · ActionView ERB · Tailwind CSS · Puma.
-                    </p>
-                    <div className="text-[11px] font-mono text-neutral-400">
-                      Live Route: <a href="/stacks/rails" className="text-rose-400 hover:underline">/stacks/rails</a>
-                    </div>
-                  </div>
-                  <div className="space-y-2 pt-2 border-t border-white/10">
-                    <button
-                      type="button"
-                      onClick={() => switchStack("rails")}
-                      className="w-full py-2 px-3 rounded-xl bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 font-semibold text-xs border border-rose-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
-                    >
-                      <Sparkles className="w-3.5 h-3.5" />
-                      <span>Switch to Rails Website</span>
-                    </button>
-                    <div className="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
-                      <a
-                        href="/stacks/rails"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 hover:text-rose-400 transition-colors"
-                      >
-                        <span>Direct Link</span>
-                        <ExternalLink className="w-3 h-3" />
-                      </a>
-                      <a
-                        href="https://github.com/reginaldalfret/portfolio-rails"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 hover:text-white transition-colors"
-                      >
-                        <Github className="w-3.5 h-3.5" />
-                        <span>Source Code</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Angular */}
-                <div className="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border border-white/10 hover:border-red-500/30 transition-all flex flex-col justify-between space-y-3">
-                  <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center gap-2">
-                        <div className="w-7 h-7 rounded-lg bg-red-950/60 border border-red-500/40 flex items-center justify-center font-bold text-xs text-red-400">
-                          A
-                        </div>
-                        <span className="font-bold text-sm text-white">Angular</span>
-                      </div>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-red-500/10 text-red-400 border border-red-500/20">
-                        TS 6.0
-                      </span>
-                    </div>
-                    <p className="text-xs text-neutral-400 mb-2">
-                      Angular 19/22 · Signals · Standalone Components · Tailwind CSS.
-                    </p>
-                    <div className="text-[11px] font-mono text-neutral-400">
-                      Live Route: <a href="/stacks/angular" className="text-red-400 hover:underline">/stacks/angular</a>
-                    </div>
-                  </div>
-                  <div className="space-y-2 pt-2 border-t border-white/10">
-                    <button
-                      type="button"
-                      onClick={() => switchStack("angular")}
-                      className="w-full py-2 px-3 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-red-300 font-semibold text-xs border border-red-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
-                    >
-                      <Sparkles className="w-3.5 h-3.5" />
-                      <span>Switch to Angular Website</span>
-                    </button>
-                    <div className="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
-                      <a
-                        href="/stacks/angular"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 hover:text-red-400 transition-colors"
-                      >
-                        <span>Direct Link</span>
-                        <ExternalLink className="w-3 h-3" />
-                      </a>
-                      <a
-                        href="https://github.com/reginaldalfret/portfolio-angular"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 hover:text-white transition-colors"
-                      >
-                        <Github className="w-3.5 h-3.5" />
-                        <span>Source Code</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Blazor WASM */}
-                <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all flex flex-col justify-between space-y-3">
-                  <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center gap-2">
-                        <div className="w-7 h-7 rounded-lg bg-purple-950/60 border border-purple-500/40 flex items-center justify-center font-bold text-xs text-purple-300">
-                          B
-                        </div>
-                        <span className="font-bold text-sm text-white">Blazor</span>
-                      </div>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">
-                        .NET 8
-                      </span>
-                    </div>
-                    <p className="text-xs text-neutral-400 mb-2">
-                      .NET 8 · C# Client-Side WASM · Standalone SPA · Tailwind CSS.
-                    </p>
-                    <div className="text-[11px] font-mono text-neutral-400">
-                      Live Route: <a href="/stacks/blazor" className="text-purple-400 hover:underline">/stacks/blazor</a>
-                    </div>
-                  </div>
-                  <div className="space-y-2 pt-2 border-t border-white/10">
-                    <button
-                      type="button"
-                      onClick={() => switchStack("blazor")}
-                      className="w-full py-2 px-3 rounded-xl bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 font-semibold text-xs border border-purple-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
-                    >
-                      <Sparkles className="w-3.5 h-3.5" />
-                      <span>Switch to Blazor Website</span>
-                    </button>
-                    <div className="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
-                      <a
-                        href="/stacks/blazor"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 hover:text-purple-400 transition-colors"
-                      >
-                        <span>Direct Link</span>
-                        <ExternalLink className="w-3 h-3" />
-                      </a>
-                      <a
-                        href="https://github.com/reginaldalfret/portfolio-blazor"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 hover:text-white transition-colors"
-                      >
-                        <Github className="w-3.5 h-3.5" />
-                        <span>Source Code</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Go Buffalo */}
-                <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between space-y-3">
-                  <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center gap-2">
-                        <div className="w-7 h-7 rounded-lg bg-cyan-950/60 border border-cyan-500/40 flex items-center justify-center font-bold text-xs text-cyan-300">
-                          🦬
-                        </div>
-                        <span className="font-bold text-sm text-white">Go Buffalo</span>
-                      </div>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
-                        GO 1.27
-                      </span>
-                    </div>
-                    <p className="text-xs text-neutral-400 mb-2">
-                      Go 1.27 · Buffalo Web Framework · Plush SSR · Gorilla Mux · Tailwind CSS.
-                    </p>
-                    <div className="text-[11px] font-mono text-neutral-400">
-                      Live Route: <a href="/stacks/buffalo" className="text-cyan-400 hover:underline">/stacks/buffalo</a>
-                    </div>
-                  </div>
-                  <div className="space-y-2 pt-2 border-t border-white/10">
-                    <button
-                      type="button"
-                      onClick={() => switchStack("buffalo")}
-                      className="w-full py-2 px-3 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 font-semibold text-xs border border-cyan-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
-                    >
-                      <Sparkles className="w-3.5 h-3.5" />
-                      <span>Switch to Buffalo Website</span>
-                    </button>
-                    <div className="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
-                      <a
-                        href="/stacks/buffalo"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 hover:text-cyan-400 transition-colors"
-                      >
-                        <span>Direct Link</span>
-                        <ExternalLink className="w-3 h-3" />
-                      </a>
-                      <a
-                        href="https://github.com/reginaldalfret/portfolio-buffalo"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 hover:text-white transition-colors"
-                      >
-                        <Github className="w-3.5 h-3.5" />
-                        <span>Source Code</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Leptos (Rust WebAssembly) */}
-                <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-orange-500/40 transition-all flex flex-col justify-between space-y-3">
-                  <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center gap-2">
-                        <div className="w-7 h-7 rounded-lg bg-orange-950/80 border border-orange-500/50 flex items-center justify-center font-bold text-xs text-orange-400">
-                          🦀
-                        </div>
-                        <span className="font-bold text-sm text-white">Leptos (Rust WASM)</span>
-                      </div>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20">
-                        Rust 1.99.1
-                      </span>
-                    </div>
-                    <p className="text-xs text-neutral-400 mb-2">
-                      Rust WebAssembly · Leptos 0.7 · Client-Side Rendering · Trunk · Tailwind CSS.
-                    </p>
-                    <div className="text-[11px] font-mono text-neutral-400">
-                      Live Route: <a href="/stacks/leptos" className="text-orange-400 hover:underline">/stacks/leptos</a>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <button
-                      type="button"
-                      onClick={() => switchStack("leptos")}
-                      className="w-full py-2 px-3 rounded-xl bg-orange-500/20 hover:bg-orange-500/30 text-orange-300 font-semibold text-xs border border-orange-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
-                    >
-                      <Sparkles className="w-3.5 h-3.5" />
-                      <span>Switch to Leptos Website</span>
-                    </button>
-                    <div className="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
-                      <a
-                        href="/stacks/leptos"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 hover:text-orange-400 transition-colors"
-                      >
-                        <span>Direct Link</span>
-                        <ExternalLink className="w-3 h-3" />
-                      </a>
-                      <a
-                        href="https://github.com/reginaldalfret/portfolio-leptos"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 hover:text-white transition-colors"
-                      >
-                        <Github className="w-3.5 h-3.5" />
-                        <span>Source Code</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Jaspr (Dart SSR & Hydration) */}
-                <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-emerald-500/40 transition-all flex flex-col justify-between space-y-3">
-                  <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center gap-2">
-                        <div className="w-7 h-7 rounded-lg bg-emerald-950/80 border border-emerald-500/50 flex items-center justify-center font-bold text-xs text-emerald-400">
-                          🎯
-                        </div>
-                        <span className="font-bold text-sm text-white">Jaspr (Dart SSR)</span>
-                      </div>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                        Dart 3.13
-                      </span>
-                    </div>
-                    <p className="text-xs text-neutral-400 mb-2">
-                      Dart 3.13 · Jaspr 0.23 · Server-Side Rendering · Client Hydration · Tailwind CSS.
-                    </p>
-                    <div className="text-[11px] font-mono text-neutral-400">
-                      Live Route: <a href="/stacks/jaspr" className="text-emerald-400 hover:underline">/stacks/jaspr</a>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <button
-                      type="button"
-                      onClick={() => switchStack("jaspr")}
-                      className="w-full py-2 px-3 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 font-semibold text-xs border border-emerald-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
-                    >
-                      <Sparkles className="w-3.5 h-3.5" />
-                      <span>Switch to Jaspr Website</span>
-                    </button>
-                    <div className="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
-                      <a
-                        href="/stacks/jaspr"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 hover:text-emerald-400 transition-colors"
-                      >
-                        <span>Direct Link</span>
-                        <ExternalLink className="w-3 h-3" />
-                      </a>
-                      <a
-                        href="https://github.com/reginaldalfret/portfolio-jaspr"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 hover:text-white transition-colors"
-                      >
-                        <Github className="w-3.5 h-3.5" />
-                        <span>Source Code</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Vapor */}
-                <div className="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border border-white/10 hover:border-sky-500/30 transition-all flex flex-col justify-between space-y-3">
-                  <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center gap-2">
-                        <div className="w-7 h-7 rounded-lg bg-sky-950/60 border border-sky-500/40 flex items-center justify-center font-bold text-xs text-sky-400">
-                          💧
-                        </div>
-                        <span className="font-bold text-sm text-white">Vapor 4 (Swift)</span>
-                      </div>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20">
-                        SWIFT 5.10
-                      </span>
-                    </div>
-                    <p className="text-xs text-neutral-400 mb-2">
-                      Server-Side Swift · Vapor 4 · Non-blocking Async I/O (SwiftNIO) · Leaf · Tailwind CSS.
-                    </p>
-                    <div className="text-[11px] font-mono text-neutral-400">
-                      Live: <a href="/stacks/vapor" className="text-sky-400 hover:underline">/stacks/vapor</a>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <button
-                      type="button"
-                      onClick={() => switchStack("vapor")}
-                      className="w-full py-2 px-3 rounded-xl bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 font-semibold text-xs border border-sky-500/40 transition-all flex items-center justify-center gap-1.5 shadow-sm"
-                    >
-                      <Sparkles className="w-3.5 h-3.5" />
-                      <span>Switch to Vapor Website</span>
-                    </button>
-                    <div className="flex items-center justify-between text-xs font-mono text-neutral-400 pt-1">
-                      <a
-                        href="/stacks/vapor"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 hover:text-sky-400 transition-colors"
-                      >
-                        <span>Direct Link</span>
-                        <ExternalLink className="w-3 h-3" />
-                      </a>
-                      <a
-                        href="https://github.com/reginaldalfret/portfolio-vapor"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 hover:text-white transition-colors"
-                      >
-                        <Github className="w-3.5 h-3.5" />
-                        <span>Source Code</span>
-                      </a>
-                    </div>
+                      <span>Explore the Engineering Lab</span>
+                      <ArrowRight className="w-4 h-4 text-black" />
+                    </a>
+                    <span className="text-[11px] font-mono text-neutral-400">
+                      Previews · Benchmarks · Architecture Diagrams
+                    </span>
                   </div>
                 </div>
               </div>
-            </div>
             </section>
 
             {/* 5. Footer */}
             <footer className="pt-6 text-center text-xs text-neutral-500 space-y-2 font-mono">
               <div className="text-neutral-400">
-                BETTER TECHNOLOGY • HAPPIER PEOPLE
+                BETTER TECHNOLOGY • HAPPIER PEOPLE •{" "}
+                <Link href="/lab" className="text-cyan-400 hover:underline">
+                  12 STACKS. 1 PRODUCT. LAB
+                </Link>
               </div>
               <div>
                 Designed &amp; built by Reginald Alfret V • Deployed on Vercel •{" "}
@@ -1870,168 +1288,6 @@ export function ResumePortfolio() {
         )}
       </div>
 
-      {/* Floating Bottom Stack Dock */}
-      <div className="floating-stack-dock fixed bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-50 no-print w-[96vw] sm:w-auto max-w-[96vw]">
-        <div className="backdrop-blur-xl bg-black/90 border border-white/20 rounded-full py-1.5 px-3 shadow-2xl flex items-center gap-1.5 sm:gap-2 text-xs overflow-x-auto no-scrollbar scroll-smooth">
-          <span className="text-[11px] font-mono text-neutral-400 hidden sm:inline">Stack:</span>
-          
-          <button
-            type="button"
-            onClick={() => switchStack("nextjs")}
-            className={`shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full font-semibold transition-all ${
-              activeStack === "nextjs"
-                ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 shadow-sm"
-                : "text-neutral-400 hover:text-white hover:bg-white/10"
-            }`}
-          >
-            {activeStack === "nextjs" && <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />}
-            <span>Next.js</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => switchStack("nuxt")}
-            className={`shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full font-semibold transition-all ${
-              activeStack === "nuxt"
-                ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-sm"
-                : "text-neutral-400 hover:text-white hover:bg-white/10"
-            }`}
-          >
-            {activeStack === "nuxt" && <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />}
-            <span>Nuxt 3</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => switchStack("django")}
-            className={`shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full font-semibold transition-all ${
-              activeStack === "django"
-                ? "bg-amber-500/20 text-amber-300 border border-amber-500/40 shadow-sm"
-                : "text-neutral-400 hover:text-white hover:bg-white/10"
-            }`}
-          >
-            {activeStack === "django" && <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />}
-            <span>Django</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => switchStack("springboot")}
-            className={`shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full font-semibold transition-all ${
-              activeStack === "springboot"
-                ? "bg-lime-500/20 text-lime-300 border border-lime-500/40 shadow-sm"
-                : "text-neutral-400 hover:text-white hover:bg-white/10"
-            }`}
-          >
-            {activeStack === "springboot" && <span className="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse" />}
-            <span>Spring Boot</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => switchStack("laravel")}
-            className={`shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full font-semibold transition-all ${
-              activeStack === "laravel"
-                ? "bg-red-500/20 text-red-300 border border-red-500/40 shadow-sm"
-                : "text-neutral-400 hover:text-white hover:bg-white/10"
-            }`}
-          >
-            {activeStack === "laravel" && <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse" />}
-            <span>Laravel</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => switchStack("rails")}
-            className={`shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full font-semibold transition-all ${
-              activeStack === "rails"
-                ? "bg-rose-500/20 text-rose-300 border border-rose-500/40 shadow-sm"
-                : "text-neutral-400 hover:text-white hover:bg-white/10"
-            }`}
-          >
-            {activeStack === "rails" && <span className="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse" />}
-            <span>Rails</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => switchStack("angular")}
-            className={`shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full font-semibold transition-all ${
-              activeStack === "angular"
-                ? "bg-red-500/20 text-red-300 border border-red-500/40 shadow-sm"
-                : "text-neutral-400 hover:text-white hover:bg-white/10"
-            }`}
-          >
-            {activeStack === "angular" && <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse" />}
-            <span>Angular</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => switchStack("blazor")}
-            className={`shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full font-semibold transition-all ${
-              activeStack === "blazor"
-                ? "bg-purple-600/20 text-purple-300 border border-purple-500/40 shadow-sm"
-                : "text-neutral-400 hover:text-white hover:bg-white/10"
-            }`}
-          >
-            {activeStack === "blazor" && <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />}
-            <span>Blazor</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => switchStack("buffalo")}
-            className={`shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full font-semibold transition-all ${
-              activeStack === "buffalo"
-                ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 shadow-sm"
-                : "text-neutral-400 hover:text-white hover:bg-white/10"
-            }`}
-          >
-            {activeStack === "buffalo" && <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />}
-            <span>Buffalo</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => switchStack("leptos")}
-            className={`shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full font-semibold transition-all ${
-              activeStack === "leptos"
-                ? "bg-orange-500/20 text-orange-300 border border-orange-500/40 shadow-sm"
-                : "text-neutral-400 hover:text-white hover:bg-white/10"
-            }`}
-          >
-            {activeStack === "leptos" && <span className="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse" />}
-            <span>Leptos</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => switchStack("jaspr")}
-            className={`shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full font-semibold transition-all ${
-              activeStack === "jaspr"
-                ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-sm"
-                : "text-neutral-400 hover:text-white hover:bg-white/10"
-            }`}
-          >
-            {activeStack === "jaspr" && <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />}
-            <span>Jaspr</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => switchStack("vapor")}
-            className={`shrink-0 whitespace-nowrap inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full font-semibold transition-all ${
-              activeStack === "vapor"
-                ? "bg-sky-500/20 text-sky-300 border border-sky-500/40 shadow-sm"
-                : "text-neutral-400 hover:text-white hover:bg-white/10"
-            }`}
-          >
-            {activeStack === "vapor" && <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />}
-            <span>Vapor</span>
-          </button>
-        </div>
       </div>
-    </div>
   );
 }
