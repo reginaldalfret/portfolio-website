@@ -1540,7 +1540,7 @@
           </div>
         </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5">
 
           <!-- Next.js 14 Card -->
           <div class="p-4 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] border-white/10 hover:border-cyan-500/30 border transition-all flex flex-col justify-between space-y-3">
@@ -2149,6 +2149,34 @@
       </footer>
     </div>
   </div>
+
+  
+  <script>
+    if (window.self !== window.top) {
+      document.documentElement.classList.add('is-embedded');
+    }
+
+    function setViewMode(mode) {
+      const interactiveView = document.getElementById('interactive-view');
+      const pdfView = document.getElementById('pdf-view');
+      const btnInteractive = document.getElementById('btn-interactive');
+      const btnPdf = document.getElementById('btn-pdf');
+
+      if (mode === 'pdf') {
+        interactiveView.classList.add('hidden');
+        pdfView.classList.remove('hidden');
+
+        btnPdf.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium transition-all bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 shadow-sm";
+        btnInteractive.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium transition-all text-neutral-400 hover:text-white";
+      } else {
+        pdfView.classList.add('hidden');
+        interactiveView.classList.remove('hidden');
+
+        btnInteractive.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium transition-all bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 shadow-sm";
+        btnPdf.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium transition-all text-neutral-400 hover:text-white";
+      }
+    }
+  </script>
 
   
   <script>

@@ -5,7 +5,7 @@ const path = require('path');
 const djangoFile = path.resolve(__dirname, '../public/stacks/django/index.html');
 let djangoRaw = fs.readFileSync(djangoFile, 'utf8');
 
-// Find the footer end `</div>\n  </div>\n\n  <!-- Floating Bottom Stack Dock`
+// Find the footer end `<!-- Floating Bottom Stack Dock`
 const dockStartMarker = '<!-- Floating Bottom Stack Dock';
 const dockPos = djangoRaw.indexOf(dockStartMarker);
 if (dockPos === -1) {
@@ -191,7 +191,7 @@ if (gridStartPos === -1) {
   throw new Error('Could not find gridStartMarker in masterBody');
 }
 
-// Find grid end `</div>\n      </section>`
+// Find grid end `</section>`
 const gridEndMarker = '</section>';
 const gridEndPos = masterBody.indexOf(gridEndMarker, gridStartPos);
 if (gridEndPos === -1) {
@@ -214,13 +214,12 @@ function generateHtml(stackId, title, stackBadge, extraHead = '') {
   );
 
   // Replace Top Command Bar header
-  // Currently: `RESUME PORTFOLIO (DJANGO)` or `RESUME PORTFOLIO`
   pageBefore = pageBefore.replace(
     /<span class="text-\[10px\] font-mono text-neutral-400 font-bold tracking-wider">RESUME PORTFOLIO[^<]*<\/span>/,
     `<span class="text-[10px] font-mono text-neutral-400 font-bold tracking-wider">RESUME PORTFOLIO (${stackBadge})</span>`
   );
 
-  // If extraHead specified (like leptos trunk scripts), inject before </head>
+  // If extraHead specified, inject before </head>
   if (extraHead) {
     pageBefore = pageBefore.replace('</head>', `${extraHead}\n</head>`);
   }
@@ -228,35 +227,28 @@ function generateHtml(stackId, title, stackBadge, extraHead = '') {
   return `${pageBefore}${gridHtml}\n      ${afterGrid}\n\n  ${dockHtml}\n`;
 }
 
-// Generate for Django
-const djangoClean = generateHtml(
-  'django',
-  'Reginald Alfret V | Open-Source Contributor · AI & DS Engineer (Django 6)',
-  'DJANGO'
-);
-fs.writeFileSync(path.resolve(__dirname, '../public/stacks/django/index.html'), djangoClean, 'utf8');
-console.log('Django canonical generated, size:', djangoClean.length);
+// STACK DEFINITIONS TO GENERATE
+const TARGETS = [
+  { id: 'nuxt', title: 'Reginald Alfret V | Open-Source Contributor · AI & DS Engineer (Nuxt 3 & Vue 3)', badge: 'NUXT 3' },
+  { id: 'django', title: 'Reginald Alfret V | Open-Source Contributor · AI & DS Engineer (Django 6 & Python 3.13)', badge: 'DJANGO' },
+  { id: 'springboot', title: 'Reginald Alfret V | Open-Source Contributor · AI & DS Engineer (Spring Boot 3 & Java 21)', badge: 'SPRING BOOT' },
+  { id: 'laravel', title: 'Reginald Alfret V | Open-Source Contributor · AI & DS Engineer (Laravel 11/12 & PHP 8.4)', badge: 'LARAVEL' },
+  { id: 'rails', title: 'Reginald Alfret V | Open-Source Contributor · AI & DS Engineer (Ruby on Rails 8 & Ruby 3.4)', badge: 'RAILS 8' },
+  { id: 'angular', title: 'Reginald Alfret V | Open-Source Contributor · AI & DS Engineer (Angular 19/22 & TypeScript 6.0)', badge: 'ANGULAR' },
+  { id: 'blazor', title: 'Reginald Alfret V | Open-Source Contributor · AI & DS Engineer (Blazor .NET 8 WASM & C#)', badge: 'BLAZOR .NET 8 WASM' },
+  { id: 'buffalo', title: 'Reginald Alfret V | Open-Source Contributor · AI & DS Engineer (Go Buffalo & Go 1.27)', badge: 'GO BUFFALO' },
+  { id: 'leptos', title: 'Reginald Alfret V | Open-Source Contributor · AI & DS Engineer (Rust Leptos 0.7 & WASM)', badge: 'LEPTOS RUST WASM', extraHead: `<script type="module">console.log('[Leptos] Rust WASM engine initialized');</script>` },
+  { id: 'jaspr', title: 'Reginald Alfret V | Open-Source Contributor · AI & DS Engineer (Jaspr & Dart Web 3.13)', badge: 'JASPR DART' },
+  { id: 'vapor', title: 'Reginald Alfret V | Open-Source Contributor · AI & DS Engineer (Vapor 4 & Swift 6.0)', badge: 'VAPOR 4 SWIFT' },
+];
 
-// Generate for Buffalo
-const buffaloClean = generateHtml(
-  'buffalo',
-  'Reginald Alfret V | Open-Source Contributor · AI & DS Engineer (Go Buffalo & Go 1.27)',
-  'GO BUFFALO'
-);
-fs.writeFileSync(path.resolve(__dirname, '../public/stacks/buffalo/index.html'), buffaloClean, 'utf8');
-console.log('Buffalo canonical generated, size:', buffaloClean.length);
+console.log('=== GENERATING CANONICAL 1:1 REPLICAS FOR ALL 11 STACKS ===');
 
-// Generate for Leptos
-const leptosExtraHead = `
-  <script type="module">
-    // Leptos WASM background loader & hydration probe
-    console.log('[Leptos] Rust WASM engine initialized');
-  </script>`;
-const leptosClean = generateHtml(
-  'leptos',
-  'Reginald Alfret V | Open-Source Contributor · AI & DS Engineer (Rust Leptos 0.7 & WASM)',
-  'LEPTOS RUST WASM',
-  leptosExtraHead
-);
-fs.writeFileSync(path.resolve(__dirname, '../public/stacks/leptos/index.html'), leptosClean, 'utf8');
-console.log('Leptos canonical generated, size:', leptosClean.length);
+for (const target of TARGETS) {
+  const html = generateHtml(target.id, target.title, target.badge, target.extraHead || '');
+  const outPath = path.resolve(__dirname, `../public/stacks/${target.id}/index.html`);
+  fs.writeFileSync(outPath, html, 'utf8');
+  console.log(`[PASS] ${target.id.toUpperCase()}: Generated 1:1 canonical portfolio (${html.length} bytes) -> ${outPath}`);
+}
+
+console.log('\nAll 11 stacks successfully synchronized with canonical Next.js specification!\n');
