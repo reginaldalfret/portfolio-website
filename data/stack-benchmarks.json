@@ -1,65 +1,223 @@
 [
   {
+    "id": "nextjs",
+    "name": "Next.js 14",
+    "language": "React / TS",
+    "runtime": "Vercel Edge RSC (Node / Edge)",
+    "architecture": "React 18 RSC / Edge",
+    "renderType": "Edge SSR",
+    "classification": "VERIFIED (NATIVE PRODUCTION)",
+    "lighthouseScore": 89,
+    "fcpMs": 624,
+    "lcpMs": 624,
+    "cls": 0,
+    "ttfbMs": 63,
+    "bundleTransferKb": 1018.6,
+    "cssTransferKb": 68.1,
+    "buildTimeSec": 3.5,
+    "repo": "https://github.com/reginaldalfret/portfolio-website",
+    "liveRoute": "/",
+    "color": "cyan",
+    "status": "Verified Native",
+    "features": [
+      "Classification: VERIFIED (NATIVE PRODUCTION)",
+      "Audited Cold FCP: 624ms (P95: 684ms, σ: 66.61ms)",
+      "Audited Cold TTFB: 63ms (Edge CDN delivery)",
+      "Total Transferred: 1018.6KB (13 requests)"
+    ],
+    "verifiedStats": {
+      "trials": 10,
+      "ttfb": {
+        "median": 63,
+        "mean": 60.2,
+        "min": 47,
+        "max": 72,
+        "stdDev": 8.07,
+        "p75": 66.75,
+        "p95": 69.75
+      },
+      "fcp": {
+        "median": 624,
+        "mean": 608.89,
+        "min": 480,
+        "max": 692,
+        "stdDev": 66.61,
+        "p75": 668,
+        "p95": 684
+      },
+      "lcp": {
+        "median": 624,
+        "mean": 608.89,
+        "min": 480,
+        "max": 692,
+        "stdDev": 66.61,
+        "p75": 668,
+        "p95": 684
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "syntheticInteractionLatency": {
+        "median": 72,
+        "mean": 75.5,
+        "min": 59,
+        "max": 131,
+        "stdDev": 19.11,
+        "p75": 73,
+        "p95": 105.35
+      },
+      "payload": {
+        "median": 1018.6,
+        "mean": 1018.6,
+        "min": 1018.6,
+        "max": 1018.6,
+        "stdDev": 0,
+        "p75": 1018.6,
+        "p95": 1018.6
+      },
+      "breakdown": {
+        "html": 180.1,
+        "js": 770.4,
+        "css": 68.1,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 0
+      },
+      "warmCache": {
+        "ttfbMedian": 50,
+        "fcpMedian": 250,
+        "lcpMedian": 250
+      },
+      "mobileCold": {
+        "ttfbMedian": 55.5,
+        "fcpMedian": 564,
+        "lcpMedian": 564
+      },
+      "lighthouseOfficial": {
+        "score": 89,
+        "fcpMs": 1445,
+        "lcpMs": 1445,
+        "tbtMs": 432,
+        "speedIndexMs": 1662,
+        "cls": 0
+      }
+    }
+  },
+  {
     "id": "buffalo",
     "name": "Go Buffalo",
     "language": "Go",
-    "runtime": "Native SSR",
-    "architecture": "Native SSR",
+    "runtime": "Vercel Edge CDN (Static HTML Pre-Render)",
+    "architecture": "Go 1.27 / Buffalo SSR",
     "renderType": "Native SSR",
-    "lighthouseScore": 85,
-    "fcpMs": 944,
-    "lcpMs": 2077,
+    "classification": "NON-COMPARABLE (STATIC EMULATION)",
+    "lighthouseScore": 94,
+    "fcpMs": 908,
+    "lcpMs": 908,
     "cls": 0,
-    "ttfbMs": 58,
-    "bundleTransferKb": 612.3,
-    "cssTransferKb": 12,
-    "buildTimeSec": 3.2,
+    "ttfbMs": 49.5,
+    "bundleTransferKb": 613,
+    "cssTransferKb": 0,
+    "buildTimeSec": 3.5,
     "repo": "https://github.com/reginaldalfret/portfolio-buffalo",
     "liveRoute": "/stacks/buffalo",
     "color": "cyan",
-    "status": "Completed",
+    "status": "Audited Static Export",
     "features": [
-      "Measured FCP: 944ms (p75: 1104ms)",
-      "Measured TTFB: 58ms",
-      "Transferred Payload: 612.3KB (JS: 397.7KB, CSS: 0KB)"
+      "Classification: NON-COMPARABLE (STATIC EMULATION)",
+      "Audited Cold FCP: 908ms (P95: 1051.4ms, σ: 66.44ms)",
+      "Audited Cold TTFB: 49.5ms (Edge CDN delivery)",
+      "Total Transferred: 613KB (4 requests)"
     ],
     "verifiedStats": {
-      "trials": 5,
+      "trials": 10,
       "ttfb": {
-        "median": 58,
-        "mean": 58.6,
+        "median": 49.5,
+        "mean": 52.6,
         "min": 43,
-        "max": 71,
-        "stdDev": 9.89,
-        "p75": 67,
-        "p95": 70.2
+        "max": 75,
+        "stdDev": 9.9,
+        "p75": 53,
+        "p95": 71.4
       },
       "fcp": {
-        "median": 944,
-        "mean": 1052.8,
-        "min": 896,
-        "max": 1384,
-        "stdDev": 180.21,
-        "p75": 1104,
-        "p95": 1328
+        "median": 908,
+        "mean": 927.6,
+        "min": 848,
+        "max": 1064,
+        "stdDev": 66.44,
+        "p75": 924,
+        "p95": 1051.4
+      },
+      "lcp": {
+        "median": 908,
+        "mean": 927.6,
+        "min": 848,
+        "max": 1064,
+        "stdDev": 66.44,
+        "p75": 924,
+        "p95": 1051.4
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "syntheticInteractionLatency": {
+        "median": 70,
+        "mean": 66.3,
+        "min": 55,
+        "max": 72,
+        "stdDev": 6.15,
+        "p75": 70.75,
+        "p95": 72
       },
       "payload": {
-        "median": 612.3,
-        "mean": 612.3,
-        "min": 612.3,
-        "max": 612.3,
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
         "stdDev": 0,
-        "p75": 612.3,
-        "p95": 612.3
+        "p75": 613,
+        "p95": 613
       },
       "breakdown": {
-        "html": 119.6,
+        "html": 120.3,
         "js": 397.7,
         "css": 0,
         "images": 0,
         "fonts": 0,
         "wasm": 0,
         "other": 95
+      },
+      "warmCache": {
+        "ttfbMedian": 44.5,
+        "fcpMedian": 408,
+        "lcpMedian": 408
+      },
+      "mobileCold": {
+        "ttfbMedian": 51.5,
+        "fcpMedian": 1014,
+        "lcpMedian": 1014
+      },
+      "lighthouseOfficial": {
+        "score": 94,
+        "fcpMs": 2449,
+        "lcpMs": 2449,
+        "tbtMs": 0,
+        "speedIndexMs": 2449,
+        "cls": 0
       }
     }
   },
@@ -67,63 +225,110 @@
     "id": "vapor",
     "name": "Vapor 4",
     "language": "Swift",
-    "runtime": "Async SwiftNIO SSR",
-    "architecture": "Async SwiftNIO SSR",
-    "renderType": "Async SwiftNIO SSR",
-    "lighthouseScore": 85,
-    "fcpMs": 900,
-    "lcpMs": 1980,
+    "runtime": "Vercel Edge CDN (Static HTML Pre-Render)",
+    "architecture": "Swift 6.0 / SwiftNIO",
+    "renderType": "Native SSR",
+    "classification": "NON-COMPARABLE (STATIC EMULATION)",
+    "lighthouseScore": 94,
+    "fcpMs": 914,
+    "lcpMs": 914,
     "cls": 0,
-    "ttfbMs": 44,
-    "bundleTransferKb": 612.3,
-    "cssTransferKb": 12,
-    "buildTimeSec": 16.5,
+    "ttfbMs": 50.5,
+    "bundleTransferKb": 613,
+    "cssTransferKb": 0,
+    "buildTimeSec": 3.5,
     "repo": "https://github.com/reginaldalfret/portfolio-vapor",
     "liveRoute": "/stacks/vapor",
-    "color": "emerald",
-    "status": "Completed",
+    "color": "cyan",
+    "status": "Audited Static Export",
     "features": [
-      "Measured FCP: 900ms (p75: 924ms)",
-      "Measured TTFB: 44ms",
-      "Transferred Payload: 612.3KB (JS: 397.7KB, CSS: 0KB)"
+      "Classification: NON-COMPARABLE (STATIC EMULATION)",
+      "Audited Cold FCP: 914ms (P95: 1002.2ms, σ: 50.57ms)",
+      "Audited Cold TTFB: 50.5ms (Edge CDN delivery)",
+      "Total Transferred: 613KB (4 requests)"
     ],
     "verifiedStats": {
-      "trials": 5,
+      "trials": 10,
       "ttfb": {
-        "median": 44,
-        "mean": 46,
-        "min": 42,
-        "max": 52,
-        "stdDev": 3.58,
-        "p75": 48,
-        "p95": 51.2
+        "median": 50.5,
+        "mean": 57.9,
+        "min": 43,
+        "max": 134,
+        "stdDev": 25.57,
+        "p75": 52,
+        "p95": 98
       },
       "fcp": {
-        "median": 900,
-        "mean": 901.6,
-        "min": 876,
-        "max": 924,
-        "stdDev": 19.86,
-        "p75": 924,
-        "p95": 924
+        "median": 914,
+        "mean": 918.4,
+        "min": 864,
+        "max": 1040,
+        "stdDev": 50.57,
+        "p75": 939,
+        "p95": 1002.2
+      },
+      "lcp": {
+        "median": 914,
+        "mean": 918.4,
+        "min": 864,
+        "max": 1040,
+        "stdDev": 50.57,
+        "p75": 939,
+        "p95": 1002.2
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "syntheticInteractionLatency": {
+        "median": 68,
+        "mean": 65.9,
+        "min": 58,
+        "max": 72,
+        "stdDev": 5.89,
+        "p75": 71.75,
+        "p95": 72
       },
       "payload": {
-        "median": 612.3,
-        "mean": 612.3,
-        "min": 612.3,
-        "max": 612.3,
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
         "stdDev": 0,
-        "p75": 612.3,
-        "p95": 612.3
+        "p75": 613,
+        "p95": 613
       },
       "breakdown": {
-        "html": 119.6,
+        "html": 120.3,
         "js": 397.7,
         "css": 0,
         "images": 0,
         "fonts": 0,
         "wasm": 0,
         "other": 95
+      },
+      "warmCache": {
+        "ttfbMedian": 44,
+        "fcpMedian": 418,
+        "lcpMedian": 418
+      },
+      "mobileCold": {
+        "ttfbMedian": 54,
+        "fcpMedian": 918,
+        "lcpMedian": 918
+      },
+      "lighthouseOfficial": {
+        "score": 94,
+        "fcpMs": 2531,
+        "lcpMs": 2531,
+        "tbtMs": 0,
+        "speedIndexMs": 2531,
+        "cls": 0
       }
     }
   },
@@ -131,63 +336,110 @@
     "id": "django",
     "name": "Django 6",
     "language": "Python",
-    "runtime": "Pure MVT SSR",
-    "architecture": "Pure MVT SSR",
-    "renderType": "Pure MVT SSR",
-    "lighthouseScore": 85,
-    "fcpMs": 936,
-    "lcpMs": 2059,
+    "runtime": "Vercel Edge CDN (Static HTML Pre-Render)",
+    "architecture": "Python 3.13 / Django MVT",
+    "renderType": "Dynamic SSR",
+    "classification": "NON-COMPARABLE (STATIC EMULATION)",
+    "lighthouseScore": 94,
+    "fcpMs": 872,
+    "lcpMs": 872,
     "cls": 0,
-    "ttfbMs": 50,
-    "bundleTransferKb": 612.3,
-    "cssTransferKb": 12,
-    "buildTimeSec": 4.1,
+    "ttfbMs": 50.5,
+    "bundleTransferKb": 613,
+    "cssTransferKb": 0,
+    "buildTimeSec": 3.5,
     "repo": "https://github.com/reginaldalfret/portfolio-django",
     "liveRoute": "/stacks/django",
     "color": "amber",
-    "status": "Completed",
+    "status": "Audited Static Export",
     "features": [
-      "Measured FCP: 936ms (p75: 948ms)",
-      "Measured TTFB: 50ms",
-      "Transferred Payload: 612.3KB (JS: 397.7KB, CSS: 0KB)"
+      "Classification: NON-COMPARABLE (STATIC EMULATION)",
+      "Audited Cold FCP: 872ms (P95: 1028.4ms, σ: 75.45ms)",
+      "Audited Cold TTFB: 50.5ms (Edge CDN delivery)",
+      "Total Transferred: 613KB (4 requests)"
     ],
     "verifiedStats": {
-      "trials": 5,
+      "trials": 10,
       "ttfb": {
-        "median": 50,
-        "mean": 48.4,
-        "min": 43,
-        "max": 55,
-        "stdDev": 4.72,
-        "p75": 51,
-        "p95": 54.2
+        "median": 50.5,
+        "mean": 50.8,
+        "min": 46,
+        "max": 57,
+        "stdDev": 2.89,
+        "p75": 52,
+        "p95": 55.2
       },
       "fcp": {
-        "median": 936,
-        "mean": 929.6,
-        "min": 888,
-        "max": 956,
-        "stdDev": 24.08,
-        "p75": 948,
-        "p95": 954.4
+        "median": 872,
+        "mean": 896,
+        "min": 824,
+        "max": 1104,
+        "stdDev": 75.45,
+        "p75": 899,
+        "p95": 1028.4
+      },
+      "lcp": {
+        "median": 872,
+        "mean": 896,
+        "min": 824,
+        "max": 1104,
+        "stdDev": 75.45,
+        "p75": 899,
+        "p95": 1028.4
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "syntheticInteractionLatency": {
+        "median": 71,
+        "mean": 67.9,
+        "min": 54,
+        "max": 76,
+        "stdDev": 6.49,
+        "p75": 71,
+        "p95": 75.1
       },
       "payload": {
-        "median": 612.3,
-        "mean": 612.3,
-        "min": 612.3,
-        "max": 612.3,
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
         "stdDev": 0,
-        "p75": 612.3,
-        "p95": 612.3
+        "p75": 613,
+        "p95": 613
       },
       "breakdown": {
-        "html": 119.6,
+        "html": 120.3,
         "js": 397.7,
         "css": 0,
         "images": 0,
         "fonts": 0,
         "wasm": 0,
         "other": 95
+      },
+      "warmCache": {
+        "ttfbMedian": 45,
+        "fcpMedian": 392,
+        "lcpMedian": 392
+      },
+      "mobileCold": {
+        "ttfbMedian": 53.5,
+        "fcpMedian": 962,
+        "lcpMedian": 962
+      },
+      "lighthouseOfficial": {
+        "score": 94,
+        "fcpMs": 2516,
+        "lcpMs": 2516,
+        "tbtMs": 0,
+        "speedIndexMs": 2516,
+        "cls": 0
       }
     }
   },
@@ -195,63 +447,110 @@
     "id": "laravel",
     "name": "Laravel 11",
     "language": "PHP",
-    "runtime": "Blade SSR",
-    "architecture": "Blade SSR",
-    "renderType": "Blade SSR",
-    "lighthouseScore": 85,
-    "fcpMs": 888,
-    "lcpMs": 1954,
+    "runtime": "Vercel Edge CDN (Static HTML Pre-Render)",
+    "architecture": "PHP 8.4 / Blade SSR",
+    "renderType": "Dynamic SSR",
+    "classification": "NON-COMPARABLE (STATIC EMULATION)",
+    "lighthouseScore": 93,
+    "fcpMs": 868,
+    "lcpMs": 868,
     "cls": 0,
-    "ttfbMs": 48,
-    "bundleTransferKb": 612.3,
-    "cssTransferKb": 12,
-    "buildTimeSec": 12,
+    "ttfbMs": 51.5,
+    "bundleTransferKb": 613,
+    "cssTransferKb": 0,
+    "buildTimeSec": 3.5,
     "repo": "https://github.com/reginaldalfret/portfolio-laravel",
     "liveRoute": "/stacks/laravel",
-    "color": "emerald",
-    "status": "Completed",
+    "color": "red",
+    "status": "Audited Static Export",
     "features": [
-      "Measured FCP: 888ms (p75: 916ms)",
-      "Measured TTFB: 48ms",
-      "Transferred Payload: 612.3KB (JS: 397.7KB, CSS: 0KB)"
+      "Classification: NON-COMPARABLE (STATIC EMULATION)",
+      "Audited Cold FCP: 868ms (P95: 916ms, σ: 30.62ms)",
+      "Audited Cold TTFB: 51.5ms (Edge CDN delivery)",
+      "Total Transferred: 613KB (4 requests)"
     ],
     "verifiedStats": {
-      "trials": 5,
+      "trials": 10,
       "ttfb": {
-        "median": 48,
-        "mean": 48,
-        "min": 44,
-        "max": 52,
-        "stdDev": 2.83,
-        "p75": 50,
-        "p95": 51.6
+        "median": 51.5,
+        "mean": 50.2,
+        "min": 43,
+        "max": 55,
+        "stdDev": 3.6,
+        "p75": 52.75,
+        "p95": 54.1
       },
       "fcp": {
-        "median": 888,
-        "mean": 902.4,
-        "min": 868,
-        "max": 968,
-        "stdDev": 36.89,
-        "p75": 916,
-        "p95": 957.6
+        "median": 868,
+        "mean": 874.8,
+        "min": 824,
+        "max": 916,
+        "stdDev": 30.62,
+        "p75": 904,
+        "p95": 916
+      },
+      "lcp": {
+        "median": 868,
+        "mean": 874.8,
+        "min": 824,
+        "max": 916,
+        "stdDev": 30.62,
+        "p75": 904,
+        "p95": 916
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "syntheticInteractionLatency": {
+        "median": 70.5,
+        "mean": 68.2,
+        "min": 57,
+        "max": 73,
+        "stdDev": 5.27,
+        "p75": 71.75,
+        "p95": 73
       },
       "payload": {
-        "median": 612.3,
-        "mean": 612.3,
-        "min": 612.3,
-        "max": 612.3,
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
         "stdDev": 0,
-        "p75": 612.3,
-        "p95": 612.3
+        "p75": 613,
+        "p95": 613
       },
       "breakdown": {
-        "html": 119.6,
+        "html": 120.3,
         "js": 397.7,
         "css": 0,
         "images": 0,
         "fonts": 0,
         "wasm": 0,
         "other": 95
+      },
+      "warmCache": {
+        "ttfbMedian": 42.5,
+        "fcpMedian": 394,
+        "lcpMedian": 394
+      },
+      "mobileCold": {
+        "ttfbMedian": 48,
+        "fcpMedian": 910,
+        "lcpMedian": 910
+      },
+      "lighthouseOfficial": {
+        "score": 93,
+        "fcpMs": 2554,
+        "lcpMs": 2554,
+        "tbtMs": 0,
+        "speedIndexMs": 2554,
+        "cls": 0
       }
     }
   },
@@ -259,63 +558,110 @@
     "id": "rails",
     "name": "Ruby on Rails 8",
     "language": "Ruby",
-    "runtime": "ActionView SSR",
-    "architecture": "ActionView SSR",
-    "renderType": "ActionView SSR",
-    "lighthouseScore": 85,
-    "fcpMs": 924,
-    "lcpMs": 2033,
+    "runtime": "Vercel Edge CDN (Static HTML Pre-Render)",
+    "architecture": "Ruby 3.4 / Puma ERB",
+    "renderType": "Dynamic SSR",
+    "classification": "NON-COMPARABLE (STATIC EMULATION)",
+    "lighthouseScore": 94,
+    "fcpMs": 914,
+    "lcpMs": 914,
     "cls": 0,
-    "ttfbMs": 48,
-    "bundleTransferKb": 612.3,
-    "cssTransferKb": 12,
-    "buildTimeSec": 12,
+    "ttfbMs": 49.5,
+    "bundleTransferKb": 613,
+    "cssTransferKb": 0,
+    "buildTimeSec": 3.5,
     "repo": "https://github.com/reginaldalfret/portfolio-rails",
     "liveRoute": "/stacks/rails",
-    "color": "emerald",
-    "status": "Completed",
+    "color": "rose",
+    "status": "Audited Static Export",
     "features": [
-      "Measured FCP: 924ms (p75: 944ms)",
-      "Measured TTFB: 48ms",
-      "Transferred Payload: 612.3KB (JS: 397.7KB, CSS: 0KB)"
+      "Classification: NON-COMPARABLE (STATIC EMULATION)",
+      "Audited Cold FCP: 914ms (P95: 1552.8ms, σ: 267.26ms)",
+      "Audited Cold TTFB: 49.5ms (Edge CDN delivery)",
+      "Total Transferred: 613KB (4 requests)"
     ],
     "verifiedStats": {
-      "trials": 5,
+      "trials": 10,
       "ttfb": {
-        "median": 48,
-        "mean": 48.8,
-        "min": 46,
-        "max": 52,
-        "stdDev": 2.32,
-        "p75": 51,
-        "p95": 51.8
+        "median": 49.5,
+        "mean": 49.3,
+        "min": 43,
+        "max": 54,
+        "stdDev": 3.1,
+        "p75": 51.75,
+        "p95": 53.1
       },
       "fcp": {
-        "median": 924,
-        "mean": 915.2,
-        "min": 832,
-        "max": 972,
-        "stdDev": 47.29,
-        "p75": 944,
-        "p95": 966.4
+        "median": 914,
+        "mean": 1023.6,
+        "min": 808,
+        "max": 1560,
+        "stdDev": 267.26,
+        "p75": 948,
+        "p95": 1552.8
+      },
+      "lcp": {
+        "median": 914,
+        "mean": 1023.6,
+        "min": 808,
+        "max": 1560,
+        "stdDev": 267.26,
+        "p75": 948,
+        "p95": 1552.8
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "syntheticInteractionLatency": {
+        "median": 62,
+        "mean": 62.6,
+        "min": 55,
+        "max": 71,
+        "stdDev": 6.97,
+        "p75": 69.75,
+        "p95": 71
       },
       "payload": {
-        "median": 612.3,
-        "mean": 612.3,
-        "min": 612.3,
-        "max": 612.3,
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
         "stdDev": 0,
-        "p75": 612.3,
-        "p95": 612.3
+        "p75": 613,
+        "p95": 613
       },
       "breakdown": {
-        "html": 119.6,
+        "html": 120.3,
         "js": 397.7,
         "css": 0,
         "images": 0,
         "fonts": 0,
         "wasm": 0,
         "other": 95
+      },
+      "warmCache": {
+        "ttfbMedian": 48,
+        "fcpMedian": 392,
+        "lcpMedian": 392
+      },
+      "mobileCold": {
+        "ttfbMedian": 52,
+        "fcpMedian": 944,
+        "lcpMedian": 944
+      },
+      "lighthouseOfficial": {
+        "score": 94,
+        "fcpMs": 2496,
+        "lcpMs": 2496,
+        "tbtMs": 0,
+        "speedIndexMs": 2496,
+        "cls": 0
       }
     }
   },
@@ -323,63 +669,110 @@
     "id": "springboot",
     "name": "Spring Boot 3",
     "language": "Java",
-    "runtime": "Thymeleaf SSR",
-    "architecture": "Thymeleaf SSR",
-    "renderType": "Thymeleaf SSR",
-    "lighthouseScore": 85,
-    "fcpMs": 888,
-    "lcpMs": 1954,
+    "runtime": "Vercel Edge CDN (Static HTML Pre-Render)",
+    "architecture": "Java 21 / Thymeleaf",
+    "renderType": "JVM SSR",
+    "classification": "NON-COMPARABLE (STATIC EMULATION)",
+    "lighthouseScore": 94,
+    "fcpMs": 878,
+    "lcpMs": 878,
     "cls": 0,
-    "ttfbMs": 52,
-    "bundleTransferKb": 612.3,
-    "cssTransferKb": 12,
-    "buildTimeSec": 12,
+    "ttfbMs": 51,
+    "bundleTransferKb": 613,
+    "cssTransferKb": 0,
+    "buildTimeSec": 3.5,
     "repo": "https://github.com/reginaldalfret/portfolio-springboot",
     "liveRoute": "/stacks/springboot",
     "color": "emerald",
-    "status": "Completed",
+    "status": "Audited Static Export",
     "features": [
-      "Measured FCP: 888ms (p75: 892ms)",
-      "Measured TTFB: 52ms",
-      "Transferred Payload: 612.3KB (JS: 397.7KB, CSS: 0KB)"
+      "Classification: NON-COMPARABLE (STATIC EMULATION)",
+      "Audited Cold FCP: 878ms (P95: 993.4ms, σ: 58.11ms)",
+      "Audited Cold TTFB: 51ms (Edge CDN delivery)",
+      "Total Transferred: 613KB (4 requests)"
     ],
     "verifiedStats": {
-      "trials": 5,
+      "trials": 10,
       "ttfb": {
-        "median": 52,
-        "mean": 49.6,
-        "min": 44,
-        "max": 55,
-        "stdDev": 4.32,
-        "p75": 52,
-        "p95": 54.4
+        "median": 51,
+        "mean": 50.8,
+        "min": 42,
+        "max": 57,
+        "stdDev": 3.6,
+        "p75": 52.5,
+        "p95": 55.2
       },
       "fcp": {
-        "median": 888,
-        "mean": 876.8,
-        "min": 840,
-        "max": 924,
-        "stdDev": 32.54,
-        "p75": 892,
-        "p95": 917.6
+        "median": 878,
+        "mean": 894.4,
+        "min": 824,
+        "max": 1024,
+        "stdDev": 58.11,
+        "p75": 919,
+        "p95": 993.4
+      },
+      "lcp": {
+        "median": 878,
+        "mean": 894.4,
+        "min": 824,
+        "max": 1024,
+        "stdDev": 58.11,
+        "p75": 919,
+        "p95": 993.4
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "syntheticInteractionLatency": {
+        "median": 58,
+        "mean": 60.4,
+        "min": 55,
+        "max": 71,
+        "stdDev": 5.92,
+        "p75": 65.25,
+        "p95": 70.1
       },
       "payload": {
-        "median": 612.3,
-        "mean": 612.3,
-        "min": 612.3,
-        "max": 612.3,
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
         "stdDev": 0,
-        "p75": 612.3,
-        "p95": 612.3
+        "p75": 613,
+        "p95": 613
       },
       "breakdown": {
-        "html": 119.6,
+        "html": 120.3,
         "js": 397.7,
         "css": 0,
         "images": 0,
         "fonts": 0,
         "wasm": 0,
         "other": 95
+      },
+      "warmCache": {
+        "ttfbMedian": 44,
+        "fcpMedian": 396,
+        "lcpMedian": 396
+      },
+      "mobileCold": {
+        "ttfbMedian": 49,
+        "fcpMedian": 916,
+        "lcpMedian": 916
+      },
+      "lighthouseOfficial": {
+        "score": 94,
+        "fcpMs": 2439,
+        "lcpMs": 2439,
+        "tbtMs": 0,
+        "speedIndexMs": 2439,
+        "cls": 0
       }
     }
   },
@@ -387,127 +780,110 @@
     "id": "nuxt",
     "name": "Nuxt 3",
     "language": "Vue 3 / TS",
-    "runtime": "Universal SSR",
-    "architecture": "Universal SSR",
+    "runtime": "Vercel Edge CDN (Static HTML Pre-Render)",
+    "architecture": "Vue 3 / Nitro",
     "renderType": "Universal SSR",
-    "lighthouseScore": 85,
-    "fcpMs": 852,
-    "lcpMs": 1874,
+    "classification": "NON-COMPARABLE (STATIC EMULATION)",
+    "lighthouseScore": 94,
+    "fcpMs": 874,
+    "lcpMs": 874,
     "cls": 0,
-    "ttfbMs": 63,
-    "bundleTransferKb": 612.3,
-    "cssTransferKb": 12,
-    "buildTimeSec": 12,
+    "ttfbMs": 47.5,
+    "bundleTransferKb": 613,
+    "cssTransferKb": 0,
+    "buildTimeSec": 3.5,
     "repo": "https://github.com/reginaldalfret/portfolio-nuxt",
     "liveRoute": "/stacks/nuxt",
     "color": "emerald",
-    "status": "Completed",
+    "status": "Audited Static Export",
     "features": [
-      "Measured FCP: 852ms (p75: 900ms)",
-      "Measured TTFB: 63ms",
-      "Transferred Payload: 612.3KB (JS: 397.7KB, CSS: 0KB)"
+      "Classification: NON-COMPARABLE (STATIC EMULATION)",
+      "Audited Cold FCP: 874ms (P95: 952ms, σ: 50.86ms)",
+      "Audited Cold TTFB: 47.5ms (Edge CDN delivery)",
+      "Total Transferred: 613KB (4 requests)"
     ],
     "verifiedStats": {
-      "trials": 5,
+      "trials": 10,
       "ttfb": {
-        "median": 63,
-        "mean": 61.6,
-        "min": 53,
-        "max": 67,
-        "stdDev": 4.72,
-        "p75": 64,
-        "p95": 66.4
+        "median": 47.5,
+        "mean": 48.3,
+        "min": 44,
+        "max": 53,
+        "stdDev": 3.29,
+        "p75": 51,
+        "p95": 53
       },
       "fcp": {
-        "median": 852,
-        "mean": 1041.6,
-        "min": 824,
-        "max": 1784,
-        "stdDev": 372.02,
-        "p75": 900,
-        "p95": 1607.2
+        "median": 874,
+        "mean": 887.6,
+        "min": 820,
+        "max": 952,
+        "stdDev": 50.86,
+        "p75": 945,
+        "p95": 952
+      },
+      "lcp": {
+        "median": 874,
+        "mean": 887.6,
+        "min": 820,
+        "max": 952,
+        "stdDev": 50.86,
+        "p75": 945,
+        "p95": 952
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "syntheticInteractionLatency": {
+        "median": 65,
+        "mean": 64.2,
+        "min": 55,
+        "max": 73,
+        "stdDev": 7.01,
+        "p75": 71,
+        "p95": 72.1
       },
       "payload": {
-        "median": 612.3,
-        "mean": 612.3,
-        "min": 612.3,
-        "max": 612.3,
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
         "stdDev": 0,
-        "p75": 612.3,
-        "p95": 612.3
+        "p75": 613,
+        "p95": 613
       },
       "breakdown": {
-        "html": 119.6,
+        "html": 120.3,
         "js": 397.7,
         "css": 0,
         "images": 0,
         "fonts": 0,
         "wasm": 0,
         "other": 95
-      }
-    }
-  },
-  {
-    "id": "nextjs",
-    "name": "Next.js 14",
-    "language": "React / TS",
-    "runtime": "Hybrid Edge RSC",
-    "architecture": "Hybrid Edge RSC",
-    "renderType": "Hybrid Edge RSC",
-    "lighthouseScore": 85,
-    "fcpMs": 648,
-    "lcpMs": 1426,
-    "cls": 0,
-    "ttfbMs": 63,
-    "bundleTransferKb": 1004.8,
-    "cssTransferKb": 67.9,
-    "buildTimeSec": 12,
-    "repo": "https://github.com/reginaldalfret/portfolio-website",
-    "liveRoute": "/",
-    "color": "emerald",
-    "status": "Completed",
-    "features": [
-      "Measured FCP: 648ms (p75: 704ms)",
-      "Measured TTFB: 63ms",
-      "Transferred Payload: 1004.8KB (JS: 759.4KB, CSS: 67.9KB)"
-    ],
-    "verifiedStats": {
-      "trials": 5,
-      "ttfb": {
-        "median": 63,
-        "mean": 69.4,
-        "min": 58,
-        "max": 103,
-        "stdDev": 16.95,
-        "p75": 64,
-        "p95": 95.2
       },
-      "fcp": {
-        "median": 648,
-        "mean": 658.4,
-        "min": 508,
-        "max": 912,
-        "stdDev": 147.16,
-        "p75": 704,
-        "p95": 870.4
+      "warmCache": {
+        "ttfbMedian": 43.5,
+        "fcpMedian": 404,
+        "lcpMedian": 404
       },
-      "payload": {
-        "median": 1004.8,
-        "mean": 1004.8,
-        "min": 1004.8,
-        "max": 1004.8,
-        "stdDev": 0,
-        "p75": 1004.8,
-        "p95": 1004.8
+      "mobileCold": {
+        "ttfbMedian": 49,
+        "fcpMedian": 910,
+        "lcpMedian": 910
       },
-      "breakdown": {
-        "html": 177.5,
-        "js": 759.4,
-        "css": 67.9,
-        "images": 0,
-        "fonts": 0,
-        "wasm": 0,
-        "other": 0
+      "lighthouseOfficial": {
+        "score": 94,
+        "fcpMs": 2520,
+        "lcpMs": 2520,
+        "tbtMs": 0,
+        "speedIndexMs": 2520,
+        "cls": 0
       }
     }
   },
@@ -515,63 +891,110 @@
     "id": "jaspr",
     "name": "Jaspr Web",
     "language": "Dart",
-    "runtime": "Hydrated SSR",
-    "architecture": "Hydrated SSR",
+    "runtime": "Vercel Edge CDN (Static HTML Pre-Render)",
+    "architecture": "Dart 3.13 / Jaspr SSR",
     "renderType": "Hydrated SSR",
-    "lighthouseScore": 85,
-    "fcpMs": 920,
-    "lcpMs": 2024,
+    "classification": "NON-COMPARABLE (STATIC EMULATION)",
+    "lighthouseScore": 94,
+    "fcpMs": 862,
+    "lcpMs": 862,
     "cls": 0,
-    "ttfbMs": 61,
-    "bundleTransferKb": 612.3,
-    "cssTransferKb": 12,
-    "buildTimeSec": 12,
+    "ttfbMs": 49.5,
+    "bundleTransferKb": 613,
+    "cssTransferKb": 0,
+    "buildTimeSec": 3.5,
     "repo": "https://github.com/reginaldalfret/portfolio-jaspr",
     "liveRoute": "/stacks/jaspr",
-    "color": "emerald",
-    "status": "Completed",
+    "color": "teal",
+    "status": "Audited Static Export",
     "features": [
-      "Measured FCP: 920ms (p75: 924ms)",
-      "Measured TTFB: 61ms",
-      "Transferred Payload: 612.3KB (JS: 397.7KB, CSS: 0KB)"
+      "Classification: NON-COMPARABLE (STATIC EMULATION)",
+      "Audited Cold FCP: 862ms (P95: 978.6ms, σ: 59.52ms)",
+      "Audited Cold TTFB: 49.5ms (Edge CDN delivery)",
+      "Total Transferred: 613KB (4 requests)"
     ],
     "verifiedStats": {
-      "trials": 5,
+      "trials": 10,
       "ttfb": {
-        "median": 61,
-        "mean": 61.2,
-        "min": 60,
-        "max": 63,
-        "stdDev": 1.17,
-        "p75": 62,
-        "p95": 62.8
+        "median": 49.5,
+        "mean": 49.5,
+        "min": 42,
+        "max": 56,
+        "stdDev": 4.43,
+        "p75": 53.25,
+        "p95": 55.55
       },
       "fcp": {
-        "median": 920,
-        "mean": 907.2,
-        "min": 852,
-        "max": 952,
-        "stdDev": 34.26,
-        "p75": 924,
-        "p95": 946.4
+        "median": 862,
+        "mean": 873.6,
+        "min": 808,
+        "max": 984,
+        "stdDev": 59.52,
+        "p75": 894,
+        "p95": 978.6
+      },
+      "lcp": {
+        "median": 862,
+        "mean": 873.6,
+        "min": 808,
+        "max": 984,
+        "stdDev": 59.52,
+        "p75": 894,
+        "p95": 978.6
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "syntheticInteractionLatency": {
+        "median": 57,
+        "mean": 60.9,
+        "min": 54,
+        "max": 72,
+        "stdDev": 6.92,
+        "p75": 67.75,
+        "p95": 71.55
       },
       "payload": {
-        "median": 612.3,
-        "mean": 612.3,
-        "min": 612.3,
-        "max": 612.3,
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
         "stdDev": 0,
-        "p75": 612.3,
-        "p95": 612.3
+        "p75": 613,
+        "p95": 613
       },
       "breakdown": {
-        "html": 119.6,
+        "html": 120.3,
         "js": 397.7,
         "css": 0,
         "images": 0,
         "fonts": 0,
         "wasm": 0,
         "other": 95
+      },
+      "warmCache": {
+        "ttfbMedian": 44.5,
+        "fcpMedian": 392,
+        "lcpMedian": 392
+      },
+      "mobileCold": {
+        "ttfbMedian": 47,
+        "fcpMedian": 928,
+        "lcpMedian": 928
+      },
+      "lighthouseOfficial": {
+        "score": 94,
+        "fcpMs": 2497,
+        "lcpMs": 2497,
+        "tbtMs": 0,
+        "speedIndexMs": 2497,
+        "cls": 0
       }
     }
   },
@@ -579,63 +1002,110 @@
     "id": "leptos",
     "name": "Leptos 0.7",
     "language": "Rust",
-    "runtime": "Client WASM",
-    "architecture": "Client WASM",
+    "runtime": "Vercel Edge CDN (Static HTML Pre-Render)",
+    "architecture": "Rust WASM / Trunk",
     "renderType": "Client WASM",
-    "lighthouseScore": 85,
-    "fcpMs": 936,
-    "lcpMs": 2059,
+    "classification": "NON-COMPARABLE (WASM ABSENT)",
+    "lighthouseScore": 95,
+    "fcpMs": 840,
+    "lcpMs": 840,
     "cls": 0,
-    "ttfbMs": 65,
-    "bundleTransferKb": 612.4,
-    "cssTransferKb": 12,
-    "buildTimeSec": 12,
+    "ttfbMs": 48,
+    "bundleTransferKb": 613.1,
+    "cssTransferKb": 0,
+    "buildTimeSec": 3.5,
     "repo": "https://github.com/reginaldalfret/portfolio-leptos",
     "liveRoute": "/stacks/leptos",
     "color": "orange",
-    "status": "Completed",
+    "status": "Audited Static Export",
     "features": [
-      "Measured FCP: 936ms (p75: 940ms)",
-      "Measured TTFB: 65ms",
-      "Transferred Payload: 612.4KB (JS: 397.7KB, CSS: 0KB)"
+      "Classification: NON-COMPARABLE (WASM ABSENT)",
+      "Audited Cold FCP: 840ms (P95: 948.6ms, σ: 59.86ms)",
+      "Audited Cold TTFB: 48ms (Edge CDN delivery)",
+      "Total Transferred: 613.1KB (4 requests)"
     ],
     "verifiedStats": {
-      "trials": 5,
+      "trials": 10,
       "ttfb": {
-        "median": 65,
-        "mean": 67.2,
-        "min": 59,
-        "max": 78,
-        "stdDev": 6.27,
-        "p75": 69,
-        "p95": 76.2
+        "median": 48,
+        "mean": 49,
+        "min": 45,
+        "max": 56,
+        "stdDev": 3.32,
+        "p75": 49.75,
+        "p95": 55.1
       },
       "fcp": {
-        "median": 936,
-        "mean": 926.4,
-        "min": 876,
-        "max": 952,
-        "stdDev": 26.36,
-        "p75": 940,
-        "p95": 949.6
+        "median": 840,
+        "mean": 852.8,
+        "min": 772,
+        "max": 1008,
+        "stdDev": 59.86,
+        "p75": 870,
+        "p95": 948.6
+      },
+      "lcp": {
+        "median": 840,
+        "mean": 852.8,
+        "min": 772,
+        "max": 1008,
+        "stdDev": 59.86,
+        "p75": 870,
+        "p95": 948.6
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "syntheticInteractionLatency": {
+        "median": 61.5,
+        "mean": 62.1,
+        "min": 53,
+        "max": 71,
+        "stdDev": 6.58,
+        "p75": 69,
+        "p95": 70.55
       },
       "payload": {
-        "median": 612.4,
-        "mean": 612.4,
-        "min": 612.4,
-        "max": 612.4,
+        "median": 613.1,
+        "mean": 613.1,
+        "min": 613.1,
+        "max": 613.1,
         "stdDev": 0,
-        "p75": 612.4,
-        "p95": 612.4
+        "p75": 613.1,
+        "p95": 613.1
       },
       "breakdown": {
-        "html": 119.7,
+        "html": 120.4,
         "js": 397.7,
         "css": 0,
         "images": 0,
         "fonts": 0,
         "wasm": 0,
         "other": 95
+      },
+      "warmCache": {
+        "ttfbMedian": 46.5,
+        "fcpMedian": 394,
+        "lcpMedian": 394
+      },
+      "mobileCold": {
+        "ttfbMedian": 49.5,
+        "fcpMedian": 900,
+        "lcpMedian": 900
+      },
+      "lighthouseOfficial": {
+        "score": 95,
+        "fcpMs": 2400,
+        "lcpMs": 2400,
+        "tbtMs": 0,
+        "speedIndexMs": 2400,
+        "cls": 0
       }
     }
   },
@@ -643,63 +1113,110 @@
     "id": "angular",
     "name": "Angular 19",
     "language": "Angular / TS",
-    "runtime": "Signals SPA",
-    "architecture": "Signals SPA",
+    "runtime": "Vercel Edge CDN (Static HTML Pre-Render)",
+    "architecture": "Angular 19 / Vite SPA",
     "renderType": "Signals SPA",
-    "lighthouseScore": 85,
-    "fcpMs": 920,
-    "lcpMs": 2024,
+    "classification": "NON-COMPARABLE (STATIC EMULATION)",
+    "lighthouseScore": 94,
+    "fcpMs": 858,
+    "lcpMs": 858,
     "cls": 0,
-    "ttfbMs": 62,
-    "bundleTransferKb": 612.3,
-    "cssTransferKb": 12,
-    "buildTimeSec": 12,
+    "ttfbMs": 46,
+    "bundleTransferKb": 613,
+    "cssTransferKb": 0,
+    "buildTimeSec": 3.5,
     "repo": "https://github.com/reginaldalfret/portfolio-angular",
     "liveRoute": "/stacks/angular",
-    "color": "emerald",
-    "status": "Completed",
+    "color": "red",
+    "status": "Audited Static Export",
     "features": [
-      "Measured FCP: 920ms (p75: 920ms)",
-      "Measured TTFB: 62ms",
-      "Transferred Payload: 612.3KB (JS: 397.7KB, CSS: 0KB)"
+      "Classification: NON-COMPARABLE (STATIC EMULATION)",
+      "Audited Cold FCP: 858ms (P95: 1507.4ms, σ: 341.17ms)",
+      "Audited Cold TTFB: 46ms (Edge CDN delivery)",
+      "Total Transferred: 613KB (4 requests)"
     ],
     "verifiedStats": {
-      "trials": 5,
+      "trials": 10,
       "ttfb": {
-        "median": 62,
-        "mean": 61.6,
-        "min": 58,
-        "max": 65,
-        "stdDev": 2.73,
-        "p75": 64,
-        "p95": 64.8
+        "median": 46,
+        "mean": 47.9,
+        "min": 42,
+        "max": 60,
+        "stdDev": 5.56,
+        "p75": 51.25,
+        "p95": 57.3
       },
       "fcp": {
-        "median": 920,
-        "mean": 916.8,
-        "min": 892,
-        "max": 940,
-        "stdDev": 15.47,
-        "p75": 920,
-        "p95": 936
+        "median": 858,
+        "mean": 968.8,
+        "min": 808,
+        "max": 1988,
+        "stdDev": 341.17,
+        "p75": 876,
+        "p95": 1507.4
+      },
+      "lcp": {
+        "median": 858,
+        "mean": 968.8,
+        "min": 808,
+        "max": 1988,
+        "stdDev": 341.17,
+        "p75": 876,
+        "p95": 1507.4
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "syntheticInteractionLatency": {
+        "median": 69,
+        "mean": 64.1,
+        "min": 54,
+        "max": 72,
+        "stdDev": 7.92,
+        "p75": 71,
+        "p95": 71.55
       },
       "payload": {
-        "median": 612.3,
-        "mean": 612.3,
-        "min": 612.3,
-        "max": 612.3,
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
         "stdDev": 0,
-        "p75": 612.3,
-        "p95": 612.3
+        "p75": 613,
+        "p95": 613
       },
       "breakdown": {
-        "html": 119.6,
+        "html": 120.3,
         "js": 397.7,
         "css": 0,
         "images": 0,
         "fonts": 0,
         "wasm": 0,
         "other": 95
+      },
+      "warmCache": {
+        "ttfbMedian": 44,
+        "fcpMedian": 392,
+        "lcpMedian": 392
+      },
+      "mobileCold": {
+        "ttfbMedian": 48.5,
+        "fcpMedian": 924,
+        "lcpMedian": 924
+      },
+      "lighthouseOfficial": {
+        "score": 94,
+        "fcpMs": 2539,
+        "lcpMs": 2539,
+        "tbtMs": 0,
+        "speedIndexMs": 2539,
+        "cls": 0
       }
     }
   },
@@ -707,63 +1224,110 @@
     "id": "blazor",
     "name": "Blazor WASM",
     "language": "C# / .NET 8",
-    "runtime": "Client WASM",
-    "architecture": "Client WASM",
+    "runtime": "Vercel Edge CDN (Static HTML Pre-Render)",
+    "architecture": "C# / .NET 8 WASM",
     "renderType": "Client WASM",
-    "lighthouseScore": 85,
-    "fcpMs": 920,
-    "lcpMs": 2024,
+    "classification": "NON-COMPARABLE (WASM ABSENT)",
+    "lighthouseScore": 94,
+    "fcpMs": 850,
+    "lcpMs": 850,
     "cls": 0,
-    "ttfbMs": 56,
-    "bundleTransferKb": 612.3,
-    "cssTransferKb": 12,
-    "buildTimeSec": 12,
+    "ttfbMs": 48,
+    "bundleTransferKb": 613,
+    "cssTransferKb": 0,
+    "buildTimeSec": 3.5,
     "repo": "https://github.com/reginaldalfret/portfolio-blazor",
     "liveRoute": "/stacks/blazor",
-    "color": "emerald",
-    "status": "Completed",
+    "color": "purple",
+    "status": "Audited Static Export",
     "features": [
-      "Measured FCP: 920ms (p75: 924ms)",
-      "Measured TTFB: 56ms",
-      "Transferred Payload: 612.3KB (JS: 397.7KB, CSS: 0KB)"
+      "Classification: NON-COMPARABLE (WASM ABSENT)",
+      "Audited Cold FCP: 850ms (P95: 1012.4ms, σ: 84.05ms)",
+      "Audited Cold TTFB: 48ms (Edge CDN delivery)",
+      "Total Transferred: 613KB (4 requests)"
     ],
     "verifiedStats": {
-      "trials": 5,
+      "trials": 10,
       "ttfb": {
-        "median": 56,
-        "mean": 56.8,
-        "min": 49,
-        "max": 69,
-        "stdDev": 6.71,
-        "p75": 57,
-        "p95": 66.6
+        "median": 48,
+        "mean": 48.6,
+        "min": 43,
+        "max": 56,
+        "stdDev": 4.32,
+        "p75": 51.25,
+        "p95": 55.55
       },
       "fcp": {
-        "median": 920,
-        "mean": 923.2,
-        "min": 872,
-        "max": 988,
-        "stdDev": 37.3,
-        "p75": 924,
-        "p95": 975.2
+        "median": 850,
+        "mean": 872.8,
+        "min": 792,
+        "max": 1088,
+        "stdDev": 84.05,
+        "p75": 903,
+        "p95": 1012.4
+      },
+      "lcp": {
+        "median": 850,
+        "mean": 872.8,
+        "min": 792,
+        "max": 1088,
+        "stdDev": 84.05,
+        "p75": 903,
+        "p95": 1012.4
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "syntheticInteractionLatency": {
+        "median": 56,
+        "mean": 57.9,
+        "min": 53,
+        "max": 71,
+        "stdDev": 4.99,
+        "p75": 59.5,
+        "p95": 66.5
       },
       "payload": {
-        "median": 612.3,
-        "mean": 612.3,
-        "min": 612.3,
-        "max": 612.3,
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
         "stdDev": 0,
-        "p75": 612.3,
-        "p95": 612.3
+        "p75": 613,
+        "p95": 613
       },
       "breakdown": {
-        "html": 119.6,
+        "html": 120.3,
         "js": 397.7,
         "css": 0,
         "images": 0,
         "fonts": 0,
         "wasm": 0,
         "other": 95
+      },
+      "warmCache": {
+        "ttfbMedian": 43.5,
+        "fcpMedian": 398,
+        "lcpMedian": 398
+      },
+      "mobileCold": {
+        "ttfbMedian": 52,
+        "fcpMedian": 924,
+        "lcpMedian": 924
+      },
+      "lighthouseOfficial": {
+        "score": 94,
+        "fcpMs": 2498,
+        "lcpMs": 2498,
+        "tbtMs": 0,
+        "speedIndexMs": 2498,
+        "cls": 0
       }
     }
   }

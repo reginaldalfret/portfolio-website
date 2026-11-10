@@ -1,0 +1,3176 @@
+{
+  "desktop-cold": [
+    {
+      "id": "nextjs",
+      "name": "Next.js 14",
+      "category": "Edge SSR",
+      "claimedRuntime": "React 18 RSC / Edge",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 63,
+        "mean": 60.2,
+        "min": 47,
+        "max": 72,
+        "stdDev": 8.07,
+        "p75": 66.75,
+        "p95": 69.75
+      },
+      "fcp": {
+        "median": 624,
+        "mean": 608.89,
+        "min": 480,
+        "max": 692,
+        "stdDev": 66.61,
+        "p75": 668,
+        "p95": 684
+      },
+      "lcp": {
+        "median": 624,
+        "mean": 608.89,
+        "min": 480,
+        "max": 692,
+        "stdDev": 66.61,
+        "p75": 668,
+        "p95": 684
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 72,
+        "mean": 75.5,
+        "min": 59,
+        "max": 131,
+        "stdDev": 19.11,
+        "p75": 73,
+        "p95": 105.35
+      },
+      "payloadKb": {
+        "median": 1018.6,
+        "mean": 1018.6,
+        "min": 1018.6,
+        "max": 1018.6,
+        "stdDev": 0,
+        "p75": 1018.6,
+        "p95": 1018.6
+      },
+      "resourceCount": {
+        "median": 13,
+        "mean": 13,
+        "min": 13,
+        "max": 13,
+        "stdDev": 0,
+        "p75": 13,
+        "p95": 13
+      },
+      "breakdownKb": {
+        "html": 180.1,
+        "js": 770.4,
+        "css": 68.1,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 0
+      }
+    },
+    {
+      "id": "buffalo",
+      "name": "Go Buffalo",
+      "category": "Native SSR",
+      "claimedRuntime": "Go 1.27 / Buffalo SSR",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 49.5,
+        "mean": 52.6,
+        "min": 43,
+        "max": 75,
+        "stdDev": 9.9,
+        "p75": 53,
+        "p95": 71.4
+      },
+      "fcp": {
+        "median": 908,
+        "mean": 927.6,
+        "min": 848,
+        "max": 1064,
+        "stdDev": 66.44,
+        "p75": 924,
+        "p95": 1051.4
+      },
+      "lcp": {
+        "median": 908,
+        "mean": 927.6,
+        "min": 848,
+        "max": 1064,
+        "stdDev": 66.44,
+        "p75": 924,
+        "p95": 1051.4
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 70,
+        "mean": 66.3,
+        "min": 55,
+        "max": 72,
+        "stdDev": 6.15,
+        "p75": 70.75,
+        "p95": 72
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "vapor",
+      "name": "Vapor 4",
+      "category": "Native SSR",
+      "claimedRuntime": "Swift 6.0 / SwiftNIO",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 50.5,
+        "mean": 57.9,
+        "min": 43,
+        "max": 134,
+        "stdDev": 25.57,
+        "p75": 52,
+        "p95": 98
+      },
+      "fcp": {
+        "median": 914,
+        "mean": 918.4,
+        "min": 864,
+        "max": 1040,
+        "stdDev": 50.57,
+        "p75": 939,
+        "p95": 1002.2
+      },
+      "lcp": {
+        "median": 914,
+        "mean": 918.4,
+        "min": 864,
+        "max": 1040,
+        "stdDev": 50.57,
+        "p75": 939,
+        "p95": 1002.2
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 68,
+        "mean": 65.9,
+        "min": 58,
+        "max": 72,
+        "stdDev": 5.89,
+        "p75": 71.75,
+        "p95": 72
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "django",
+      "name": "Django 6",
+      "category": "Dynamic SSR",
+      "claimedRuntime": "Python 3.13 / Django MVT",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 50.5,
+        "mean": 50.8,
+        "min": 46,
+        "max": 57,
+        "stdDev": 2.89,
+        "p75": 52,
+        "p95": 55.2
+      },
+      "fcp": {
+        "median": 872,
+        "mean": 896,
+        "min": 824,
+        "max": 1104,
+        "stdDev": 75.45,
+        "p75": 899,
+        "p95": 1028.4
+      },
+      "lcp": {
+        "median": 872,
+        "mean": 896,
+        "min": 824,
+        "max": 1104,
+        "stdDev": 75.45,
+        "p75": 899,
+        "p95": 1028.4
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 71,
+        "mean": 67.9,
+        "min": 54,
+        "max": 76,
+        "stdDev": 6.49,
+        "p75": 71,
+        "p95": 75.1
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "laravel",
+      "name": "Laravel 11",
+      "category": "Dynamic SSR",
+      "claimedRuntime": "PHP 8.4 / Blade SSR",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 51.5,
+        "mean": 50.2,
+        "min": 43,
+        "max": 55,
+        "stdDev": 3.6,
+        "p75": 52.75,
+        "p95": 54.1
+      },
+      "fcp": {
+        "median": 868,
+        "mean": 874.8,
+        "min": 824,
+        "max": 916,
+        "stdDev": 30.62,
+        "p75": 904,
+        "p95": 916
+      },
+      "lcp": {
+        "median": 868,
+        "mean": 874.8,
+        "min": 824,
+        "max": 916,
+        "stdDev": 30.62,
+        "p75": 904,
+        "p95": 916
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 70.5,
+        "mean": 68.2,
+        "min": 57,
+        "max": 73,
+        "stdDev": 5.27,
+        "p75": 71.75,
+        "p95": 73
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "rails",
+      "name": "Ruby on Rails 8",
+      "category": "Dynamic SSR",
+      "claimedRuntime": "Ruby 3.4 / Puma ERB",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 49.5,
+        "mean": 49.3,
+        "min": 43,
+        "max": 54,
+        "stdDev": 3.1,
+        "p75": 51.75,
+        "p95": 53.1
+      },
+      "fcp": {
+        "median": 914,
+        "mean": 1023.6,
+        "min": 808,
+        "max": 1560,
+        "stdDev": 267.26,
+        "p75": 948,
+        "p95": 1552.8
+      },
+      "lcp": {
+        "median": 914,
+        "mean": 1023.6,
+        "min": 808,
+        "max": 1560,
+        "stdDev": 267.26,
+        "p75": 948,
+        "p95": 1552.8
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 62,
+        "mean": 62.6,
+        "min": 55,
+        "max": 71,
+        "stdDev": 6.97,
+        "p75": 69.75,
+        "p95": 71
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "springboot",
+      "name": "Spring Boot 3",
+      "category": "JVM SSR",
+      "claimedRuntime": "Java 21 / Thymeleaf",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 51,
+        "mean": 50.8,
+        "min": 42,
+        "max": 57,
+        "stdDev": 3.6,
+        "p75": 52.5,
+        "p95": 55.2
+      },
+      "fcp": {
+        "median": 878,
+        "mean": 894.4,
+        "min": 824,
+        "max": 1024,
+        "stdDev": 58.11,
+        "p75": 919,
+        "p95": 993.4
+      },
+      "lcp": {
+        "median": 878,
+        "mean": 894.4,
+        "min": 824,
+        "max": 1024,
+        "stdDev": 58.11,
+        "p75": 919,
+        "p95": 993.4
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 58,
+        "mean": 60.4,
+        "min": 55,
+        "max": 71,
+        "stdDev": 5.92,
+        "p75": 65.25,
+        "p95": 70.1
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "nuxt",
+      "name": "Nuxt 3",
+      "category": "Universal SSR",
+      "claimedRuntime": "Vue 3 / Nitro",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 47.5,
+        "mean": 48.3,
+        "min": 44,
+        "max": 53,
+        "stdDev": 3.29,
+        "p75": 51,
+        "p95": 53
+      },
+      "fcp": {
+        "median": 874,
+        "mean": 887.6,
+        "min": 820,
+        "max": 952,
+        "stdDev": 50.86,
+        "p75": 945,
+        "p95": 952
+      },
+      "lcp": {
+        "median": 874,
+        "mean": 887.6,
+        "min": 820,
+        "max": 952,
+        "stdDev": 50.86,
+        "p75": 945,
+        "p95": 952
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 65,
+        "mean": 64.2,
+        "min": 55,
+        "max": 73,
+        "stdDev": 7.01,
+        "p75": 71,
+        "p95": 72.1
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "jaspr",
+      "name": "Jaspr Web",
+      "category": "Hydrated SSR",
+      "claimedRuntime": "Dart 3.13 / Jaspr SSR",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 49.5,
+        "mean": 49.5,
+        "min": 42,
+        "max": 56,
+        "stdDev": 4.43,
+        "p75": 53.25,
+        "p95": 55.55
+      },
+      "fcp": {
+        "median": 862,
+        "mean": 873.6,
+        "min": 808,
+        "max": 984,
+        "stdDev": 59.52,
+        "p75": 894,
+        "p95": 978.6
+      },
+      "lcp": {
+        "median": 862,
+        "mean": 873.6,
+        "min": 808,
+        "max": 984,
+        "stdDev": 59.52,
+        "p75": 894,
+        "p95": 978.6
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 57,
+        "mean": 60.9,
+        "min": 54,
+        "max": 72,
+        "stdDev": 6.92,
+        "p75": 67.75,
+        "p95": 71.55
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "leptos",
+      "name": "Leptos 0.7",
+      "category": "Client WASM",
+      "claimedRuntime": "Rust WASM / Trunk",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 48,
+        "mean": 49,
+        "min": 45,
+        "max": 56,
+        "stdDev": 3.32,
+        "p75": 49.75,
+        "p95": 55.1
+      },
+      "fcp": {
+        "median": 840,
+        "mean": 852.8,
+        "min": 772,
+        "max": 1008,
+        "stdDev": 59.86,
+        "p75": 870,
+        "p95": 948.6
+      },
+      "lcp": {
+        "median": 840,
+        "mean": 852.8,
+        "min": 772,
+        "max": 1008,
+        "stdDev": 59.86,
+        "p75": 870,
+        "p95": 948.6
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 61.5,
+        "mean": 62.1,
+        "min": 53,
+        "max": 71,
+        "stdDev": 6.58,
+        "p75": 69,
+        "p95": 70.55
+      },
+      "payloadKb": {
+        "median": 613.1,
+        "mean": 613.1,
+        "min": 613.1,
+        "max": 613.1,
+        "stdDev": 0,
+        "p75": 613.1,
+        "p95": 613.1
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.4,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "angular",
+      "name": "Angular 19",
+      "category": "Signals SPA",
+      "claimedRuntime": "Angular 19 / Vite SPA",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 46,
+        "mean": 47.9,
+        "min": 42,
+        "max": 60,
+        "stdDev": 5.56,
+        "p75": 51.25,
+        "p95": 57.3
+      },
+      "fcp": {
+        "median": 858,
+        "mean": 968.8,
+        "min": 808,
+        "max": 1988,
+        "stdDev": 341.17,
+        "p75": 876,
+        "p95": 1507.4
+      },
+      "lcp": {
+        "median": 858,
+        "mean": 968.8,
+        "min": 808,
+        "max": 1988,
+        "stdDev": 341.17,
+        "p75": 876,
+        "p95": 1507.4
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 69,
+        "mean": 64.1,
+        "min": 54,
+        "max": 72,
+        "stdDev": 7.92,
+        "p75": 71,
+        "p95": 71.55
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "blazor",
+      "name": "Blazor WASM",
+      "category": "Client WASM",
+      "claimedRuntime": "C# / .NET 8 WASM",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 48,
+        "mean": 48.6,
+        "min": 43,
+        "max": 56,
+        "stdDev": 4.32,
+        "p75": 51.25,
+        "p95": 55.55
+      },
+      "fcp": {
+        "median": 850,
+        "mean": 872.8,
+        "min": 792,
+        "max": 1088,
+        "stdDev": 84.05,
+        "p75": 903,
+        "p95": 1012.4
+      },
+      "lcp": {
+        "median": 850,
+        "mean": 872.8,
+        "min": 792,
+        "max": 1088,
+        "stdDev": 84.05,
+        "p75": 903,
+        "p95": 1012.4
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 56,
+        "mean": 57.9,
+        "min": 53,
+        "max": 71,
+        "stdDev": 4.99,
+        "p75": 59.5,
+        "p95": 66.5
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    }
+  ],
+  "desktop-warm": [
+    {
+      "id": "nextjs",
+      "name": "Next.js 14",
+      "category": "Edge SSR",
+      "claimedRuntime": "React 18 RSC / Edge",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 50,
+        "mean": 50.4,
+        "min": 40,
+        "max": 69,
+        "stdDev": 8.42,
+        "p75": 54,
+        "p95": 64.5
+      },
+      "fcp": {
+        "median": 250,
+        "mean": 258,
+        "min": 228,
+        "max": 320,
+        "stdDev": 23.2,
+        "p75": 259,
+        "p95": 298.4
+      },
+      "lcp": {
+        "median": 250,
+        "mean": 258,
+        "min": 228,
+        "max": 320,
+        "stdDev": 23.2,
+        "p75": 259,
+        "p95": 298.4
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 71,
+        "mean": 71.5,
+        "min": 70,
+        "max": 73,
+        "stdDev": 0.92,
+        "p75": 72,
+        "p95": 73
+      },
+      "payloadKb": {
+        "median": 1018.6,
+        "mean": 1018.6,
+        "min": 1018.6,
+        "max": 1018.6,
+        "stdDev": 0,
+        "p75": 1018.6,
+        "p95": 1018.6
+      },
+      "resourceCount": {
+        "median": 12,
+        "mean": 12,
+        "min": 12,
+        "max": 12,
+        "stdDev": 0,
+        "p75": 12,
+        "p95": 12
+      },
+      "breakdownKb": {
+        "html": 180.1,
+        "js": 770.4,
+        "css": 68.1,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 0
+      }
+    },
+    {
+      "id": "buffalo",
+      "name": "Go Buffalo",
+      "category": "Native SSR",
+      "claimedRuntime": "Go 1.27 / Buffalo SSR",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 44.5,
+        "mean": 46.3,
+        "min": 39,
+        "max": 58,
+        "stdDev": 5.88,
+        "p75": 47.5,
+        "p95": 57.1
+      },
+      "fcp": {
+        "median": 408,
+        "mean": 406.8,
+        "min": 388,
+        "max": 424,
+        "stdDev": 12.66,
+        "p75": 418,
+        "p95": 424
+      },
+      "lcp": {
+        "median": 408,
+        "mean": 406.8,
+        "min": 388,
+        "max": 424,
+        "stdDev": 12.66,
+        "p75": 418,
+        "p95": 424
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 67.5,
+        "mean": 64.4,
+        "min": 55,
+        "max": 72,
+        "stdDev": 7.09,
+        "p75": 71,
+        "p95": 71.55
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "vapor",
+      "name": "Vapor 4",
+      "category": "Native SSR",
+      "claimedRuntime": "Swift 6.0 / SwiftNIO",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 44,
+        "mean": 47.3,
+        "min": 39,
+        "max": 75,
+        "stdDev": 9.75,
+        "p75": 47.75,
+        "p95": 63.75
+      },
+      "fcp": {
+        "median": 418,
+        "mean": 448.4,
+        "min": 372,
+        "max": 724,
+        "stdDev": 98.08,
+        "p75": 447,
+        "p95": 617.8
+      },
+      "lcp": {
+        "median": 418,
+        "mean": 448.4,
+        "min": 372,
+        "max": 724,
+        "stdDev": 98.08,
+        "p75": 447,
+        "p95": 617.8
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 66.5,
+        "mean": 64.2,
+        "min": 54,
+        "max": 73,
+        "stdDev": 7.77,
+        "p75": 71.75,
+        "p95": 72.55
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "django",
+      "name": "Django 6",
+      "category": "Dynamic SSR",
+      "claimedRuntime": "Python 3.13 / Django MVT",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 45,
+        "mean": 1004.1,
+        "min": 39,
+        "max": 9647,
+        "stdDev": 2880.97,
+        "p75": 48,
+        "p95": 5327.45
+      },
+      "fcp": {
+        "median": 392,
+        "mean": 1360.4,
+        "min": 376,
+        "max": 10044,
+        "stdDev": 2894.56,
+        "p75": 411,
+        "p95": 5713.2
+      },
+      "lcp": {
+        "median": 392,
+        "mean": 1360.4,
+        "min": 376,
+        "max": 10044,
+        "stdDev": 2894.56,
+        "p75": 411,
+        "p95": 5713.2
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 70,
+        "mean": 67.1,
+        "min": 54,
+        "max": 74,
+        "stdDev": 7.03,
+        "p75": 72,
+        "p95": 73.55
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "laravel",
+      "name": "Laravel 11",
+      "category": "Dynamic SSR",
+      "claimedRuntime": "PHP 8.4 / Blade SSR",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 42.5,
+        "mean": 46.4,
+        "min": 39,
+        "max": 67,
+        "stdDev": 7.99,
+        "p75": 48,
+        "p95": 60.7
+      },
+      "fcp": {
+        "median": 394,
+        "mean": 395.6,
+        "min": 376,
+        "max": 412,
+        "stdDev": 10.8,
+        "p75": 402,
+        "p95": 412
+      },
+      "lcp": {
+        "median": 394,
+        "mean": 395.6,
+        "min": 376,
+        "max": 412,
+        "stdDev": 10.8,
+        "p75": 402,
+        "p95": 412
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 62,
+        "mean": 63,
+        "min": 54,
+        "max": 71,
+        "stdDev": 6.96,
+        "p75": 70.75,
+        "p95": 71
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "rails",
+      "name": "Ruby on Rails 8",
+      "category": "Dynamic SSR",
+      "claimedRuntime": "Ruby 3.4 / Puma ERB",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 48,
+        "mean": 45.9,
+        "min": 39,
+        "max": 51,
+        "stdDev": 4.28,
+        "p75": 49,
+        "p95": 50.55
+      },
+      "fcp": {
+        "median": 392,
+        "mean": 392.8,
+        "min": 376,
+        "max": 408,
+        "stdDev": 7.96,
+        "p75": 396,
+        "p95": 404.4
+      },
+      "lcp": {
+        "median": 392,
+        "mean": 392.8,
+        "min": 376,
+        "max": 408,
+        "stdDev": 7.96,
+        "p75": 396,
+        "p95": 404.4
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 59,
+        "mean": 62.4,
+        "min": 55,
+        "max": 71,
+        "stdDev": 7,
+        "p75": 70.75,
+        "p95": 71
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "springboot",
+      "name": "Spring Boot 3",
+      "category": "JVM SSR",
+      "claimedRuntime": "Java 21 / Thymeleaf",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 44,
+        "mean": 45.5,
+        "min": 40,
+        "max": 53,
+        "stdDev": 4.61,
+        "p75": 50.25,
+        "p95": 52.1
+      },
+      "fcp": {
+        "median": 396,
+        "mean": 403.2,
+        "min": 384,
+        "max": 444,
+        "stdDev": 18.57,
+        "p75": 410,
+        "p95": 436.8
+      },
+      "lcp": {
+        "median": 396,
+        "mean": 403.2,
+        "min": 384,
+        "max": 444,
+        "stdDev": 18.57,
+        "p75": 410,
+        "p95": 436.8
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 68.5,
+        "mean": 66,
+        "min": 55,
+        "max": 77,
+        "stdDev": 7.07,
+        "p75": 71,
+        "p95": 74.75
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "nuxt",
+      "name": "Nuxt 3",
+      "category": "Universal SSR",
+      "claimedRuntime": "Vue 3 / Nitro",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 43.5,
+        "mean": 45.4,
+        "min": 39,
+        "max": 56,
+        "stdDev": 6.12,
+        "p75": 51,
+        "p95": 54.65
+      },
+      "fcp": {
+        "median": 404,
+        "mean": 444,
+        "min": 384,
+        "max": 832,
+        "stdDev": 129.74,
+        "p75": 408,
+        "p95": 646.6
+      },
+      "lcp": {
+        "median": 404,
+        "mean": 444,
+        "min": 384,
+        "max": 832,
+        "stdDev": 129.74,
+        "p75": 408,
+        "p95": 646.6
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 68,
+        "mean": 66.3,
+        "min": 55,
+        "max": 74,
+        "stdDev": 7.07,
+        "p75": 73,
+        "p95": 73.55
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "jaspr",
+      "name": "Jaspr Web",
+      "category": "Hydrated SSR",
+      "claimedRuntime": "Dart 3.13 / Jaspr SSR",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 44.5,
+        "mean": 44.7,
+        "min": 40,
+        "max": 54,
+        "stdDev": 3.9,
+        "p75": 46.5,
+        "p95": 50.85
+      },
+      "fcp": {
+        "median": 392,
+        "mean": 392,
+        "min": 376,
+        "max": 408,
+        "stdDev": 9.8,
+        "p75": 396,
+        "p95": 406.2
+      },
+      "lcp": {
+        "median": 392,
+        "mean": 392,
+        "min": 376,
+        "max": 408,
+        "stdDev": 9.8,
+        "p75": 396,
+        "p95": 406.2
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 55.5,
+        "mean": 59.9,
+        "min": 54,
+        "max": 72,
+        "stdDev": 7.2,
+        "p75": 67.25,
+        "p95": 71.1
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "leptos",
+      "name": "Leptos 0.7",
+      "category": "Client WASM",
+      "claimedRuntime": "Rust WASM / Trunk",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 46.5,
+        "mean": 46.2,
+        "min": 39,
+        "max": 56,
+        "stdDev": 4.77,
+        "p75": 49,
+        "p95": 52.85
+      },
+      "fcp": {
+        "median": 394,
+        "mean": 398,
+        "min": 380,
+        "max": 428,
+        "stdDev": 12.3,
+        "p75": 402,
+        "p95": 419
+      },
+      "lcp": {
+        "median": 394,
+        "mean": 398,
+        "min": 380,
+        "max": 428,
+        "stdDev": 12.3,
+        "p75": 402,
+        "p95": 419
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 57.5,
+        "mean": 60.4,
+        "min": 55,
+        "max": 71,
+        "stdDev": 6.09,
+        "p75": 64,
+        "p95": 71
+      },
+      "payloadKb": {
+        "median": 613.1,
+        "mean": 613.1,
+        "min": 613.1,
+        "max": 613.1,
+        "stdDev": 0,
+        "p75": 613.1,
+        "p95": 613.1
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.4,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "angular",
+      "name": "Angular 19",
+      "category": "Signals SPA",
+      "claimedRuntime": "Angular 19 / Vite SPA",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 44,
+        "mean": 43.6,
+        "min": 39,
+        "max": 49,
+        "stdDev": 2.65,
+        "p75": 44.75,
+        "p95": 47.65
+      },
+      "fcp": {
+        "median": 392,
+        "mean": 398.4,
+        "min": 388,
+        "max": 440,
+        "stdDev": 14.77,
+        "p75": 395,
+        "p95": 425.6
+      },
+      "lcp": {
+        "median": 392,
+        "mean": 398.4,
+        "min": 388,
+        "max": 440,
+        "stdDev": 14.77,
+        "p75": 395,
+        "p95": 425.6
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 64,
+        "mean": 63.7,
+        "min": 54,
+        "max": 73,
+        "stdDev": 8.03,
+        "p75": 71,
+        "p95": 73
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "blazor",
+      "name": "Blazor WASM",
+      "category": "Client WASM",
+      "claimedRuntime": "C# / .NET 8 WASM",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 43.5,
+        "mean": 44.6,
+        "min": 38,
+        "max": 53,
+        "stdDev": 4.61,
+        "p75": 47.75,
+        "p95": 51.65
+      },
+      "fcp": {
+        "median": 398,
+        "mean": 414.8,
+        "min": 376,
+        "max": 576,
+        "stdDev": 55.14,
+        "p75": 404,
+        "p95": 507.6
+      },
+      "lcp": {
+        "median": 398,
+        "mean": 414.8,
+        "min": 376,
+        "max": 576,
+        "stdDev": 55.14,
+        "p75": 404,
+        "p95": 507.6
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 67,
+        "mean": 64.4,
+        "min": 54,
+        "max": 73,
+        "stdDev": 7.68,
+        "p75": 71.75,
+        "p95": 72.55
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    }
+  ],
+  "mobile-cold": [
+    {
+      "id": "nextjs",
+      "name": "Next.js 14",
+      "category": "Edge SSR",
+      "claimedRuntime": "React 18 RSC / Edge",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 55.5,
+        "mean": 56.1,
+        "min": 42,
+        "max": 68,
+        "stdDev": 8.15,
+        "p75": 63.25,
+        "p95": 67.1
+      },
+      "fcp": {
+        "median": 564,
+        "mean": 576.8,
+        "min": 536,
+        "max": 660,
+        "stdDev": 38.9,
+        "p75": 594,
+        "p95": 645.6
+      },
+      "lcp": {
+        "median": 564,
+        "mean": 576.8,
+        "min": 536,
+        "max": 660,
+        "stdDev": 38.9,
+        "p75": 594,
+        "p95": 645.6
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 71,
+        "mean": 69.5,
+        "min": 57,
+        "max": 73,
+        "stdDev": 4.52,
+        "p75": 71.75,
+        "p95": 72.55
+      },
+      "payloadKb": {
+        "median": 1018.6,
+        "mean": 1018.6,
+        "min": 1018.6,
+        "max": 1018.6,
+        "stdDev": 0,
+        "p75": 1018.6,
+        "p95": 1018.6
+      },
+      "resourceCount": {
+        "median": 13,
+        "mean": 13,
+        "min": 13,
+        "max": 13,
+        "stdDev": 0,
+        "p75": 13,
+        "p95": 13
+      },
+      "breakdownKb": {
+        "html": 180.1,
+        "js": 770.4,
+        "css": 68.1,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 0
+      }
+    },
+    {
+      "id": "buffalo",
+      "name": "Go Buffalo",
+      "category": "Native SSR",
+      "claimedRuntime": "Go 1.27 / Buffalo SSR",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 51.5,
+        "mean": 56,
+        "min": 44,
+        "max": 75,
+        "stdDev": 10.02,
+        "p75": 64.75,
+        "p95": 71.85
+      },
+      "fcp": {
+        "median": 1014,
+        "mean": 1024,
+        "min": 924,
+        "max": 1108,
+        "stdDev": 53.4,
+        "p75": 1053,
+        "p95": 1106.2
+      },
+      "lcp": {
+        "median": 1014,
+        "mean": 1024,
+        "min": 924,
+        "max": 1108,
+        "stdDev": 53.4,
+        "p75": 1053,
+        "p95": 1106.2
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 69.5,
+        "mean": 72.7,
+        "min": 56,
+        "max": 109,
+        "stdDev": 15.67,
+        "p75": 74.75,
+        "p95": 101.8
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "vapor",
+      "name": "Vapor 4",
+      "category": "Native SSR",
+      "claimedRuntime": "Swift 6.0 / SwiftNIO",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 54,
+        "mean": 53.3,
+        "min": 46,
+        "max": 61,
+        "stdDev": 4.71,
+        "p75": 55.75,
+        "p95": 60.1
+      },
+      "fcp": {
+        "median": 918,
+        "mean": 937.2,
+        "min": 832,
+        "max": 1064,
+        "stdDev": 81.19,
+        "p75": 1008,
+        "p95": 1051.4
+      },
+      "lcp": {
+        "median": 918,
+        "mean": 937.2,
+        "min": 832,
+        "max": 1064,
+        "stdDev": 81.19,
+        "p75": 1008,
+        "p95": 1051.4
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 67.5,
+        "mean": 66,
+        "min": 52,
+        "max": 81,
+        "stdDev": 8.4,
+        "p75": 71.75,
+        "p95": 76.95
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "django",
+      "name": "Django 6",
+      "category": "Dynamic SSR",
+      "claimedRuntime": "Python 3.13 / Django MVT",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 53.5,
+        "mean": 52.2,
+        "min": 45,
+        "max": 64,
+        "stdDev": 5.71,
+        "p75": 55,
+        "p95": 60.4
+      },
+      "fcp": {
+        "median": 962,
+        "mean": 976,
+        "min": 832,
+        "max": 1152,
+        "stdDev": 101.59,
+        "p75": 1051,
+        "p95": 1130.4
+      },
+      "lcp": {
+        "median": 962,
+        "mean": 976,
+        "min": 832,
+        "max": 1152,
+        "stdDev": 101.59,
+        "p75": 1051,
+        "p95": 1130.4
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 65,
+        "mean": 68.2,
+        "min": 54,
+        "max": 83,
+        "stdDev": 9.96,
+        "p75": 78,
+        "p95": 82.55
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "laravel",
+      "name": "Laravel 11",
+      "category": "Dynamic SSR",
+      "claimedRuntime": "PHP 8.4 / Blade SSR",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 48,
+        "mean": 51,
+        "min": 44,
+        "max": 72,
+        "stdDev": 7.46,
+        "p75": 51.25,
+        "p95": 63.9
+      },
+      "fcp": {
+        "median": 910,
+        "mean": 938.4,
+        "min": 852,
+        "max": 1088,
+        "stdDev": 75.43,
+        "p75": 970,
+        "p95": 1073.6
+      },
+      "lcp": {
+        "median": 910,
+        "mean": 938.4,
+        "min": 852,
+        "max": 1088,
+        "stdDev": 75.43,
+        "p75": 970,
+        "p95": 1073.6
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 73.5,
+        "mean": 74.2,
+        "min": 54,
+        "max": 104,
+        "stdDev": 12.89,
+        "p75": 78.75,
+        "p95": 95
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "rails",
+      "name": "Ruby on Rails 8",
+      "category": "Dynamic SSR",
+      "claimedRuntime": "Ruby 3.4 / Puma ERB",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 52,
+        "mean": 52.1,
+        "min": 45,
+        "max": 58,
+        "stdDev": 3.75,
+        "p75": 54.75,
+        "p95": 57.1
+      },
+      "fcp": {
+        "median": 944,
+        "mean": 985.2,
+        "min": 828,
+        "max": 1200,
+        "stdDev": 131.02,
+        "p75": 1094,
+        "p95": 1192.8
+      },
+      "lcp": {
+        "median": 944,
+        "mean": 985.2,
+        "min": 828,
+        "max": 1200,
+        "stdDev": 131.02,
+        "p75": 1094,
+        "p95": 1192.8
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 63.5,
+        "mean": 64.6,
+        "min": 55,
+        "max": 73,
+        "stdDev": 5.71,
+        "p75": 68.75,
+        "p95": 73
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "springboot",
+      "name": "Spring Boot 3",
+      "category": "JVM SSR",
+      "claimedRuntime": "Java 21 / Thymeleaf",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 49,
+        "mean": 49.3,
+        "min": 43,
+        "max": 58,
+        "stdDev": 4.45,
+        "p75": 50.75,
+        "p95": 56.65
+      },
+      "fcp": {
+        "median": 916,
+        "mean": 954.4,
+        "min": 848,
+        "max": 1124,
+        "stdDev": 103.12,
+        "p75": 1044,
+        "p95": 1118.6
+      },
+      "lcp": {
+        "median": 916,
+        "mean": 954.4,
+        "min": 848,
+        "max": 1124,
+        "stdDev": 103.12,
+        "p75": 1044,
+        "p95": 1118.6
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 72.5,
+        "mean": 78.2,
+        "min": 54,
+        "max": 121,
+        "stdDev": 20.57,
+        "p75": 85,
+        "p95": 115.15
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "nuxt",
+      "name": "Nuxt 3",
+      "category": "Universal SSR",
+      "claimedRuntime": "Vue 3 / Nitro",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 49,
+        "mean": 50.6,
+        "min": 43,
+        "max": 58,
+        "stdDev": 4.03,
+        "p75": 53.5,
+        "p95": 56.65
+      },
+      "fcp": {
+        "median": 910,
+        "mean": 904.8,
+        "min": 804,
+        "max": 1008,
+        "stdDev": 62.58,
+        "p75": 938,
+        "p95": 999
+      },
+      "lcp": {
+        "median": 910,
+        "mean": 904.8,
+        "min": 804,
+        "max": 1008,
+        "stdDev": 62.58,
+        "p75": 938,
+        "p95": 999
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 71.5,
+        "mean": 72.9,
+        "min": 58,
+        "max": 105,
+        "stdDev": 11.74,
+        "p75": 72.75,
+        "p95": 91.95
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "jaspr",
+      "name": "Jaspr Web",
+      "category": "Hydrated SSR",
+      "claimedRuntime": "Dart 3.13 / Jaspr SSR",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 47,
+        "mean": 47.5,
+        "min": 43,
+        "max": 57,
+        "stdDev": 3.83,
+        "p75": 48.75,
+        "p95": 53.85
+      },
+      "fcp": {
+        "median": 928,
+        "mean": 1022.4,
+        "min": 808,
+        "max": 1736,
+        "stdDev": 261.17,
+        "p75": 963,
+        "p95": 1512.8
+      },
+      "lcp": {
+        "median": 928,
+        "mean": 1022.4,
+        "min": 808,
+        "max": 1736,
+        "stdDev": 261.17,
+        "p75": 963,
+        "p95": 1512.8
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 70,
+        "mean": 72.3,
+        "min": 62,
+        "max": 98,
+        "stdDev": 10.37,
+        "p75": 73.5,
+        "p95": 91.25
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "leptos",
+      "name": "Leptos 0.7",
+      "category": "Client WASM",
+      "claimedRuntime": "Rust WASM / Trunk",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 49.5,
+        "mean": 52.3,
+        "min": 43,
+        "max": 69,
+        "stdDev": 7.52,
+        "p75": 54.5,
+        "p95": 65.85
+      },
+      "fcp": {
+        "median": 900,
+        "mean": 936.8,
+        "min": 876,
+        "max": 1040,
+        "stdDev": 62.76,
+        "p75": 1002,
+        "p95": 1032.8
+      },
+      "lcp": {
+        "median": 900,
+        "mean": 936.8,
+        "min": 876,
+        "max": 1040,
+        "stdDev": 62.76,
+        "p75": 1002,
+        "p95": 1032.8
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 65,
+        "mean": 64.1,
+        "min": 53,
+        "max": 72,
+        "stdDev": 5.65,
+        "p75": 68,
+        "p95": 70.65
+      },
+      "payloadKb": {
+        "median": 613.1,
+        "mean": 613.1,
+        "min": 613.1,
+        "max": 613.1,
+        "stdDev": 0,
+        "p75": 613.1,
+        "p95": 613.1
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.4,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "angular",
+      "name": "Angular 19",
+      "category": "Signals SPA",
+      "claimedRuntime": "Angular 19 / Vite SPA",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 48.5,
+        "mean": 48.7,
+        "min": 41,
+        "max": 55,
+        "stdDev": 4.27,
+        "p75": 50.75,
+        "p95": 55
+      },
+      "fcp": {
+        "median": 924,
+        "mean": 926.8,
+        "min": 824,
+        "max": 1204,
+        "stdDev": 102.79,
+        "p75": 927,
+        "p95": 1101.4
+      },
+      "lcp": {
+        "median": 924,
+        "mean": 926.8,
+        "min": 824,
+        "max": 1204,
+        "stdDev": 102.79,
+        "p75": 927,
+        "p95": 1101.4
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 61,
+        "mean": 64.7,
+        "min": 52,
+        "max": 84,
+        "stdDev": 10.22,
+        "p75": 66,
+        "p95": 83.55
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    },
+    {
+      "id": "blazor",
+      "name": "Blazor WASM",
+      "category": "Client WASM",
+      "claimedRuntime": "C# / .NET 8 WASM",
+      "sampleCount": 10,
+      "ttfb": {
+        "median": 52,
+        "mean": 51.6,
+        "min": 41,
+        "max": 70,
+        "stdDev": 8.22,
+        "p75": 56.25,
+        "p95": 64.15
+      },
+      "fcp": {
+        "median": 924,
+        "mean": 916,
+        "min": 840,
+        "max": 1040,
+        "stdDev": 56.17,
+        "p75": 937,
+        "p95": 1002.2
+      },
+      "lcp": {
+        "median": 924,
+        "mean": 916,
+        "min": 840,
+        "max": 1040,
+        "stdDev": 56.17,
+        "p75": 937,
+        "p95": 1002.2
+      },
+      "cls": {
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "stdDev": 0,
+        "p75": 0,
+        "p95": 0
+      },
+      "loadEvent": {
+        "median": null,
+        "mean": null,
+        "min": null,
+        "max": null,
+        "stdDev": null,
+        "p75": null,
+        "p95": null
+      },
+      "syntheticLatency": {
+        "median": 62,
+        "mean": 62.8,
+        "min": 53,
+        "max": 75,
+        "stdDev": 6.79,
+        "p75": 68.5,
+        "p95": 72.3
+      },
+      "payloadKb": {
+        "median": 613,
+        "mean": 613,
+        "min": 613,
+        "max": 613,
+        "stdDev": 0,
+        "p75": 613,
+        "p95": 613
+      },
+      "resourceCount": {
+        "median": 4,
+        "mean": 4,
+        "min": 4,
+        "max": 4,
+        "stdDev": 0,
+        "p75": 4,
+        "p95": 4
+      },
+      "breakdownKb": {
+        "html": 120.3,
+        "js": 397.7,
+        "css": 0,
+        "images": 0,
+        "fonts": 0,
+        "wasm": 0,
+        "other": 95
+      }
+    }
+  ]
+}
