@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  buffalo:
+    build:
+      context: /mnt/e/Portfolio-Buffalo
+      dockerfile: Dockerfile
+    container_name: polyglot-buffalo
+    ports:
+      - "8087:8087"
+    restart: unless-stopped
+
+  django:
+    build:
+      context: /mnt/e/Portfolio-Django
+      dockerfile: Dockerfile
+    container_name: polyglot-django
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+  laravel:
+    build:
+      context: /mnt/e/Portfolio-Laravel
+      dockerfile: Dockerfile
+    container_name: polyglot-laravel
+    ports:
+      - "8001:8001"
+    restart: unless-stopped
+
+  springboot:
+    build:
+      context: /mnt/e/Portfolio-SpringBoot
+      dockerfile: Dockerfile
+    container_name: polyglot-springboot
+    ports:
+      - "8082:8082"
+    restart: unless-stopped
+
+  rails:
+    build:
+      context: /mnt/e/Portfolio-Rails
+      dockerfile: Dockerfile
+    container_name: polyglot-rails
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+
+  vapor:
+    build:
+      context: /mnt/e/Portfolio-Vapor
+      dockerfile: Dockerfile
+    container_name: polyglot-vapor
+    ports:
+      - "8086:8080"
+    restart: unless-stopped

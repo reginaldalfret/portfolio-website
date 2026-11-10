@@ -1,0 +1,116 @@
+{
+  "clientResults": [
+    {
+      "stack": "Leptos",
+      "lang": "Rust 1.99.1",
+      "type": "WebAssembly SPA",
+      "status": "VERIFIED",
+      "downloadedAssetsCount": 3,
+      "hasExpectedAssets": true,
+      "containsName": true,
+      "errorCount": 0
+    },
+    {
+      "stack": "Blazor",
+      "lang": ".NET 8 / C#",
+      "type": "WebAssembly SPA",
+      "status": "VERIFIED",
+      "downloadedAssetsCount": 36,
+      "hasExpectedAssets": true,
+      "containsName": true,
+      "errorCount": 0
+    },
+    {
+      "stack": "Angular",
+      "lang": "TypeScript 6.0",
+      "type": "Client SPA (Signals)",
+      "status": "VERIFIED",
+      "downloadedAssetsCount": 2,
+      "hasExpectedAssets": true,
+      "containsName": true,
+      "errorCount": 0
+    },
+    {
+      "stack": "Nuxt",
+      "lang": "Vue 3 / TypeScript",
+      "type": "Nitro Hydration / Vue 3",
+      "status": "VERIFIED",
+      "downloadedAssetsCount": 10,
+      "hasExpectedAssets": true,
+      "containsName": true,
+      "errorCount": 0
+    },
+    {
+      "stack": "Jaspr",
+      "lang": "Dart 3.13.5",
+      "type": "Dart Web SPA",
+      "status": "VERIFIED",
+      "downloadedAssetsCount": 2,
+      "hasExpectedAssets": true,
+      "containsName": true,
+      "errorCount": 0
+    }
+  ],
+  "backendResults": [
+    {
+      "stack": "Go Buffalo",
+      "port": 8087,
+      "lang": "Go 1.27",
+      "framework": "Buffalo Plush",
+      "active": false,
+      "statusCode": null,
+      "serverHeader": null,
+      "error": "connect ECONNREFUSED 127.0.0.1:8087"
+    },
+    {
+      "stack": "Spring Boot",
+      "port": 8082,
+      "lang": "Java 21",
+      "framework": "Spring MVC Tomcat",
+      "active": false,
+      "statusCode": null,
+      "serverHeader": null,
+      "error": "connect ECONNREFUSED 127.0.0.1:8082"
+    },
+    {
+      "stack": "Django",
+      "port": 8000,
+      "lang": "Python 3.13",
+      "framework": "Django SSR",
+      "active": true,
+      "statusCode": 200,
+      "serverHeader": "PHP/8.4.24",
+      "error": null
+    },
+    {
+      "stack": "Laravel",
+      "port": 8001,
+      "lang": "PHP 8.4",
+      "framework": "Laravel Blade",
+      "active": false,
+      "statusCode": null,
+      "serverHeader": null,
+      "error": "connect ECONNREFUSED 127.0.0.1:8001"
+    },
+    {
+      "stack": "Ruby on Rails",
+      "port": 3000,
+      "lang": "Ruby 3.4",
+      "framework": "Rails 8 Puma",
+      "active": false,
+      "statusCode": null,
+      "serverHeader": null,
+      "error": "connect ECONNREFUSED 127.0.0.1:3000"
+    },
+    {
+      "stack": "Vapor 4",
+      "port": 8086,
+      "lang": "Swift 6.0",
+      "framework": "SwiftNIO",
+      "active": false,
+      "statusCode": null,
+      "serverHeader": null,
+      "error": "connect ECONNREFUSED 127.0.0.1:8086"
+    }
+  ]
+}
