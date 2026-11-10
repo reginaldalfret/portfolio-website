@@ -263,7 +263,8 @@ if (fs.existsSync(angularAppHtml)) {
     }
     if (fs.existsSync(distIndex)) {
       let distHtml = fs.readFileSync(distIndex, 'utf8');
-      distHtml = distHtml.replace('<app-root></app-root>', '<app-root></app-root>\n' + lab);
+      const nav = '<nav style="display:none"><a href="#performance-lab">Performance Lab</a></nav>';
+      distHtml = distHtml.replace('<app-root></app-root>', nav + '<app-root></app-root>\n' + lab);
       fs.writeFileSync('public/stacks/angular/index.html', distHtml, 'utf8');
     }
     console.log('[9/12] Angular 19 ✔ VERIFIED (Built & Deployed)\n');
