@@ -1,5 +1,63 @@
 [
   {
+    "id": "containers-podman-py-672",
+    "organization": "Containers",
+    "orgKey": "containers",
+    "organizationUrl": "https://github.com/containers",
+    "repository": "containers/podman-py",
+    "repositoryUrl": "https://github.com/containers/podman-py",
+    "prNumber": 672,
+    "title": "feat(containers): support nano_cpus in containers.create()",
+    "url": "https://github.com/containers/podman-py/pull/672",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "MAINTENANCE",
+    "contribution": "Summary containers.create() documents nanocpus (int): CPU quota in units of 1e-9 CPUs, but nanocpus was previously included in the ignored keywords list, creating the container without CPU limits.",
+    "description": "Summary containers.create() documents nanocpus (int): CPU quota in units of 1e-9 CPUs, but nanocpus was previously included in the ignored keywords list, creating the container without CPU limits.",
+    "labels": [],
+    "date": "2026-11-12T09:37:39.000Z",
+    "mergedAt": "2026-11-12T09:37:39.000Z",
+    "displayDate": "Nov 12, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
+    "id": "google-adk-js-1137",
+    "organization": "Google",
+    "orgKey": "google",
+    "organizationUrl": "https://github.com/google",
+    "repository": "google/adk-js",
+    "repositoryUrl": "https://github.com/google/adk-js",
+    "prNumber": 1137,
+    "title": "fix(core): invoke plugin beforeAgentCallback and afterAgentCallback",
+    "url": "https://github.com/google/adk-js/pull/1137",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "BUG FIX",
+    "contribution": "In BaseAgent.handleBeforeAgentCallback and BaseAgent.handleAfterAgentCallback, execution previously only checked his.canonicalBeforeAgentCallbacks / his.canonicalAfterAgentCallbacks. If an agent had no instance callba…",
+    "description": "In BaseAgent.handleBeforeAgentCallback and BaseAgent.handleAfterAgentCallback, execution previously only checked his.canonicalBeforeAgentCallbacks / his.canonicalAfterAgentCallbacks. If an agent had no instance callba…",
+    "labels": [
+      "request clarification"
+    ],
+    "date": "2026-11-11T23:04:07.000Z",
+    "mergedAt": "2026-11-11T23:04:07.000Z",
+    "displayDate": "Nov 11, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
     "id": "vercel-v0-sdk-268",
     "organization": "Vercel",
     "orgKey": "vercel",
