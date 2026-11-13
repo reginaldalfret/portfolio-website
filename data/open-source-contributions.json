@@ -1,5 +1,33 @@
 [
   {
+    "id": "google-research-timesfm-528",
+    "organization": "Google Research",
+    "orgKey": "google-research",
+    "organizationUrl": "https://github.com/google-research",
+    "repository": "google-research/timesfm",
+    "repositoryUrl": "https://github.com/google-research/timesfm",
+    "prNumber": 528,
+    "title": "fix: apply symmetric tolerance guard in revin denormalization",
+    "url": "https://github.com/google-research/timesfm/pull/528",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "BUG FIX",
+    "contribution": "In reversible instance normalization (\\evin\\), forward normalization guards against division-by-zero on low/zero-variance inputs (\\sigma < TOLERANCE\\) by clamping small \\sigma\\ to \\1.0\\. However, reverse denormalizati…",
+    "description": "In reversible instance normalization (\\evin\\), forward normalization guards against division-by-zero on low/zero-variance inputs (\\sigma < TOLERANCE\\) by clamping small \\sigma\\ to \\1.0\\. However, reverse denormalizati…",
+    "labels": [],
+    "date": "2026-11-13T04:38:21.000Z",
+    "mergedAt": "2026-11-13T04:38:21.000Z",
+    "displayDate": "Nov 13, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
     "id": "containers-podman-py-672",
     "organization": "Containers",
     "orgKey": "containers",
@@ -1626,7 +1654,8 @@
     "mergedAt": "2026-10-07T22:35:17.000Z",
     "description": "Corrected typographical errors and refined technical phrasing in the state vector simulators quantum documentation.",
     "labels": [
-      "documentation"
+      "documentation",
+      "no release notes"
     ],
     "isFeatured": true,
     "organizationUrl": "https://github.com/NVIDIA"
