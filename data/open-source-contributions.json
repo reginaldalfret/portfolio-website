@@ -1,5 +1,64 @@
 [
   {
+    "id": "flutter-flutter-194673",
+    "organization": "Flutter",
+    "orgKey": "flutter",
+    "organizationUrl": "https://github.com/flutter",
+    "repository": "flutter/flutter",
+    "repositoryUrl": "https://github.com/flutter/flutter",
+    "prNumber": 194673,
+    "title": "Safely return null on malformed stack trace line in StackFrame.fromStackTraceLine",
+    "url": "https://github.com/flutter/flutter/pull/194673",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "MAINTENANCE",
+    "contribution": "\\StackFrame.fromStackTraceLine\\ documents: Returns null if format is not as expected.",
+    "description": "\\StackFrame.fromStackTraceLine\\ documents: Returns null if format is not as expected.",
+    "labels": [
+      "framework",
+      "CICD"
+    ],
+    "date": "2026-11-14T01:02:01.000Z",
+    "mergedAt": "2026-11-14T01:02:01.000Z",
+    "displayDate": "Nov 14, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
+    "id": "cisco-libsrtp-832",
+    "organization": "Cisco",
+    "orgKey": "cisco",
+    "organizationUrl": "https://github.com/cisco",
+    "repository": "cisco/libsrtp",
+    "repositoryUrl": "https://github.com/cisco/libsrtp",
+    "prNumber": 832,
+    "title": "ci: skip irrelevant build jobs for documentation-only changes",
+    "url": "https://github.com/cisco/libsrtp/pull/832",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "DOCS",
+    "contribution": "Minor documentation changes (such as typo fixes in markdown files like 779) previously triggered the full suite of GitHub Actions CI workflows, including expensive multi-platform build matrices across Linux, macOS, an…",
+    "description": "Minor documentation changes (such as typo fixes in markdown files like 779) previously triggered the full suite of GitHub Actions CI workflows, including expensive multi-platform build matrices across Linux, macOS, an…",
+    "labels": [],
+    "date": "2026-11-13T12:02:44.000Z",
+    "mergedAt": "2026-11-13T12:02:44.000Z",
+    "displayDate": "Nov 13, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
     "id": "google-research-timesfm-528",
     "organization": "Google Research",
     "orgKey": "google-research",
