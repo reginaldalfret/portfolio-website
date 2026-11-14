@@ -19,8 +19,8 @@ export function Footer() {
           <div className="text-xs sm:text-sm font-bold font-mono tracking-wider text-white">
             {PORTFOLIO_DATA.personal.name.toUpperCase()}
           </div>
-          <div className="text-[11px] sm:text-xs text-neutral-400 mt-1">
-            Software Engineer <span className="text-neutral-600">|</span> Full-Stack Developer <span className="text-neutral-600">|</span> AI Engineer
+          <div className="text-[11px] sm:text-xs text-neutral-400 mt-1 font-mono tracking-wide">
+            OPEN-SOURCE CONTRIBUTOR <span className="text-neutral-600">·</span> AI &amp; DS ENGINEER <span className="text-neutral-600">·</span> SOFTWARE DEVELOPER
           </div>
         </div>
 
@@ -73,6 +73,9 @@ export function Footer() {
         </a>
         <a href="/about" className="hover:text-cyan-400 transition-colors">
           About Reginald Alfret V
+        </a>
+        <a href="/lab" className="hover:text-cyan-400 transition-colors">
+          Engineering Lab (12 Stacks)
         </a>
         <a href="/#open-source" className="hover:text-cyan-400 transition-colors">
           Open-Source Contributions

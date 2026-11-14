@@ -18,12 +18,21 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Reginald Alfret V Portfolio",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "AI Crop Recommendation — Agri-Intelligence Engine",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "AI Crop Recommendation — Agri-Intelligence Engine",
     description:
       "Machine learning recommendation engine combining soil, weather, and GIS datasets with transparent Explainable AI. 1st Place Winner at Blaze a Trail 2.0.",
+    images: ["/og-image.png"],
   },
 };
 

@@ -2,33 +2,44 @@ import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://reginaldalfret.tech";
-  const updatedModified = new Date("2026-10-06T20:00:00.000Z");
-  const projectModified = new Date("2026-09-18T20:00:00.000Z");
+  const now = new Date();
 
   return [
     {
       url: `${baseUrl}/`,
-      lastModified: updatedModified,
-    },
-    {
-      url: `${baseUrl}/lab`,
-      lastModified: new Date("2026-11-10T20:00:00.000Z"),
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 1.0,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: updatedModified,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/lab`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/projects/301-super-ai-agents`,
-      lastModified: projectModified,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/projects/tor-unveil`,
-      lastModified: projectModified,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/projects/ai-crop-recommendation`,
-      lastModified: projectModified,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
     },
   ];
 }

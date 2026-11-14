@@ -835,7 +835,9 @@ export function ResumePortfolio() {
                   >
                     <div className="flex items-center justify-between mb-1.5">
                       <div className="flex items-center gap-2 min-w-0">
-                        <OrgLogo orgKey={item.key} className="w-4 h-4 text-neutral-300 group-hover:text-cyan-400 transition-colors shrink-0" />
+                        <div className="w-5 h-5 flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-110">
+                          <OrgLogo orgKey={item.key} className="w-4.5 h-4.5 shrink-0" />
+                        </div>
                         <span className="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
                           {item.org}
                         </span>
@@ -920,7 +922,9 @@ export function ResumePortfolio() {
                     <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-2.5">
                       <div className="flex flex-wrap items-baseline justify-between gap-1">
                         <h3 className="text-sm font-bold text-white">
-                          301 Super AI Agents — Sovereign Multi-Agent AI Platform
+                          <Link href="/projects/301-super-ai-agents" className="hover:text-cyan-400 transition-colors">
+                            301 Super AI Agents — Sovereign Multi-Agent AI Platform
+                          </Link>
                         </h3>
                         <span className="text-xs font-semibold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
                           1st · HackIndia 2026 (500+ Teams)
@@ -941,13 +945,25 @@ export function ResumePortfolio() {
                         <li>Implemented local model selection, OCR document parsing, real-time streaming and automation.</li>
                         <li>Built an interface supporting offline, on-device inference for privacy-sensitive environments.</li>
                       </ul>
+                      <div className="pt-2 flex items-center justify-between border-t border-white/5">
+                        <Link
+                          href="/projects/301-super-ai-agents"
+                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 hover:underline"
+                        >
+                          <span>Read Full Architecture Case Study</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
+                        <span className="text-[10px] font-mono text-neutral-500">Offline Multi-Agent AI</span>
+                      </div>
                     </div>
 
                     {/* Project 2 */}
                     <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-2.5">
                       <div className="flex flex-wrap items-baseline justify-between gap-1">
                         <h3 className="text-sm font-bold text-white">
-                          TOR-UNVEIL — Dark Web AI Cybercriminal Tracker
+                          <Link href="/projects/tor-unveil" className="hover:text-rose-400 transition-colors">
+                            TOR-UNVEIL — Dark Web AI Cybercriminal Tracker
+                          </Link>
                         </h3>
                         <span className="text-xs font-semibold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
                           1st · TN Police Hackathon 2025
@@ -967,13 +983,25 @@ export function ResumePortfolio() {
                         <li>Built a platform for real-time cybercriminal identification and network profiling on TOR dark web.</li>
                         <li>Developed search, suspect profile cards and network-graph visualisations with ML classification.</li>
                       </ul>
+                      <div className="pt-2 flex items-center justify-between border-t border-white/5">
+                        <Link
+                          href="/projects/tor-unveil"
+                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-rose-400 hover:text-rose-300 hover:underline"
+                        >
+                          <span>Read Case Study &amp; Forensic Breakdown</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
+                        <span className="text-[10px] font-mono text-neutral-500">Law Enforcement Analytics</span>
+                      </div>
                     </div>
 
                     {/* Project 3 */}
                     <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/5 space-y-2.5">
                       <div className="flex flex-wrap items-baseline justify-between gap-1">
                         <h3 className="text-sm font-bold text-white">
-                          AI Crop Recommendation &amp; Agri-Intelligence Engine
+                          <Link href="/projects/ai-crop-recommendation" className="hover:text-emerald-400 transition-colors">
+                            AI Crop Recommendation &amp; Agri-Intelligence Engine
+                          </Link>
                         </h3>
                         <span className="text-xs font-semibold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
                           1st · Blaze a Trail 2.0
@@ -993,6 +1021,16 @@ export function ResumePortfolio() {
                         <li>Built an ML engine using soil, weather and GIS datasets to deliver actionable farming insights.</li>
                         <li>Integrated REST API backend with React.js dashboard; applied Explainable AI for accessibility.</li>
                       </ul>
+                      <div className="pt-2 flex items-center justify-between border-t border-white/5">
+                        <Link
+                          href="/projects/ai-crop-recommendation"
+                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-400 hover:text-emerald-300 hover:underline"
+                        >
+                          <span>Read Agritech ML Architecture</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
+                        <span className="text-[10px] font-mono text-neutral-500">Precision Agritech ML</span>
+                      </div>
                     </div>
                   </div>
                 </section>
@@ -1267,7 +1305,32 @@ export function ResumePortfolio() {
             </section>
 
             {/* 5. Footer */}
-            <footer className="pt-6 text-center text-xs text-neutral-500 space-y-2 font-mono">
+            <footer className="pt-6 text-center text-xs text-neutral-500 space-y-3 font-mono">
+              <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-xs text-neutral-400">
+                <Link href="/" className="hover:text-cyan-400 transition-colors">
+                  Home
+                </Link>
+                <span className="text-neutral-700">•</span>
+                <Link href="/about" className="hover:text-cyan-400 transition-colors">
+                  About Reginald
+                </Link>
+                <span className="text-neutral-700">•</span>
+                <Link href="/lab" className="hover:text-cyan-400 transition-colors">
+                  Engineering Lab
+                </Link>
+                <span className="text-neutral-700">•</span>
+                <Link href="/projects/301-super-ai-agents" className="hover:text-cyan-400 transition-colors">
+                  301 Super AI Agents
+                </Link>
+                <span className="text-neutral-700">•</span>
+                <Link href="/projects/tor-unveil" className="hover:text-rose-400 transition-colors">
+                  TOR-UNVEIL
+                </Link>
+                <span className="text-neutral-700">•</span>
+                <Link href="/projects/ai-crop-recommendation" className="hover:text-emerald-400 transition-colors">
+                  AI Crop Recommendation
+                </Link>
+              </div>
               <div className="text-neutral-400">
                 BETTER TECHNOLOGY • HAPPIER PEOPLE •{" "}
                 <Link href="/lab" className="text-cyan-400 hover:underline">

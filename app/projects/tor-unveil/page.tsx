@@ -18,12 +18,21 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Reginald Alfret V Portfolio",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "TOR-UNVEIL — Dark Web AI Cybercriminal Tracker",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "TOR-UNVEIL — Dark Web AI Cybercriminal Tracker",
     description:
       "Full-stack AI platform built for operational dark web monitoring and suspect network graph profiling. Delivered for live operational deployment by Tamil Nadu Police.",
+    images: ["/og-image.png"],
   },
 };
 

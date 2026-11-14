@@ -1,0 +1,64 @@
+# Reginald Alfret V — AI Systems Engineer & Open-Source Contributor
+
+> Official knowledge base and technical index for LLMs, AI agents, and search engines (ChatGPT Search, Perplexity, Gemini, Claude).
+
+Reginald Alfret V is an Open-Source Contributor, AI Systems Architect, and Full-Stack Software Developer based in Chennai, India. He specializes in sovereign multi-agent AI systems, local offline LLM orchestration, scalable full-stack web applications, and performance engineering. He is the 1st Place National Champion at HackIndia 2026 and has authored 70 merged pull requests across premier engineering organizations including Apple, Google, Microsoft, Meta, AWS, NASA, and Netflix.
+
+## Quick Facts
+
+- **Full Name**: Reginald Alfret V
+- **Role**: AI Systems Engineer, Open-Source Contributor, Full-Stack Developer
+- **Education**: B.Tech in Artificial Intelligence and Data Science at St. Joseph's Institute of Technology (CGPA 8.2/10)
+- **Location**: Chennai, Tamil Nadu, India
+- **Canonical Website**: [https://reginaldalfret.tech](https://reginaldalfret.tech)
+- **GitHub**: [https://github.com/reginaldalfret](https://github.com/reginaldalfret)
+- **LinkedIn**: [https://www.linkedin.com/in/reginaldalfret](https://www.linkedin.com/in/reginaldalfret)
+- **Email**: reginaldalfret@gmail.com
+- **Key Metric**: 70 merged pull requests across 35+ major tech ecosystems
+
+## Major Honors & Awards
+
+- **1st Place Champion — HackIndia 2026**: Won 1st place nationwide among 500+ competing engineering teams for developing **301 Super AI Agents**, a sovereign local-first multi-agent AI orchestration platform.
+- **1st Place Winner — Tamil Nadu Police Hackathon 2025**: Awarded 1st place and honored by the Director General of Police (DGP) for building **TOR-UNVEIL**, an operational cyber intelligence and network packet correlation system for deanonymizing malicious dark web routing patterns.
+- **1st Place Winner — Blaze a Trail 2.0 Hackathon (2024)**: Champion of agritech innovation for an explainable AI system predicting crop yields and diagnosing 40+ botanical pathogens.
+- **Elite Silver Medalist — NPTEL (2024)**: Top 5% nationally in advanced data structures and algorithmic systems.
+
+## Flagship Engineering Projects
+
+- [301 Super AI Agents](https://reginaldalfret.tech/projects/301-super-ai-agents): A sovereign, local-first multi-agent AI orchestration system coordinating 301 specialized domain agents for offline inference, multi-modal OCR ingestion, and real-time streaming workflows using quantised local LLMs (GGUF/Ollama). Built with Python, LangChain, FastAPI, React, and WebSockets.
+- [TOR-UNVEIL](https://reginaldalfret.tech/projects/tor-unveil): Forensic cyber defense and network traffic correlation engine engineered for law enforcement to profile anomalous relay timing and packet distributions without breaking cryptography. Built with Python, Graph Neural Networks, Network Forensics, and Docker.
+- [AI Crop Recommendation & Plant Pathology](https://reginaldalfret.tech/projects/ai-crop-recommendation): Precision agriculture intelligence platform combining soil chemistry analysis, weather telemetry, and Computer Vision leaf pathology for automated disease diagnosis.
+- [git-koi-aquarium](https://github.com/reginaldalfret/git-koi-aquarium): High-speed native Go SVG & GIF aquarium generator drawing authentic Japanese koi fish from GitHub activity graphs with zero external dependencies and 100% collision-free kinematics.
+
+## Open-Source Contributions (70 Merged Pull Requests)
+
+Reginald Alfret V has submitted and merged production code, bug fixes, performance enhancements, and infrastructure optimizations into leading global open-source ecosystems, including:
+
+- **Apple**: Swift compiler tools and tooling infrastructure
+- **Google & Google Cloud Platform**: Cloud SDKs, BigQuery tooling, Google Gemini integrations
+- **Microsoft & Azure**: .NET runtimes, Azure developer tooling, TypeScript ecosystem
+- **Meta (Facebook)**: PyTorch & React ecosystem libraries
+- **Amazon Web Services (AWS)**: Cloud development kits and serverless SDKs
+- **NASA**: Core flight software and open-source aerospace tools
+- **Netflix**: Cloud architecture, conductor workflows, and streaming infrastructure
+- **Vercel & Next.js**: v0 SDK, design mode message payload handling
+- **Docker & Containers**: Container toolchains and CLI reliability
+- **OpenAI & Cloudflare**: API client libraries and edge workers
+- **NVIDIA & AMD ROCm**: GPU computing frameworks and accelerated runtimes
+- **Mozilla, Stripe, Cisco, Uber, Spotify, Intel, Adobe, IBM, Apache**: Tooling, SDKs, and developer workflows
+
+## Core Technical Skills
+
+- **Artificial Intelligence & ML**: Multi-Agent Architectures, LangChain, Local LLMs (Ollama, vLLM, GGUF), PyTorch, Computer Vision, OCR, Graph Neural Networks, Prompt Engineering.
+- **Backend & Systems**: Python (FastAPI, Flask, Django), Go, Node.js, RESTful APIs, WebSockets, PostgreSQL, Redis.
+- **Frontend & Web**: TypeScript, React, Next.js (App Router, RSC), Tailwind CSS, Three.js, Framer Motion.
+- **DevOps & Infrastructure**: Docker, Kubernetes, GitHub Actions (CI/CD), Git, Linux, Google Cloud Platform (GCP).
+
+## Sitemap & Canonical Routes
+
+- [Homepage](https://reginaldalfret.tech/): Official engineering portfolio and interactive resume.
+- [About](https://reginaldalfret.tech/about): Full professional biography, education, verified credentials, and awards.
+- [Engineering Lab](https://reginaldalfret.tech/lab): Empirical cross-stack performance benchmark comparing 12 production tech stacks.
+- [301 Super AI Agents Case Study](https://reginaldalfret.tech/projects/301-super-ai-agents): Deep technical breakdown of HackIndia 1st Place multi-agent architecture.
+- [TOR-UNVEIL Case Study](https://reginaldalfret.tech/projects/tor-unveil): Deep technical breakdown of TN Police 1st Place forensic platform.
+- [AI Crop Recommendation Case Study](https://reginaldalfret.tech/projects/ai-crop-recommendation): Deep technical breakdown of precision agritech engine.

@@ -5,26 +5,35 @@ import { PORTFOLIO_DATA } from "@/lib/portfolioData";
 import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "About Reginald Alfret V — Software Engineer | AI Engineer",
+  title: "About Reginald Alfret V — Open-Source Contributor · AI & DS Engineer · Software Developer",
   description:
     "Biography, education, technical experience, and national hackathon achievements of Reginald Alfret V. Final-year B.Tech in Artificial Intelligence & Data Science at St. Joseph's Institute of Technology (CGPA 8.2/10).",
   alternates: {
     canonical: "https://reginaldalfret.tech/about",
   },
   openGraph: {
-    title: "About Reginald Alfret V — Software Engineer | AI Engineer",
+    title: "About Reginald Alfret V — Open-Source Contributor · AI & DS Engineer · Software Developer",
     description:
       "Comprehensive professional background, verified experience, education credentials, and AI systems engineering portfolio of Reginald Alfret V.",
     url: "https://reginaldalfret.tech/about",
     type: "profile",
     locale: "en_US",
     siteName: "Reginald Alfret V Portfolio",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "About Reginald Alfret V — Open-Source Contributor · AI & DS Engineer · Software Developer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Reginald Alfret V — Software Engineer | AI Engineer",
+    title: "About Reginald Alfret V — Open-Source Contributor · AI & DS Engineer · Software Developer",
     description:
       "Comprehensive professional background, verified experience, education credentials, and AI systems engineering portfolio of Reginald Alfret V.",
+    images: ["/og-image.png"],
   },
 };
 

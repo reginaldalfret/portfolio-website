@@ -18,12 +18,21 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Reginald Alfret V Portfolio",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "301 Super AI Agents — Sovereign Multi-Agent AI Platform",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "301 Super AI Agents — Sovereign Multi-Agent AI Platform",
     description:
       "A sovereign multi-agent AI platform orchestrating 301 specialised agents for offline inference, OCR parsing, and automated workflows. 1st Place at HackIndia 2026.",
+    images: ["/og-image.png"],
   },
 };
 
