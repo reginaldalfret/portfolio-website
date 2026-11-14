@@ -834,9 +834,9 @@ export function ResumePortfolio() {
                     className="group relative p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
                   >
                     <div className="flex items-center justify-between mb-1.5">
-                      <div className="flex items-center gap-2 min-w-0">
-                        <div className="w-5 h-5 flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-110">
-                          <OrgLogo orgKey={item.key} className="w-4.5 h-4.5 shrink-0" />
+                      <div className="flex items-center gap-2.5 min-w-0">
+                        <div className="w-7 h-7 rounded-lg bg-white/[0.06] border border-white/10 p-1 flex items-center justify-center shrink-0 transition-all duration-200 group-hover:scale-105 group-hover:border-cyan-500/40 group-hover:bg-white/[0.1] shadow-sm">
+                          <OrgLogo orgKey={item.key} className="w-5 h-5 shrink-0" />
                         </div>
                         <span className="text-xs font-bold text-neutral-200 truncate group-hover:text-white">
                           {item.org}
