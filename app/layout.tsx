@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://reginaldalfret.tech"),
   title: "Reginald Alfret V — Open-Source Contributor · AI & DS Engineer · Software Developer",
   description:
-    "Open-Source Contributor, AI & Data Science Engineer, and Software Developer with 70 merged PRs across Apple, Google, Microsoft, Meta, AWS, NVIDIA, NASA, and Netflix. 1st Place Champion at HackIndia 2026.",
+    "Building intelligent software, multi-agent AI systems, and scalable real-world products. Open-Source Contributor & HackIndia 2026 Winner.",
   alternates: {
     canonical: "https://reginaldalfret.tech",
   },
@@ -47,16 +47,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Reginald Alfret V — Open-Source Contributor · AI & DS Engineer · Software Developer",
     description:
-      "Open-Source Contributor, AI & Data Science Engineer, and Software Developer with 70 merged PRs across Apple, Google, Microsoft, Meta, AWS, NVIDIA, NASA, and Netflix. 1st Place Champion at HackIndia 2026.",
+      "Building intelligent software, multi-agent AI systems, and scalable real-world products.",
     url: "https://reginaldalfret.tech",
     type: "website",
     locale: "en_US",
     siteName: "Reginald Alfret V Portfolio",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://reginaldalfret.tech/og-image.png",
+        secureUrl: "https://reginaldalfret.tech/og-image.png",
         width: 1200,
         height: 630,
+        type: "image/png",
         alt: "Reginald Alfret V — Open-Source Contributor · AI & DS Engineer · Software Developer",
       },
     ],
@@ -65,8 +67,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Reginald Alfret V — Open-Source Contributor · AI & DS Engineer · Software Developer",
     description:
-      "Open-Source Contributor, AI & Data Science Engineer, and Software Developer with 70 merged PRs across Apple, Google, Microsoft, Meta, AWS, NVIDIA, NASA, and Netflix. 1st Place Champion at HackIndia 2026.",
-    images: ["/og-image.png"],
+      "Building intelligent software, multi-agent AI systems, and scalable real-world products.",
+    images: ["https://reginaldalfret.tech/og-image.png"],
   },
   robots: {
     index: true,
