@@ -1,5 +1,33 @@
 [
   {
+    "id": "hpinc-jipp-223",
+    "organization": "Hpinc",
+    "orgKey": "hpinc",
+    "organizationUrl": "https://github.com/HPInc",
+    "repository": "HPInc/jipp",
+    "repositoryUrl": "https://github.com/HPInc/jipp",
+    "prNumber": 223,
+    "title": "fix(encoding): validate negative IPP value length during packet parsing (#222)",
+    "url": "https://github.com/HPInc/jipp/pull/223",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "BUG FIX",
+    "contribution": "Problem Statement When parsing IPP packets in IppInputStream, the 16-bit attribute value length field is read via readShort().toInt() in readValueBytes() and readShort().toLong() in skipValueBytes().",
+    "description": "Problem Statement When parsing IPP packets in IppInputStream, the 16-bit attribute value length field is read via readShort().toInt() in readValueBytes() and readShort().toLong() in skipValueBytes().",
+    "labels": [],
+    "date": "2026-11-19T00:56:08.000Z",
+    "mergedAt": "2026-11-19T00:56:08.000Z",
+    "displayDate": "Nov 19, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
     "id": "juspay-neurolink-2033",
     "organization": "Juspay",
     "orgKey": "juspay",
