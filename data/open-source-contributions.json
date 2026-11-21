@@ -1,5 +1,33 @@
 [
   {
+    "id": "linkedin-hoptimator-260",
+    "organization": "Linkedin",
+    "orgKey": "linkedin",
+    "organizationUrl": "https://github.com/linkedin",
+    "repository": "linkedin/Hoptimator",
+    "repositoryUrl": "https://github.com/linkedin/Hoptimator",
+    "prNumber": 260,
+    "title": "Normalize line separators and whitespace in test assertions",
+    "url": "https://github.com/linkedin/Hoptimator/pull/260",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "TEST",
+    "contribution": "Summary This PR addresses cross-platform test assertion failures in TestBasicSql and ScriptImplementorTest caused by operating-system line separator (\\r\\n vs \\n) and SQL formatting differences:",
+    "description": "Summary This PR addresses cross-platform test assertion failures in TestBasicSql and ScriptImplementorTest caused by operating-system line separator (\\r\\n vs \\n) and SQL formatting differences:",
+    "labels": [],
+    "date": "2026-11-20T16:46:10.000Z",
+    "mergedAt": "2026-11-20T16:46:10.000Z",
+    "displayDate": "Nov 20, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
     "id": "hpinc-jipp-223",
     "organization": "Hpinc",
     "orgKey": "hpinc",
