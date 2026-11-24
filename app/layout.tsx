@@ -115,7 +115,7 @@ export default function RootLayout({
           "Full-Stack Developer",
         ],
         "description":
-          "Open-Source Contributor, AI & Data Science Engineer and Software Developer with 30+ merged pull requests across Apple, Google, Microsoft, Meta, AWS, NVIDIA, NASA, and Netflix. 1st Place Champion at HackIndia 2026 and Tamil Nadu Police Hackathon 2025.",
+          "Open-Source Contributor, AI & Data Science Engineer and Software Developer with 40+ merged pull requests across Apple, Google, Microsoft, Meta, AWS, NVIDIA, NASA, and Netflix. 1st Place Champion at HackIndia 2026 and Tamil Nadu Police Hackathon 2025.",
         "url": "https://reginaldalfret.tech/",
         "image": "https://reginaldalfret.tech/og-image.png",
         "sameAs": [

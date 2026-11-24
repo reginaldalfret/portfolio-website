@@ -62,7 +62,7 @@ export const PORTFOLIO_DATA = {
     ],
     headline: "Building intelligent systems and contributing focused fixes, tests, documentation, and infrastructure improvements to major open-source ecosystems.",
     summary:
-      "Open-Source Contributor, AI & Data Science Engineer and Software Developer (final-year B.Tech AI & DS) building AI/ML systems, full-stack applications and scalable products. Currently building an ERP platform at DailyGurus. Built 70+ projects, including three 1st-place hackathon winners (HackIndia 2026, TN Police Hackathon 2025, Blaze a Trail 2.0). Author of 30 merged open-source pull requests at Apple, Google, Microsoft, AWS, Meta, NVIDIA, NASA, Netflix, Stripe and more.",
+      "Open-Source Contributor, AI & Data Science Engineer and Software Developer (final-year B.Tech AI & DS) building AI/ML systems, full-stack applications and scalable products. Currently building an ERP platform at DailyGurus. Built 70+ projects, including three 1st-place hackathon winners (HackIndia 2026, TN Police Hackathon 2025, Blaze a Trail 2.0). Author of 40 merged open-source pull requests at Apple, Google, Microsoft, AWS, Meta, NVIDIA, NASA, Netflix, Stripe, Vercel, Mozilla, Flutter and more.",
     location: "Chennai, India",
     email: "reginaldalfret@gmail.com",
     phone: "+91 81220 87088",
@@ -80,7 +80,7 @@ export const PORTFOLIO_DATA = {
   },
 
   stats: [
-    { value: "30", label: "Merged Pull Requests", caption: "Across leading engineering organisations" },
+    { value: "40", label: "Merged Pull Requests", caption: "Across leading engineering organisations" },
     { value: "70+", label: "Built Projects", caption: "AI systems, full-stack & automation" },
     { value: "3×", label: "1st Place Hackathons", caption: "HackIndia 2026, TN Police & Blaze a Trail" },
     { value: "301", label: "Specialised AI Agents", caption: "Orchestrated in sovereign local platform" },
