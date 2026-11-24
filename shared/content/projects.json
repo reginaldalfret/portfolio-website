@@ -100,7 +100,7 @@
     ],
     "points": [
       "Engineered 12 independent, idiomatically built applications across TypeScript, Vue, Python, Java, PHP, Ruby, C#, Go, Rust, Dart, and Swift.",
-      "Maintained 100% visual and functional fidelity, rendering all 30 merged PRs, interactive resume canvas, and responsive viewports.",
+      "Maintained 100% visual and functional fidelity, rendering all 40 merged PRs, interactive resume canvas, and responsive viewports.",
       "Unified performance metrics dashboard benchmarking FCP, LCP, CLS, TTFB, and artifact payload sizes."
     ],
     "github": "https://github.com/reginaldalfret/portfolio-website"
