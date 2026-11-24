@@ -65,6 +65,16 @@ const CONTRIBUTIONS = [
   { org: "Spotify", repo: "Confidence SDK Swift", pr: "#272", url: "https://github.com/spotify/confidence-sdk-swift/pull/272", key: "spotify" },
   { org: "Cisco", repo: "cJOSE", pr: "#202", url: "https://github.com/cisco/cjose/pull/202", key: "cisco" },
   { org: "Netflix", repo: "Atlas", pr: "#2011", url: "https://github.com/Netflix/atlas/pull/2011", key: "netflix" },
+  { org: "Vercel", repo: "v0-sdk", pr: "#268", url: "https://github.com/vercel/v0-sdk/pull/268", key: "vercel" },
+  { org: "Mozilla", repo: "Remote Settings", pr: "#1682", url: "https://github.com/mozilla/remote-settings/pull/1682", key: "mozilla" },
+  { org: "ARM", repo: "DAP.js", pr: "#131", url: "https://github.com/ARMmbed/dapjs/pull/131", key: "arm" },
+  { org: "Juspay", repo: "NeuroLink", pr: "#2033", url: "https://github.com/juspay/neurolink/pull/2033", key: "juspay" },
+  { org: "Flutter", repo: "Flutter", pr: "#194673", url: "https://github.com/flutter/flutter/pull/194673", key: "flutter" },
+  { org: "Gemini", repo: "API Examples", pr: "#121", url: "https://github.com/google-gemini/api-examples/pull/121", key: "gemini" },
+  { org: "LinkedIn", repo: "Hoptimator", pr: "#260", url: "https://github.com/linkedin/Hoptimator/pull/260", key: "linkedin" },
+  { org: "Kaggle", repo: "Kaggle CLI", pr: "#1246", url: "https://github.com/Kaggle/kaggle-cli/pull/1246", key: "kaggle" },
+  { org: "Unity", repo: "Mobile Logcat", pr: "#237", url: "https://github.com/Unity-Technologies/com.unity.mobile.logcat/pull/237", key: "unity" },
+  { org: "HP", repo: "JIPP", pr: "#223", url: "https://github.com/HPInc/jipp/pull/223", key: "hp" },
 ];
 
 export function ResumePortfolio() {
@@ -794,7 +804,7 @@ export function ResumePortfolio() {
               <div className="flex flex-wrap items-center justify-center gap-2.5">
                 <div className="px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold flex items-center gap-1.5">
                   <GitPullRequest className="w-3.5 h-3.5" />
-                  <span>30 Merged PRs</span>
+                  <span>40 Merged PRs</span>
                 </div>
                 <div className="px-3 py-1 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold flex items-center gap-1.5">
                   <Layers className="w-3.5 h-3.5" />
@@ -815,7 +825,7 @@ export function ResumePortfolio() {
                     <span className="text-cyan-400">⚡</span> OPEN-SOURCE CONTRIBUTIONS
                   </h2>
                   <p className="text-xs text-neutral-400 font-mono">
-                    30 pull requests merged across leading engineering organisations
+                    40 pull requests merged across leading engineering organisations
                   </p>
                 </div>
                 <div className="text-[11px] font-mono text-cyan-400/80 bg-cyan-500/10 px-2.5 py-1 rounded-md border border-cyan-500/20 self-start sm:self-auto">
@@ -823,7 +833,7 @@ export function ResumePortfolio() {
                 </div>
               </div>
 
-              {/* 30 PRs Grid: 5 columns on desktop, 3 on tablet, 2 on mobile */}
+              {/* 40 PRs Grid: 5 columns on desktop, 3 on tablet, 2 on mobile */}
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 2xl:grid-cols-6 gap-2.5">
                 {CONTRIBUTIONS.map((item, idx) => (
                   <a
@@ -865,7 +875,7 @@ export function ResumePortfolio() {
                     <span className="text-base">👨‍💻</span> Professional Summary
                   </h2>
                   <p className="text-xs sm:text-[13px] leading-relaxed text-neutral-300 bg-white/[0.02] border border-white/5 rounded-2xl p-4">
-                    Open-Source Contributor, AI &amp; Data Science Engineer and Software Developer (final-year B.Tech AI &amp; DS) building AI/ML systems, full-stack applications and scalable products. Currently building an ERP platform at <strong className="text-white">DailyGurus</strong>. Built 70+ projects, including three 1st-place hackathon winners (HackIndia 2026, TN Police Hackathon 2025, Blaze a Trail 2.0). Author of 30 merged open-source pull requests at Apple, Google, Microsoft, AWS, Meta, NVIDIA, NASA, Netflix, Stripe and more.
+                    Open-Source Contributor, AI &amp; Data Science Engineer and Software Developer (final-year B.Tech AI &amp; DS) building AI/ML systems, full-stack applications and scalable products. Currently building an ERP platform at <strong className="text-white">DailyGurus</strong>. Built 70+ projects, including three 1st-place hackathon winners (HackIndia 2026, TN Police Hackathon 2025, Blaze a Trail 2.0). Author of 40 merged open-source pull requests at Apple, Google, Microsoft, AWS, Meta, NVIDIA, NASA, Netflix, Stripe, Vercel, Mozilla, Flutter and more.
                   </p>
                 </section>
 
