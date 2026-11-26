@@ -1,5 +1,33 @@
 [
   {
+    "id": "shopify-theme-tools-1325",
+    "organization": "Shopify",
+    "orgKey": "shopify",
+    "organizationUrl": "https://github.com/Shopify",
+    "repository": "Shopify/theme-tools",
+    "repositoryUrl": "https://github.com/Shopify/theme-tools",
+    "prNumber": 1325,
+    "title": "fix(theme-graph): populate webComponentDefs via getWebComponentMap in CLI",
+    "url": "https://github.com/Shopify/theme-tools/pull/1325",
+    "status": "merged",
+    "statusLabel": "Merged",
+    "category": "BUG FIX",
+    "contribution": "In packages/theme-graph/bin/theme-graph, webComponentDefs was previously initialized as an empty ew Map(), causing getWebComponentDefinitionReference to always return undefined.",
+    "description": "In packages/theme-graph/bin/theme-graph, webComponentDefs was previously initialized as an empty ew Map(), causing getWebComponentDefinitionReference to always return undefined.",
+    "labels": [],
+    "date": "2026-11-25T15:07:43.000Z",
+    "mergedAt": "2026-11-25T15:07:43.000Z",
+    "displayDate": "Nov 25, 2026",
+    "isFeatured": false,
+    "theme": {
+      "accent": "#67E8F9",
+      "borderGlow": "rgba(103,232,249,0.28)",
+      "gradient": "from-cyan-500/10 via-sky-600/5 to-transparent",
+      "textColor": "text-cyan-300",
+      "badgeBg": "bg-cyan-500/10 border-cyan-500/30 text-cyan-300"
+    }
+  },
+  {
     "id": "linkedin-hoptimator-260",
     "organization": "Linkedin",
     "orgKey": "linkedin",
